@@ -1,0 +1,22 @@
+<div class="plans-info-item <%= make_active(setting) %>"
+     data-id='<%= setting.name + setting.id.to_s %>'>
+  <div class="plans-info-item-inner">
+    <div class="plans-item-inner-left">
+      <h3 class="title">
+        <%= t('plugin_for_integration_with') + ' ' +
+            Project::PLUGINS.key(setting.name) %>
+      </h3>
+      <span class="plugins-project"><%= @project.title %></span>
+      <div class="author-block">
+        <span class="author"><%= setting.user.try(:name) %></span>
+        <span class="date"><%= setting.created_at.strftime("%d/%m/%y") %></span>
+      </div>
+    </div>
+    <div class="plans-item-inner-right">
+      <div class="plans-icons">
+        <%= destroy_synchronization_link(setting) %>
+        <%= edit_synchronization_link(setting) %>
+      </div>
+    </div>
+  </div>
+</div>

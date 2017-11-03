@@ -1,0 +1,837 @@
+{
+  "resources": [
+    {
+      "name": "Crashes",
+      "examples": [
+        {
+          "description": "Upload crashes",
+          "link": "crashes/upload_crashes.json",
+          "groups": "all",
+          "route": "/projects/upload_crashes",
+          "method": "post"
+        }
+      ]
+    },
+    {
+      "name": "Issues",
+      "examples": [
+        {
+          "description": "Create",
+          "link": "issues/create.json",
+          "groups": "all",
+          "route": "/api/v1/projects/issues/create",
+          "method": "post"
+        },
+        {
+          "description": "Create. From devise",
+          "link": "issues/create._from_devise.json",
+          "groups": "all",
+          "route": "/api/v1/projects/issues/create",
+          "method": "post"
+        },
+        {
+          "description": "Delete from ID",
+          "link": "issues/delete_from_id.json",
+          "groups": "all",
+          "route": "/api/v1/issues/:id",
+          "method": "delete"
+        },
+        {
+          "description": "Delete from ID in project",
+          "link": "issues/delete_from_id_in_project.json",
+          "groups": "all",
+          "route": "/api/v1/issues/:id",
+          "method": "delete"
+        },
+        {
+          "description": "Index",
+          "link": "issues/index.json",
+          "groups": "all",
+          "route": "/api/v1/issues",
+          "method": "get"
+        },
+        {
+          "description": "Index. User not project member",
+          "link": "issues/index._user_not_project_member.json",
+          "groups": "all",
+          "route": "/api/v1/issues",
+          "method": "get"
+        },
+        {
+          "description": "Issue info with mobile build",
+          "link": "issues/issue_info_with_mobile_build.json",
+          "groups": "all",
+          "route": "/api/v1/projects/issue_info",
+          "method": "post"
+        },
+        {
+          "description": "Issue info with web site",
+          "link": "issues/issue_info_with_web_site.json",
+          "groups": "all",
+          "route": "/api/v1/projects/issue_info",
+          "method": "post"
+        },
+        {
+          "description": "Show from id",
+          "link": "issues/show_from_id.json",
+          "groups": "all",
+          "route": "/api/v1/issues/:id",
+          "method": "get"
+        },
+        {
+          "description": "Show from id in project ",
+          "link": "issues/show_from_id_in_project_.json",
+          "groups": "all",
+          "route": "/api/v1/issues/:id",
+          "method": "get"
+        },
+        {
+          "description": "Update from id",
+          "link": "issues/update_from_id.json",
+          "groups": "all",
+          "route": "/api/v1/issues/:id",
+          "method": "put"
+        },
+        {
+          "description": "Update from id in project",
+          "link": "issues/update_from_id_in_project.json",
+          "groups": "all",
+          "route": "/api/v1/issues/:id",
+          "method": "put"
+        }
+      ]
+    },
+    {
+      "name": "Issues Attachments",
+      "examples": [
+        {
+          "description": "Create",
+          "link": "issues_attachments/create.json",
+          "groups": "all",
+          "route": "/api/v1/issues/:issue_id/attachments",
+          "method": "post"
+        },
+        {
+          "description": "Create. Id in project",
+          "link": "issues_attachments/create._id_in_project.json",
+          "groups": "all",
+          "route": "/api/v1/issues/:issue_id/attachments",
+          "method": "post"
+        },
+        {
+          "description": "Delete",
+          "link": "issues_attachments/delete.json",
+          "groups": "all",
+          "route": "/api/v1/attachments/:id",
+          "method": "delete"
+        }
+      ]
+    },
+    {
+      "name": "Organizations",
+      "examples": [
+        {
+          "description": "Create",
+          "link": "organizations/create.json",
+          "groups": "all",
+          "route": "/api/v1/organizations",
+          "method": "post"
+        },
+        {
+          "description": "Delete",
+          "link": "organizations/delete.json",
+          "groups": "all",
+          "route": "/api/v1/organizations/:id",
+          "method": "delete"
+        },
+        {
+          "description": "Delete. Not owner",
+          "link": "organizations/delete._not_owner.json",
+          "groups": "all",
+          "route": "/api/v1/organizations/:id",
+          "method": "delete"
+        },
+        {
+          "description": "Index",
+          "link": "organizations/index.json",
+          "groups": "all",
+          "route": "/api/v1/organizations",
+          "method": "get"
+        },
+        {
+          "description": "Show",
+          "link": "organizations/show.json",
+          "groups": "all",
+          "route": "/api/v1/organizations/:id",
+          "method": "get"
+        },
+        {
+          "description": "Update",
+          "link": "organizations/update.json",
+          "groups": "all",
+          "route": "/api/v1/organizations/:id",
+          "method": "put"
+        },
+        {
+          "description": "Update. Not owner",
+          "link": "organizations/update._not_owner.json",
+          "groups": "all",
+          "route": "/api/v1/organizations/:id",
+          "method": "put"
+        }
+      ]
+    },
+    {
+      "name": "Projects",
+      "examples": [
+        {
+          "description": "Create",
+          "link": "projects/create.json",
+          "groups": "all",
+          "route": "/api/v1/projects",
+          "method": "post"
+        },
+        {
+          "description": "Create. Not owner or admin",
+          "link": "projects/create._not_owner_or_admin.json",
+          "groups": "all",
+          "route": "/api/v1/projects",
+          "method": "post"
+        },
+        {
+          "description": "Delete",
+          "link": "projects/delete.json",
+          "groups": "all",
+          "route": "/api/v1/projects/:id",
+          "method": "delete"
+        },
+        {
+          "description": "Delete. Not project manager or higher rank",
+          "link": "projects/delete._not_project_manager_or_higher_rank.json",
+          "groups": "all",
+          "route": "/api/v1/projects/:id",
+          "method": "delete"
+        },
+        {
+          "description": "Index",
+          "link": "projects/index.json",
+          "groups": "all",
+          "route": "/api/v1/projects",
+          "method": "get"
+        },
+        {
+          "description": "Show",
+          "link": "projects/show.json",
+          "groups": "all",
+          "route": "/api/v1/projects/:id",
+          "method": "get"
+        },
+        {
+          "description": "Update",
+          "link": "projects/update.json",
+          "groups": "all",
+          "route": "/api/v1/projects/:id",
+          "method": "put"
+        },
+        {
+          "description": "Update. Not project manager or higher rank",
+          "link": "projects/update._not_project_manager_or_higher_rank.json",
+          "groups": "all",
+          "route": "/api/v1/projects/:id",
+          "method": "put"
+        }
+      ]
+    },
+    {
+      "name": "Roles",
+      "examples": [
+        {
+          "description": "Create organization role by user email",
+          "link": "roles/create_organization_role_by_user_email.json",
+          "groups": "all",
+          "route": "/api/v1/organizations/:organization_id/roles",
+          "method": "post"
+        },
+        {
+          "description": "Create organization role by user id",
+          "link": "roles/create_organization_role_by_user_id.json",
+          "groups": "all",
+          "route": "/api/v1/organizations/:organization_id/roles",
+          "method": "post"
+        },
+        {
+          "description": "Create project role by user email",
+          "link": "roles/create_project_role_by_user_email.json",
+          "groups": "all",
+          "route": "/api/v1/organizations/:organization_id/roles",
+          "method": "post"
+        },
+        {
+          "description": "Create project role by user id",
+          "link": "roles/create_project_role_by_user_id.json",
+          "groups": "all",
+          "route": "/api/v1/organizations/:organization_id/roles",
+          "method": "post"
+        },
+        {
+          "description": "Delete",
+          "link": "roles/delete.json",
+          "groups": "all",
+          "route": "/api/v1/roles/:id",
+          "method": "delete"
+        },
+        {
+          "description": "Delete. Not owner",
+          "link": "roles/delete._not_owner.json",
+          "groups": "all",
+          "route": "/api/v1/roles/:id",
+          "method": "delete"
+        },
+        {
+          "description": "Organization Index",
+          "link": "roles/organization_index.json",
+          "groups": "all",
+          "route": "/api/v1/organizations/:organization_id/roles",
+          "method": "get"
+        },
+        {
+          "description": "Project Index",
+          "link": "roles/project_index.json",
+          "groups": "all",
+          "route": "/api/v1/organizations/:organization_id/roles",
+          "method": "get"
+        },
+        {
+          "description": "Show",
+          "link": "roles/show.json",
+          "groups": "all",
+          "route": "/api/v1/roles/:id",
+          "method": "get"
+        },
+        {
+          "description": "Update organization role",
+          "link": "roles/update_organization_role.json",
+          "groups": "all",
+          "route": "/api/v1/roles/:id",
+          "method": "put"
+        },
+        {
+          "description": "Update project role",
+          "link": "roles/update_project_role.json",
+          "groups": "all",
+          "route": "/api/v1/roles/:id",
+          "method": "put"
+        }
+      ]
+    },
+    {
+      "name": "Statuses",
+      "examples": [
+        {
+          "description": "Create",
+          "link": "statuses/create.json",
+          "groups": "all",
+          "route": "/api/v1/statuses",
+          "method": "post"
+        },
+        {
+          "description": "Create. Viewer",
+          "link": "statuses/create._viewer.json",
+          "groups": "all",
+          "route": "/api/v1/statuses",
+          "method": "post"
+        },
+        {
+          "description": "Delete",
+          "link": "statuses/delete.json",
+          "groups": "all",
+          "route": "/api/v1/statuses/:id",
+          "method": "delete"
+        },
+        {
+          "description": "Delete. Viewer",
+          "link": "statuses/delete._viewer.json",
+          "groups": "all",
+          "route": "/api/v1/statuses/:id",
+          "method": "delete"
+        },
+        {
+          "description": "Index",
+          "link": "statuses/index.json",
+          "groups": "all",
+          "route": "/api/v1/statuses",
+          "method": "get"
+        },
+        {
+          "description": "Index. User not project member",
+          "link": "statuses/index._user_not_project_member.json",
+          "groups": "all",
+          "route": "/api/v1/statuses",
+          "method": "get"
+        },
+        {
+          "description": "Show",
+          "link": "statuses/show.json",
+          "groups": "all",
+          "route": "/api/v1/statuses/:id",
+          "method": "get"
+        },
+        {
+          "description": "Update",
+          "link": "statuses/update.json",
+          "groups": "all",
+          "route": "/api/v1/statuses/:id",
+          "method": "put"
+        },
+        {
+          "description": "Update. Viewer",
+          "link": "statuses/update._viewer.json",
+          "groups": "all",
+          "route": "/api/v1/statuses/:id",
+          "method": "put"
+        }
+      ]
+    },
+    {
+      "name": "Test Cases",
+      "examples": [
+        {
+          "description": "Create",
+          "link": "test_cases/create.json",
+          "groups": "all",
+          "route": "/api/v1/test_modules/:test_module_id/test_cases",
+          "method": "post"
+        },
+        {
+          "description": "Create. Not tester or higher rank",
+          "link": "test_cases/create._not_tester_or_higher_rank.json",
+          "groups": "all",
+          "route": "/api/v1/test_modules/:test_module_id/test_cases",
+          "method": "post"
+        },
+        {
+          "description": "Delete",
+          "link": "test_cases/delete.json",
+          "groups": "all",
+          "route": "/api/v1/test_cases/:id",
+          "method": "delete"
+        },
+        {
+          "description": "Delete. Not tester or higher rank",
+          "link": "test_cases/delete._not_tester_or_higher_rank.json",
+          "groups": "all",
+          "route": "/api/v1/test_cases/:id",
+          "method": "delete"
+        },
+        {
+          "description": "Index in test modules",
+          "link": "test_cases/index_in_test_modules.json",
+          "groups": "all",
+          "route": "/api/v1/:parent_name/:parent_id/test_cases",
+          "method": "get"
+        },
+        {
+          "description": "Index in test plans",
+          "link": "test_cases/index_in_test_plans.json",
+          "groups": "all",
+          "route": "/api/v1/:parent_name/:parent_id/test_cases",
+          "method": "get"
+        },
+        {
+          "description": "Index. User not project member",
+          "link": "test_cases/index._user_not_project_member.json",
+          "groups": "all",
+          "route": "/api/v1/:parent_name/:parent_id/test_cases",
+          "method": "get"
+        },
+        {
+          "description": "Show",
+          "link": "test_cases/show.json",
+          "groups": "all",
+          "route": "/api/v1/test_cases/:id",
+          "method": "get"
+        },
+        {
+          "description": "Update",
+          "link": "test_cases/update.json",
+          "groups": "all",
+          "route": "/api/v1/test_cases/:id",
+          "method": "put"
+        },
+        {
+          "description": "Update. Not tester or higher rank",
+          "link": "test_cases/update._not_tester_or_higher_rank.json",
+          "groups": "all",
+          "route": "/api/v1/test_cases/:id",
+          "method": "put"
+        }
+      ]
+    },
+    {
+      "name": "Test Modules",
+      "examples": [
+        {
+          "description": "Create",
+          "link": "test_modules/create.json",
+          "groups": "all",
+          "route": "/api/v1/test_plans/:test_plan_id/test_modules",
+          "method": "post"
+        },
+        {
+          "description": "Create. Not tester or higher rank",
+          "link": "test_modules/create._not_tester_or_higher_rank.json",
+          "groups": "all",
+          "route": "/api/v1/test_plans/:test_plan_id/test_modules",
+          "method": "post"
+        },
+        {
+          "description": "Delete",
+          "link": "test_modules/delete.json",
+          "groups": "all",
+          "route": "/api/v1/test_modules/:id",
+          "method": "delete"
+        },
+        {
+          "description": "Delete. Not tester or higher rank",
+          "link": "test_modules/delete._not_tester_or_higher_rank.json",
+          "groups": "all",
+          "route": "/api/v1/test_modules/:id",
+          "method": "delete"
+        },
+        {
+          "description": "Index",
+          "link": "test_modules/index.json",
+          "groups": "all",
+          "route": "/api/v1/test_plans/:test_plan_id/test_modules",
+          "method": "get"
+        },
+        {
+          "description": "Index. User not project member",
+          "link": "test_modules/index._user_not_project_member.json",
+          "groups": "all",
+          "route": "/api/v1/test_plans/:test_plan_id/test_modules",
+          "method": "get"
+        },
+        {
+          "description": "Show",
+          "link": "test_modules/show.json",
+          "groups": "all",
+          "route": "/api/v1/test_modules/:id",
+          "method": "get"
+        },
+        {
+          "description": "Update",
+          "link": "test_modules/update.json",
+          "groups": "all",
+          "route": "/api/v1/test_modules/:id",
+          "method": "put"
+        },
+        {
+          "description": "Update. Not tester or higher rank",
+          "link": "test_modules/update._not_tester_or_higher_rank.json",
+          "groups": "all",
+          "route": "/api/v1/test_modules/:id",
+          "method": "put"
+        }
+      ]
+    },
+    {
+      "name": "Test Objects",
+      "examples": [
+        {
+          "description": "Create. Link",
+          "link": "test_objects/create._link.json",
+          "groups": "all",
+          "route": "/api/v1/test_objects",
+          "method": "post"
+        },
+        {
+          "description": "Create. Mobile Build",
+          "link": "test_objects/create._mobile_build.json",
+          "groups": "all",
+          "route": "/api/v1/test_objects",
+          "method": "post"
+        },
+        {
+          "description": "Delete",
+          "link": "test_objects/delete.json",
+          "groups": "all",
+          "route": "/api/v1/test_objects/:id",
+          "method": "delete"
+        },
+        {
+          "description": "Get all test object links",
+          "link": "test_objects/get_all_test_object_links.json",
+          "groups": "all",
+          "route": "/api/v1/test_objects",
+          "method": "get"
+        },
+        {
+          "description": "Index",
+          "link": "test_objects/index.json",
+          "groups": "all",
+          "route": "/api/v1/test_objects",
+          "method": "get"
+        },
+        {
+          "description": "Show",
+          "link": "test_objects/show.json",
+          "groups": "all",
+          "route": "/api/v1/test_objects/:id",
+          "method": "get"
+        }
+      ]
+    },
+    {
+      "name": "Test Plans",
+      "examples": [
+        {
+          "description": "Create",
+          "link": "test_plans/create.json",
+          "groups": "all",
+          "route": "/api/v1/test_plans",
+          "method": "post"
+        },
+        {
+          "description": "Create. Not tester or higher rank",
+          "link": "test_plans/create._not_tester_or_higher_rank.json",
+          "groups": "all",
+          "route": "/api/v1/test_plans",
+          "method": "post"
+        },
+        {
+          "description": "Delete",
+          "link": "test_plans/delete.json",
+          "groups": "all",
+          "route": "/api/v1/test_plans/:id",
+          "method": "delete"
+        },
+        {
+          "description": "Delete. Not tester or higher rank",
+          "link": "test_plans/delete._not_tester_or_higher_rank.json",
+          "groups": "all",
+          "route": "/api/v1/test_plans/:id",
+          "method": "delete"
+        },
+        {
+          "description": "Index",
+          "link": "test_plans/index.json",
+          "groups": "all",
+          "route": "/api/v1/test_plans",
+          "method": "get"
+        },
+        {
+          "description": "Index. User not project member",
+          "link": "test_plans/index._user_not_project_member.json",
+          "groups": "all",
+          "route": "/api/v1/test_plans",
+          "method": "get"
+        },
+        {
+          "description": "Show",
+          "link": "test_plans/show.json",
+          "groups": "all",
+          "route": "/api/v1/test_plans/:id",
+          "method": "get"
+        },
+        {
+          "description": "Update",
+          "link": "test_plans/update.json",
+          "groups": "all",
+          "route": "/api/v1/test_plans/:id",
+          "method": "put"
+        },
+        {
+          "description": "Update. Not tester or higher rank",
+          "link": "test_plans/update._not_tester_or_higher_rank.json",
+          "groups": "all",
+          "route": "/api/v1/test_plans/:id",
+          "method": "put"
+        }
+      ]
+    },
+    {
+      "name": "Test Run Results",
+      "examples": [
+        {
+          "description": "Delete",
+          "link": "test_run_results/delete.json",
+          "groups": "all",
+          "route": "/api/v1/test_run_results/:id",
+          "method": "delete"
+        },
+        {
+          "description": "Delete. Not tester or higher rank",
+          "link": "test_run_results/delete._not_tester_or_higher_rank.json",
+          "groups": "all",
+          "route": "/api/v1/test_run_results/:id",
+          "method": "delete"
+        },
+        {
+          "description": "Index",
+          "link": "test_run_results/index.json",
+          "groups": "all",
+          "route": "/api/v1/test_runs/:test_run_id/test_run_results",
+          "method": "get"
+        },
+        {
+          "description": "Index. User not project member",
+          "link": "test_run_results/index._user_not_project_member.json",
+          "groups": "all",
+          "route": "/api/v1/test_runs/:test_run_id/test_run_results",
+          "method": "get"
+        },
+        {
+          "description": "Show",
+          "link": "test_run_results/show.json",
+          "groups": "all",
+          "route": "/api/v1/test_run_results/:id",
+          "method": "get"
+        },
+        {
+          "description": "Update",
+          "link": "test_run_results/update.json",
+          "groups": "all",
+          "route": "/api/v1/test_run_results/:id",
+          "method": "put"
+        },
+        {
+          "description": "Update. Not tester or higher rank",
+          "link": "test_run_results/update._not_tester_or_higher_rank.json",
+          "groups": "all",
+          "route": "/api/v1/test_run_results/:id",
+          "method": "put"
+        }
+      ]
+    },
+    {
+      "name": "Test Runs",
+      "examples": [
+        {
+          "description": "Create",
+          "link": "test_runs/create.json",
+          "groups": "all",
+          "route": "/api/v1/test_runs",
+          "method": "post"
+        },
+        {
+          "description": "Create. Not tester or higher rank",
+          "link": "test_runs/create._not_tester_or_higher_rank.json",
+          "groups": "all",
+          "route": "/api/v1/test_runs",
+          "method": "post"
+        },
+        {
+          "description": "Delete",
+          "link": "test_runs/delete.json",
+          "groups": "all",
+          "route": "/api/v1/test_runs/:id",
+          "method": "delete"
+        },
+        {
+          "description": "Delete. Not tester or higher rank",
+          "link": "test_runs/delete._not_tester_or_higher_rank.json",
+          "groups": "all",
+          "route": "/api/v1/test_runs/:id",
+          "method": "delete"
+        },
+        {
+          "description": "Index",
+          "link": "test_runs/index.json",
+          "groups": "all",
+          "route": "/api/v1/test_runs",
+          "method": "get"
+        },
+        {
+          "description": "Index. User not project member",
+          "link": "test_runs/index._user_not_project_member.json",
+          "groups": "all",
+          "route": "/api/v1/test_runs",
+          "method": "get"
+        },
+        {
+          "description": "Show",
+          "link": "test_runs/show.json",
+          "groups": "all",
+          "route": "/api/v1/test_runs/:id",
+          "method": "get"
+        },
+        {
+          "description": "Update test run with create test run result",
+          "link": "test_runs/update_test_run_with_create_test_run_result.json",
+          "groups": "all",
+          "route": "/api/v1/test_runs/:id",
+          "method": "put"
+        },
+        {
+          "description": "Update test run with destroy test run result",
+          "link": "test_runs/update_test_run_with_destroy_test_run_result.json",
+          "groups": "all",
+          "route": "/api/v1/test_runs/:id",
+          "method": "put"
+        },
+        {
+          "description": "Update. Not tester or higher rank",
+          "link": "test_runs/update._not_tester_or_higher_rank.json",
+          "groups": "all",
+          "route": "/api/v1/test_runs/:id",
+          "method": "put"
+        }
+      ]
+    },
+    {
+      "name": "Users",
+      "examples": [
+        {
+          "description": "Organization members list by id",
+          "link": "users/organization_members_list_by_id.json",
+          "groups": "all",
+          "route": "/api/v1/organization/members",
+          "method": "get"
+        },
+        {
+          "description": "Organization members list by title",
+          "link": "users/organization_members_list_by_title.json",
+          "groups": "all",
+          "route": "/api/v1/organization/members",
+          "method": "get"
+        },
+        {
+          "description": "Project members list",
+          "link": "users/project_members_list.json",
+          "groups": "all",
+          "route": "/api/v1/projects/members_list",
+          "method": "get"
+        },
+        {
+          "description": "Sign in",
+          "link": "users/sign_in.json",
+          "groups": "all",
+          "route": "/api/v1/sign_in",
+          "method": "post"
+        },
+        {
+          "description": "Sign out",
+          "link": "users/sign_out.json",
+          "groups": "all",
+          "route": "/api/v1/sign_out",
+          "method": "delete"
+        },
+        {
+          "description": "User show by email",
+          "link": "users/user_show_by_email.json",
+          "groups": "all",
+          "route": "/api/v1/users/show",
+          "method": "get"
+        },
+        {
+          "description": "User show by id",
+          "link": "users/user_show_by_id.json",
+          "groups": "all",
+          "route": "/api/v1/users/show",
+          "method": "get"
+        }
+      ]
+    }
+  ]
+}

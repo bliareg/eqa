@@ -1,0 +1,8 @@
+<thead id="module_<%= test_module.id %>">
+  <%= render partial: 'test_cases/table_header',
+             locals: { test_module: test_module }  %>
+</thead>
+<tbody>
+  <tr></tr>
+  <%= render test_module.test_cases_sorted_array(@column_visibility) %>
+</tbody>

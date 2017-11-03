@@ -1,0 +1,25 @@
+<% content_for :meta do %>
+  <meta name="description" content="Create a new account or sign in with existing one into EasyQA web-based test management tool to improve software quality.">
+  <meta property="og:image" content="https://app.geteasyqa.com/images/facebook_referral.png">
+<% end %>
+
+<div class="container-full">
+  <div class="row">
+    <div class="main-content col m-12">
+      <div class="sign">
+        <div class="sign-tabs">
+          <ul class="sign-tabs-list">
+            <li><a href="#signUp" class="tab-active"><%= t 'sign_up' %></a></li>
+            <li><a href="#signIn" ><%= t 'sign_in' %></a></li>
+          </ul>
+        </div>
+        <div class="sign-in tab" id="signUp">
+          <%= render 'devise/registrations/sign_up' %>
+        </div>
+        <div class="sign-up tab" id="signIn">
+          <%= render 'devise/sessions/sign_in' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

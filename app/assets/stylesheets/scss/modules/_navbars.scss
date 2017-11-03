@@ -1,0 +1,32 @@
+.nav_menu {
+
+  a {
+    display: block;
+    padding: 17px 15px;
+    border-left: 4px solid transparent;
+    color: $nav-menu-text;
+    text-transform: capitalize;
+    @include rem(font-size, 14px);
+
+    & > span {
+      margin-right: 18px;
+      vertical-align: middle;
+
+      span{
+        font-size: 19px;
+      }
+    }
+
+    &:hover,
+    &:active {
+      background-color: $nav-menu-btn-hover;
+      border-left: 4px solid $nav-menu-btn-border-hover;
+    }
+  }
+
+  .active {
+      background-color: $nav-menu-btn-hover;
+      border-left: 4px solid $nav-menu-btn-border-hover;
+  }
+}
+

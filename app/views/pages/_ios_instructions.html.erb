@@ -1,0 +1,38 @@
+<p class="main-step" xmlns="http://www.w3.org/1999/html">1. <%= t 'ios_instructions_details.detail1' %></p>
+<div class="sdk-platforms">
+  <%= link_to download_ios_path, method: :post, class: 'btn btn-green sdk-platform' do %>
+    <%= image_tag('apple-icon.png', class: 'img-png') %>
+    <span><%= t 'ios_sdk' %></span>
+  <% end %>
+</div>
+<br>
+<p class="main-step">2. <%= t('ios_instructions_details.detail2').html_safe %></p>
+<%= image_tag('ios-instruction-1.png', class: 'instruction-img') %>
+<p class="main-step">3. <%= t('ios_instructions_details.detail3').html_safe %></p>
+<%= image_tag('ios-instruction-3.png', class: 'instruction-img') %>
+<p class="main-step"><%= t 'ios_instructions_details.detail4' %> <strong>EasyQASDK.framework</strong></p>
+<%= image_tag('ios-instruction-4.png', class: 'instruction-img') %>
+<p class="main-step">4. <%= t('ios_instructions_details.detail5').html_safe %></p>
+<p class="main-step"><strong><%= t 'for' %> Objective-C:</strong> #import <EasyQASDK/EasyQASDK.h></p>
+<p class="main-step"><strong><%= t 'for' %> Swift:</strong> import EasyQASDK</p>
+<p class="main-step">5. <%= t('ios_instructions_details.detail6').html_safe %></p>
+<span class="token-title"><%= t 'token' %></span>
+<div class="token-block">
+  <div class="token">
+    <span><%= @project.token %></span>
+    <div class="copy-token">
+      <a class="btn-white-green" data-copied-text="<%= t('copied') %>" data-copy-link-text="<%= t 'copy_link' %>"><%= t 'copy_token' %></a>
+    </div>
+  </div>
+</div>
+<p class="main-step">6. <%= t('ios_instructions_details.detail7').html_safe %></p>
+<p class="main-step"><strong><%= t 'for' %> Objective-C:</strong> [EasyQAIntegration setUpWithBaseURL: andWriteKey:];</p>
+<p class="main-step"><strong><%= t 'for' %> Swift:</strong> EasyQAIntegration.setUpWithBaseURL(, andWriteKey: )</p>
+<p class="main-step">7. <%= t('ios_instructions_details.detail8').html_safe %></p>
+<p class="main-step">8. <%= t('ios_instructions_details.detail9').html_safe %></p>
+<%= image_tag('ios-instruction-2.png', class: 'instruction-img') %>
+<p class="main-step"> <%= t 'ios_instructions_details.detail10' %> Run Script (Build Phases)</p>
+<p class="main-step">/bin/sh ${TARGET_BUILD_DIR}/${WRAPPER_NAME}/Frameworks/EasyQASDK.framework/AppStoreARCH  CompabilityScript.sh</p>
+<%= image_tag('ios-instruction-5.png', class: 'instruction-img') %>
+<p class="main-step"><%= t 'ios_instructions_details.detail11' %> <%= link_to 'EasyQA test management tool', issues_path(@project) %>.</p>
+

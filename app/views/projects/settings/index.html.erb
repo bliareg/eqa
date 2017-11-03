@@ -1,0 +1,47 @@
+<div class="project-info-header">
+  <%= image_tag @project.logo.file.url(:medium), class: 'project-logo' %>
+  <h3 class="project-title"><%= @project.title %></h3>
+  <%= @project.change_project_profile_link(current_user) %>
+</div>
+<table class="project-info-table">
+  <colgroup>
+    <col width="10%">
+    <col width="30%">
+    <col width="15%">
+    <col width="45%">
+  </colgroup>
+  <tr>
+    <td><%= t('platform') %></td>
+    <td>
+      <div class="platform">
+        <% @project.platforms.each do |platform| %>
+          <div class="<%= platform_icon(platform.name) %>">
+            <span class="fa fa-<%= platform_icon(platform.name) %>" aria-hidden="true">
+              <span class="platform-info-block" data-title="<%= platform.name %>"></span>
+            </span>
+          </div>
+        <% end %>
+      </div>
+    </td>
+    <td><%= t('project.last_updated') %></td>
+    <td>
+      <div class="last-update"><%= time_ago_in_words(@project.updated_at) %> </div>
+    </td>
+  </tr>
+  <tr>
+    <td><%= t('created_at') %></td>
+    <td><%= (@project.created_at + timezone).strftime('%m/%d/%Y %H:%M') %></td>
+    <td><%= t('project.test_objects') %></td>
+    <td>
+      <% test_obects_hash(@project).each do |key, value| %>
+        <span><%= "#{key} (#{value.count})" %> </span>
+      <% end %>
+    </td>
+  </tr>
+  <tr>
+    <td><%= t('enumerize.role.role.owner') %></td>
+    <td><%= @project.owner.name %></td>
+    <td><%= t('project.last_object') %></td>
+    <td><%= @project.test_objects.last.try(:file_file_name) || t('n_a')%></td>
+  </tr>
+</table>

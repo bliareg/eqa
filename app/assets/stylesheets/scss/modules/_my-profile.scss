@@ -1,0 +1,377 @@
+//  ===== card tabs block =====
+.card-tabs {
+  margin-top: 30px;
+
+  &-list {
+    &-item:nth-child(n+2) {
+      .item-content {
+        border-top: 1px solid $base-border;
+      }
+    }
+
+    &-item:last-child {
+      .item-content {
+        border-radius: 0 0 6px 6px;
+      }
+    }
+
+    &-item:first-child {
+      .item-content {
+        border-radius: 6px 6px 0 0;
+      }
+    }
+
+    &-item {
+      .item-content {
+        display: block;
+        padding: 15px 15px 15px 0;
+        color: $tab-list-item-text;
+        font-family: $light-font-family;
+        line-height: 20px;
+        background-color: $base-bg;
+        border-left: 3px solid transparent;
+        @include rem(font-size, 14px);
+
+        span:first-child {
+          font-size: 20px;
+          margin: 15px;
+          vertical-align: middle;
+        }
+      }
+    }
+
+    .active {
+      color: $white;
+      background-color: $tab-list-item-active;
+      border-top: 1px solid $tab-list-item-active;
+      border-left: 3px solid $tab-list-item-border-active;
+      transition: all 300ms ease 0s;
+    }
+  }
+}
+
+// ===== end card tabs block =====
+
+.card-tab-content {
+  margin-top: 30px;
+  padding: 32px 24px 40px 24px;
+  @extend %clearfix;
+
+  .card-header {
+    @extend %clearfix;
+
+    &-title {
+      float: left;
+      margin-bottom: 30px;
+      max-width: 600px;
+      color: $base-text;
+      font-family: $bold-font-family;
+      font-weight: bold;
+      @include rem(font-size, 24px);
+    }
+
+    &-second-title {
+      margin-bottom: 20px;
+      font-family: $base-font-family;
+      @include rem(font-size, 20px);
+    }
+
+    &-btn {
+      float: right;
+      height: 40px;
+      line-height: 25px;
+    }
+  }
+
+  .columns-wrapper {
+    position: relative;
+    @extend %clearfix;
+
+    .deactivate {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      height: 40px;
+      padding: 9px 20px;
+    }
+  }
+
+  .card-form-column {
+    float: left;
+    width: 350px;
+
+    .languages-title {
+      color: $base-text;
+      @include rem(font-size, 14px);
+    }
+
+    .languages-btn {
+      margin: 0 0 15px 0;
+
+      > li {
+        display: inline-block;
+
+        .btn {
+          height: 40px;
+          padding: 0 15px;
+          line-height: 40px;
+        }
+
+        .active {
+          height: 40px;
+          padding: 0 15px;
+          color: $white;
+          line-height: 40px;
+          border-color: $languages-btn-active;
+          background-color: $languages-btn-active;
+          text-decoration: none;
+        }
+      }
+    }
+
+    .btn {
+      height: 40px;
+      margin-top: 10px;
+      line-height: 30px;
+    }
+  }
+
+  // ========================
+
+  .card-image {
+    &-column {
+      float: left;
+      width: 340px;
+      padding: 30px;
+    }
+  }
+
+  // ===== organization =====
+
+  .organization {
+    height: 110px;
+    margin: 10px 0;
+    padding-left: 10px;
+    background-color: $organization-row-bg;
+    border-radius: 6px;
+    @extend %clearfix;
+
+    &-main-info {
+      display: block;
+      float: left;
+      min-width: 350px;
+    }
+
+    &-logo {
+      float: left;
+      width: 70px;
+      height: 70px;
+      margin: 20px;
+      border-radius: 50%;
+      border: none;
+    }
+
+    .name-block {
+      float: left;
+      width: 370px;
+    }
+
+    &-name {
+      display: block;
+      margin: 27px 0 0 0;
+      color: $base-text;
+      @extend %text-overflow;
+    }
+
+    &-name:hover {
+      color: $organization-name-hover;
+    }
+
+    &-created,
+    &-owner {
+      display: block;
+      max-width: 350px;
+      clear: both;
+      color: $base-light-text;
+      font-family: $light-font-family;
+      @include rem(font-size, 13px);
+      @extend %text-overflow;
+    }
+
+    &-count {
+      float: right;
+      width: auto;
+
+      .count-block {
+        display: inline-block;
+        width: 120px;
+        height: 110px;
+        padding: 18px 0;
+        border-left: 1px solid $organization-count-border;
+        text-align: center;
+
+        > h2 {
+          color: $base-light-text;
+          text-transform: uppercase;
+          line-height: 40px;
+          @include rem(font-size, 12px);
+        }
+
+        > span {
+          color: $base-text;
+          font-family: $bold-font-family;
+          font-weight: bold;
+          line-height: 40px;
+          @include rem(font-size, 24px);
+        }
+      }
+    }
+  }
+
+  .notification {
+    &-team {
+      padding: 0;
+
+      .enable-all {
+        float: right;
+        color: $base-light-text;
+        line-height: 40px;
+        @include rem(font-size, 14px);
+
+        .delete,
+        .check {
+          margin-right: 5px;
+        }
+
+        .btn-white-red,
+        .btn-white-green {
+          cursor: pointer;
+        }
+      }
+
+      .btn-red {
+        height: 40px;
+      }
+    }
+  }
+
+  .project-role {
+    float: left;
+    height: 110px;
+    padding: 28px 50px;
+
+    .your-role-title {
+      float: left;
+      color: $base-light-text;
+      font-family: $light-font-family;
+      line-height: 27px;
+      @include rem(font-size, 14px);
+    }
+
+    .role {
+      float: left;
+      color: $base-text;
+      font-family: $bold-font-family;
+      font-weight: bold;
+      line-height: 27px;
+      clear: both;
+      @include rem(font-size, 14px);
+    }
+  }
+
+  .project-switch {
+    float: right;
+    padding: 40px 30px;
+    border-left: 1px solid $base-border;
+  }
+}
+
+.card-billing-info {
+
+  .left-side {
+    padding-right: 12px;
+    //border-right: 1px solid $base-border;
+  }
+
+  .right-side {
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-bottom: 40px;
+  }
+
+  .card-header-title {
+    float: none;
+    @include rem(font-size, 18px);
+  }
+
+  .columns-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+
+    &:before,
+    &:after {
+      display: none;
+    }
+
+    .card-form-column {
+      float: none;
+      width: 50%;
+
+      .zip-code {
+        width: 100px;
+      }
+
+      .deactivate {
+        margin: 0;
+        line-height: inherit;
+      }
+    }
+
+    .form-wrapper {
+      width: 66.66666%;
+      display: flex;
+    }
+
+    .dropzone-wrapper {
+      width: 33.33333%;
+      margin: 78px 0 10px;
+      padding-left: 12px;
+    }
+  }
+}
+
+.deactivate-account {
+  width: 570px;
+
+  .warning-img {
+    margin-top: 5px;
+  }
+
+  .description {
+    margin: 0;
+    color: $deactivate-account;
+    @include rem(font-size, 14px);
+  }
+
+  .description-title {
+    margin-bottom: 10px;
+    color: $deactivate-account;
+    font-family: $bold-font-family;
+    font-weight: bold;
+    @include rem(font-size, 16px);
+  }
+
+  .btn {
+    width: 80px;
+  }
+
+  .btn-green {
+    margin-left: 7px;
+  }
+}
+
+#changePassword,
+#myOrganizations,
+#notifications {
+  display: none;
+}

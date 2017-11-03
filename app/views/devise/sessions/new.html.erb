@@ -1,0 +1,35 @@
+<% content_for :meta do %>
+  <meta name="description" content="Create a new account or sign in with existing one into EasyQA web-based test management tool to improve software quality.">
+<% end %>
+
+<% if flash[:locked_user_id] %>
+  <% content_for :modal do %>
+    <%= render 'users/sessions/account_is_locked' %>
+  <% end %>
+<% elsif flash[:deleted_user_id] %>
+  <% content_for :modal do %>
+    <%= render 'users/sessions/activate_account' %>
+  <% end %>
+<% end %>
+
+<div class="container-full">
+  <div class="row">
+    <div class="main-content col m-12">
+      <div class="sign">
+        <h1>EasyQA Sign in and Sign Up</h1>
+        <div class="sign-tabs">
+          <ul class="sign-tabs-list">
+            <li><a href="#signIn" class="tab-active"><%= t 'sign_in' %></a></li>
+            <li><a href="#signUp"><%= t 'sign_up' %></a></li>
+          </ul>
+        </div>
+        <div class="sign-in tab" id="signIn">
+          <%= render 'devise/sessions/sign_in' %>
+        </div>
+        <div class="sign-up tab" id="signUp">
+          <%= render 'devise/registrations/sign_up' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

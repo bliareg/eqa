@@ -1,0 +1,20 @@
+<div>
+  <div class="input_wrapper disabled disabled-select">
+  <label class="title"><%= t 'project_name' %></label>
+  <input type='url' value="<%= setting.project_name %>">
+  </div>
+  <div class="input_wrapper disabled disabled-select">
+  <label class="title"><%= t 'tracker_name' %></label>
+  <input type='url' value="<%= setting.tracker_name %>">
+  </div>
+  <div class="input_wrapper disabled disabled-select">
+  <label class="title"><%= t 'base_url' %></label>
+  <input type='url' value="<%= setting.base_url %>">
+  </div>
+  <div class="input_wrapper disabled disabled-select">
+  <label class="title"><%= t 'api_key' %></label>
+  <input type='url' value="<%= setting.api_key %>">
+  </div>
+  <%= render partial: 'synchronizations/setting_plugin_boxes_show',
+           locals: { setting: setting } %>
+</div>

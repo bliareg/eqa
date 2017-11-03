@@ -1,0 +1,25 @@
+<% columnable = @column_visibility.columnable %>
+<% @column_set = columnable.column_set(current_user) %>
+<% if columnable.is_a? TestRun %>
+  <% @test_run = columnable %>
+  <% group_results = @column_visibility.columnable.test_results_sorted_array(@column_visibility).group_by(&:test_plan) %>
+  <% group_results.each do |test_plan, test_run_results| %>
+    var selector = '#run-for-test-plan-<%= test_plan.id %>'
+    $(selector).find('table.resizable-table').removeAttr('id').html("<%= j render partial: 'test_runs/table/table',
+                                                                 locals: {test_run_results: test_run_results} %>")
+  <% end %>
+  TestRunResult.init_sortable();
+  add_profile_table_links();
+<% else %>
+  <% @project = columnable.project %>
+  <% test_modules = columnable.test_modules %>
+  <% test_modules.each do |test_module| %>
+    var selector = '#module_<%= test_module.id %>'
+    $(selector).parent().removeAttr('id').html("<%= j render partial: 'test_modules/test_module_table',
+                                                             locals: { test_module: test_module } %>")
+ <% end %>
+  testModuleWidth();
+  TestModule.init();
+<% end %>
+$('.sort-block').html("<%= j render partial: 'test_plans/sort_block' %>")
+table_resizable();

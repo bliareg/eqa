@@ -1,0 +1,107 @@
+<div class="modal-dialog modal-test-run-steps">
+  <div class="modal-content container">
+    <div class="title-main">
+      <h3><%= t 'execute_test_case' %></h3>
+        <%= link_to test_run_profile_data_path(@test_run_result.test_run.project_id, @test_run_result.test_run_id),
+                    remote: true, class: 'test_run_profile_button close' do %>
+          <span class='icon-close-icon'></span>
+        <% end %>
+    </div>
+    <form action="">
+      <div class="row">
+        <div class="modal-content-scroll">
+          <div class="modal-body">
+            <div class="col <%= wider_colon %>">
+              <table class="test-run-info-table">
+                <tr>
+                  <td><%= ::TestCase.human_attribute_name(:id) %>:</td>
+                  <td class="mark-case-id">
+                    <%= @test_run_result.id_in_project %>
+                  </td>
+                </tr>
+                <tr>
+                  <td><%= ::TestCase.human_attribute_name(:title) %>:</td>
+                  <td class="mark-case-title">
+                    <%= @test_run_result.title %>
+                  </td>
+                </tr>
+                <tr>
+                  <td><%= ::TestCase.human_attribute_name(:pre_steps) %>:</td>
+                  <td class="mark-case-presteps">
+                    <%= simple_format(h(@test_run_result.pre_steps)) %>
+                  </td>
+                </tr>
+                <tr>
+                  <td><%= ::TestCase.human_attribute_name(:steps) %>:</td>
+                  <td class="mark-case-steps">
+                    <%= simple_format(h(@test_run_result.steps)) %>
+                  </td>
+                </tr>
+                <tr>
+                  <td><%= ::TestCase.human_attribute_name(:expected_result) %>:</td>
+                  <td class="mark-case-expected-result">
+                    <%= simple_format(h(@test_run_result.expected_result)) %>
+                  </td>
+                </tr>
+              </table>
+            </div> 
+            <div class="col <%= thinner_colon %> radio-status-result">
+              <div class="pass">
+                <input type="radio" name="test-run" value="pass" id="radio4"
+                       class="radio" data-project-id="<%= @test_run_result.test_run.project_id %>"
+                       data-result-id="<%= @test_run_result.id %>"
+                       <%= 'checked' if @test_run_result.status.pass? %> >
+                <label for="radio4" class="title"><%= t 'enumerize.test_run_result.status.pass' %></label>
+              </div>
+              <div class="failed">
+                <input type="radio" name="test-run" value="fail" id="radio5"
+                       class="radio"
+                       data-project-id="<%= @test_run_result.test_run.project_id %>"
+                       data-result-id="<%= @test_run_result.id %>"
+                       <%= 'checked' if @test_run_result.status.fail? %> >
+                <label for="radio5" class="title"><%= t 'enumerize.test_run_result.status.fail' %></label>
+              </div>
+              <div class="blocked">
+                <input type="radio" name="test-run" value="block" id="radio6"
+                       class="radio"
+                       data-result-id="<%= @test_run_result.id %>"
+                       data-project-id="<%= @test_run_result.test_run.project_id %>"
+                       <%= 'checked' if @test_run_result.status.block? %> >
+                <label for="radio6" class="title"><%= t 'enumerize.test_run_result.status.block' %></label>
+              </div>
+
+              <div class="not-available">
+                <input type="radio" name="test-run" value="na" id="radio7"
+                       class="radio"
+                       data-result-id="<%= @test_run_result.id %>"
+                       data-project-id="<%= @test_run_result.test_run.project_id %>"
+                       <%= 'checked' if @test_run_result.status.na? %> >
+                <label for="radio7" class="title"><%= t 'enumerize.test_run_result.status.na' %></label>
+              </div>
+              <div class="btn-group view-btn-group">
+                <div class='btn btn-green btn-big edit_case' test_run_result_id='<%= @test_run_result.id %>' case_id='<%= @test_run_result.test_case_id %>'>
+                  <%= t('edit_case') %>
+                </div>
+                <% if @test_run.test_results_sorted_array(@column_visibility).length > 1 %>
+                  <%= link_to t('delete_case'), @test_run_result, method: :delete, remote: true,
+                                                class: 'btn btn-red btn-big delete_case',
+                                                data: { confirm: I18n.t('issue.confirm_deletion') } %> 
+                <% end %>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="btn-group test-run-step-controls">
+        <%= prev_button(@test_run.test_results_sorted_array(@column_visibility)[@result_index.pred]) if @result_index.nonzero? %>
+        <% if @test_run.test_results_sorted_array(@column_visibility)[@result_index.next].present? %>
+          <%= next_button(@test_run.test_results_sorted_array(@column_visibility)[@result_index.next])%>
+        <% else %>
+          <%= finish_button(test_run_profile_data_path(@test_run.project_id,
+                                                  @test_run.id))%>
+        <% end %>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+<div class="modal-dialog upload-build">
+  <div class="modal-content container">
+    <div class="title-main">
+      <h3><%= t 'synchronization_progress' %></h3>
+      <span class="close">
+        <span class='icon-close-icon'></span>
+      </span>
+    </div>
+    <div class="modal-body">
+      <div class="row">
+        <div class="col xs-12">
+          <span class="file-name"><span><%= t 'plugin' %>: </span></span>
+          <span class='text'></span>
+          <div id="synchronizationProgress"></div>
+          <span class="status">
+            <span><%= t 'activerecord.attributes.issue.status' %>: </span>
+          </span>
+          <span class='text'></span>
+
+          <span class='percent'></span>
+          <span class="received"><span><%= t 'received' %>: </span></span>
+
+          <div class="btn-block">
+            <span class="btn btn-ghost-red btn-big sync_break"><%= t 'stop_synchronization' %></span>
+            <span style='display: none;' class="btn btn-ghost btn-big sync_ok cancel"><%= t 'ok' %></span>
+          </div>
+          <div class='modal-content-scroll sync-progressbar'></div>
+        </div>
+      </div>
+    </div> <!--modal-body-->
+  </div>
+</div>

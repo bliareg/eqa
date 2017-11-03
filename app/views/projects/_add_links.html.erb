@@ -1,0 +1,36 @@
+<div class="btn-group">
+  <% if policy(@project).tester_or_higher_rank? %>
+    <%= link_to t('add_module'),
+                new_test_module_path(test_plan_id: (@current_plan.try(:id) || :undefined)),
+                class: "btn btn-green #{non_active_button_class(@current_plan)}", remote: true %>
+    <%= link_to t('add_case'),
+                new_test_plan_test_case_path(test_plan_id: (@current_plan.try(:id) || :undefined)),
+                class: "btn btn-green add_case_btn #{add_case_active?}", remote: true %>
+    <span style="display: none;" class="btn btn-green copy_cases"><%= t 'copy' %></span>
+  <% end %>
+</div>
+
+<div class="icon-block">
+
+  <%= link_to edit_column_visibility_path(@current_plan.try(:column_visibility, current_user) || :undefined),
+                                          class: "icon-btn columns \
+                                          #{non_active_button_class(@current_plan)}",
+                                          remote: true do %>
+    <span class='icon-table-icon'></span>
+    <span class="hover-block columns-hover"><%= t 'manage_columns' %></span>
+  <% end %>
+
+  <%= link_to 'javascript:;', 'data-path' => export_cases_path(@current_plan || :undefined, { format: :csv }), class: "icon-btn export #{non_active_button_class(@current_plan)} export-cases" do %>
+    <span class='icon-export'></span>
+    <span class="hover-block export-hover"><%= t 'export' %></span>
+  <% end %>
+
+  <%= link_to upload_csv_path(@project || :undefined, object: :test_case), remote: true, class: "icon-btn import #{non_active_button_class(@current_plan)}" do %>
+    <span class='icon-import'></span>
+    <span class="hover-block import-hover"><%= t 'import' %></span>
+  <% end %>
+</div>
+
+<div class="sort-block">
+  <%= render partial: 'test_plans/sort_block' %>
+</div>

@@ -1,0 +1,8 @@
+<% if content_for?(:modal) %>
+  <div id="myModal" class="modal" style='display: block;'>
+    <%= yield(:modal) %>
+  </div>
+<% else %>
+  <div id="myModal" class="modal">
+  </div>
+<% end %>

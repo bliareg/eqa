@@ -1,0 +1,73 @@
+{
+  "resource": "Test Run Results",
+  "http_method": "POST",
+  "route": "/api/v1/test_runs/:test_run_id/test_run_results",
+  "description": "Create. Not tester or higher rank",
+  "explanation": null,
+  "parameters": [
+    {
+      "required": true,
+      "name": "auth_token",
+      "description": "User authenticity token"
+    },
+    {
+      "required": true,
+      "name": "token",
+      "description": "Uniq project token"
+    },
+    {
+      "required": true,
+      "name": "test_run_id",
+      "description": "ID of test run"
+    },
+    {
+      "required": true,
+      "name": "test_run_result",
+      "description": "Test run result attributes"
+    },
+    {
+      "scope": "test_run_result",
+      "required": true,
+      "name": "test_case_id",
+      "description": "Test case id"
+    },
+    {
+      "scope": "test_run_result",
+      "name": "result_status",
+      "description": "Status of test run results, might be in \"pass\", \"block\", \"untested\" and \"fail\""
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "POST",
+      "request_path": "/api/v1/test_runs/5/test_run_results",
+      "request_body": "{\"token\":\"+m4HRXUR02q+NR0nWN4dlfUCXPw0d4x+113\",\"test_run_result\":{\"result_status\":\"fail\",\"test_case_id\":150},\"auth_token\":\"gvu2yRc3/RUnpyOY8KOXqAM0rKel8Q4I504\"}",
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 403,
+      "response_status_text": "Forbidden",
+      "response_body": "<!DOCTYPE html>\n<html>\n  <head>\n    <title>QualityDashboard</title>\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"/css/main.css\"/>\n  </head>\n  <body>\n    <header id=\"head_menu\" class=\"main-header\">\n      <div class=\"logo_title\">\n        <a href=\"/\">\n          <img src=\"/images/logo_main.png\" alt=\"Logo main\" />\n          <span>Easy QA</span>\n</a>      </div>\n      <div style=\"text-align: center\"> You have no permission to view this page or perform this action.</div>\n    </header>\n  </body>\n</html>\n",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Content-Type": "text/html; charset=utf-8",
+        "Cache-Control": "no-cache",
+        "X-Request-Id": "6b11465c-f810-4573-8d9f-9426df3a3719",
+        "X-Runtime": "0.101299",
+        "Content-Length": "505"
+      },
+      "response_content_type": "text/html; charset=utf-8",
+      "curl": "curl \"http://localhost:3000/api/v1/test_runs/5/test_run_results\" -d '{\"token\":\"+m4HRXUR02q+NR0nWN4dlfUCXPw0d4x+113\",\"test_run_result\":{\"result_status\":\"fail\",\"test_case_id\":150},\"auth_token\":\"gvu2yRc3/RUnpyOY8KOXqAM0rKel8Q4I504\"}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

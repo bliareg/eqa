@@ -1,0 +1,67 @@
+{
+  "resource": "Issues",
+  "http_method": "POST",
+  "route": "/api/v1/projects/issue_info",
+  "description": "Issue info with mobile build",
+  "explanation": null,
+  "parameters": [
+    {
+      "required": true,
+      "name": "token",
+      "description": "Uniq project token"
+    },
+    {
+      "name": "auth_token",
+      "description": "User authenticity token"
+    },
+    {
+      "required": true,
+      "name": "packageName",
+      "description": "Application package name"
+    },
+    {
+      "required": true,
+      "name": "buildVersionCode",
+      "description": "Application version code"
+    },
+    {
+      "required": true,
+      "name": "buildVersionName",
+      "description": "Application version name"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "POST",
+      "request_path": "/api/v1/projects/issue_info",
+      "request_body": "{\"token\":\"MWuTuH0gsXNrO6b9PXepf8CbPVrnbi6f3\",\"auth_token\":\"j3rLlApItw9beE63SDYmeHIODn87JwoE20\",\"packageName\":\"com.thinkmobiles.android.easyqa\",\"buildVersionCode\":\"10\",\"buildVersionName\":\"1.1.10_debug\"}",
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"test_object_id\": 3,\n  \"issue_type\": [\n    {\n      \"name\": \"No type\",\n      \"id\": \"no_type\"\n    },\n    {\n      \"name\": \"Documentation\",\n      \"id\": \"documentation\"\n    },\n    {\n      \"name\": \"Task\",\n      \"id\": \"task\"\n    },\n    {\n      \"name\": \"Feature\",\n      \"id\": \"feature\"\n    },\n    {\n      \"name\": \"Usability Problem\",\n      \"id\": \"usability_problem\"\n    },\n    {\n      \"name\": \"Bug\",\n      \"id\": \"bug\"\n    },\n    {\n      \"name\": \"Crash\",\n      \"id\": \"crash\"\n    }\n  ],\n  \"priority\": [\n    {\n      \"name\": \"Low\",\n      \"id\": \"low\"\n    },\n    {\n      \"name\": \"Medium\",\n      \"id\": \"medium\"\n    },\n    {\n      \"name\": \"High\",\n      \"id\": \"high\"\n    },\n    {\n      \"name\": \"Critical\",\n      \"id\": \"critical\"\n    }\n  ],\n  \"users\": [\n    {\n      \"name\": \"Danika Stroman\",\n      \"id\": 18\n    },\n    {\n      \"name\": \"Eldon Wehner\",\n      \"id\": 14\n    },\n    {\n      \"name\": \"Tom Keeling\",\n      \"id\": 13\n    }\n  ]\n}",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"4f53924f19431c1901a862c1cb89d281\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "3729f68f-9c46-44d2-8bc0-dea96529f138",
+        "X-Runtime": "0.225586",
+        "Content-Length": "529"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"http://localhost:3000/api/v1/projects/issue_info\" -d '{\"token\":\"MWuTuH0gsXNrO6b9PXepf8CbPVrnbi6f3\",\"auth_token\":\"j3rLlApItw9beE63SDYmeHIODn87JwoE20\",\"packageName\":\"com.thinkmobiles.android.easyqa\",\"buildVersionCode\":\"10\",\"buildVersionName\":\"1.1.10_debug\"}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+<div class="comments-tab tab" id="comments">
+  <div class="modal-content-scroll">
+    <%= render object.comments.sort_by_creation_asc %>
+  </div>
+  <% if policy(object.project).not_viewer? %>
+    <%= form_for(Comment.new, url: send(object.model_name.route_key + '_comments_path'),
+                              validate: true, remote: true) do |f| %>
+      <%= f.hidden_field :user_id, value: current_user.id %>
+      <%= f.hidden_field :commentable_id, value: object.id %>
+      <%= f.hidden_field :commentable_type, value: object.model_name.name %>
+      <div class='tab-footer'>
+        <div class="input_wrapper">
+          <%= f.text_area :body, validate: true,
+                                 rows: '1',
+                                 placeholder: 'Comment',
+                                 class: 'add-comment' %>
+        </div>
+        <div class="input_wrapper">
+          <%= f.submit t('add_comment'), class: 'btn btn-green' %>
+          <span class="btn btn-green btn-big save_btn" style='display: none;'><%= t 'save' %></span>
+          <span class="btn btn-white-green btn-big cancel_btn" style='display: none;'><%= t 'cancel' %></span>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>

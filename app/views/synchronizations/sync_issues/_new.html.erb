@@ -1,0 +1,58 @@
+ry(:<div class="modal-dialog synchronization">
+  <div class="modal-content container">
+    <div class="title-main">
+      <h3 class="title"><%= t 'plugin_synchronization' %></h3>
+      <span class="close">
+        <span class='icon-close-icon'></span>
+      </span>
+    </div>
+    <div class="modal-content-scroll">
+      <div class="modal-body">
+        <div class="row">
+          <div class="col xs-12">
+            <table class="synchronization-table">
+              <tr class="table-title">
+                <th colspan="plugin-name"><%= t 'plugin' %></th>
+                <th><%= t 'member_name' %></th>
+                <th><%= t 'object_added' %></th>
+                <th>
+                  <input type="checkbox" id="checkbox" class="checkbox">
+                  <label for="checkbox" class="table-checkbox-label"></label>
+                </th>
+              </tr>
+              <!-- ===== Member ===== -->
+              <% @settings.each do |setting| %>
+                <tr class="table-field plugin_settings">
+                  <td class='plugin-name'>
+                    <%= "#{t 'plugin_for_integration_with'} #{Project::PLUGINS.key(setting.name)}" %>
+                  </td>
+                  <td class='member-name'>
+                    <%= setting.user.try(:name) %>
+                  </td>
+                  <td class="time-added">
+                    <%= (setting.created_at + timezone).strftime("%d/%m/%y %H:%M:%S") %>
+                  </td>
+                  <td plugin-name='<%= setting.name %>' plugin-id='<%= setting.id %>'>
+                    <input type="checkbox" id="checkbox<%= setting.name + setting.id.to_s %>" class="checkbox">
+                    <label for="checkbox<%= setting.name + setting.id.to_s %>" class="table-checkbox-label"></label>
+                  </td>
+                </tr>
+              <% end %>
+            </table>
+          </div>
+        </div>
+      </div> <!--modal-body-->
+    </div>
+    <div class="btn-group">
+      <button type="button" class="btn btn-green synchronize_plugin inactive" disabled="disabled" path='<%= project_sync_issues_path(@project) %>'>
+        <%= t('synchronize') %>
+      </button>
+      <button type="button" class="btn btn-white-green cancel">
+        <%= t('cancel') %>
+      </button>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+  Checkboxes.preventClickWhenCheckboxesNotChecked.init($('.synchronize_plugin'), $('.table-field .checkbox'));
+</script>

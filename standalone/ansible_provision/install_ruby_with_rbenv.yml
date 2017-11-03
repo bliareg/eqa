@@ -1,0 +1,13 @@
+---
+
+- name: Install Ruby with rbenv
+  hosts: all
+  remote_user: deploy
+  roles:
+    - role: spitfast.rbenv
+      rbenv_version: v1.0.0
+      rbenv_repo_path: https://github.com/rbenv/rbenv.git
+      rbenv_ruby_build_repo_path: https://github.com/sstephenson/ruby-build.git
+      rbenv_user: "{{ deploy_user }}"
+      rbenv_root_path: "/home/{{ rbenv_user }}/.rbenv"
+      rbenv_ruby_version: 2.3.5

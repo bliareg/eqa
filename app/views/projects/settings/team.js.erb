@@ -1,0 +1,3 @@
+$('#content').html("<%= j render file: 'projects/settings/team.html.erb' %>");
+window.history.pushState({}, '', '<%= request.path %>');
+$('.load-block').hide();

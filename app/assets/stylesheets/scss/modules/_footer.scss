@@ -1,0 +1,40 @@
+// Footer block style
+.main-footer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 200px;
+  height: $footer-height;
+  background-color: $base-bg;
+  border-top: 1px solid $footer-border;
+  line-height: $footer-height;
+  @extend %clearfix;
+
+  &-without-nav {
+    left: 0;
+  }
+
+  &-copyright {
+    float: left;
+    margin: 0;
+    padding: 0 15px;
+    color: $footer-copyright;
+    font-family: $bold-font-family;
+    font-weight: bold;
+    @include rem(font-size, 14px);
+  }
+
+  &-nav {
+    float: right;
+
+    li {
+      display: inline-block;
+      padding: 0 15px;
+
+      a {
+        color: $footer-nav;
+        @include rem(font-size, 14px);
+      }
+    }
+  }
+}

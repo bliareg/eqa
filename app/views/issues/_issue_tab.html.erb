@@ -1,0 +1,41 @@
+<div class="issue-info-tab tab" id="issueInfo">
+  <%= form_for(@issue, url: issue_path(@project, @issue),
+                       method: :put,
+                       html: { multipart: true, class: 'form edit_issue' },
+                       remote: true) do |f| %>
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <div class="modal-content-scroll">
+      <div class="row-wrap">
+        <div class="input_wrapper col-3 issue-type <%= @issue.issue_type %>">
+          <%= f.label :issue_type%>
+          <%= f.select :issue_type, Issue.issue_type.options, {}, id: 'type-view' %>
+        </div>
+        <div class="input_wrapper col-3 issue-priority <%= @issue.priority %>">
+          <%= f.label :priority%>
+          <%= f.select :priority, Issue.priority.options %>
+        </div>
+        <div class="input_wrapper col-3">
+          <%= f.label :status_id %>
+          <%= f.select :status_id, @issue.status_options %>
+        </div>
+        <div class="input_wrapper col-3">
+          <%= f.label :test_object %>
+          <%= f.select :test_object_id, select_test_object(@project), {
+          include_blank: t('choose_test_object') }, id: 'build-view' %>
+        </div>
+      </div>
+      <%= render 'info_block', f: f %>
+      <%= render 'edit_block', f: f %>
+    </div>
+    <div class="tab-footer">
+      <div class="btn-group view-btn-group">
+        <%= add_issue_edit_link(@issue) %>
+        <%= add_issue_destroy_link(@issue) %>
+      </div>
+      <div class="btn-group edit-btn-group" style="display: none;">
+        <button type="button" class="btn btn-white-green btn-big cancel"><%= t 'cancel' %></button>
+        <%= f.submit t('save'), class: 'btn btn-green btn-big submit_editing' %>
+      </div>
+    </div>
+  <% end %>
+</div>

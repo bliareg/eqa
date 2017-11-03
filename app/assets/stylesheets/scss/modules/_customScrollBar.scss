@@ -1,0 +1,205 @@
+.dd-options {
+  .mCSB_scrollTools_vertical {
+    right: 1px !important;
+  }
+}
+
+.content-with-sidebar {
+  .mCSB_inside {
+
+    .mCSB_buttonUp,
+    .mCSB_buttonDown {
+      background-position: 15px 0;
+    }
+
+    .mCSB_scrollTools {
+      width: 10px;
+    }
+
+    .mCSB_dragger_bar {
+      background-color: $dragger-bar-bg;
+    }
+    .mCSB_dragger_onDrag {
+      .mCSB_dragger_bar {
+        background-color: $dragger-onDrag-bar-bg;
+      }
+    }
+  }
+}
+
+.mCSB_inside {
+  .mCSB_container {
+    margin-right: 0;
+  }
+}
+
+.plans-info.mCustomScrollbar {
+  .mCSB_scrollTools {
+    right: 11px;
+    width: 10px;
+
+    .mCSB_buttonUp {
+      background: url("../images/arrow-up.svg") no-repeat 0 6px;
+      background-size: 87%;
+    }
+
+    .mCSB_buttonDown {
+      background: url("../images/arrow-down.svg") no-repeat 1px 10px;;
+      background-size: 85%;
+    }
+
+    .mCSB_dragger_bar {
+      width: 5px;
+      background-color: $grey-4;
+    }
+
+    .mCSB_draggerRail {
+      background: transparent;
+    }
+  }
+}
+
+.plugins-block .plans-info.mCustomScrollbar {
+  .mCSB_scrollTools {
+    right: 0 !important;
+  }
+}
+
+.cases-info {
+
+  .mCSB_scrollTools {
+    right: -2px;
+
+    .mCSB_dragger .mCSB_dragger_bar {
+      background-color: $grey-5;
+    }
+  }
+
+  .mCSB_scrollTools_vertical {
+    .mCSB_buttonUp {
+      background: url("../images/arrow-up.svg") no-repeat 2px 6px;
+      background-size: 60%;
+    }
+
+    .mCSB_buttonDown {
+      background: url("../images/arrow-down.svg") no-repeat 1px 10px;;
+      background-size: 60%;
+    }
+
+    .mCSB_dragger_bar {
+      width: 5px;
+      background-color: $grey-4;
+    }
+
+    .mCSB_draggerRail {
+      background: transparent;
+    }
+  }
+
+  .mCSB_scrollTools_horizontal {
+    bottom: -15px !important;
+
+    .mCSB_draggerRail {
+      background-color: transparent;
+    }
+
+    .mCSB_dragger_bar {
+      height: 5px;
+      background-color: $grey-4;
+    }
+  }
+}
+
+.history-list.mCustomScrollbar {
+  .mCSB_draggerContainer {
+    margin: 0;
+  }
+
+  .mCSB_scrollTools {
+    right: 0;
+
+    .mCSB_buttonUp,
+    .mCSB_buttonDown {
+      display: none;
+      background: none;
+    }
+
+    .mCSB_dragger_bar {
+      width: 4px;
+
+      background-color: $history-list-dragger-bar-bg;
+      border-radius: 3px;
+    }
+
+    .mCSB_draggerRail {
+      background-color: $history-list-dragger-rail-bg;
+    }
+  }
+}
+
+
+.modal-select-cases-info > div .contains.mCustomScrollbar,
+.cases-info-modal.mCustomScrollbar,
+.modal-content-scroll.mCustomScrollbar {
+
+  .mCSB_scrollTools_vertical {
+    right: -6px;
+    z-index: 2000;
+
+    .mCSB_dragger_bar {
+      width: 4px;
+      background-color: $history-list-dragger-bar-bg;
+      border-radius: 3px;
+    }
+
+    .mCSB_draggerRail {
+      background-color: $history-list-dragger-rail-bg;
+    }
+  }
+}
+
+.cases-info-modal.mCustomScrollbar
+.mCSB_scrollTools_vertical {
+  right: 0;
+}
+
+.column_card.mCustomScrollbar,
+.issue_content.mCustomScrollbar,
+.cases-info-modal.mCustomScrollbar {
+  .mCSB_scrollTools_horizontal {
+
+    .mCSB_draggerRail {
+      background-color: transparent;
+    }
+
+    .mCSB_dragger_bar {
+      height: 4px;
+      background-color: $history-list-dragger-bar-bg;
+      border-radius: 3px;
+    }
+  }
+}
+
+.cases-info-modal.mCustomScrollbar {
+  .mCSB_scrollTools_horizontal {
+    bottom: -2px !important;
+  }
+}
+
+.issue_content.mCustomScrollbar {
+  .mCSB_scrollTools_horizontal {
+    position: fixed;
+    bottom: 0;
+    left: 230px;
+    width: calc(100% - 260px);
+    background: $base-bg;
+    z-index: 50;
+  }
+}
+
+.column_card.mCustomScrollbar {
+  .mCSB_scrollTools_horizontal {
+    bottom: -20px !important;
+  }
+}
+

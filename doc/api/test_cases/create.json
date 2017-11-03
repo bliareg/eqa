@@ -1,0 +1,89 @@
+{
+  "resource": "Test Cases",
+  "http_method": "POST",
+  "route": "/api/v1/test_modules/:test_module_id/test_cases",
+  "description": "Create",
+  "explanation": null,
+  "parameters": [
+    {
+      "required": true,
+      "name": "auth_token",
+      "description": "User authenticity token"
+    },
+    {
+      "required": true,
+      "name": "token",
+      "description": "Uniq project token"
+    },
+    {
+      "required": true,
+      "name": "test_module_id",
+      "description": "Test module ID"
+    },
+    {
+      "required": true,
+      "name": "test_case",
+      "description": "Test case attributes"
+    },
+    {
+      "scope": "test_case",
+      "required": true,
+      "name": "title",
+      "description": "Title of the test case"
+    },
+    {
+      "scope": "test_case",
+      "name": "pre_steps",
+      "description": "Pre steps to test case"
+    },
+    {
+      "scope": "test_case",
+      "name": "steps",
+      "description": "Steps to test case"
+    },
+    {
+      "scope": "test_case",
+      "name": "expected_result",
+      "description": "Expected test case result"
+    },
+    {
+      "scope": "test_case",
+      "name": "case_type",
+      "description": "Type of test case"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "POST",
+      "request_path": "/api/v1/test_modules/1/test_cases",
+      "request_body": "{\"token\":\"J8T9xwaY1PH+jSaTe/uS2b5NgLCx2v6t17\",\"test_case\":{\"title\":\"Pinwheel\",\"pre_steps\":\"1. Find Yoda \\n 2. Give him Wookiee\",\"steps\":\"1. Sit in a V-Wing Fighter\\n 2. Go to Naboo\",\"expected_result\":\"droid 'FA-4' say 'Shut him up or shut him down.'\",\"case_type\":2},\"auth_token\":\"dO+WrEX5xJoGIDESFB6soc+H54IWMFq+51\"}",
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"id\": 7,\n  \"test_plan_id\": 1,\n  \"module_id\": 1,\n  \"updated_by\": null,\n  \"title\": \"Pinwheel\",\n  \"case_type\": \"boundary\",\n  \"pre_steps\": \"1. Find Yoda \\n 2. Give him Wookiee\",\n  \"steps\": \"1. Sit in a V-Wing Fighter\\n 2. Go to Naboo\",\n  \"expected_result\": \"droid 'FA-4' say 'Shut him up or shut him down.'\",\n  \"created_at\": \"2017-04-14T07:56:09.702Z\",\n  \"updated_at\": \"2017-04-14T07:56:09.702Z\",\n  \"created_by\": 49,\n  \"id_in_project\": 7,\n  \"position\": 6\n}",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"0896b0f3eef1176620d71d5463408ef8\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "66c570aa-7702-4b73-bc6b-17d68258e9a0",
+        "X-Runtime": "0.135522",
+        "Content-Length": "399"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"http://localhost:3000/api/v1/test_modules/1/test_cases\" -d '{\"token\":\"J8T9xwaY1PH+jSaTe/uS2b5NgLCx2v6t17\",\"test_case\":{\"title\":\"Pinwheel\",\"pre_steps\":\"1. Find Yoda \\n 2. Give him Wookiee\",\"steps\":\"1. Sit in a V-Wing Fighter\\n 2. Go to Naboo\",\"expected_result\":\"droid \\u0027FA-4\\u0027 say \\u0027Shut him up or shut him down.\\u0027\",\"case_type\":2},\"auth_token\":\"dO+WrEX5xJoGIDESFB6soc+H54IWMFq+51\"}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

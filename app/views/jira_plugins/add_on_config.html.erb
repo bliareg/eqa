@@ -1,0 +1,22 @@
+<div class="container-full">
+  <div class="row">
+    <div class="main-content col m-12">
+      <div class="card">
+        <div class="card-configuration">
+          <h2 class="card-title">EasyQA Configuration</h2>
+          <%= form_for @current_jwt_auth, url: add_token_path(@current_jwt_auth.id), method: :put, remote: true do |f| %>
+          <div class="input_wrapper">
+            <label class="star">Organization Token</label>
+            <%= f.text_field :token %>
+          </div>
+          <div class="btn-group">
+            <%= f.submit 'Save', class: 'btn btn-green', id: 'save_token' %>
+            <span class="hide">Saved successfully</span>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

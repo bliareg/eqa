@@ -1,0 +1,54 @@
+{
+  "resource": "Projects",
+  "http_method": "GET",
+  "route": "/api/v1/projects/:id",
+  "description": "Show",
+  "explanation": null,
+  "parameters": [
+    {
+      "required": true,
+      "name": "auth_token",
+      "description": "User authenticity token"
+    },
+    {
+      "required": true,
+      "name": "id",
+      "description": "Project id"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "/api/v1/projects/5?auth_token=1fBCDPRuFQ9VIpyBCdf4zkxW3nD3Pnx427",
+      "request_body": null,
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+        "auth_token": "1fBCDPRuFQ9VIpyBCdf4zkxW3nD3Pnx427"
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"id\": 5,\n  \"title\": \"Tin5\",\n  \"user_id\": 25,\n  \"organization_id\": 13,\n  \"deleted_at\": null,\n  \"created_at\": \"2017-04-14T07:55:32.491Z\",\n  \"updated_at\": \"2017-04-14T07:55:32.491Z\",\n  \"token\": \"EhhiuST0Ak6CvqUNtD6fczN3tNR1sSyI5\",\n  \"slug\": \"Organization13_Tin5\"\n}",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"c060e094f2ff768261c2c58b1721135c\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "54803ca7-e57f-4779-81f0-f206723a3d02",
+        "X-Runtime": "0.039356",
+        "Content-Length": "228"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"http://localhost:3000/api/v1/projects/5?auth_token=1fBCDPRuFQ9VIpyBCdf4zkxW3nD3Pnx427\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

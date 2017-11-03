@@ -1,0 +1,67 @@
+<div class="card card-builds">
+  <div class="card-builds-header">
+    <h2 class="card-builds-title"><%= t 'test_objects' %></h2>
+    <%= link_add_test_object(@project) %>
+    <%= link_get_test_object(@project) %>
+  </div>
+  <table class="builds-table" class="tablesorter">
+    <colgroup>
+    <col width="5%">
+    <col width="14%">
+    <col width="12%">
+    <col width="9%">
+    <col width="15%">
+    <col width="15%">
+    <col width="13%">
+    <col width="14%">
+    <col width="3%">
+    </colgroup>
+    <thead class="builds-table-title">
+      <tr>
+        <th></th>
+        <th><%= t 'test_objects' %>
+          <span class='fa fa-chevron-down' aria-hidden='true'></span>
+          <span class='fa fa-chevron-up' aria-hidden='true'></span>
+        </th>
+        <th><%= t 'issues' %>
+          <span class='fa fa-chevron-down' aria-hidden='true'></span>
+          <span class='fa fa-chevron-up' aria-hidden='true'></span>
+        </th>
+        <th><%= t 'crashes' %>
+          <span class='fa fa-chevron-down' aria-hidden='true'></span>
+          <span class='fa fa-chevron-up' aria-hidden='true'></span>
+        </th>
+        <th><%= t 'platform' %>
+          <span class='fa fa-chevron-down' aria-hidden='true'></span>
+          <span class='fa fa-chevron-up' aria-hidden='true'></span>
+        </th>
+        <th><%= t 'member_name' %>
+          <span class='fa fa-chevron-down' aria-hidden='true'></span>
+          <span class='fa fa-chevron-up' aria-hidden='true'></span>
+        </th>
+        <th><%= t 'object_added' %>
+          <span class='fa fa-chevron-down' aria-hidden='true'></span>
+          <span class='fa fa-chevron-up' aria-hidden='true'></span>
+        </th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @project.test_objects %>
+    </tbody>
+  </table>
+</div>
+<script type="text/javascript">
+  $('.builds-table').tablesorter({
+    dateFormat : "ddmmyyyy",
+    sortList: [[4, 1]],
+    headers: {
+      0: { sorter: false       },
+      6: { sorter: 'shortDate' },
+      7: { sorter: false       },
+      8: { sorter: false       }
+    },
+    cssChildRow: "test-object-child-row"
+  });
+</script>

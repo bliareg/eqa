@@ -1,0 +1,12 @@
+<div id="preview" class="preview issues_dropzone">
+  <div class="items">
+    <%= render @issue.attachments %>
+  </div>
+  <div class="btn-wrapper">
+    <div class="btn btn-green upload_file">
+      <span class="fa fa-paperclip" aria-hidden="true"></span>
+      <span class="file-name"><%= t 'add_file' %></span>
+    </div>
+    <div class="attachment-hint"><%= t 'you_can_paste_file_with_ctrl_v' %></div>
+  </div>
+</div>

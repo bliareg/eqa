@@ -1,0 +1,13 @@
+$('.field_with_errors:visible').remove();
+<% if @user.nil? %>
+  $('<%= j render "shared/error_message" %>').insertAfter('.sign-form .sign-title');
+  $('#user_password').val('');
+<% elsif @user.locked_at %>
+  $(MODAL_CLASS).html("<%= j render 'account_is_locked' %>");
+  show_modal();
+<% elsif @user.deleted_at %>
+  $(MODAL_CLASS).html("<%= j render 'activate_account' %>");
+  show_modal();
+<% else %>
+  window.location.href = '<%= j controller.after_sign_in_path_for(resource) %>';
+<% end %>

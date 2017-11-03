@@ -1,0 +1,66 @@
+{
+  "resource": "Organizations",
+  "http_method": "PUT",
+  "route": "/api/v1/organizations/:id",
+  "description": "Update. Not owner",
+  "explanation": null,
+  "parameters": [
+    {
+      "required": true,
+      "name": "auth_token",
+      "description": "User authenticity token"
+    },
+    {
+      "required": true,
+      "name": "id",
+      "description": "Organization id"
+    },
+    {
+      "name": "organization",
+      "description": "Organization attributes"
+    },
+    {
+      "scope": "organization",
+      "name": "title",
+      "description": "Title of the organization"
+    },
+    {
+      "scope": "organization",
+      "name": "description",
+      "description": "Description of the organization"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "PUT",
+      "request_path": "/api/v1/organizations/11",
+      "request_body": "{\"organization\":{\"title\":\"Organization11\",\"description\":\"Organization11 - the best company in the world.\"},\"auth_token\":\"mSmzY+WVmViMSOKEZyi4yFS/ncvvk4QN22\"}",
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 403,
+      "response_status_text": "Forbidden",
+      "response_body": "<!DOCTYPE html>\n<html>\n  <head>\n    <title>QualityDashboard</title>\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"/css/main.css\"/>\n  </head>\n  <body>\n    <header id=\"head_menu\" class=\"main-header\">\n      <div class=\"logo_title\">\n        <a href=\"/\">\n          <img src=\"/images/logo_main.png\" alt=\"Logo main\" />\n          <span>Easy QA</span>\n</a>      </div>\n      <div style=\"text-align: center\"> You have no permission to view this page or perform this action.</div>\n    </header>\n  </body>\n</html>\n",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Content-Type": "text/html; charset=utf-8",
+        "Cache-Control": "no-cache",
+        "X-Request-Id": "869a35d7-3c29-46e0-8510-aa5505da2c15",
+        "X-Runtime": "0.069999",
+        "Content-Length": "505"
+      },
+      "response_content_type": "text/html; charset=utf-8",
+      "curl": "curl \"http://localhost:3000/api/v1/organizations/11\" -d '{\"organization\":{\"title\":\"Organization11\",\"description\":\"Organization11 - the best company in the world.\"},\"auth_token\":\"mSmzY+WVmViMSOKEZyi4yFS/ncvvk4QN22\"}' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14">
+  <defs>
+    <style>
+      .reload{
+        fill: #28bd8b;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="reload_icon" class="reload" d="M745,443.833h-4.667l2.15-1.567a5.251,5.251,0,0,0-9.66,1.859h-1.769A7,7,0,0,1,743.747,441L745,439.167v4.666Zm-12.833,2.334h3.5l-2.068,1.7a5.251,5.251,0,0,0,9.578-1.988h1.768a7,7,0,0,1-12.649,3.184l-1.3,1.774v-4.666h1.167Z" transform="translate(-731 -438)"/>
+</svg>

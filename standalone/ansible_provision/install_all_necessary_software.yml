@@ -1,0 +1,9 @@
+---
+
+- name: Install all necessary software
+  hosts: all
+  remote_user: "{{ deploy_user }}"
+  become: yes
+  roles:
+    - { role: common }
+    - { role: geerlingguy.nodejs }

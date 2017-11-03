@@ -1,0 +1,58 @@
+<div class="modal-dialog modal-add-case">
+  <div class="modal-content">
+    <div class="title-main">
+      <h3><%= t 'add_case' %></h3>
+      <span class="close">
+        <span class='icon-close-icon'></span>
+      </span>
+    </div>
+    <%= form_for(@test_case, url: test_plan_test_cases_path(@test_plan),
+                 method: :post, remote: true, validate: true) do |f| %>
+      <div class="modal-content-scroll">
+        <div class="modal-body">
+          <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+          <%= f.hidden_field :updated_by, value: current_user.id %>
+          <%= f.hidden_field :created_by, value: current_user.id %>
+          <%= f.hidden_field :test_plan_id, value: params[:test_plan_id] %>
+          <div class='field case-title'>
+            <%= f.label :title, class: 'title star'%>
+            <%= f.text_field :title, autofocus: true, validate: true %>
+          </div>
+          <div class="case-selection clearfix">
+            <div class="field input_wrapper drop-arr case-selection-item">
+              <%= f.label :test_module, class: 'title star'%>
+              <%= f.select :module_id,
+                           options_for_select(@test_modules.map { |m| [sanitize(m.title), m.id] },
+                                              selected: @test_module_id || t('choose_test_module')),
+                                              { include_blank: t('choose_test_module') },
+                                              id: 'section', class: 'validate_select'  %>
+           </div>
+            <div class="field input_wrapper drop-arr case-selection-item">
+              <%= f.label :case_type, class: 'title star' %>
+              <%= f.select :case_type, ::TestCase.case_type.options, {}, class: 'validate_select' %>
+            </div>
+          </div>
+          <div class="field presteps">
+            <%= f.label :pre_steps, class: 'title' %>
+            <%= f.text_area :pre_steps %>
+            <span class="example"><%= t 'presteps_example' %></span>
+          </div>
+          <div class="field steps">
+            <%= f.label :steps, class: 'title' %>
+            <%= f.text_area :steps %>
+            <span class="example"><%= t 'steps_example' %></span>
+          </div>
+          <div class="field expected_result">
+            <%= f.label :expected_result, class: 'title' %>
+            <%= f.text_area :expected_result %>
+            <span class="example"><%= t 'expected_result_example' %></span>
+          </div>
+        </div>
+      </div>
+      <div class="actions btn-group">
+        <%= f.submit t('save'), class: 'submit_project btn btn-green' %>
+        <span class="btn btn-white-green cancel"><%= t('cancel') %></span>
+      </div>
+    <% end %>
+  </div>
+</div>

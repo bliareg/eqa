@@ -1,0 +1,33 @@
+<div class="testRun-box-item" id="test-run-<%= run.id %>">
+  <div class="testRun-box-item-img">
+    <%= image_tag('projects.png') %>
+  </div>
+  <div class="testRun-box-item-info">
+    <%=link_to run.title, test_run_path(run.id), class: 'title',
+                          remote: true %>
+    <span class="user">
+      <%= run.assigner.name %>
+      <span class="date"><%= t('on') %> <%= run.created_at.strftime('%d/%m/%Y') %></span>
+    </span>
+    <%= test_run_button_edit(run, 'icon-edit-icon') %>
+    <%= test_run_button_clone(run) %>
+    <%= test_run_button_destroy(run) %>
+    <ul class="test-progress">
+      <% run.results.each do |status, count| %>
+        <li>
+          <span><%= count %> </span><%= t "enumerize.test_run_result.status.#{status}" %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="progress-bar">
+    <div class="progress">
+      <div class="passed" style="width: <%= run.progress_width[:pass] %>"></div>
+      <div class="blocked" style="width: <%= run.progress_width[:block] %>"></div>
+      <div class="failed" style="width: <%= run.progress_width[:fail] %>"></div>
+      <div class="not-available" style="width: <%= run.progress_width[:na] %>"></div>
+      <div class="untested" style="width: <%= run.progress_width[:untested] %>"></div>
+    </div>
+    <span class="passed-progress"><%= run.progress_width[:pass] || '0%' %></span>
+  </div>
+</div>

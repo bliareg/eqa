@@ -1,0 +1,7 @@
+---
+
+- name: Automate backups
+  hosts: rails
+  remote_user: deploy
+  roles:
+    - { role: backups, when: (backup is defined) and backup }

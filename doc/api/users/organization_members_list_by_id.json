@@ -1,0 +1,55 @@
+{
+  "resource": "Users",
+  "http_method": "GET",
+  "route": "/api/v1/organization/members",
+  "description": "Organization members list by id",
+  "explanation": null,
+  "parameters": [
+    {
+      "required": true,
+      "name": "organization_id",
+      "description": "Organization id"
+    },
+    {
+      "required": true,
+      "name": "auth_token",
+      "description": "User auth token"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "/api/v1/organization/members?organization_id=27&auth_token=c55cwpM1BDyP0a4HyTIN%2BYbFmjKww3pL81",
+      "request_body": null,
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+        "organization_id": "27",
+        "auth_token": "c55cwpM1BDyP0a4HyTIN+YbFmjKww3pL81"
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "[\n  {\n    \"name\": \"Fausto Beatty\",\n    \"email\": \"sophie.gusikowski@steuber.biz\",\n    \"id\": 79\n  },\n  {\n    \"name\": \"Heath Denesik\",\n    \"email\": \"vincent.stiedemann@nitzsche.info\",\n    \"id\": 84\n  },\n  {\n    \"name\": \"Micaela Thiel\",\n    \"email\": \"joyce.reichel@runte.co\",\n    \"id\": 80\n  },\n  {\n    \"name\": \"Ruben Nienow\",\n    \"email\": \"edward@hettinger.info\",\n    \"id\": 81\n  },\n  {\n    \"name\": \"Dariana Larkin\",\n    \"email\": \"garnet@watsicahomenick.org\",\n    \"id\": 82\n  }\n]",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"a9031d6be3370a9a51d15a8b46e659c8\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "90a43afe-55a7-4165-a4b3-461f4e323e6f",
+        "X-Runtime": "0.056522",
+        "Content-Length": "351"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"http://localhost:3000/api/v1/organization/members?organization_id=27&auth_token=c55cwpM1BDyP0a4HyTIN%2BYbFmjKww3pL81\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

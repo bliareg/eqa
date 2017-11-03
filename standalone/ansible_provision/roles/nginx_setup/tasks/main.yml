@@ -1,0 +1,13 @@
+---
+
+- name: Replace line in /etc/nginx/nginx.conf
+  become_user: root
+  become: yes
+  lineinfile:
+    dest: /etc/nginx/nginx.conf
+    state: present
+    regexp: 'passenger_ruby \/usr\/bin\/ruby'
+    line: '  passenger_ruby /home/deploy/.rbenv/shims/ruby;'
+  notify:
+    - restart nginx
+

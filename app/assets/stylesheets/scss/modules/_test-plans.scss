@@ -1,0 +1,182 @@
+.plans-info {
+  position: relative;
+  height: 670px;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  &-item {
+    margin-right: 20px;
+    padding: 15px 10px;
+    background-color: $base-bg;
+
+    &-inner {
+      border: 2px solid $base-border;
+      border-radius: 6px;
+      color: $base-text;
+      @extend %clearfix;
+    }
+
+    &:hover,
+    &.active {
+      background-color: $item-hover-bg;
+
+      .plans-info-item-inner {
+        border: 2px solid $item-inner-hover-border;
+        background-color: $base-bg;
+      }
+    }
+
+    .plans-item-inner {
+
+      &-left {
+        display: block;
+        float: left;
+        width: 100%;
+        padding: 10px;
+        color: $base-text;
+
+        .plugins-project,
+        .title {
+          width: 95%;
+          margin-top: 0;
+          margin-bottom: 10px;
+          font-weight: 600;
+          font-family: $base-font-family;
+          @include rem(font-size, 13px);
+          @extend %text-overflow;
+        }
+
+        .author {
+          margin: 0;
+          @include rem(font-size, 13px);
+        }
+
+        .date {
+          margin: 0;
+          line-height: 20px;
+          @include rem(font-size, 12px);
+        }
+
+        &.grow {
+          width: 53%;
+        }
+      }
+
+      &-right {
+        display: none;
+        float: right;
+        width: 47%;
+
+        .plans-modules {
+          float: left;
+          padding: 12px 6px;
+          text-align: center;
+          border-left: 1px solid $base-border;
+
+          &-title {
+            color: $base-text;
+            font-family: $bold-font-family;
+            font-weight: bold;
+            @include rem(font-size, 11px);
+          }
+
+          &-count {
+            color: $base-light-text;
+            font-family: $bold-font-family;
+            font-weight: bold;
+            @include rem(font-size, 15px);
+          }
+        }
+
+        .plans-cases {
+          float: left;
+          padding: 12px 7px;
+          text-align: center;
+          border-left: 1px solid $base-border;
+
+          &-title {
+            color: $base-text;
+            font-family: $bold-font-family;
+            font-weight: bold;
+            @include rem(font-size, 11px);
+          }
+
+          &-count {
+            color: $base-light-text;
+            font-family: $bold-font-family;
+            font-weight: bold;
+            @include rem(font-size, 15px);
+          }
+        }
+
+        .plans-icons {
+          display: inline-block;
+          border-left: 1px solid $base-border;
+          @extend %clearfix;
+
+          span {
+            font-size: 20px;
+          }
+          &-basket {
+            padding: 13px;
+            border-bottom: 1px solid $base-border;
+
+            span{
+              color: $btn-red;
+            }
+          }
+
+          &-edit {
+            padding: 13px;
+
+            span{
+              color: $btn-green;
+            }
+          }
+        }
+      }
+
+      &-bottom {
+        display: none;
+        float: left;
+        width: 100%;
+        padding: 11px 10px 8px 10px;
+        color: $item-inner-bottom-block-text;
+        border-top: 1px solid $base-border;
+        @include rem(font-size, 12px);
+
+        .latest-update {
+          float: left;
+        }
+
+        .date {
+          float: right;
+        }
+      }
+    }
+  }
+}
+
+.plans-toggle {
+  position: absolute;
+  right: 0;
+  height: 100%;
+  width: 12px;
+  color: $plans-toggle;
+  background-color: $plans-toggle-bg;
+  border-right: 1px solid $plans-toggle-border;
+  border-left: 1px solid $plans-toggle-border;
+  z-index: 21;
+
+  span {
+    position: absolute;
+    top: calc(50% - 8px);
+    right: 2px;
+  }
+
+  &:hover {
+    background-color: $plans-toggle-bg-hover;
+  }
+}
+
+

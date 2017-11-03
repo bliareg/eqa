@@ -1,0 +1,26 @@
+<tr id=<%=item.id%>>
+  <td><%= item.id %></td>
+  <td><%= item.title %></td>
+  <td><%= item.description%></td>
+  <td><%= link_to 'Add sub module', new_test_module_path(item.test_plan_id, {parent_id: item.id}), id: 'create_test_module',  remote: true %>/
+      <%= link_to 'Add case',new_test_case_path( {test_plan_id: item.test_plan_id, module_id: item.id, selection: item.title, project_id: @id_of_project || @project_id}), id: 'create_test_case',  remote: true %>/
+      <%=link_to 'Edit', edit_test_module_path({id:item.id, test_plan_id: item.test_plan_id}), remote: true, id:'edit_test_module'%>/
+      <%=link_to 'Delete', destroy_test_module_path(item.id),method: :delete, data: { confirm: 'Delete module?'}, id:'destroy_test_module' %></td>
+</tr>
+<tr>
+  <td colspan="4">
+  <table border="1" width=100% id=<%="module_case_lists_#{item.id}" %> >
+    <tr>
+      <th>ID</th>
+      <th>Title</th>
+      <th>Selection</th>
+      <th>Pre-steps</th>
+      <th>Steps</th>
+      <th>Expected result</th>
+      <th>Options</th>
+    </tr>
+      <%= render partial: 'test_cases/test_case_lists', collection: item.test_cases, as: :item %>
+
+  </table>
+  </td>
+</tr>

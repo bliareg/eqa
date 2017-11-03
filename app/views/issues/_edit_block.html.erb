@@ -1,0 +1,25 @@
+<div class="issue-info-block edit-issue-block" style="display: none;">
+  <div class="row assigned-to">
+    <div class="col xs-2"><%= t 'assigned_to' %>:</div>
+    <div class="col xs-10">
+    </div>
+  </div>
+  <div class="edit-inner-wrap">
+    <div class="row">
+      <div class="col xs-2"><%= t 'summary' %>:</div>
+      <div class="col xs-10">
+        <div class="input_wrapper">
+          <%= f.text_field :summary %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col xs-2"><%= t 'description' %>:</div>
+      <div class="col xs-10">
+        <div class="input_wrapper">
+          <%= f.text_area :description, class: 'desc' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

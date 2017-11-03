@@ -1,0 +1,23 @@
+<% @project = @test_module.project %>
+var parent = "<%= @test_module.parent_id %>"
+test_module = $("<%= j render @test_module, test_plan: @current_plan %>")
+if (parent == "") {
+  $('.cases-info .sortable-container.root').first().append(test_module);
+} else {
+  selector = $('.cases-info-item-inner[data-id=<%= @test_module.parent_id %>] > .cases-test > .sortable-container' )
+  selector.append(test_module)
+}
+selector = $('div.plans-info-item[data-plan-id=<%= @test_module.test_plan_id %>] p.modules_count');
+selector.text(parseInt(selector.text()) +1 );
+$('span.modules_count').html( $('.cases-test-header').length);
+hide_modal();
+sortable_case_init();
+bind_custom_scrollbar();
+$('.mCustomScrollbar').mCustomScrollbar('update');
+$('.add_case_btn').removeClass('btn-nonActive');
+TestModule.jstree.create_item(<%= raw @test_module.to_jstree.to_json %>);
+table_resizable();
+<% unless @test_module.previous_changes.empty? %>
+$('.plans-info').children().find('.active .plans-item-inner-bottom .latest-update').text('<%= j test_plan_footer_info(@current_plan).first %>')
+$('.plans-info').children().find('.active .plans-item-inner-bottom .date').text('<%= j test_plan_footer_info(@current_plan).second %>')
+<% end %>

@@ -1,0 +1,67 @@
+<div class="modal-dialog select-project-members">
+  <div class="modal-content  container">
+    <div class="title-block title-main">
+      <h3 class="title"><%= t('project.manage_members') %></h3>
+      <h3 class="added-members">
+        <%= t('added') %> <%= t('member', count: @added_members_count) %>
+      </h3>
+      <span class="close">
+        <span class='icon-close-icon'></span>
+      </span>
+    </div>
+    <div class="modal-content-scroll">
+      <div class="modal-body">
+        <div class="row">
+          <div class="col xs-12">
+            <% if @members.size > 0 %>
+              <div id='invitation_modal' data-project='<%= @project.id %>' data-organization='<%= @organization.id %>'>
+                <table class="select-project-members-table" id="add_members">
+                  <tr class="table-title">
+                    <td colspan="2"><%= t('member_name') %></td>
+                    <td><%= t('projects') %></td>
+                    <td><%= t('joined_at') %></td>
+                    <td> <%= t('project_role') %></td>
+                    <td>
+                      <input type="checkbox" id="checkbox" class="checkbox">
+                      <label for="checkbox" class="table-checkbox-label"></label>
+                    </td>
+                  </tr>
+                  <% @members.each do |member| %>
+                    <tr class="member">
+                      <td class="member-avatar">
+                        <%= image_tag member.avatar.file.url(:medium) %>
+                      </td>
+                      <%= render partial: 'users/member_info', locals: {member: member} %>
+                      <td class="member-projects"><%= member.all_projects.count %></td>
+                      <td class="member-joined"><%= joined_at_date(member) %></td>
+                      <td class="project-role" member='<%=member.id%>' changes='true'>
+                        <% role = find_user_project_role(member, @project.id) %>
+                        <div class="input_wrapper drop-arr <%= proj_role_selector_disable(@project.id, member, role) %>">
+                          <%= role_selector(member, role, @project.id, @organization.id) %>
+                        </div>
+                      </td>
+                      <td>
+                        <%= add_checkbox(member, role) %>
+                        <label for="checkbox_<%="#{member.id}"%>" class="table-checkbox-label"></label>
+                      </td>
+                    </tr>
+                  <% end %>
+                </table>
+              </div>
+            <% else %>
+              <div class="empty-table">
+                <span><%= t('organization.no_members') %></span>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="select-project-members-buttons">
+    <% if @members.size > 0 %>
+      <%= save_button(params[:show_list]) %>
+    <% end %>
+      <span id='cancel' class='btn btn-white-green cancel'><%= t('cancel') %></span>
+    </div>
+  </div>
+</div>

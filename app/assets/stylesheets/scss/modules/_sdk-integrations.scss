@@ -1,0 +1,465 @@
+.card-integrations-title {
+  padding: 0 20px;
+  height: 80px;
+  margin-bottom: 20px;
+
+  h2 {
+    margin-bottom: 25px;
+    color: $base-text;
+    line-height: 80px;
+    font-family: $bold-font-family;
+    font-weight: bold;
+    @include rem(font-size, 24px);
+  }
+}
+
+.card-sdk-integrations {
+  padding: 30px 20px;
+  margin-bottom: 15px;
+
+  .tab-pane {
+    display: none;
+
+    &:first-child {
+      display: block;
+    }
+  }
+
+  &-title {
+    margin-bottom: 25px;
+    color: $base-text;
+    font-family: $bold-font-family;
+    font-weight: bold;
+    @include rem(font-size, 24px);
+  }
+
+  .sdk-platforms {
+    margin-top: 15px;
+
+    .sdk-platform {
+      display: inline-block;
+      width: 180px;
+      height: 80px;
+      margin-right: 8px;
+      padding: 10px 0;
+      text-align: center;
+
+      span {
+        display: block;
+        color: $white;
+        line-height: 30px;
+        @include rem(font-size, 14px);
+      }
+    }
+  }
+
+  .instructions-block {
+    margin-top: 50px;
+
+    .chrome-instruction-image {
+      display: block;
+      margin: 20px auto 20px;
+
+      &-w {
+        max-height: 200px;
+      }
+
+      &-wh {
+        max-hight: 300px;
+      }
+
+      &-h {
+        max-width: 300px;
+      }
+    }
+
+    .log_error_handler_instructions_list {
+      list-style-type: decimal;
+
+      li {
+        margin-left: 5%;
+      }
+    }
+
+    .sdk-integration-tabs {
+      padding-bottom: 20px;
+      border-bottom: 1px solid $base-border;
+      @extend %clearfix;
+
+      li {
+        float: left;
+        margin-right: 10px;
+      }
+
+      .btn-white-green {
+        padding: 10px 5px;
+
+        &:hover {
+          text-decoration: none;
+          color: $white;
+          background: $btn-gray;
+        }
+      }
+
+      .active {
+        color: $white;
+        background: $btn-gray;
+      }
+    }
+
+    .instruction {
+      color: $base-text;
+
+      li {
+        margin: 10px 30px;
+        list-style: decimal;
+        @include rem(font-size, 14px);
+
+        .main-step {
+          @include rem(font-size, 15px);
+        }
+      }
+
+      &-img {
+        margin: 15px 0 30px 0;
+      }
+
+      .btn {
+        margin-bottom: 10px;
+      }
+
+      .token-title {
+        color: $base-text;
+      }
+    }
+  }
+}
+
+.token-title {
+  color: $base-text;
+  font-family: $bold-font-family;
+  font-weight: bold;
+  line-height: 30px;
+  @include rem(font-size, 16px);
+}
+
+.token-block {
+  @extend %clearfix;
+
+  .token {
+    float: left;
+    height: 50px;
+    width: 60%;
+    margin-bottom: 15px;
+    padding: 0 20px;
+    background-color: $token-bg;
+    border-radius: 6px;
+    @extend %clearfix;
+
+    span {
+      float: left;
+      width: 350px;
+      font-family: $base-font-family;
+      color: $base-light-text;
+      line-height: 50px;
+      @include rem(font-size, 14px);
+      @extend %text-overflow;
+    }
+
+    .copy-token {
+      float: right;
+      padding-left: 20px;
+      border-left: 1px solid $base-border;
+
+      .btn-white-green {
+        line-height: 50px;
+        text-decoration: underline;
+        background: transparent;
+        cursor: pointer;
+        @include rem(font-size, 14px);
+      }
+    }
+  }
+
+  .btn {
+    float: left;
+    padding: 0 20px;
+    margin-left: 50px;
+    line-height: 50px;
+    height: 50px;
+  }
+}
+
+.plugins-info-tab {
+
+  .tab-pane-content-header {
+    .title {
+      margin: 14px 20px;
+    }
+
+    .btn {
+      height: 30px;
+      margin: 10px 0;
+    }
+
+    .plugins {
+      border-right: 1px solid $plan-activity-header-border;
+    }
+  }
+
+  .plugins {
+    float: left;
+    position: relative;
+    width: 40%;
+    @extend %clearfix;
+
+    &-block {
+      height: 555px;
+
+      .plans-item-inner-left {
+        width: 85%;
+
+        .title {
+          margin-bottom: 0;
+        }
+
+        .plugins-project {
+          display: block;
+          margin-bottom: 26px;
+        }
+
+        .author-block {
+          @extend %clearfix;
+
+          .author {
+            float: left;
+          }
+
+          .date {
+            float: right;
+          }
+        }
+      }
+
+      .plans-item-inner-right {
+        display: block;
+        width: 15%;
+
+        .plans-icons {
+          float: right;
+        }
+      }
+    }
+  }
+
+  .plans-info {
+    height: 550px;
+
+    &-item {
+      margin-right: 10px;
+    }
+  }
+
+  .plugins-info {
+    float: left;
+    width: 60%;
+
+    &-block {
+      height: 555px;
+      padding: 20px 10px;
+      border-left: 1px solid $base-border;
+      box-sizing: border-box;
+      background-color: $cases-info-border;
+
+      .plugins-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+        height: 100%;
+        padding: 20px;
+        background: $base-bg;
+        border-radius: 6px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+      }
+    }
+
+    .input_wrapper {
+      margin-bottom: 15px;
+
+      input[type="text"],
+      input[type="url"] {
+        background: $inputDisabledBg;
+        box-shadow: none;
+        @include rem(font-size, 14px);
+      }
+
+      p {
+        margin-bottom: 10px;
+      }
+
+      .radio-item {
+        display: block;
+        margin-right: 35px;
+      }
+
+      .checkbox {
+        &:not(:checked) + label:after,
+        &:checked + label:after {
+          left: 2px;
+        }
+      }
+    }
+
+    .description-block {
+      width: 100%;
+      height: 120px;
+      padding: 20px;
+      background: $main-content-bg;
+      border-radius: 6px;
+      @extend %clearfix;
+
+      img {
+        float: left;
+        margin: 15px 20px 15px 0;
+      }
+
+      .descrp-text {
+        float: left;
+        @include rem(font-size, 14px);
+
+        p {
+          margin-bottom: 10px;
+        }
+
+        .main-info {
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
+
+#androidInstructions,
+#iosInstructions,
+#pluginIntegration {
+  display: none;
+}
+
+//  Add-plugin pop-up -----
+
+.add-plugin {
+  width: 570px;
+
+  button {
+    &.btn-white-green {
+      margin-top: 47px;
+    }
+  }
+
+  .modal-content {
+    min-height: 272px;
+  }
+
+  .input_wrapper {
+    margin-bottom: 15px;
+
+    &.synchronize {
+      margin-bottom: 0;
+    }
+  }
+
+  .select-plugin {
+    border-bottom: 1px solid $base-border;
+    padding-bottom: 20px;
+
+    .dd-container {
+      .dd-options {
+        max-height: 120px;
+      }
+    }
+  }
+
+  .radio-item {
+    display: block;
+    margin-right: 35px;
+  }
+
+  .more-info {
+    position: relative;
+
+    .img-info-wrap {
+      height: 20px;
+      width: 20px;
+      margin: 38px 0 0 -15px;
+      cursor: pointer;
+
+      .hover-block {
+        right: 14px;
+        bottom: 25px;
+        padding: 10px;
+        background: $info-hover-block;
+
+        &:after {
+          bottom: -6px;
+          right: 18px;
+          border-top: 6px solid $info-hover-block;
+        }
+      }
+    }
+
+    .img-info-wrap:hover .hover-block {
+      opacity: 0.5;
+      visibility: visible;
+    }
+  }
+}
+
+.info-block {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 80px;
+  padding: 20px;
+  margin-top: 20px;
+  background: $block-bg;
+  border-radius: 6px;
+
+  img {
+    width: 32px;
+  }
+
+  .description {
+    padding-left: 20px;
+
+    h4 {
+      @include rem(font-size, 14px);
+    }
+
+    p {
+      margin: 0;
+      color: $base-light-text;
+      @include rem(font-size, 14px);
+    }
+  }
+
+  &.error {
+    h4 {
+      color: $errorMessage;
+    }
+  }
+
+  &.success {
+    h4 {
+      color: $successMessage;
+    }
+  }
+}
+
+.upload-build {
+  .info-block {
+    min-height: 50px;
+    padding: 5px 20px;
+  }
+}
+

@@ -1,0 +1,16 @@
+---
+
+- name: Create directories
+  file:
+    path: "{{ deploy_folder }}{{ app_name }}"
+    state: directory
+    owner: "{{ deploy_user }}"
+    mode: 0755
+  notify: restart nginx
+
+- name: Remove passenger host
+  file: path=/etc/nginx/sites-available/passenger state=absent
+
+- name: Remove passenger link
+  file: path=/etc/nginx/sites-enabled/passenger state=absent
+

@@ -1,0 +1,59 @@
+{
+  "resource": "Test Plans",
+  "http_method": "GET",
+  "route": "/api/v1/test_plans/:id",
+  "description": "User not project member",
+  "explanation": null,
+  "parameters": [
+    {
+      "required": true,
+      "name": "auth_token",
+      "description": "User authenticity token"
+    },
+    {
+      "required": true,
+      "name": "token",
+      "description": "Uniq project token"
+    },
+    {
+      "required": true,
+      "name": "id",
+      "description": "Test plan id"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "/api/v1/test_plans/24?token=lA2ea9E%2BA7noUZWt26mRwAYMrl9JJNbg9&auth_token=iYjUwRtkm505p3fKuwkELQsl8QsekUc%2B30",
+      "request_body": null,
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+        "token": "lA2ea9E+A7noUZWt26mRwAYMrl9JJNbg9",
+        "auth_token": "iYjUwRtkm505p3fKuwkELQsl8QsekUc+30"
+      },
+      "request_content_type": "application/json",
+      "response_status": 404,
+      "response_status_text": "Not Found",
+      "response_body": "{\n  \"message\": \"User not found\"\n}",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Content-Type": "application/json; charset=utf-8",
+        "Cache-Control": "no-cache",
+        "X-Request-Id": "bbf24b0a-4938-41be-a732-22686e773a82",
+        "X-Runtime": "0.034810",
+        "Content-Length": "28"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"http://localhost:3000/api/v1/test_plans/24?token=lA2ea9E%2BA7noUZWt26mRwAYMrl9JJNbg9&auth_token=iYjUwRtkm505p3fKuwkELQsl8QsekUc%2B30\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

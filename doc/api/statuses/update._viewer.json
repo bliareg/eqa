@@ -1,0 +1,66 @@
+{
+  "resource": "Statuses",
+  "http_method": "PUT",
+  "route": "/api/v1/statuses/:id",
+  "description": "Update. Viewer",
+  "explanation": null,
+  "parameters": [
+    {
+      "required": true,
+      "name": "auth_token",
+      "description": "User authenticity token"
+    },
+    {
+      "required": true,
+      "name": "token",
+      "description": "Uniq project token"
+    },
+    {
+      "required": true,
+      "name": "id",
+      "description": "Status id"
+    },
+    {
+      "name": "status_object",
+      "description": "Status attributes"
+    },
+    {
+      "scope": "status_object",
+      "name": "name",
+      "description": "Status name"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "PUT",
+      "request_path": "/api/v1/statuses/57",
+      "request_body": "{\"token\":\"qRexM7UIpU2ew7Z+dMLyyvb00x4LGOJw15\",\"status_object\":{\"name\":\"compressing\"},\"auth_token\":\"weZ7LRYf4FdPOAgXn7qeBBC8MXoWRhtI44\"}",
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 403,
+      "response_status_text": "Forbidden",
+      "response_body": "<!DOCTYPE html>\n<html>\n  <head>\n    <title>QualityDashboard</title>\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"/css/main.css\"/>\n  </head>\n  <body>\n    <header id=\"head_menu\" class=\"main-header\">\n      <div class=\"logo_title\">\n        <a href=\"/\">\n          <img src=\"/images/logo_main.png\" alt=\"Logo main\" />\n          <span>Easy QA</span>\n</a>      </div>\n      <div style=\"text-align: center\"> You have no permission to view this page or perform this action.</div>\n    </header>\n  </body>\n</html>\n",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Content-Type": "text/html; charset=utf-8",
+        "Cache-Control": "no-cache",
+        "X-Request-Id": "ebf5abcd-8439-4ca7-a709-6028b926b30a",
+        "X-Runtime": "0.083443",
+        "Content-Length": "505"
+      },
+      "response_content_type": "text/html; charset=utf-8",
+      "curl": "curl \"http://localhost:3000/api/v1/statuses/57\" -d '{\"token\":\"qRexM7UIpU2ew7Z+dMLyyvb00x4LGOJw15\",\"status_object\":{\"name\":\"compressing\"},\"auth_token\":\"weZ7LRYf4FdPOAgXn7qeBBC8MXoWRhtI44\"}' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "resource": "Issues",
+  "http_method": "DELETE",
+  "route": "/api/v1/issues/:id",
+  "description": "Delete",
+  "explanation": null,
+  "parameters": [
+    {
+      "required": true,
+      "name": "token",
+      "description": "Uniq project token"
+    },
+    {
+      "required": true,
+      "name": "id",
+      "description": "Issue ID"
+    },
+    {
+      "required": true,
+      "name": "auth_token",
+      "description": "User authenticity token"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "DELETE",
+      "request_path": "/api/v1/issues/16",
+      "request_body": "{\"token\":\"OSu3E3TMwqOxEKqy5o4998WjC+2zXBCU12\",\"auth_token\":\"ly0yFH19/MvB1Hl1+qNm4/ocbAJplSPC47\"}",
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"id\": 16,\n  \"summary\": \"debitis\",\n  \"description\": \"Cumque in ut esse quasi reiciendis.\",\n  \"project_id\": 12,\n  \"issue_type\": \"documentation\",\n  \"severity\": \"low\",\n  \"priority\": \"highest\",\n  \"status_id\": 1,\n  \"reporter_id\": null,\n  \"assigner_id\": null,\n  \"created_at\": \"2017-03-23T09:20:59.475Z\",\n  \"updated_at\": \"2017-03-23T09:20:59.475Z\",\n  \"project_issue_number\": 2,\n  \"test_object_id\": null,\n  \"log_file_id\": null,\n  \"spent_time\": \"1970-01-01T00:00:00.000Z\",\n  \"deleted_at\": \"2017-03-23T09:20:59.755Z\",\n  \"crash_id\": null\n}",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"e8d6369d96ac9b78d49220376f5022fa\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "7dada636-af44-4607-a3a6-708ba9fad665",
+        "X-Runtime": "0.195204",
+        "Content-Length": "458"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"http://localhost:3000/api/v1/issues/16\" -d '{\"token\":\"OSu3E3TMwqOxEKqy5o4998WjC+2zXBCU12\",\"auth_token\":\"ly0yFH19/MvB1Hl1+qNm4/ocbAJplSPC47\"}' -X DELETE \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "resource": "Statuses",
+  "http_method": "PUT",
+  "route": "/api/v1/statuses/:id",
+  "description": "Update",
+  "explanation": null,
+  "parameters": [
+    {
+      "required": true,
+      "name": "auth_token",
+      "description": "User authenticity token"
+    },
+    {
+      "required": true,
+      "name": "token",
+      "description": "Uniq project token"
+    },
+    {
+      "required": true,
+      "name": "id",
+      "description": "Status id"
+    },
+    {
+      "name": "status_object",
+      "description": "Status attributes"
+    },
+    {
+      "scope": "status_object",
+      "name": "name",
+      "description": "Status name"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "PUT",
+      "request_path": "/api/v1/statuses/56",
+      "request_body": "{\"token\":\"qRexM7UIpU2ew7Z+dMLyyvb00x4LGOJw15\",\"status_object\":{\"name\":\"parsing\"},\"auth_token\":\"ww8a6t5AQoWmNy/cO2nRYwBeuV+lrJTN39\"}",
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"id\": 56,\n  \"name\": \"parsing\",\n  \"created_at\": \"2017-04-14T07:55:51.086Z\",\n  \"updated_at\": \"2017-04-14T07:55:51.208Z\"\n}",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"e893989a44b6e00056a82d6c37254366\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "a089a8a5-930d-491f-bc82-2b6f4193cbba",
+        "X-Runtime": "0.070867",
+        "Content-Length": "106"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"http://localhost:3000/api/v1/statuses/56\" -d '{\"token\":\"qRexM7UIpU2ew7Z+dMLyyvb00x4LGOJw15\",\"status_object\":{\"name\":\"parsing\"},\"auth_token\":\"ww8a6t5AQoWmNy/cO2nRYwBeuV+lrJTN39\"}' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

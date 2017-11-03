@@ -1,0 +1,45 @@
+#
+include /etc/monit/conf.d/*.conf
+
+set daemon 60           # check services at 2-minute intervals
+    with start delay 60  # optional: delay the first check by 4-minutes
+
+set logfile /var/log/monit.log
+
+set httpd
+  port 2812
+  allow {{ monit_web_login }}:{{ monit_web_passwd }} # require user 'admin' with password 'monit'
+
+# nginx
+check process nginx with pidfile /run/nginx.pid
+  start program = "/etc/init.d/nginx start"
+  stop  program = "/etc/init.d/nginx stop"
+  if failed host 127.0.0.1 port 80 then restart
+  # if cpu is greater than 40% for 2 cycles then exec "/etc/monit/slack_notification.sh"
+  if cpu > 60% for 5 cycles then restart
+  if 10 restarts within 10 cycles then timeout
+
+# redis
+check process redis with pidfile /var/run/redis/6379.pid
+  group database
+  # start program = "/etc/init.d/redis_6379 start"
+  # stop  program = "/etc/init.d/redis_6379 stop"
+  if failed host 127.0.0.1 port 6379 then restart
+  if 15 restarts within 15 cycles then timeout
+
+# postgres
+check process postgres with pidfile /var/lib/postgresql/9.5/main/postmaster.pid
+  group database
+  start program = "/etc/init.d/postgresql start"
+  stop  program = "/etc/init.d/postgresql stop"
+  if 15 restarts within 15 cycles then timeout
+
+# HDD
+check device var with path /var
+  if SPACE usage > 80% for 5 times within 15 cycles then alert
+
+# sidekiq
+# check process sidekiq
+#   with pidfile /home/deploy/www/eqa/shared/tmp/pids/sidekiq.pid
+#   start program = "/bin/bash -l -c ' cd /home/deploy/www/eqa/current/; bundle exec sidekiq -e standalone -L /home/deploy/www/eqa/shared/log/sidekiq.log -C /home/deploy/www/eqa/current/config/sidekiq.yml -P /home/deploy/www/eqa/shared/tmp/pids/sidekiq-0.pid'"
+#   stop program = "/bin/bash -l -c 'cd /home/deploy/www/eqa/current/ ;bundle exec sidekiqctl stop /home/deploy/www/eqa/shared/tmp/pids/sidekiq-0.pid 20'"

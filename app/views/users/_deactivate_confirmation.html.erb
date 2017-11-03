@@ -1,0 +1,33 @@
+<div class="modal-dialog deactivate-account">
+  <div class="modal-content container">
+    <div class="title-main">
+      <h3><%= t 'deactivate_account' %></h3>
+      <span class="close">
+        <span class='icon-close-icon'></span>
+      </span>
+    </div>
+    <div class="modal-body">
+      <div class="row">
+        <div class="col xs-2">
+          <%= image_tag('warning-icon.png', class: 'warning-img') %>
+        </div>
+
+        <div class="col xs-10">
+          <p class="description-title"><%= t 'deactivate_text_title' %></p>
+          <p class="description"><%= t 'deactivate_text_1' %></p>
+          <p class="description"><%= t 'deactivate_text_2' %></p>
+          <p class="description"><%= t 'deactivate_text_3' %></p>
+        </div>
+      </div>
+    </div>
+    <div class="btn-group">
+      <%= link_to t('yes_word'), users_path,
+                                 remote: true,
+                                 method: :delete,
+                                 class: "btn btn-red" %>
+      <button type="button" class="btn btn-green btn-big cancel">
+        <%= t 'no_word' %>
+      </button>
+    </div>
+  </div>
+</div>

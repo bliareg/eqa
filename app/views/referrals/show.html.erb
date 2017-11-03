@@ -1,0 +1,66 @@
+<div class="tab">
+	<div class="card card-tab-content">
+		<div class="card-header">
+			<h2 class="card-header-title"><%= t('referral_program')%></h2>
+		</div>
+		<div class="share-box">
+			<div class="token-block email-sender">
+				<%= form_tag send_email_referrals_path, remote: true do %>
+					<div class="input-field">
+						<%= email_field_tag 'email', nil, placeholder: t('enter_email'), class: 'email_field', required: true %>
+					</div>
+					<div class="btn-box">
+						<%= submit_tag t('send_email'), class: 'btn btn-green' %>
+					</div>
+				<% end %>
+			</div>
+
+			<div class="contact-imports">
+				<h4><%= t 'import_contacts_from' %></h4>
+				<ul class='contact-imports-list'>
+					<li>
+						<%= link_to omniauth_authorize_path(User, :google_oauth2) do %>
+						<%= social_icon_span('google_oauth2') %>
+						<% end %>
+					</li>
+				</ul>
+			</div>
+
+			<div class="separator">
+				<span><%= t 'or' %></span>
+			</div>
+
+			<div class="token-block share-link">
+				<h4><%= t 'share_link' %></h4>
+				<div class="token">
+					<span><%= referral_invitation_url(current_user.referral_token) %></span>
+					<div class="copy-token">
+						<a class="btn-white-green" data-copied-text="<%= t('copied') %>" data-copy-link-text="<%= t 'copy_link' %>"><%= t 'copy_link' %></a>
+					</div>
+				</div>
+
+				<div id="shareBtn" class="btn-box">
+					<%= social_icon_span('facebook') %>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	$.ajaxSetup({cache: true});
+	$.getScript('//connect.facebook.net/en_US/sdk.js', function () {
+		FB.init({
+			appId: "<%= ENV['SECRET_FACEBOOK_ID'] %>",
+			version: 'v2.6'
+		});
+	});
+	document.getElementById('shareBtn').onclick = function () {
+		FB.ui({
+			method: 'share',
+			display: 'popup',
+			href: '<%= Rails.env.development? ? "https://app.geteasyqa.com/users/sign_up" : referral_invitation_url(current_user.referral_token) %>'
+		}, function (response) {
+		});
+	}
+</script>

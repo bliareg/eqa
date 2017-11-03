@@ -1,0 +1,33 @@
+<td class="member-avatar">
+  <%= image_tag member.avatar.file.url(:medium) %>
+</td> 
+<%= render partial: 'users/member_info', locals: {member: member} %>
+<td class="member-projects"><%= @data_projects[member.id].try(:size) || 0 %></td>
+<td class="member-joined"><%= member_organization_role.created_at %></td>
+<td member='<%=member.id%>' organization='<%= @organization.id %>'>
+  <% if no_org_permission?(@organization_id, member) %>
+    <span class="org-role"><%= member_organization_role.role.text %></span>
+  <% else %>
+    <div class="input_wrapper drop-arr">
+      <%= @organization.member_organization_role_select(member_organization_role,
+                                                        member) %>
+    </div>
+  <% end %>
+</td>
+<td>
+  <% unless member.invitation_token.nil? %>
+    <span class="btn-resend btn-white-green"> 
+      <%= @organization.add_organization_member_link(member, @organization) %>   
+      <span class="hover-block"><%= t('resend_invite') %></span> 
+    </span>
+  <% end %>
+  <span class="btn-resend btn-white-green">
+    <%= @organization.delete_organization_member_role(member) %>  
+    <span class="hover-block"><%= t('delete_member') %></span>
+  </span>
+</td>
+<td>
+<% if member.invitation_token.nil? %>
+  <span class="chevron-down"></span>
+<% end %>
+</td>

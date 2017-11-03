@@ -1,0 +1,46 @@
+<% if params[:test_run_result_id].present? %>
+  var test_run_result = $('tr[data-test-result-id=' + <%= @test_run_result.id %> + "]");
+  test_run_result.replaceWith("<%= j render partial: 'test_runs/table/test_run_result_case', locals: { result: @test_run_result}  %>")
+  TestRunResult.init_sortable();
+  add_profile_table_links()
+<% else %>
+  <% @current_plan = @test_plan %>
+  <% @project = @test_plan.project %>
+  var test_case = $('#case_<%= @test_case.id %>.test_case_item');
+  var new_module_table = $('.cases-info-item-inner[data-id=<%= @test_module.id %>]').children('.cases-test');
+  var old_module_table = test_case.parents('.cases-test-content')
+                                  .parent('.cases-test');
+  test_case.replaceWith('<%= j render @test_case %>');
+
+  if(new_module_table.parent().data('id') != old_module_table.parent().data('id')) {
+    $('#case_<%= @test_case.id %>.test_case_item').remove();
+    new_module_table.children('.cases-test-content')
+                    .find('tbody')
+                    .append(test_case);
+    new_module_table.parents('.cases-test').add(new_module_table).children('.cases-test-header')
+                    .find('.number').each(function(i, val) {
+      var number_text = $(val).text();
+      var number = parseInt(number_text.substring(1, number_text.length-1)) + 1
+      $(val).text('(' + number + ')')
+    });
+    old_module_table.parents('.cases-test')
+                    .add(old_module_table)
+                    .children('.cases-test-header')
+                    .find('.number')
+                    .each(function(i, val) {
+      var number_text = $(val).text();
+      var number = parseInt(number_text.substring(1, number_text.length-1)) - 1
+      $(val).text('(' + number + ')')
+    });
+  };
+  sortable_case_init();
+  <% unless @test_case.previous_changes.empty? %>
+  $('.plans-info').children().find('.active .plans-item-inner-bottom .latest-update').text('<%= j test_plan_footer_info(@current_plan).first %>')
+  $('.plans-info').children().find('.active .plans-item-inner-bottom .date').text('<%= j test_plan_footer_info(@current_plan).second %>')
+  <% end %>
+<% end %>
+if($(MODAL_CLASS).find('div.double-modal').length > 0) {
+  $(MODAL_CLASS).html("<%= j render 'test_runs/test_run_results/show' if @test_run_result %>");
+} else {
+  hide_modal();
+}

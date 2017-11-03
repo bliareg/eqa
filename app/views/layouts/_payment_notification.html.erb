@@ -1,0 +1,13 @@
+<div class="notification-top-panel">
+  <div class="panel-inner">
+    <% if current_user.billing.trial_period? && (current_user.billing.expires_in > 14) %>
+      <span class="message"><%= "#{t(:trial_started)} #{l(current_user.billing.prev_expired_at, format: '%d %B %Y')}" %></span>
+    <% elsif current_user.is_payment_expiring? %>
+      <span class="message"><%= "#{t(:days_to_end, count: current_user.billing.expires_in)} #{current_user.billing.trial_period ? t(:trial_version) : t(:paid_version)}".html_safe %></span>
+    <% else %>
+      <span class="message"><%= "#{current_user.billing.trial_period ? t(:trial_version_over) : t(:paid_version_over)}" %></span>
+    <% end %>
+    <%= link_to t(:view_plans), billings_path, class: "btn top-panel-btn" %>
+  </div>
+  <span class="fa fa-times close close_notification" aria-hidden="true"></span>
+</div>

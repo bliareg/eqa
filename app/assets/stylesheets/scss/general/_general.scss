@@ -1,0 +1,46 @@
+.wrapper {
+  position: relative;
+  background-color: $grey-1;
+  min-height: calc(100vh - 2px);
+  padding-bottom: 70px;
+}
+
+.section {
+  @include em(padding-top, 15px);
+  @include em(padding-bottom, 15px);
+
+  &-title {
+    font-family: $bold-font-family;
+    font-weight: bold;
+    @include rem(font-size, 32px);
+  }
+}
+.pagination {
+  margin: 20px;
+
+  span {
+    display: inline-block;
+    height: 40px;
+    line-height: 40px;
+    font-family: "opensans regular", sans-serif;
+    font-size: 14px;
+    font-size: 0.875rem;
+    margin-right: 10px;
+
+    a {
+      color: #28bd8b;
+    }
+    &:hover {
+      a {
+        color: #209971;
+        text-decoration: underline;
+      }
+    }
+    &.current {
+      color: #ffffff;
+      background: #b6b6b6;
+      padding: 0 15px;
+      border-radius: 6px;
+    }
+  }
+}

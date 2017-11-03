@@ -1,0 +1,22 @@
+<div class="modal-dialog column-settings">
+  <div class="modal-content">
+    <div class="title-main">
+      <h3><%= t('column_settings') %></h3>
+      <span class="close">
+        <span class="icon-close-icon"></span>
+      </span>
+    </div>
+    <div class="modal-body">
+      <%= form_tag column_visibility_path(@column_visibility), method: :patch, remote: true do%>
+        <% columns =  columnable.column_set(current_user).keys %>
+        <% column_data.each_key do |name, _command| %>
+          <%= check_box_for_column_visibility(name, columns) %>
+        <% end %>
+      <div class="btn-group">
+        <%= submit_tag t('save_changes'), class: 'btn btn-green'%>
+        <button type="button" class="btn btn-white-green cancel"><%= t 'cancel' %></button>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

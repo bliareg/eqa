@@ -1,0 +1,26 @@
+<div class="test-module-sortable-item <%= class_for_root_module(test_module) %>">
+  <div class="cases-info-item-inner" data-id="<%= test_module.id %>">
+    <div class="cases-test module-item <%= class_for_sub_module(test_module) %>">
+      <div class="cases-test-header">
+        <%= render partial: 'test_modules/module_header',
+                   locals: { test_module: test_module } %>
+      </div>
+      <div class="cases-test-content">
+        <div class="cases-test-content-item">
+          <% @column_visibility ||= @current_plan.column_visibility(current_user) %>
+          <% @column_set ||= @current_plan.column_set(current_user) %>
+          <table class='caseSortable resizable-table' data-columnable='<%= @column_visibility.id %>'>
+            <%= render partial: 'test_modules/test_module_table', locals: { test_module: test_module } %>
+          </table>
+        </div>
+        <%= render partial: 'test_modules/test_module_footer',
+                   locals: { test_module: test_module } %>
+      </div>
+      <div class='sortable-container'>
+        <%= render test_module.children.sort_by(&:position) %>
+        <div class="test-module-sortable-item dummy-item"></div>
+      </div>
+    </div>
+  </div>
+</div>
+

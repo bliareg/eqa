@@ -1,0 +1,60 @@
+<div class="wrapper">
+<center class="wrapper"> 
+  <div style="max-width: 580px;margin: 0 auto; padding: 0 10px;">
+    <table style="color:#484848;width: 100%;margin: 0 auto;font-size:0;">
+      <tbody>
+        <tr>
+          <td style="padding:48px 0 32px;">
+            <a target="_blank" href="https://geteasyqa.com" title="EasyQA" style="display:inline-block;font-size: 20px;line-height: 20px; text-decoration: none; color: #32b789;font-weight: 600;">
+              <span style="padding-right: 6px">
+                <img src="https://app.geteasyqa.com/images/logo_main_dark.png" width="30" height="30">
+              </span>
+              <span style="vertical-align: super;">EasyQA</span>
+            </a>
+          </td>
+        </tr>         
+        <tr><td style="font-weight: 300;line-height: 1.4;font-size: 18px;padding-bottom: 20px;">
+          <%= @message.html_safe %>
+        </td></tr>
+        <tr><td><%= link_to t('click_here').upcase, @url_of_invitation,
+                                                          style: 'display: inline-block;
+                                                          line-height: 1;
+                                                          padding: 10px 20px;
+                                                          background-color: #32b789;
+                                                          color: #fff;
+                                                          font-size: 18px;
+                                                          border-radius: 5px;
+                                                          text-decoration: none;',
+                                                          target: "_blank"  %>
+        </td></tr>
+        <tr><td style="padding: 20px 0"><hr style="background-color: rgb(219, 219, 219);height: 1px;border: none;width: 100%;"></td></tr>
+        <tr>
+          <td style="padding: 20px 0">
+            <div style="display: inline-block;padding-right: 10px;"><%= image_tag root_url + @organization_owner.avatar.file.url(:medium), style: "display: block; outline: none; text-decoration: none; width: auto; clear: both; border: none; max-width: 77px; border-radius: 50%; max-height: 77px;" %></div>
+            <div style="display: inline-block;vertical-align: top;">
+                <p style="margin: 0;text-align: left; padding: 0; font-weight: 700; line-height: 1.4; font-size: 18px;"><%= @organization_owner.name %></p>
+                <p style="margin: 0;text-align: left; padding: 0; font-weight: 300; line-height: 1.4; font-size: 18px; "><%= I18n.t('on_easyqa_since') %> <%= @organization_owner.created_at.year %></p>
+            </div>
+          </td>
+        </tr>
+        <tr><td style="padding: 20px 0"><hr style="background-color: rgb(219, 219, 219);height: 1px;border: none;width: 100%;"></td></tr>
+        <tr>
+          <td>
+          <% if I18n.locale.to_s == 'en' %>
+            <a style="display: inline-block; line-height: 1; padding: 10px 20px; color: #32b789;
+                      border: 1px solid #32b789; font-size: 18px; border-radius: 5px;
+                      text-decoration: none;"
+                      href="https://geteasyqa.com/how-to/what-is-easyqa" target="_blank"> <%= I18n.t('learn_more_how_to_use_easyqa') %> </a>
+          <% else %>
+            <a style="display: inline-block; line-height: 1; padding: 10px 20px; color: #32b789;
+                      border: 1px solid #32b789; font-size: 18px; border-radius: 5px;
+                      text-decoration: none;"
+                      href="https://geteasyqa.com/ru/how-to/easyqa-what-is/" target="_blank"> <%= I18n.t('learn_more_how_to_use_easyqa') %> </a>
+          <% end %>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</center>
+</div>

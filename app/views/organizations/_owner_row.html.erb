@@ -1,0 +1,14 @@
+<tr class="member" member ="<%= owner.id %>">
+  <td class="member-avatar">
+    <%= image_tag owner.avatar.file.url(:medium) %>
+  </td>
+  <%= render 'users/member_info', member: owner %>
+  <td class="member-projects"><%= owner.all_projects.size %></td>
+  <td class="member-joined"><%= owner.organization_role(@organization.id).created_at %></td>
+  <td>
+    <span class="org-role"><%= t 'enumerize.role.role.owner' %></span>
+  </td>
+  <td></td>
+  <td></td>
+</tr>
+<tr></tr>

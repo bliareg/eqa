@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>QualityDashboard</title>
+    <link rel="stylesheet" type="text/css" href="/css/main.css"/>
+  </head>
+  <body>
+    <header id="head_menu" class="main-header">
+      <div class="logo_title">
+        <%= link_to root_path do %>
+          <%= image_tag 'logo_main.png' %>
+          <span>Easy QA</span>
+        <% end %>
+      </div>
+      <div style="text-align: center"> <%= t('no_permission_warning') %></div>
+    </header>
+  </body>
+</html>

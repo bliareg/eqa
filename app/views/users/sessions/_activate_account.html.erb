@@ -1,0 +1,24 @@
+<div class="modal-dialog restore-your-account">
+  <div class="modal-content">
+    <div class="title-main">
+      <h3><%= t 'restore_your_account' %></h3>
+      <span class="close">
+        <span class='icon-close-icon'></span>
+      </span>
+    </div>
+    <div class="modal-body">
+      <div class="description">
+          <p><%= t 'restore_text_p1' %></p>
+          <p><%= t 'restore_text_p2' %></p>
+      </div>
+      <%= link_to t('restore_account'),
+                  activate_account_path(flash[:deleted_user_id] || @user.id),
+                  remote: true,
+                  method: :put,
+                  class: "btn btn-green" %>
+      <%= link_to t('register_new_account'),
+                  new_user_registration_path,
+                  class: 'btn btn-white-green' %>
+    </div>
+  </div>
+</div>

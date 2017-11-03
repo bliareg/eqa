@@ -1,0 +1,10 @@
+development:
+  :concurrency: 5
+staging:
+  :concurrency: 10
+production:
+  :concurrency: 20
+standalone:
+  :concurrency: 20
+demo:
+  :concurrency: 20

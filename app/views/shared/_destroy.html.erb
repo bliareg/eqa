@@ -1,0 +1,22 @@
+<!-- Modal content -->
+<div class="modal-dialog modal-delete">
+  <div class="modal-content">
+    <div class="title-main">
+      <h3><%= t('delete?') %></h3>
+      <span class="close">
+        <span class='icon-close-icon'></span>
+      </span>
+    </div>
+    <div class="modal-body">
+      <span class="delete-info"><%= text %></span>
+      <div class="btn-group">
+        <%= link_to t('delete'), url,
+                              remote: true,
+                              method: :delete,
+                              id: 'confirm',
+                              class: "btn btn-red" %>
+        <span id='cancel' class="btn btn-white-green cancel"><%= t('cancel') %></span>
+      </div>
+    </div>
+  </div>
+</div>

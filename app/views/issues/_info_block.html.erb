@@ -1,0 +1,39 @@
+<div class="issue-info-block container-full info_block">
+  <div class="row">
+    <div class="col xs-2"><%= t 'summary' %>:</div>
+    <div class="col xs-10">
+      <span class="issue-title"><%= @issue.summary %></span>
+    </div>
+  </div>
+  <div class="row assigned-to">
+    <div class="col xs-2"><%= t 'assigned_to' %>:</div>
+    <div class="col xs-4">
+      <div class="input_wrapper" id='user-select-data' data-default-id='<%= @issue.assigner_id %>'>
+        <%= f.select :assigner_id, users_select(@project.members),
+                                   { prompt: t('non_assigned') },
+                                   id: 'assigned' %>
+      </div>
+    </div>
+    <div class="col xs-6">
+      <span class="started"><%= t 'started' %>:</span>
+      <span class="started-time"><%= @issue.created_at.strftime("%d/%m/%y") %></span>
+      <%= issue_reporter_info %>
+    </div>
+  </div>
+  <div class="row description">
+    <div class="col xs-2"><%= t 'description' %>:</div>
+    <div class="col xs-10">
+      <div class="description-field">
+        <%= set_issue_description %>
+      </div>
+      <a href="javascript:;" class="btn-white-green show-all">
+        <span class='show_all'><%= t 'show_all' %></span>
+        <span class='show_less' style='display: none;'><%= t 'show_less' %></span>
+      </a>
+    </div>
+  </div>
+  <div class="row issue-attachments">
+    <div class="col xs-2"><%= t 'attachments' %>:</div>
+    <%= render 'issues/attachments_row', form: f %>
+  </div>
+</div>

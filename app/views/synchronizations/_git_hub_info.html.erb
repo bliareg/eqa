@@ -1,0 +1,19 @@
+<div>
+  <div class="input_wrapper disabled disabled-select">
+    <label class="title"><%= t 'repository_url' %></label>
+    <input type='url' value="<%= setting.repository_url %>">
+  </div>
+  <div class="input_wrapper disabled disabled-select">
+    <label class="title"><%= t 'branch' %></label>
+    <input type='url' value="<%= setting.branch %>">
+  </div>
+  <%= render partial: 'synchronizations/setting_plugin_boxes_show',
+             locals: { setting: setting } %>
+</div>
+<div class="description-block">
+  <%= image_tag('ico.png') %>
+  <div class="descrp-text">
+    <p class="main-info"><%= t 'git_hub_instructions.chapter1' %><br>
+                         <%= t 'git_hub_instructions.chapter2' %></p>
+  </div>
+</div>

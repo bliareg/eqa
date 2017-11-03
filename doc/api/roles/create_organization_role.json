@@ -1,0 +1,63 @@
+{
+  "resource": "Roles",
+  "http_method": "POST",
+  "route": "/api/v1/organizations/:organization_id/roles",
+  "description": "Create organization role",
+  "explanation": null,
+  "parameters": [
+    {
+      "required": true,
+      "name": "auth_token",
+      "description": "User authenticity token"
+    },
+    {
+      "required": true,
+      "name": "organization_id",
+      "description": "Organization id"
+    },
+    {
+      "required": true,
+      "name": "role",
+      "description": "Role in organization. Must be \"user\" or \"admin\""
+    },
+    {
+      "required": true,
+      "name": "user_id",
+      "description": "User id"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "POST",
+      "request_path": "/api/v1/organizations/14/roles",
+      "request_body": "{\"role\":\"user\",\"user_id\":35,\"auth_token\":\"MPNNwcSwbxEMqc0y7BgGMkTLM2a/tVqH33\"}",
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"id\": 70,\n  \"organization_id\": 14,\n  \"project_id\": null,\n  \"user_id\": 35,\n  \"role\": \"user\",\n  \"created_at\": \"2017-04-12T14:18:35.091Z\",\n  \"updated_at\": \"2017-04-12T14:18:35.091Z\",\n  \"is_subscribed\": null,\n  \"deleted_at\": null\n}",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"ea7b728a17df9d78173251d74edb4a3d\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "a526c177-255f-4f3a-90ea-403fe87b76ef",
+        "X-Runtime": "0.087521",
+        "Content-Length": "194"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"http://localhost:3000/api/v1/organizations/14/roles\" -d '{\"role\":\"user\",\"user_id\":35,\"auth_token\":\"MPNNwcSwbxEMqc0y7BgGMkTLM2a/tVqH33\"}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

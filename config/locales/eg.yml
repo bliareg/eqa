@@ -1,0 +1,39 @@
+eg:
+  enumerize:
+    role:
+      role:
+        owner: Owner(EG)
+        pm: PM(EG)
+        developer: Developer(EG)
+        tester: Tester(EG)
+        viewer: Viewer(EG)
+    user:
+      country:
+        usa: USA(EG)
+        uk: United Kingdom(EG)
+        ua: Ukraine(EG)
+  users:
+    personal_information: Personal Information(EG)
+    change_password: Change password(EG)
+    my_organizations: My organizations(EG)
+    notifications: Notifications(EG)
+    date_registration: 'Date registration(EG):'
+    last_sign_in: 'Last Sign In at(EG):'
+    profile: My profile(EG)
+  projects: Projects(EG)
+  organizations: Organizations(EG)
+  create_project: Create Project(EG)
+  create_organization: Create Organization(EG)
+  devices: Devices(EG)
+  delete_organization: Delete Organization(EG)
+  payment_history: Payment History(EG)
+  plans_and_billings: Plans & Billings(EG)
+  organization_members: Organization Members(EG)
+  organization_profile: Organization profile(EG)
+  user_created: User Created(EG)
+  update_success: Update Success(EG)
+  update_error:  "Organization not update, check organization's field(EG)"
+  add_members: Add members(EG)
+  delete_organization: Delete Organization(EG)
+  use_separator: Use , to separate e-mail addresses(EG)
+  upload_build: Upload new build(EG)

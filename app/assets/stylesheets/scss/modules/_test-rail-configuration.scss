@@ -1,0 +1,42 @@
+.card-configuration {
+  width: 50%;
+  padding: 35px 30px 30px 30px;
+  overflow: hidden;
+
+  .card-title {
+    margin-bottom: 30px;
+    color: #333333;
+    font-size: 24px;
+  }
+
+  .info-wrapper,
+  .image-wrapper {
+    margin-bottom: 30px;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .input_wrapper {
+    .btn {
+      padding: 11px 20px;
+      margin-top: 15px;
+    }
+  }
+
+  .btn-group {
+    float: right;
+
+    span {
+      display: block;
+      color: #333333;
+      font-size: 18px;
+      line-height: 40px;
+    }
+
+    .btn {
+      padding: 11px 20px;
+    }
+  }
+}

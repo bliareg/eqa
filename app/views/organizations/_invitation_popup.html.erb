@@ -1,0 +1,65 @@
+<div class="modal-dialog add-organization-members">
+  <div class="modal-content container">
+    <div class="title-main">
+      <h3><%= t 'organization.add_members' %></h3>
+      <span class="close">
+        <span class='icon-close-icon'></span>
+      </span>
+    </div>
+    <%= form_tag invite_users_path, remote: true, 'data-client-side-validations' => client_side_validations_form_tag_options do %>
+      <%= hidden_field_tag :organization_id, @organization.id%>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col xs-8">
+              <div class="input_wrapper">
+                  <%= label_tag t('invite.emails'),nil,  class: "pop-up-label" %>
+                  <%= render 'shared/error_message' if flash[:error].present? %>
+                  <%= text_area_tag :emails, nil, cols: "30", rows: "4"  %>
+              </div>
+              <div class="textarea-help">
+                <span><%= t 'invite.use_separator' %>
+                  <span class="textarea-help-bold">
+                    <%= t 'invite.or_new_line' %>
+                  </span>
+                  <%= t 'invite.to_separate' %>
+                </span>
+              </div>
+              <div class="input_wrapper">
+                <%= label_tag t('message'), nil,  class: 'pop-up-label' %>
+                <%= text_area_tag :message, default_invitation,
+                  cols: "30", rows:"4", maxlength: "2000" %>
+                <p class="textarea-description"><%= t 'invite.max_count' %></p>
+              </div>
+            </div>
+            <div class="col xs-4">
+              <div class="popup-description-column">
+                <p class="popup-description"><%= t 'invite.existing_users' %></p>
+                <p class="popup-description"><%= t 'invite.an_invitation' %></p>
+                <% if Rails.env.standalone? %>
+                  <% if (@organization.owner&.current_license&.licenses_left || 0).zero? %>
+                    <p class="popup-description warning"><%= t 'invite.no_licenses' %></p>
+                  <% else %>
+                    <p class="popup-description accent"><%= t('invite.licenses_left', count: @organization.owner.current_license.licenses_left) %></p>
+                  <% end %>
+                <% else %>
+                  <% if !@organization.owner.billing.trial_period? %>
+                    <% if @organization.owner.available_licenses_count.zero? %>
+                      <p class="popup-description warning"><%= t 'invite.no_licenses' %></p>
+                    <% else %>
+                      <p class="popup-description accent"><%= t('invite.licenses_left', count: @organization.owner.available_licenses_count) %></p>
+                    <% end %>
+                  <% end %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      <div class="actions">
+        <%= submit_tag t('invite.add_members'), class: 'add_members btn btn-green' %>
+        <button type="button" class="btn btn-white-green btn-big cancel">
+          <%= t 'cancel' %>
+        </button>
+      </div>
+    <% end %>
+  </div>
+</div>

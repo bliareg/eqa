@@ -1,0 +1,32 @@
+<div class="content-wrapper">
+  <div class="container-full">
+    <div class="row">
+      <div class="main-content col m-12">
+        <div class="sign">
+          <div class="sign-tabs">
+            <h1 class="forgot-password"><%= t 'devise.passwords.new.forgot_your_password' %></h1>
+          </div>
+          <div class="sign-form-column">
+            <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post, class: 'sign-form' }) do |f| %>
+              <h2 class="sign-title"><%= t 'enter_email_to_restore_password' %></h2>
+              <div class="field input_wrapper">
+                <%= f.label :email, 'E-mail*' %><br />
+                <%= f.email_field :email, autofocus: true %>
+              </div>
+              <div class="forgot-password-sign-block">
+                <%= link_to t('sign_in'), new_user_session_path, class: 'btn-white-green' %>
+                <%= link_to t('sign_up'), new_user_registration_path, class: 'btn-white-green' %>
+              </div>
+              <div class="actions">
+                <%= f.submit t('restore'), class: 'btn btn-green sign-submit' %>
+              </div>
+            <% end %>
+          </div>
+          <% unless Rails.env.standalone? %>
+            <%= render "devise/shared/socials" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

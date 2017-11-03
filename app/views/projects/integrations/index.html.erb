@@ -1,0 +1,49 @@
+<div class="card card-sdk-integrations">
+  <h2 class="card-sdk-integrations-title"><%= t 'sdk_integrations' %></h2>
+  <span class="token-title"><%= t 'token' %></span>
+  <div class="token-block">
+    <div class="token">
+      <span><%= @project.token %></span>
+      <div class="copy-token">
+        <a class="btn-white-green" data-copied-text="<%= t('copied') %>" data-copy-link-text="<%= t 'copy_link' %>"><%= t 'copy_token' %></a>
+      </div>
+    </div>
+    <%= @project.refresh_token_link(current_user) %>
+  </div>
+  <div class="sdk-platforms">
+    <%= link_to "http://repository.geteasyqa.com/artifactory/public/", target: :_blank, class: 'btn btn-green sdk-platform' do %>
+      <%= image_tag('android-icon.png', class: 'img-png') %>
+      <span><%= t 'android_sdk' %></span>
+    <% end %>
+    <%= link_to download_ios_path, method: :post, class: 'btn btn-green sdk-platform' do %>
+      <%= image_tag('apple-icon.png', class: 'img-png') %>
+      <span><%= t 'ios_sdk' %></span>
+    <% end %>
+  </div>
+  <div class="instructions-block">
+    <ul class="sdk-integration-tabs">
+      <li><a href="#howItWorks" class="btn btn-white-green active"><%= t 'how_it_works' %></a></li>
+      <li><a href="#androidInstructions" class="btn btn-white-green"><%= t 'android_instructions' %></a></li>
+      <li><a href="#iosInstructions" class="btn btn-white-green"><%= t 'ios_instructions' %></a></li>
+      <li><a href="#chromeExtentionInstructions" class="btn btn-white-green"><%= t 'chrome_extention_instructions' %></a></li>
+      <li><a href="#logErrorHandlerInstructions" class="btn btn-white-green"><%= t 'log_error_handler_instructions' %></a></li>
+    </ul>
+    <div class="tab-content card-sdk-integrations">
+      <div class="tab-pane" id="howItWorks">
+        <%= render 'pages/how_it_works' %>
+      </div>
+      <div class="tab-pane" id="androidInstructions">
+        <%= render 'pages/android_instructions' %>
+      </div>
+      <div class="tab-pane" id="iosInstructions">
+        <%= render 'pages/ios_instructions' %>
+      </div>
+      <div class="tab-pane" id="chromeExtentionInstructions">
+        <%= render 'pages/chrome_extention_instructions' %>
+      </div>
+      <div class="tab-pane" id="logErrorHandlerInstructions">
+        <%= render 'pages/log_error_handler_instructions' %>
+      </div>
+    </div>
+  </div>
+</div>

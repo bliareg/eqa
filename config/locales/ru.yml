@@ -1,0 +1,1156 @@
+u:
+  Click to upload: Нажмите, чтобы загрузить
+  about: о
+  about_us: О нас
+  access_level: Уровень доступа
+  account_locked_p1: Учетная запись заблокирована
+  account_locked_p2: Вы не можете войти.
+  account_locked_p3: Пожалуйста свяжитесь з командой поддержки EasyQA
+  active_admin:
+    filters:
+      predicates:
+        not_eq: Не равно
+  active_test_runs: Активные тестовые прогоны
+  activerecord:
+    attributes:
+      git_hub_setting:
+        access_token: Токен доступа
+        branch: Ветка
+        repository_url: URL репозитория
+      git_lab_setting:
+        access_token: Токен доступа
+        branch: Ветка
+        project_url: URL проекта
+      issue:
+        assign_to: Назначить
+        assigned_to: Назначено
+        assigner: Исполнитель
+        build: Объект
+        description: Описание
+        document_updated_at: Документ обновлен в
+        issue_type: Тип карточки
+        priority: Приоритет
+        project: Проект
+        project_issue_number: Номер карточки проекта
+        reporter: Создатель
+        status: Статус
+        status_id: Статус
+        summary: Название
+        test_object: Тестовый объект
+      jira_setting:
+        base_url: Базовый URL
+        board_name: Название канбан доски
+        password: Пароль
+        project_key: Ключ проекта
+        username: Имя пользователя
+      organization:
+        description: Описание
+        title: Название
+      pivotal_setting:
+        api_token: Токен апи
+        project_name: Название проекта
+      project:
+        organization: Организация
+        title: Название
+      redmine_setting:
+        api_key: Ключ апи
+        base_url: Базовый URL
+        project_name: Название проекта
+        tracker_name: Название трекера
+      test_case:
+        case_type: Тип
+        expected_result: Ожидаемый результат
+        pre_steps: Предварительные шаги
+        steps: Шаги
+        test_module: Модуль
+        title: Название
+      test_module:
+        description: Описание
+        title: Название
+      test_plan:
+        description: Описание
+        title: Название
+      test_run:
+        assigner_id: Исполнитель
+        description: Описание
+        test_plan_id: Тест план
+        title: Название
+      test_run_result:
+        status: Статус
+      trello_setting:
+        api_key: Ключ апи
+        board_name: Название доски
+        member_token: Токен пользователя
+      user:
+        company: Компания
+        city: Город
+        street_address: Адрес улицы
+        phone_number: Номер телефона
+        zip_code: Zip код
+        state: Область
+        country: Страна
+        current_password: Текущий пароль
+        email: Эл. адрес
+        first_name: Имя
+        last_name: Фамилия
+        password: Новый пароль
+        password_confirmation: Подтверждение пароля
+        password_sample: Пароль
+        remember_me: Запомнить меня
+        title: Название
+      you_track_setting:
+        agile_board_name: Название канбан доски
+        base_url: Базовый URL
+        login: Логин
+        password: Пароль
+        service_pid: ID проекта
+        sprint_name: Название спринта
+    errors:
+      models:
+        user:
+          attributes:
+            company:
+              unspaces: Недействительное значение
+            street_address:
+              unspaces: Недействительное значение
+            city:
+              unspaces: Недействительное значение
+            state:
+              unspaces: Недействительное значение
+            zip_code:
+              unspaces: Недействительное значение
+            phone_number:
+              unspaces: Недействительное значение
+        time_management:
+          attributes:
+            spent_time:
+              invalid_spent_time: Неверный формат. К примеру, попробуйте 2h 30m
+    models:
+      comment: Комментарий
+      issue: Карточку
+      log_file: Лог файл
+      project: Проект
+      test_case: Тест кейс
+      test_plan: Тест план
+      test_run: Тестовый прогон
+      user: Пользователь
+  add: Добавить
+  add_case: Добавить кейс
+  add_column: Добавить колонку
+  add_comment: Добавить
+  add_file: Добавить файл
+  add_members: Добавить участников
+  add_module: Добавить модуль
+  add_new: + Добавить новый
+  add_new_column: Создать колонку
+  add_new_organization: Создать организацию
+  add_new_plugin: Добавить новый плагин
+  add_organization: Создать организацию
+  add_project: Создать проект
+  add_submodule: Добавить подмодуль
+  add_the_dependency: 'добавьте зависимость:'
+  add_test_object: Добавить объект
+  add_test_run: Добавить тестовый прогон
+  add_time: Добавить
+  add_url_of_EasyQA_repository: 'добавьте URL-адрес репозитория EasyQA:'
+  added: добавил
+  added_licenses:
+    one: Добавлено %{count} лицензию
+    few: Добавлено %{count} лицензии
+    many: Добавлено %{count} лицензий
+    other: Добавлено %{count} лицензий
+  after_that_you_can_create_your_app_build_and_upload_it: После этого вы можете создать билд приложения и загрузить его в тест-объекты в рамках вашего проекта в 
+  agile_board_name: Название канбан доски
+  ago: назад
+  all: Все
+  all_issues: Все карточки
+  all_rights: by THINKMOBILES. All rights reserved.
+  amount: Сумма
+  amount_caps: СУММА
+  and: и
+  android_instructions: Android инструкции
+  android_instructions_details:
+    deatil4: Выберите загруженную библиотеку <span>></span> Готово
+    detail1: Откройте свой проект (например, в Android Studio);
+    detail10: Сгенерируйте тест билд и загрузите его на
+    detail11: странице «Объекты тестирования»
+    detail12: на веб-сайте EasyQA <span>></span> ваш билд готов отслеживать сбои.
+    detail2: 'Перейдите на веб-сайт EasyQA <span>></span> откройте свой проект <span>></span> Элемент меню SDK Intergations <span>></span> Загрузить библиотеку для проектов Android:'
+    detail3: 'Добавьте эту библиотеку в свой проект:'
+    detail5: Откройте структуру проекта <span>></span> Выберите модуль вашего приложения <span>></span> Перейдите на вкладку «Зависимости» <span>></span> Нажмите «+» <span>></span> Зависимость модуля <span>></span> Выберите модуль «easyqa» <span>></span> Нажмите «OK».
+    detail6: Перейдите на веб-сайт EasyQA <span>></span> откройте проект <span>></span> элемент меню SDK Intergations <span>></span> токен копии
+    detail7: Интеграция SDK
+    detail8: Токен
+    detail9: 'Откройте класс приложения вашего проекта и добавьте код в метод onCreate:'
+  android_sdk: Android SDK
+  api_key: API KEY
+  api_token: API токен
+  are_you_sure: Вы уверены?
+  as: как
+  assign_to: Назначить
+  assigned_issues: Назначенные мне
+  assigned_to: Назначено
+  assigner: Исполнитель
+  assigner_id: Исполнитель
+  at: в
+  attachments: Вложения
+  automatic_synchronization: Автоматическая синхронизация
+  back: Назад
+  bad_connection: Плохое соединение
+  bad_token: Неверный токен
+  base_url: Базовый URL
+  begin_import: Начать импорт  
+  blog: Блог
+  board_columns: Колонки доски
+  board_name: Название доски
+  board_settings: Настройки доски
+  branch: Ветка
+  breaked: Прервано
+  breaked_synchronize: Синхронизация была нарушена!
+  build: Объект
+  build_file_ipa_or_apk: Файл сборки (IPA или APK)
+  build_version: Версия объекта
+  builds: Тест объекты
+  can_not_be_long: Не может быть длинным
+  can_not_be_zero: Не может быть равен нулю
+  invalid_license: Лицензия недействительная
+  expired_license: Срок лицензии уже истек
+  already_exists: Уже существует
+  trial_already_exists: Пробная лицензия уже существует
+  cancel: Отмена
+  cancel_my_account: Удалить мою учетную запись
+  cant_be_blank: Не может быть пустым
+  card_number: Номер карточки
+  case_type: Тип
+  cases: Кейсы
+  cases_by_module: Тесты по модулю
+  cases_by_status: Тесты по статусу
+  cases_by_type: Тесты по типу
+  cases_count: Кейсов
+  cases_down_case: тесты
+  catch_crashes_and_report_bugs_from_mobile_apps: Вылавливайте сбои и сообщайте об ошибках из мобильных приложений
+  change: Изменить
+  changed_from: изменено с
+  change_organization: Изменить профиль организации
+  change_selection: изменить выделение
+  changed_from: изменился с
+  check_all: Отметить все
+  choose_country: Выберите вашу страну
+  choose_emails_to_send_a_referral_link: Выберите получателя реферальной ссылки
+  choose_organization: Выберите организацию
+  choose_plugin: Пожалуйста, выберите плагин интеграции
+  choose_test_module: Выбрать тестовый модуль
+  choose_test_object: Выбрать объект
+  choose_test_plan: Выберите тест план
+  choose_test_run: Выберите тестовый прогон
+  choose_type_of_report: Выберите тип отчета
+  choose_user: Выберите пользователя
+  chrome_extention_instructions: Инструкции по расширению к Chrome
+  chrome_extention_instructions_details:
+    detail1: Чтобы добавить расширение chrome в свой браузер,
+    detail10: Пользователь может изменить токен или вернуться к первому экрану, нажав значок <strong>«Настройки»</strong> и выбрав «Изменить токен» или «Выйти».
+    detail2: просто нажмите на ссылку и нажмите «Установить»
+    detail3: . Теперь в углу вашего браузера должен появиться логотип EasyQA.
+    detail4: Если вы являетесь частью команды QA для разработчиков веб-приложения, и вы зарегистрированы в инструменте управления тестированием EasyQA, вы можете сообщать об ошибках после входа в систему, используя свой адрес электронной почты и пароль. Просто нажмите кнопку <strong>входа</strong> в систему на первом экране и начните заполнение данных
+    detail5: Введите <strong>токен проекта</strong>, который вы скопировали на странице <strong>Интеграции</strong> внутри вашего проекта
+    detail6: И <strong>базовый URL</strong> (
+    detail7: '- если вы используете <strong>облако EasyQA</strong> или IP-адрес вашего <strong>автономного сервера EasyQA</strong>)'
+    detail8: 'Если данные действительны, вы переместите третий экран, где вам нужно ввести свой зарегистрированный адрес электронной почты и пароль:'
+    detail9: После успешного входа в систему вы окажетесь на экране, где сможете делать скриншоты и записывать видео. Ваше имя будет отображаться как <strong>имя составителя отчета</strong> на карточке на <strong>странице «Issues»</strong> в вашем проекте.
+  click_here: КЛИКНИТЕ СЮДА
+  click_to_load: Нажмите, чтобы загрузить
+  click_the_link_below_to_unlock_your_account: 'Нажмите на ссылку ниже, чтобы разблокировать свою учетную запись:'
+  close: Закрыть
+  close_confirmation_message: Вы правда хотите закрить это модальное окно? Все измененные данные будут утеряны.
+  closed: Закрытые
+  closed_issues: Закрытые карточки
+  code_review: Обзор кода
+  column_assigned_to: Назначено
+  column_created_by: Автор
+  column_created_on: Создано
+  column_default: Умолчанию
+  column_module: Модуль
+  column_settings: Настройки колонок
+  column_status: Статус
+  column_type: Тип
+  column_updated_by: Обновил
+  column_updated_on: Обновлено
+  columns: Колонки
+  columns_visibility: Отображение колонок
+  comment:
+    case_added_to: Тест Кейс был добавлен к Тестовому Прогону %{test_run_name}
+    case_removed_from: Тест Кейс был удален из Тестового Прогона %{test_run_name}
+    deleted_by: удалил пользователь
+    issue_created: Карточка была создана
+    many: Комментарии
+    one: Коментарий
+    test_case_based_issue: На основании тест кейса была создана карточка
+    test_case_created: Тест Кейс был создан
+    test_case_moved: Тест Кейс был перемещен с модуля %{old_module} в %{new_module}
+    updated_by: обновил пользователь
+  company: Компания
+  complete: Завершено
+  confirm_my_account: Подтвердить свою учетную запись
+  confirm_your_account: Подтвердите свой аккаунт
+  confirm_your_email: Подтвердите свой адрес электронной почты
+  confirm_your_password: Подтвердите ваш пароль
+  connect: Подключить
+  connection_error_message: Не удалось установить соединение. Пожалуйста, проверьте ваши данные или повторите попытку позже
+  connection_failed: Ошибка подключения
+  contact_us: Свяжитесь с нами
+  contains: Содержит
+  continue: Продолжить
+  convert_to_issue: Преобразовать в карточку
+  copied: Скопировано!
+  copy: Скопировать
+  clone: Клонировать
+  cloned: Клонирован
+  copy_link: Копировать ссылку
+  copy_token: Скопировать токен
+  country: Страна
+  crash_id: Сбой
+  crash_on: Сбой на
+  crash_summary: Краткое описание сбоя
+  crashes: Сбои
+  crashes_by_build: Сбои по объекту
+  crashes_by_version: Сбои по версии
+  crashes_count: Количество сбоев
+  crashes_report_label: Диаграмма сбоев по версиям
+  create_bugs_tasks_improvements_etc_on_our_agile_board: Создавайте ошибки, задачи, улучшения и т.д. на нашей канбан доске
+  create_issues_on_easyqa: Создание карточки на EasyQA...
+  create_issues_on_plugin: Создание карточки на плагине…
+  create_new_organization: Создать организацию
+  create_organization: Создать организацию
+  create_project: Создать проект
+  create_status: Создать статус
+  create_status_uniq_error: Ваш проект уже имеет статус этого имени
+  create_test_object_error: Пожалуйста, добавьте .apk или файл .ipa или введите ссылку
+  create_test_plan: Создать тест план
+  create_test_plans_and_write_test_cases: Создавать планы тестирования и записывать тестовые примеры
+  create_test_run: Создать тестовый прогон
+  create_user: Создать пользователя
+  created: Созданно
+  created_at: Создан в
+  created_by: Создан
+  created_on: Создан в
+  creator: Создатель
+  csv_field: CSV поле
+  current plan: Текущий план
+  cvv: CVV
+  date_caps: ДАТА
+  date_of_tax_invoice_creation: 'Дата создания налогового счета:'
+  date_small: Дата
+  date_word: Дата
+  days_to_end:
+    few: Осталось <span class='accent'> %{count} ДНЯ</span> до конца
+    many: Осталось <span class='accent'> %{count} ДНЕЙ</span> до конца
+    one: Остался <span class='accent'> %{count} ДЕНЬ</span> до конца
+    other: Осталось <span class='accent'> %{count} ДНЕЙ</span> до конца
+  deactivate_account: Деактивировать учетную запись
+  deactivate_text_1: У вас есть возможность восстановить свою учетную запись в течение одного года.
+  deactivate_text_2: Все ваши данные будут доступны.
+  deactivate_text_3: Через год вся ваша информация будет удалена.
+  deactivate_text_title: Вы уверены, что хотите деактивировать учетную запись?
+  dear: Уважаемый(ая)
+  delete: Удалить
+  delete?: Удалить?
+  delete_case: Удалить кейс
+  delete_member: Удалить участника
+  delete_organization: Удалить организацию
+  delete_project: Удалить проект
+  delete_test_run_confirmation: Вы действительно хотите удалить тестовый прогон?
+  deleted: удалил
+  deleted_at: Удалено в
+  deleting_organization: При удалении организации будут удалены все связанные с ней проекты и тест объекты.
+  deleting_project: При удалении проекта будут удалены все связанные с ним тест объекты, проблемы и сбои.
+  description: Описание
+  detected: Обнаружен
+  device: Устройство
+  device_brand: Бренд устройства
+  device_manufacturer: Производитель устройства
+  device_model: Модель устройства
+  device_serial: Серийный номер устройства
+  devices: Приборы
+  devise:
+    confirmations:
+      new:
+        resend_confirmation_instructions: Отправить инструкции подтверждения еще раз
+    failure:
+      already_authenticated: Вы уже вошли в систему.
+      inactive: Ваша учетная запись еще не активирована.
+      invalid: Неправильный %{authentication_keys} или пароль.
+      last_attempt: У вас есть еще одна попытка, прежде чем ваша учетная запись будет заблокирована.
+      locked: Ваша учетная запись заблокирована.
+      not_found_in_database: Неправильный %{authentication_keys} или пароль.
+      timeout: Ваша сессия истекла. Пожалуйста, войдите в систему еще раз, чтобы продолжить.
+      token_is_invlaid: Confirmation token is invalid
+      unauthenticated: ''
+      unconfirmed: Вы должны подтвердить свой адрес электронной почты, прежде чем продолжить.
+    mailer:
+      confirmation_instructions:
+        action: Подвердить мою учетную запись
+        greeting: Добро пожаловать %{recipient}!
+        instruction: 'Вы можете подтвердить свой адрес электронной почты по ссылке ниже:'
+      reset_password_instructions:
+        action: Изменить мой пароль
+        greeting: Добро пожаловать %{recipient}! 
+        instruction: Кто-то запросил ссылку, чтобы изменить свой пароль, и вы можете сделать это через ссылку ниже.
+        instruction_2: Если вы не запрашивали этого, игнорируйте это сообщение.
+        instruction_3: Ваш пароль не будет изменен до тех пор, пока вы не перейдете по указанной выше ссылке и не создадите новый.
+        instruction_for_del_user: Ваш аккаунт был удален. Но
+      unlock_instructions:
+        action: Разблокировать мою учетную запись
+        greeting: Добро пожаловать %{recipient}!
+        instruction: 'Нажмите на ссылку ниже, чтобы разблокировать свой аккаунт:'
+        message: Ваш аккаунт был заблокирован из-за чрезмерного количества неудачных попыток входа в систему.
+    passwords:
+      edit:
+        change_my_password: Изменить мой пароль
+        change_your_password: Измените свой пароль
+        confirm_new_password: Подтвердите новый пароль
+        new_password: Новый пароль
+      new:
+        forgot_your_password: Забыли пароль?
+        send_me_reset_password_instructions: Отправить мне инструкции по сбросу пароля
+      user:
+        send_instructions: Вы получите электронное письмо с инструкциями о том, как сбросить пароль, за несколько минут.
+    registrations:
+      edit:
+        are_you_sure: Вы уверены?
+        cancel_my_account: Удалить мою учетную запись
+        currently_waiting_confirmation_for_email: 'Ожидаем подтверждения для: %{email}'
+        leave_blank_if_you_don_t_want_to_change_it: оставьте пустым, если вы не хотите изменить его
+        title: Изменить %{resource}
+        unhappy: Недовольны
+        update: Обновить
+        we_need_your_current_password_to_confirm_your_changes: Нам нужен текущий пароль для подтверждения изменений
+      new:
+        sign_up: Зарегистрироваться
+    sessions:
+      new:
+        sign_in: Войти в систему
+    shared:
+      links:
+        back: Назад
+        didn_t_receive_confirmation_instructions: Не получили инструкции для подтверждения?
+        didn_t_receive_unlock_instructions: Не получили инструкции, чтобы разблокировать?
+        forgot_your_password: Забыли пароль?
+        sign_in: Sign in
+        sign_in_with_provider: Войти через %{provider}
+        sign_up: Зарегистрироваться
+    unlocks:
+      new:
+        resend_unlock_instructions: Отправить инструкции для разблокировки еще раз
+  disable_all: Выключить все
+  disable_email: Отключить уведомления по электронной почте
+  distribution_groups: Группы рассылки
+  document_updated_at: Документ обновлен в
+  dont_map_this_field: Не назначайте это поле
+  download: Скачать
+  download_report: Скачать отчет
+  download_the_tax_invoice_in_pdf_format: Загрузите налоговый счет в формате PDF
+  drag_selected_column_here_to_remove: перетащить выбранную колонку сюда, чтобы удалить
+  edit: Изменить
+  edit_case: Изменить тест кейс
+  edit_module: Изменить модуль
+  edit_test_run: Редактировать
+  email: Email
+  email_confirmed: Электронная почта уже подтверждена
+  employees: Участники
+  enable_all: Включить все
+  enter_email: Введите email
+  enter_email_to_restore_password: Введите адрес электронной почты для восстановления пароля
+  enter_new_password: Ввести новый пароль
+  enter_your_company: Введите вашу компанию
+  enter_your_email: Введите адрес электронной почты
+  enter_your_first_name: Введите ваше имя
+  enter_your_last_name: Введите вашу фамилию
+  enter_your_password: Введите ваш пароль
+  enter_your_password_sample: Введите ваш пароль
+  enumerize:
+    issue:
+      issue_type:
+        bug: Ошибка
+        crash: Сбой
+        documentation: Документация
+        feature: Функция
+        no_type: Нет типа
+        task: Задание
+        usability_problem: Проблема юзабилити
+      priority:
+        critical: Критический
+        high: Высокий
+        low: Низкий
+        medium: Средний
+    payment:
+      status:
+        fail: Сбой платежа
+        pending: В процессе
+        success: Успешно
+    paypal_payment:
+      status:
+        fail: Сбой платежа
+        pending: В процессе
+        success: Успешно
+    role:
+      role:
+        admin: Администратор
+        developer: Разработчик
+        owner: Владелец
+        pm: Менеджер проекта
+        project_manager: Менеджер проекта
+        tester: Тестировщик
+        user: Пользователь
+        viewer: Зритель
+    test_case:
+      case_type:
+        boundary: Граничный
+        integration: Интеграция
+        localization: Локализация
+        negative: Негативный
+        positive: Позитивный
+        ui: Интерфейс
+    test_run_result:
+      status:
+        block: Заблокировано
+        fail: Провалено
+        pass: Пройдено
+        na: Не применимо
+        untested: Не проверено
+    user:
+      country:
+        ua: Украина
+        uk: Великобритания
+        usa: США
+  error_csv_message: Не валидный csv файл, или не правильный сепаратор
+  error_privileges_message: У вас нет прав для этой операции. Только владелец или администратор может создавать проекты.
+  error_select_organization_message: Вы не выбрали организацию
+  easyqa_sdk_will_block_its_work_without_a_correct_token: EasyQA SDK будет блокировать работу приложения без правильного токена.
+  easy_qa_team: Команда EasyQA
+  execute_test_case: Выполнить тест
+  execute_testing_by_running_test_cases: Выполнение тестирования путем запуска тестовых примеров
+  existing_user_to_organization_invitation_email_subject: Приглашение существующему пользователю
+  expected_result: Ожидаемый результат
+  expected_result_example: Ожидаемый результат после выполнения тестового случая.
+  expiration_date: Действительна до
+  start_date: Дата начала
+  export: Экспорт
+  failed: Не выполнено
+  features: Функции
+  field: поле
+  file: Файл
+  finished_cases_by_module: Пройденные тесты по модулю
+  finished_test_runs: Завершенные тестовые прогоны
+  for: для
+  from_clients: От Клиентов
+  generate: Сгенерировать
+  generate_a_project_token: Создаём токен проекта
+  generate_test_cases_report: Сгенерировать отчет о тестовых случаях
+  generate_test_run_cases_report: Сгенерировать отчет о пройденных тестах
+  get_build: Получить объект
+  get_test_object: Получить тест объект
+  git_hub_instructions:
+    chapter1: 'Перейти к: GitHub - Settings - Personal Access Tokens'
+    chapter2: и нажать Generate new token.
+    chapter3: В новом окне выберите repo.
+  git_lab_instructions:
+    chapter1: 'Перейти к: GitLab - Profile Settings - Access Token'
+    chapter2: и нажать Generate
+    chapter3: '*Если вы не являетесь владельцем или администратором проекта,'
+    chapter4: вы не можете удалять карточки
+  go_to: Перейти к
+  go_to_project: ПЕРЕЙТИ К ПРОЕКТУ
+  hello: Привет
+  hello_sample: Привет %{recipient}!
+  hi: Здравствуйте
+  hide_form: Спрятать форму
+  hours: часов
+  how_it_works: Как это работает
+  id: ID
+  id_in_project: ID в проекте
+  if_you_have_any_questions_please_contact_our_product_manager: 'Если у вас есть какие-либо вопросы, пожалуйста, свяжитесь с нашим менеджером по продуктам Яной Густи по электронной почте: yana.gusti@thinkmobiles.com'
+  import: Импорт
+  import_contacts_from: 'Импортировать контакты из:'
+  import_issues: Импорт Карточек
+  import_preview: Предварительный просмотр импорта
+  import_progress: Ход процесса импорта
+  import_test_cases: Импорт Тест кейсов
+  imported_as_an: Импортируется как
+  imported_from: Импортировано из
+  in: в
+  in_progress: Выполняемые
+  include_all_test_cases: Включить все тест кейсы
+  inform: информирует
+  information: Информация
+  install_link: Ваша ссылка для установки приложения на мобильный телефон
+  instals: Установки
+  integrate_sdk: Интеграция SDK
+  integration: Интеграция
+  integration_instruction: Инструкции по интеграции
+  integrations: Интеграции
+  invitation: Приглашение
+  invite:
+    add_members: Добавить участников
+    an_invitation: Приглашение будет отправлено новым пользователям.
+    success_resend: Приглашение было успешно отправлено.
+    default_text: Я хотел бы добавить Вас к моей организации в EasyQA.
+    emails: Введите электронные адреса вручную
+    error_1: был ранее добавлен к Вашей организации
+    error_2: У Вас нет свободных лицензий для
+    existing_users: Существующие пользователи получают доступ к этой организации.
+    good_day: Добрый день!
+    licenses_left:
+      few: У вас осталось %{count} лицензии.
+      many: У вас осталось %{count} лицензий.
+      one: У вас осталась %{count} лицензия.
+      other: У вас осталось %{count} лицензий.
+    max_count: '* Макс. 2000 символов'
+    no_licenses: У Вас не осталось свободных лицензий. Но Вы все еще можете добавлять участников, которые добавлены в другие Ваши организации.
+    note: Заметка
+    or_new_line: или новую строку
+    to_separate: чтобы отделить email адреса
+    use_separator: Используйте ,;
+  ios_instructions: iOS инструкции
+  ios_instructions_details:
+    detail1: 'Чтобы начать процесс интеграции, загрузите библиотеку iOS на странице интеграции в своем проекте в EasyQA, нажав следующую кнопку:'
+    detail10: И поместить в
+    detail11: После этого вы можете создать билд своего приложения и загрузить его в
+    detail2: Извлеките загруженный .zip-файл и добавьте эту библиотеку в свой проект, перетащив ее в папку проекта в <strong>XCode:</strong>
+    detail3: 'Перейдите в <strong>Общие</strong> настройки и добавьте EasyQA SDK в качестве <strong>встроенной среды разработки</strong>. Нажмите на кнопку «+»:'
+    detail4: и выберите
+    detail5: Выберите отображаемые на картинке переключатели и нажмите кнопку <strong>«Готово»</strong>. Вставить следующую строку в файл <strong>AppDelegate.m</strong>
+    detail6: Перейдите в инструмент управления тестированием EasyQA <span>></span> откройте проект <span>></span> меню Интеграция и копируйте токен
+    detail7: Откройте файл <strong>AppDelegate.m</strong> и вставьте в метод didFinishLaunchingWithOptions в следующей строке
+    detail8: Если вы хотите загрузить свое приложение в Test Flight или Apple Store с помощью нашей <strong>EasyQASDK.framework</strong>, вы должны добавить фазу сценария запуска.
+    detail9: 'Откройте <strong>фазу сборки</strong> и нажмите кнопку «+» и выберите <strong>«Новая фаза сценария запуска»</strong>:'
+  ios_sdk: iOS SDK
+  is_failed: не выполнено
+  is_not_project_member: не участник проекта
+  is_synchronized: синхронизирован!
+  issue:
+    bug: Баг
+    comments:
+      assigned_to: Назначен исполнитель
+    confirm_deletion: Вы уверены, что хотите удалить эту карточку?
+    crash: Креш
+    create_issue: Создать карточку
+    delete_error: Не удалось удалить карточку!
+    deleted: Карточка была успешно удалена!
+    documentation: Документация
+    edit: Редактировать
+    email_destroy: Ваша карточка "%{issue_summary}" была удалена
+    email_new: 'У вас есть новая карточка %{link}: %{issue_summary}.'
+    email_update: Ваша карточка "%{issue_summary}"(%{link}) была обновлена
+    feature: Функция
+    inform: сообщить.
+    new: Создать карточку
+    no_type: Без типа
+    task: Задания
+    usability_problem: Удобство использования
+    your_issue: Ваша карточка
+  issue_field: Поле карточки
+  issue_id: ID Карточки
+  issue_summary: Название
+  issue_type: Тип карточки
+  issue_word: Карточка
+  issues: Баг трекер
+  issues_by_priority: Карточки по приоритетности
+  issues_by_status: Карточки по статусу
+  issues_by_type: Карточки по типу
+  issues_summary: Описание
+  issues_word: Карточки
+  joined_at: Присоединился
+  king_regards: С уважением,
+  language: Язык
+  languages:
+    english: Английский
+    german: Немецкий
+    russian: Русский
+  last_updated: Последнее обновление
+  latest_build: Последний объект
+  latest_run: Последний тестовый прогон
+  latest_update: Последнее обновление
+  learn_more_how_to_use_easyqa: Подробнее о том, как использовать EasyQA
+  leave_field_blank: Оставьте это поле пустым
+  license:
+    many: Лицензии
+    many_caps: ЛИЦЕНЗИИ
+    wrong_number: 'Неверное количество лицензий: '
+    total_amount: 'Общее количество лицензий: '
+    additional_amount: Количество новых лицензий
+  licenses: лицензия(ий)
+  link_to: Ссылка на
+  link_to_object: Ссылка на объект
+  link_to_test_object: Ссылка на тест объект
+  log: Лог
+  log_error_handler_instructions: Инструкция к креш аналитике веб сервера
+  log_error_handler_instructions_details:
+    detail1: 'гем для обнаружения ошибок на вашем сервере и их обработки. На данный момент возможны три варианта действий после обнаружения ошибки: вывести в консоль, записать в отдельный файл и отправить http запросом на сайт. О них подробнее Вы можете узнать чуть ниже.'
+    detail10: К примеру, если у меня tid находится в фигурных скобках, а не в начале строки
+    detail11: В связи с тем, что этот regexp пишется в консоли, нужна двойная экранизация.
+    detail12: Гем узнает что данный запрос содержит ошибку, если находит строку, отвечающий regexp-ю ошибки
+    detail13: К примеру нам нужно вылавливать не только 500 ошибки, но и 404
+    detail14: Что бы проверить все значения по умолчанию следует ввести
+    detail15: Все время в настройках по умолчанию указано в секундах.
+    detail16: Опция <strong>--not_modify_timeout</strong> означает время, которое дается thread для того чтобы дописать логи в этот файл, если таймаут пройдет, и за это время файл не будет изменен ни разу - тогда файл отправляется на вывод, если в нем была найдена ошибка, и удаляется.
+    detail17: Опция <strong>--log_file_tracker_waiting</strong> Значит насколько часто будет проходить цикл по проверке временных файлов каждого треда.
+    detail18: Опция <strong>--debug_mode</strong> обеспечивает вывод информации в stdout о считывании с stdin.
+    detail19: Как говорилось выше, существуют три способа вывода информации
+    detail2: Для того, чтобы гем начал работать, ему необходимо обеспечить непрерывный поток входных данных. Это можно сделать двумя методами
+    detail20: В stdout. Выполняется по умолчанию, если не указан ни один из других параметров вывода.
+    detail21: В файл, если указанный параметр
+    detail22: К примеру
+    detail23: В сеть. Для этого необходимо указать параметр
+    detail24: К примеру
+    detail25: По умолчанию для отправки данных используется http метод post, но его можно легко изменить
+    detail26: К примеру
+    detail27: По умолчанию ключ, под которым находится ошибка, является message, за это значение отвечает параметр
+    detail28: К примеру
+    detail29: Если вместе с ошибкой, вам нужно отправлять некоторые дополнительные параметры то их можно задать с помощью опций
+    detail3: Провести pipe к гему. К примеру
+    detail30: Или
+    detail31: К примеру
+    detail32: Перед отправкой все ероры кодируются в <strong>Base64</strong>
+    detail4: Это обеспечит вывод stdout вашей программы в stdin гема. Минус данного подхода в том, что его можно применять только при запуске вашей программы, логи которой вы хотите трекать.
+    detail5: Указать путь к лог файлу вашей программы. К примеру
+    detail6: Таким образом вы можете начать следить за логами вашей программы не прерывая ее работы.
+    detail7: Для того чтобы корректно выводить логи, гему нужен уникальный идентификатор каждого запроса на сервер. Поскольку большинство веб серверов являются многопоточными и каждый новый запрос обрабатывается в другом потоке, то для этого лучше всего подойдет thread identificator (tid). Для того, чтобы добавить этот уникальный идентификатор, например, в фреймворке Ruby on Rails нужно добавить только одну строку
+    detail8: После этого в каждой строке выведенных логов выводится tid. Это выглядит примерно так
+    detail9: Для выявления tid гем использует regexp <em>/^\[\d+\]/</em> Но если у вас отличается способ вывода tid, при запуске можно его задать
+  logout: Выход
+  maillist_header: Выберите участников проекта
+  manage_columns: Управление колонками
+  map_fields: Присвоить поля
+  member:
+    few: '%{count} участника'
+    one: 1 участник
+    other: '%{count} участников'
+  member_name: Имя участника
+  member_names: Имена участников
+  member_token: Токен пользователя
+  members: Участники
+  message: Сообщение
+  message_was_deleted: Это сообщение было удалено
+  min_os_version: Мин ОС версия
+  module: Модуль
+  module_name: Название модуля
+  modules: Модули
+  modules_and: модули и
+  modules_count: Модулей
+  monthly_fee: Ежемесячная оплата
+  must_be_emails_present: Email адреса должны присутствовать.
+  must_be_valid_link: Ссылка должна быть действительна
+  n_a: пусто
+  name: Имя
+  new_integration: Новая интеграция
+  new_licenses: новые лицензии
+  new_status: Новый статус
+  new_test_plan: Новый тест план
+  new_test_runs: Новые тестовые прогоны
+  new_user: Новый пользователь
+  new_user_to_organization_invitation_email_subject: Приглашение нового пользователя
+  next: След
+  no_contacts: Нет контактов
+  no_member: Учетные записи участников не будут удалены.
+  no_permission_warning: У вас нет прав для просмотра этой страницы или выполнения этого действия.
+  no_plugins_for_build: Если вы хотите добавить объект, пожалуйста, создайте синхронизацию с любым репозиторием git
+  no_projects_found: Ни один проект не найдено
+  no_test_object: нет объекта
+  no_word: Нет
+  non_assigned: Не назначено
+  none: Ничего
+  not_confirmed: Пользователь не подтвержден
+  not_implemented: Не реализован
+  not_valid_apk_file_please_ensure_that_your_file_is_valid: Не валидный apk файлю Пожалуйста убедитесь что ваш файл соответствует всем требованиям.
+  notifications_enabled: Уведомления по электронной почте включены
+  number_of_cases_passed: Количество пройденных тест кейсов
+  number_of_written_cases: Количество написанных тест кейсов
+  number_of_months: Количество месяцев
+  object_added: Добавлен
+  object_title: Имя объекта
+  of_my_profile_page: на странице «Мой профиль».
+  ok: Да
+  on_easyqa_since: В EasyQA с
+  on_my_profile_page: на странице «Мой профиль».  
+  open_issues: Открытые карточки
+  open_the_application_class_of_your_project_and_add_the_following_code: 'Откройте класс приложения вашего проекта и добавьте следующий код в метод onCreate:'
+  or: или
+  or_add_link: или введите ссылку
+  or_click_resend_set_up_password_instructions_if_you_didn`t_receive_any_messages: Или нажмите «Повторно отправить инструкции настройки пароля», если вы не получили никаких уведомлений.
+  or_drag_your_image_here: или перетащите файл сюда
+  organization:
+    add_members: Добавить участников организации
+    confirm_deletion: Вы уверены, что хотите удалить эту организацию?
+    edit_title_label: Имя организации*
+    members: Участники организации
+    no_members: Организация не имеет участников
+    one: ‘Организация'
+    role: Роль в организации
+  organization_members: Участники организации
+  organization_profile: Профиль организации
+  organization_project: Организация / Проект
+  organizations: Организации
+  package_name: Имя пакета
+  paid_version: оплаченного периода
+  paid_version_over: Ваши лицензии истекли! Пожалуста, проведите ежемесячный платеж, чтобы продолжить работу
+  paste_your_unique_token_into_the_place_project_token: Вставьте ваш уникальный токен вместо project token.
+  empty_licenses: Please, add licenses to start your work with EasyQA.
+  overlimit_users: Your projects are locked because you have only %{licenses} license(s) for %{members} members. Please, remove # members or add # licenses to unlock your projects
+  parent_module_name: Название родительского модуля
+  pay: Оплатить
+  payment:
+    auto: АВТОПЛАТЕЖИ
+    many: Платежи
+    next_regular: Следующий регулярный платеж
+    one: Платеж
+    regular: Регулярный платеж
+    waiting: Подождите окончание последнего платежа
+  payment_failed: Платеж не прошел
+  payment_history: История платежей
+  payment_methods: Платежные методы
+  payment_successful: Успешная оплата
+  payment_reminder: Напоминание о платеже
+  permanent_action: Вы не сможете отменить это действие.
+  personal_info_tab: вкладке «Личная информация»
+  phone_type: Тип ОС
+  pivotal_instructions:
+    chapter1: 'Перейти к: PivotalTracker - Profile'
+    chapter2: Вы можете найти свой ключ API в нижней части страницы
+  plans_and_billings: Планы и Оплаты
+  plans_and_billings_tab: вкладке «Планы и Оплаты»
+  platform: Платформа
+  platforms: Платформы
+  please_check_your_email: Пожалуйста, проверьте свою электронную почту!
+  please_check_your_paypal_account_to_proceed_your_payment: Пожалуйста, проверьте свою учетную запись PayPal, чтобы продолжить платеж.
+  please_fill_billing_address_and_other_info: Пожалуйста, заполните платежный адрес и другую информацию на 
+  please_set_up_your_password_to_continue_the_registration_process: 'Пожалуйста, настройте свой пароль, чтобы продолжить процесс регистрации:'
+  plugin: Плагин
+  plugin_for_integration_with: Плагин для интеграции с
+  plugin_integrations: Интеграция плагинов
+  plugin_synchronization: Синхронизация плагина
+  plugins: Плагины
+  position: Позиция
+  pre_steps: Предварительные шаги
+  presteps: Предварительные шаги
+  presteps_example: Предварительные шаги этого теста.
+  presteps_example_with_ref: Предварительные шаги этого теста. Взять с другого тестового случая с [C#] (e.g. [C17]).
+  preview_report: Просмотреть отчет
+  prices: Цены
+  pricing: Цены
+  print: Распечатать
+  priority: Приоритет
+  privacy_policy: Privacy Policy
+  project:
+    activity: Активность за последние 30 дней
+    add_new: Добавить новый проект
+    confirm_deletion: Вы уверенны что хотите удалить этот проект?
+    edit_project: Редактировать проект
+    invite: Пригласить пользователей в проект
+    last_object: 'Последний тест объект:'
+    last_updated: Последние обновление
+    latest_test_object: Последний тест объект
+    manage_members: Управление пользователями
+    test_objects: Тест объекты
+    title: Название проекта
+  project_graphics: Графики проектов
+  project_history: История проекта
+  project_id: ID проекта
+  project_info: Информация о проекте
+  project_issue_number: Номер карточки проекта
+  project_key: Ключ проекта
+  project_name: Название проекта
+  project_not_found: Проект не найден
+  project_notifications: Уведомления по проекту
+  project_overview: Обзор
+  project_overview_graph_name: Активность за последние 30 дней
+  project_role: Роль в проекте
+  project_single: Проект
+  project_spent_time: Потраченное время на проект
+  project_summary: Описание проекта
+  project_url: URL проекта
+  project_users_spent_time: Потраченное время пользователей на проекте
+  projects: Проекты
+  promocode:
+    new: Новый промокод
+    apply: Применить
+    enter: Введите промокод
+    invalid: Промокод не действителен
+    discount: "%{discount}% скидка"
+    number_of_licenses:
+      one: " на 1 лицензию"
+      few: " на %{count} лицензии"
+      many: " на %{count} лицензий"
+      other: " на %{count} лицензий"
+    number_of_months:
+      one: " на 1 месяц"
+      few: " на %{count} месяца"
+      many: " на %{count} месяцев"
+      other: " на %{count} месяцев"
+  pushed_issues: Синхронизированные карточки
+  qa_review: QA Обзор
+  quantity: Количество
+  received: Получено
+  redmine_instructions:
+    chapter1: 'Перейти к: Redmine - Administration - Settings - Authentication'
+    chapter2: отметьте пункт "Enable REST web service" и нажмите "Save"
+    chapter3: 'Перейти к: Redmine - My account'
+    chapter4: Вы можете найти свой ключ API на правой панели
+  reduce_licenses: Вы хотите уменьшить количество лицензий до
+  referral_program: Реферальная программа
+  refresh_token: Обновить токен
+  registered_by_your_referral_link: зарегистрированный вашей реферальной ссылкой
+  register_new_account: Зарегистрировать новую учетную запись
+  reload: Загрузить
+  reopened: Переоткрытые
+  report:
+    bug: Создать баг
+    found: Нашли проблему в EasyQA?
+    send: Отправить отчет
+    to_project: Сообщить об ошибке в проекте EasyQA
+  report_bug_error_message: <span>Извините, но что-то пошло не так. :(</span><span>Пожалуйста, повторите попытку позже.</span>
+  report_bug_success_message: <span>Баг был успешно отправлен!</span><span>Спасибо за внимание.</span>
+  report_builder: Генератор отчетов
+  report_pdf: Отчет PDF
+  report_title: Название отчета
+  reportable:
+    all_spent_time: Полное потраченое время
+    crashes_count: Количество сбоев
+    issues_count: Количество карточек
+    modules_count: Количество модулей
+    test_cases_count: Количество тестовых случаев
+    test_objects_count: Количество тестовых объектов
+  reported_issues: Созданные мною
+  reporter: Создатель
+  reporter_id: Создатель
+  reports:
+    issues:
+      by_priority: Карточки по приоритетности
+      by_status: Карточки по статусу
+      by_type: Карточки по типу
+  required_fields: поля обязательные для заполнения
+  resend_confirmation_instructions: Отправить инструкции подтверждения еще раз
+  resend_invite: Отправить приглашение
+  resend_set_up_password_instructions: Повторно отправить инструкции настройки пароля 
+  restore: Восстановить
+  restore_account: Восстановить учетную запись
+  restore_text_p1: Вы можете восстановить свою учетную запись со всей информацией, которая была в ней.
+  restore_text_p2: Если так, то нажмите кнопку восстановить учетную запись, если нет, то зарегистрируйте новую учетную запись.
+  restore_your_account: Восстановить учетную запись
+  retry: Повторить
+  save: Сохранить
+  save_changes: Сохранить
+  save_module: Сохранить
+  save_object: Сохранить
+  save_test_plan: Сохранить
+  sdk_integrations: SDK Интеграции
+  sdk_version: SDK версия
+  search: Поиск
+  search_issue: Найти карточку
+  section: Модуль
+  section_on_my_profile_page: на странице Мой профиль.
+  select: Выбрать
+  select_cases: Выбрать тесты
+  select_some_options: Выберите некоторые параметры
+  select_specific_test_cases: Выбрать определенные тест кейсы
+  select_the_csv_fields_to_import: Выберите поля из CSV-файла для импорта, а затем выберите соответствующие поля, где будут преобразованы данные
+  send: Отправить
+  send_by_email: Отправить по электронной почте
+  send_email: Отправить Email
+  send_link: Отправить ссылку
+  send_reset_password_instructions: Отправить мне инструкции по сбросу пароля
+  sent_you_an_invitation: отправил вам приглашение
+  separator: Разделитель
+  sessions: Сессии
+  set_up_your_password: Настройте свой пароль
+  settings: Настройки
+  share_link: 'Поделиться ссылкой:'
+  share_your_test_object: Поделитесь своим тестовым объектом
+  should_be_at_least_6_characters: Должно быть не менее 6 символов
+  show: Показать
+  show_all: Показать все
+  show_case: Просмотр тест кейса
+  show_issue: Показать карточку
+  show_less: Показать меньше
+  show_more: Показать еще
+  sign_in: Вход
+  sign_in_via: Вход через
+  sign_in_via_email: Вход через электронную почту
+  sign_up: Регистрация
+  sign_up_via_email: Регистрация по электронной почте
+  size: Размер
+  something_went_wrong_please_check_your_credentional: Что-то пошло не так. Пожалуйста проверьте ваши учетные данные
+  sort_by: 'Сортировать по: '
+  spent_time: Потраченное время
+  sprint_name: Названия спринта
+  started: Создано в
+  starting: Запуск…
+  status: Статус
+  status_id: Статус
+  status_sub_title: Выбранные поле используется, по крайней мере, одним проектом, который не связан с этой доской. Переименование или добавление новых столбцов будет влиять на все проекты, использующие выбранный столбец.
+  status_uniq_name_error: Должен быть уникальным в проекте
+  steps: Шаги
+  steps_example: Необходимые шаги для выполнения тестового случая.
+  stop_import: Остановить импорт
+  stop_synchronization: Остановить синхронизацию
+  submitted: Созданные
+  subscribe: Подписаться
+  success: Успешно
+  summary: Название
+  synchronization_progress: Выполнение синхронизации
+  synchronize: Синхронизировать
+  synchronize_text: Синхронизация
+  tax_invoice_id: 'Идентификатор налогового счета:'
+  team: Команда
+  term_and_cond: Term and Cond
+  term_and_conditions: Условия и положения
+  test_activities: Тестовая активность
+  test_case: Тест кейс
+  test_case_delete_confirmation: Вы уверены, что хотите удалить этот тестовый случай ?
+  test_case_expected_result: Ожидаемый результат
+  test_case_id: Тест Кейс
+  test_case_included:
+    few: <span>%{count}</span> тест кейсa включено
+    one: <span>1</span> тест кейс включен
+    other: <span>%{count}</span> тест кейсов включено
+  test_case_steps: Шаги
+  test_cases: Тест кейсы
+  test_module: Тестовый модуль
+  test_object: Тестовый объект
+  test_object_has_been_deleted_successfully: Тестовый объект был удален успешно.
+  test_objects: Тест объекты
+  test_plan: Тест план
+  test_plan_activity: Тестирование
+  test_plans: Тест планы
+  test_reports: Тестовые отчеты
+  test_run: Выполнение тестов
+  test_run_successfully_cloned: Тестовый прогон был успешно клонирован.
+  test_run_chart_info:
+    passed: Пройдено
+    tests: тесты
+    untested: Не проверено
+  test_run_example:
+    assigned_to: Пользователь, который будет выполнять тестирование, должны быть первоначально назначены. Электронный адрес отправляется пользователю если уведомления по электронной почте включены.
+    description: Используйте, чтобы описать цель этого тестового прогона.
+    include_all: Выберите этот параметр, чтобы включить все тест кейсы в этом тестовом прогоне.
+    select_specific: В качестве альтернативы можно выбрать тест кейсы, чтобы включить в этот тестовый прогон.
+    title: 'Например: Выполнение тестов 16/08/2016, Объект 240 или Версия 3.0'
+  test_run_mail:
+    destroy: Ваш тестовый прогон "%{run_title}" был удален.
+    new: У вас есть новый тестовый прогон "%{run_title}".
+    update: Ваш тестовый прогон "%{run_title}" был обновлен
+  test_run_notification_label: Уведомления о тестовых прогонах
+  test_run_result_status:
+    blocked: Блокирован
+    failed: Провален
+    passed: Пройден
+    untested: Не проверен
+    na: Не применим
+  test_run_step_button:
+    finish: Завершить выполнение тестов
+    next: След
+    prev: Пред
+  testing_activities: Тестирование
+  testong_activities: Тестовая Деятельность
+  thank_you: Спасибо Вам!
+  the_link_was_sent_successfully: <span>Ссылка была успешно отправлена</span>
+  the_refreshment_is_needed_in_case_one_of_your_team_members: Обновление требуется в случае, если один из членов вашей команды покидает проект, и вы ограничите этой особе возможность использовать приложение (так как участники используют свои устройства, чтобы протестировать приложение).
+  this_is_friendly_reminder_about_your_payment_period_will_expire_in_three_days: Это дружеское напоминание о том, что срок оплаты истекает через 3 дня.
+  time_spent: Потраченное время
+  time_word: Время
+  title: Название
+  to: к
+  to_be_discussed: Обсуждаемые
+  to_do_this_click_the_link_that_we_have_sent_you_in_the_email: Для этого нажмите на ссылку, которую мы отправили вам по электронной почте.
+  to_in: в
+  to_issues: Карточкам
+  to_na: на
+  to_start_the_integration_process_just_add_the_dependency: 'Чтобы начать процесс интеграции, просто добавьте зависимость в файле build.gradle вашего приложения:'
+  to_test_cases: Тест кейсам
+  to_upload_builds_from_your_building: для загрузки сборок прямо из GitHub или GitLab хранилищ
+  to_user: на
+  to_view_the_transaction_log_just_log_into_the_easyqa_account_and_open_the: Чтобы просмотреть журнал транзакций, войдите в учетную запись EasyQA и откройте
+  token: Токен
+  token_is_a_unique_identifier_of_your_project: Токен является уникальным идентификатором вашего проекта. Вы можете создать его на странице интеграций в рамках вашего
+  total: Всего
+  tracker_name: Название трекера
+  tracker_not_found: Трекер не найден
+  trello_instructions:
+    chapter1: Перейдите по ссылке https://trello.com/1/appKey/generate
+    chapter2: Перейдите по ссылке https://trello.com/1/appKey/generate
+    chapter3: Перейдите по ссылке с названием 'Токен' и нажмите 'Разрешить'
+    chapter4: Вы можете найти свой Токен в нижней части страницы
+  trial_started: Ваш 30 дневный пробный период начался
+  trial_version: пробного периода
+  trial_version_over: Ваш пробный период закончился! Пожалуйста, купите лицензии, чтобы продолжить работу
+  try_for_free: ПОПРОБУЙ БЕСПЛАТНО
+  try_log_in: Попробуйте ввойти в систему
+  turn_off_sync: Отключить синхронизацию
+  turn_on_notification: Включить уведомления
+  type: Тип
+  un_subscribe: Отписаться
+  uniq_build_in_project_error: Тест объект с такими параметрами уже существует. Пожалуйста, измените название версии.
+  unlock_my_account: Разблокировать свою учетную запись
+  update: Обновить
+  update_error: ' Изменения не были сохранены, проверьте правильность введенных данных '
+  update_issues_on_easyqa: Обновление карточки на EasyQA...
+  update_success: Обновление прошло успешно
+  updated: обновил
+  updated_by: Обновлен
+  updated_on: Обновлен в
+  updates: Обновления
+  upload_build: Добавить новый тест объект
+  upload_csv_file: Загрузить CSV файл
+  upload_first_build: Добавить первый тест объект
+  upload_first_object: Добавить первый объект
+  upload_object: Добавить объект
+  user: Пользователь
+  user_created: Пользователь создан
+  user_spent_time: Потраченное время пользователя
+  users:
+    billings_info: Платежная информация
+    change_my_password: Изменить пароль
+    change_password: Изменение пароля
+    confirm_new_password: Подтвердите новый пароль
+    current_password: Текущий пароль
+    date_registration: 'Дата регистрации:'
+    incorrect_password: Некорректный Текущий пароль
+    last_sign_in: 'Последний вход:'
+    my_organizations: Мои организации
+    my_projects: Мои проекты
+    new_password: Новый пароль
+    notifications: Уведомления
+    password_updated: Пароль обновлен
+    personal_information: Личная информация
+    profile: Мой Профиль
+  users_list: Список участников
+  validation_errors:
+    invite_user_undefined_email: одна из введенных электронных почт является недействительной
+  via: через
+  view_plans: СМОТРЕТЬ ПЛАНЫ
+  was_changed_from: была изменена с
+  was_suspended: было приостановлено.
+  we_are_contacting_you_to_notify_you_that_your_password_has_been_changed: Мы свяжемся с вами, чтобы уведомить вас о том, что ваш пароль изменен.
+  we_have_prepared_an_electronic_tax_invoice_for_your_last_purchase: 'Мы подготовили электронный налоговый счет для вашей последней покупки:'
+  yes_word: Да
+  you_are: Вы
+  you_buy: Вы хотите купить
+  you_can_also_use_our: Вы можете также использовать наши
+  you_can_paste_file_with_ctrl_v: Вы можете вставить файл с помощью ctrl+v
+  you_can_register_in_easyqa_test_management_tool_and_organize_your_testing_process: 'Вы можете зарегистрироваться в EasyQA Test Management Tool и организовать процесс тестирования:'
+  you_can_review_your_payments_details_on: Вы можете просмотреть данные о платежах на
+  you_have_to_set_up_your_password_to_continue_the_registration_process: Чтобы продолжить процесс регистрации, вам необходимо настроить свой пароль.
+  you_have_tried_to_pay_for_your_easyqa_license_but_the_transaction_was_not_successful: Вы пытались оплатить лицензию(и) EasyQA, но транзакция не была успешной.
+  you_just_need_to_click_on_copy_token_button_to_copy_the_token_to_the_clipboard: Вам просто нужно нажать на кнопку Копировать токен, чтобы скопировать эго в  буфер обмена. Идентификатор является уникальным для каждого проекта и может быть обновлен.
+  you_will_receive: Вы будете получать уведомления по электронной почте о важных системных событиях, таких как новый тест объект доступен, ошибки оплаты и т.д. ...
+  you_were_added_to_project: Вы были добавлены в проект
+  your_account_has_been_locked_due_to_an_excessive_number_of_unsuccessful_sign_in_attempts: Ваша учетная запись заблокирована из-за чрезмерного количества неудачных попыток.
+  your_mail_has_been_sent_successfully: Ваша почта успешно отправлена
+  your_new_promocode_for_1_license_is: Ваш новый промокод для 1 лицензии
+  your_organization_member_has_been_deleted_successfully: Ваш член организации был удалён успешно.
+  your_participation_at_project: Ваше участие в проекте
+  your_password_has_been_changed: Ваш пароль был изменён
+  your_projects: Твои Проекты
+  your_role: Ваша роль
+  your_role_in_project: Ваша роль в проекте
+  your_subscription_details: 'Ваши данные подписки:'
+  yours: Ваш

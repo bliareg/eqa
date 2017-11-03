@@ -1,0 +1,9 @@
+<div id="error_message" class="error_message">
+  <ul>
+    <% @errors.each do |key, values| %>
+      <% values.each do |message| %>
+        <li><strong><%= "#{key.to_s} - " unless key.eql?(:no) %></strong><%= message %></li>
+      <% end %>
+    <% end %>
+  </ul>
+</div>

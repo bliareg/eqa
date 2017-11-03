@@ -1,0 +1,353 @@
+.testRun {
+
+  &-nav {
+    @extend %clearfix;
+    height: 50px;
+    margin-top: 10px;
+    background-color: $test-run-nav-bg;
+    border-radius: 6px;
+    overflow: hidden;
+
+    .id {
+      float: left;
+      position: relative;
+      top: 10px;
+      left: 10px;
+      height: 30px;
+      min-width: 37px;
+      margin-right: 30px;
+      color: $white;
+      text-align: center;
+      background-color: $test-run-nav-id-bg;
+      border-radius: 4px;
+      @include rem(font-size, 14px);
+    }
+
+    .value {
+      line-height: 30px;
+    }
+
+    .title {
+      float: left;
+      color: $base-text;
+      line-height: 50px;
+      font-weight: 600;
+      @include rem(font-size, 16px);
+      max-width: 300px;
+
+    }
+
+    .switch {
+      float: right;
+      margin: 10px 15px;
+    }
+
+    .switch-subscribe {
+      float: right;
+      line-height: 50px;
+      @include rem(font-size, 14px);
+    }
+
+    .list {
+      float: right;
+      height: 100%;
+      @extend %clearfix;
+
+      li {
+        float: left;
+        height: 100%;
+        padding: 0 20px;
+        border-left: 1px solid $test-run-nav-list-border;
+        line-height: 50px;
+        transition: all 350ms ease-in-out 0s;
+        @include rem(font-size, 14px);
+
+        svg {
+          margin-right: 9px;
+          vertical-align: middle;
+        }
+
+        a {
+          color: $base-text;
+          transition: all 350ms ease-in-out 0s;
+        }
+
+        .icon-edit-icon-blue,
+        .icon-print-icon,
+        .fa-clone,
+        .icon-delete-icon {
+          margin-right: 3px;
+        }
+
+        .test-run-list-svg {
+          transition: all 350ms ease-in-out 0s;
+        }
+
+        &:hover {
+          color: $white;
+          border-left: 1px solid $test-run-nav-list-hover;
+          background-color: $test-run-nav-list-hover;
+
+          a {
+            color: $white;
+          }
+
+          .test-run-list-svg {
+            fill: $white;
+          }
+        }
+      }
+    }
+  }
+
+  &-test-header {
+    @extend %clearfix;
+    height: 50px;
+    background-color: $test-run-header-bg;
+    border-radius: 6px 6px 0 0;
+
+    .continue-btn {
+      float: left;
+      width: 125px;
+      padding: 0 20px;
+      line-height: 50px;
+      color: $green-1;
+      cursor: pointer;
+      @include rem(font-size, 15px);
+    }
+
+    .export,
+    .columns {
+      float: right;
+      //width: 125px;
+      padding: 0 20px;
+      color: $white;
+      text-align: right;
+      line-height: 50px;
+      border-left: 1px solid $test-run-header-border;
+      cursor: pointer;
+      @include rem(font-size, 13px);
+
+      span[class^="icon-"] {
+        margin-right: 5px;
+        vertical-align: middle;
+      }
+    }
+
+    .export {
+      span[class^="icon-"] {
+        display: inline-block;
+        margin-right: 5px;
+        margin-bottom: 2px;
+        font-size: 18px;
+        vertical-align: middle;
+      }
+    }
+  }
+
+  &-test {
+    .cases-test-content {
+      overflow: visible !important;
+    }
+    .cases-info-item {
+
+      .module-item {
+        width: 100%;
+      }
+    }
+  }
+
+  &-test-filter {
+    float: left;
+    width: 50%;
+    height: 100%;
+    padding: 10px 0;
+    color: $white;
+  }
+
+  .input_wrapper {
+    margin-bottom: 0;
+  }
+
+  .testRun-filter-item {
+    position: relative;
+    float: left;
+    width: 16%;
+    margin-left: 60px;
+
+    .title {
+      position: absolute;
+      top: 5px;
+      left: -41px;
+      margin-bottom: 0;
+      color: $white;
+    }
+
+    .dd-container {
+      border: none;
+
+      .dd-select {
+        box-shadow: none;
+        background: transparent !important;
+
+        &-text {
+          color: $white;
+        }
+
+        .dd-selected {
+          padding-left: 5px;
+
+          &-text {
+            padding: 0;
+            color: $test-run-dd-color;
+            line-height: 15px !important;
+          }
+
+          .dd-pointer {
+            right: -16px;
+            top: 60%;
+          }
+        }
+
+        .dd-pointer-down {
+          border-top: solid 5px $white;
+        }
+
+        .dd-pointer-up {
+          border-bottom: solid 5px $white !important;
+        }
+      }
+    }
+
+    .dd-options {
+      top: 30px;
+      border: 1px solid $test-run-dd-border;
+      background-color: $test-run-dd-bg;
+
+      li {
+        border-bottom: 1px solid $test-run-dd-border;
+      }
+
+      .dd-option {
+        padding-left: 5px;
+
+        &:hover {
+          background: rgba(246, 246, 246, 0.2);
+        }
+
+        &-text {
+          padding: 0;
+          color: $white;
+          line-height: 20px !important;
+        }
+
+        &-selected {
+          background: rgba(246, 246, 246, 0.2);
+        }
+      }
+    }
+
+    &:first-child {
+      border-right: 1px solid $blue-10;
+      padding-right: 5px;
+    }
+
+    &:last-child {
+      .dd-pointer {
+        right: 27px;
+      }
+    }
+  }
+
+  .cases-info-item {
+    margin-right: 0;
+    padding: 0;
+
+    td, th {
+      min-width: 40px;
+      padding: 5px;
+      border-right: 1px solid $base-border;
+    }
+
+    td {
+      cursor: pointer;
+    }
+
+    tr {
+      td:last-child,
+      th:last-child {
+        border-right: 0;
+      }
+    }
+
+    .test-progress {
+      display: inline-block;
+      width: 128px;
+      height: 22px;
+      margin-top: 10px;
+      margin-left: 20px;
+      border: 1px solid $base-border;
+      border-radius: 4px;
+    }
+
+    .test-title {
+      a {
+        color: $base-text;
+
+        &:hover {
+          color: $link-hover;
+        }
+      }
+    }
+
+    .assignedTo {
+      width: 100px;
+    }
+
+    .status {
+      padding: 5px;
+      width: 100px;
+
+      .status-block {
+        width: 100%;
+        height: 20px;
+        color: $white;
+        line-height: 20px;
+        text-align: center;
+        border-radius: 4px;
+
+        &.pass {
+          background: $test-run-passed;
+        }
+
+        &.block {
+          background: $test-run-blocked;
+        }
+
+        &.fail {
+          background: $test-run-failed;
+        }
+
+        &.untested {
+          background: $test-run-untested;
+          color: $base-light-text;
+        }
+
+        &.not-available {
+          background: $test-run-not-available;
+          color: $white;
+        }
+      }
+    }
+
+    td.status {
+      min-width: 75px;
+    }
+
+    //.select {
+    //  width: 20%;
+    //  padding-right: 5px;
+    //}
+  }
+}
+

@@ -1,0 +1,41 @@
+<%= form_tag(url, method: :get, class: 'filter_form') do %>
+   <%=label_tag 'Period' %>
+  <div class="date_range input filter_form_field filter_date_range">
+    <%= text_field_tag 'q[created_at_gteq_date]',
+                       (params[:q].present? ? params[:q][:created_at_gteq_date] : 2.month.ago.to_date),
+                       maxlength: 10, size: 12,
+                       autocomplete: :off,
+                       class: 'datepicker' %>
+    -
+    <%= text_field_tag 'q[created_at_lteq_date]',
+                       (params[:q].present? ? params[:q][:created_at_lteq_date] : Date.today),
+                       maxlength: 10, size: 12,
+                       autocomplete: :off,
+                       class: 'datepicker' %>
+  </div>
+  <%= label_tag 'Countries' %>
+  <br>
+  <%= select_tag "q[country_in]",
+                 options_from_collection_for_select(ISO3166::Country.countries,
+                                                    'un_locode', 'name',
+                                                    (params[:q][:country_in] if params[:q].present?)),
+                 class: 'chosen',
+                 multiple: true,
+                 data: { placeholder: "Select countries" } %>
+
+  <br>
+  <%= label_tag 'Company:' %>
+  <br>
+  <%= text_field_tag 'q[company_eq]', (params[:q][:company_eq] if params[:q].present?) %>
+  <br>
+  <%= label_tag 'Except company:' %>
+  <br>
+  <%= text_field_tag 'q[company_not_eq]', (params[:q][:company_not_eq] if params[:q].present?) %>
+  <br>
+  <br>
+  Except ThinkMobiles <%= check_box_tag :except_tm, true, params[:except_tm] %>
+  <div class="buttons">
+    <%= submit_tag "Filter" %>
+    <%= link_to 'Clear Filters', '#', class: 'clear_filters_btn' %>
+  </div>
+<% end %>

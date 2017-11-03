@@ -1,0 +1,55 @@
+{
+  "resource": "Test Plans",
+  "http_method": "GET",
+  "route": "/api/v1/test_plans",
+  "description": "List all test plans",
+  "explanation": null,
+  "parameters": [
+    {
+      "required": true,
+      "name": "auth_token",
+      "description": "User authenticity token"
+    },
+    {
+      "required": true,
+      "name": "token",
+      "description": "Uniq project token"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "/api/v1/test_plans?token=r5b%2BEfniccARuof4CfXR7me8m8SgMT9S6&auth_token=sWO1effyzIqpupR06q1e4T8lIVm%2FCkFN19",
+      "request_body": null,
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+        "token": "r5b+EfniccARuof4CfXR7me8m8SgMT9S6",
+        "auth_token": "sWO1effyzIqpupR06q1e4T8lIVm/CkFN19"
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "[\n  {\n    \"id\": 1,\n    \"project_id\": 6,\n    \"created_by\": 16,\n    \"title\": \"Lilies of the Field\",\n    \"description\": \"Who's the more foolish; the fool, or the fool who follows him?\",\n    \"created_at\": \"2017-03-07T08:31:06.629Z\",\n    \"updated_at\": \"2017-03-07T08:31:06.629Z\"\n  },\n  {\n    \"id\": 2,\n    \"project_id\": 6,\n    \"created_by\": 16,\n    \"title\": \"His Dark Materials\",\n    \"description\": \"It's not impossible. I used to bullseye womp rats in my T-16 back home, they're not much bigger than two meters.\",\n    \"created_at\": \"2017-03-07T08:31:06.945Z\",\n    \"updated_at\": \"2017-03-07T08:31:06.945Z\"\n  },\n  {\n    \"id\": 3,\n    \"project_id\": 6,\n    \"created_by\": 16,\n    \"title\": \"The Widening Gyre\",\n    \"description\": \"You do have your moments. Not many, but you have them.\",\n    \"created_at\": \"2017-03-07T08:31:07.009Z\",\n    \"updated_at\": \"2017-03-07T08:31:07.009Z\"\n  },\n  {\n    \"id\": 4,\n    \"project_id\": 6,\n    \"created_by\": 16,\n    \"title\": \"Wildfire at Midnight\",\n    \"description\": \"Strike me down, and I will become more powerful than you could possibly imagine.\",\n    \"created_at\": \"2017-03-07T08:31:07.072Z\",\n    \"updated_at\": \"2017-03-07T08:31:07.072Z\"\n  },\n  {\n    \"id\": 5,\n    \"project_id\": 6,\n    \"created_by\": 16,\n    \"title\": \"A Monstrous Regiment of Women\",\n    \"description\": \"I have a bad feeling about this.\",\n    \"created_at\": \"2017-03-07T08:31:07.134Z\",\n    \"updated_at\": \"2017-03-07T08:31:07.134Z\"\n  },\n  {\n    \"id\": 6,\n    \"project_id\": 6,\n    \"created_by\": 16,\n    \"title\": \"A Time to Kill\",\n    \"description\": \"Bounty hunters! We don't need this scum.\",\n    \"created_at\": \"2017-03-07T08:31:07.196Z\",\n    \"updated_at\": \"2017-03-07T08:31:07.196Z\"\n  }\n]",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"5ddd68b1c52e6aa8a25361f937afc837\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "9e2f6f83-e749-4d7e-94a3-9c684fae3656",
+        "X-Runtime": "0.117994",
+        "Content-Length": "1386"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"http://localhost:3000/api/v1/test_plans?token=r5b%2BEfniccARuof4CfXR7me8m8SgMT9S6&auth_token=sWO1effyzIqpupR06q1e4T8lIVm%2FCkFN19\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

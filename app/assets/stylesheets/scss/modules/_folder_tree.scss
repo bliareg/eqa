@@ -1,0 +1,32 @@
+.jstree-default {
+
+  .jstree-anchor {
+    padding: 0;
+  }
+
+  .jstree-clicked {
+    background: transparent;
+    border-radius: 2px;
+    border-color: transparent;
+    box-shadow: none;
+  }
+
+  .jstree-hovered{
+    background-color: $jstree-hovered;
+    border-radius: 2px;
+
+    .folder-title {
+      color: $folder-title;
+    }
+  }
+}
+
+.folder-title {
+  padding-right: 5px;
+  color: $base-text;
+  font-family: $base-font-family;
+  font-weight: 400;
+  @include rem(font-size, 14px);
+}
+
+

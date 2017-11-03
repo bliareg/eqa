@@ -1,0 +1,54 @@
+{
+  "resource": "Roles",
+  "http_method": "GET",
+  "route": "/api/v1/roles/:id",
+  "description": "Show",
+  "explanation": null,
+  "parameters": [
+    {
+      "required": true,
+      "name": "auth_token",
+      "description": "User authenticity token"
+    },
+    {
+      "required": true,
+      "name": "id",
+      "description": "Role id"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "/api/v1/roles/57?auth_token=cjIywkHBYO%2Bp8g1cKyauxei27w%2Fzjdtr33",
+      "request_body": null,
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+        "auth_token": "cjIywkHBYO+p8g1cKyauxei27w/zjdtr33"
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"id\": 57,\n  \"organization_id\": 14,\n  \"project_id\": null,\n  \"user_id\": 31,\n  \"role\": \"owner\",\n  \"created_at\": \"2017-04-14T07:55:40.400Z\",\n  \"updated_at\": \"2017-04-14T07:55:40.400Z\",\n  \"is_subscribed\": null,\n  \"deleted_at\": null\n}",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"44114a296960d09c6aa7e0f139adb2a1\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "515a7123-2ed2-4833-b727-5507055e7126",
+        "X-Runtime": "0.055537",
+        "Content-Length": "195"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"http://localhost:3000/api/v1/roles/57?auth_token=cjIywkHBYO%2Bp8g1cKyauxei27w%2Fzjdtr33\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

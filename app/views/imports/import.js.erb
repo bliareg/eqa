@@ -1,0 +1,49 @@
+$(MODAL_CLASS).html("<%= j render 'import_progress' %>" );
+show_modal();
+
+var progress_path = "<%= progress_info_path(@job_id) %>",
+    is_stoped = false;
+
+$('#importProgressbar').progressbar({
+  value: 0,
+  complete: function() {
+    $('.status').next('.text').text("<%= t 'complete' %>");
+    $('.sync_break').hide();
+    $('.sync_ok').show();
+  },
+  create: function() {
+    $('.status').next('.text').text("<%= t 'starting' %>");
+  }
+});
+
+$('.sync_break').click(function() {
+  $.ajax({
+    type: 'DELETE',
+    url: "<%= kill_job_path(@job_id) %>",
+    success: function() {
+      is_stoped = true;
+      $('#importProgressbar').progressbar({ value: 100 });
+      $('.status').next('.text').text("<%= t 'breaked' %>");
+    }
+  });
+});
+
+progressBarLoad();
+
+function progressBarLoad() {
+  if ( is_stoped ) {
+    return ;
+  }
+
+  $.ajax({
+    url: progress_path,
+    success: function(data) {
+      $('#importProgressbar').progressbar({ value: data.progress });
+      $('.received').prev('.percent').text(data.progress + '%');
+
+      if ( data.progress < 100 ) {
+        setTimeout(progressBarLoad, 700);
+      }
+    }
+  });
+}

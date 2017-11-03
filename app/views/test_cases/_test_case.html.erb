@@ -1,0 +1,34 @@
+<tr class='test_case_item cases-clikable' id="case_<%= test_case.id %>">
+  <% if @column_visibility.sort_order.nil? %>
+    <td class="drag" style='width: <%= @column_set['drag_icon'] %>%'>
+      <span class='icon-drag-icon'></span>
+    </td>
+    <td class="checkbox" style='width: <%= @column_set['drag_checkbox'] %>%'>
+      <input type="checkbox" class="checkbox" id="checkbox-case-<%= test_case.id %>" autocomplete='off'/>
+      <label for="checkbox-case-<%= test_case.id %>" class="checkbox-label"></label>
+    </td>
+  <% end %>
+  <td class="id" case_id="<%= test_case.id %>" title='<%= test_case.id_in_project %>' style='width: <%= @column_set['id'] %>%'>
+    <%= test_case.id_in_project %>
+  </td>
+  <td class="test-title" title='<%= test_case.title %>' style='width: <%= sorted_title_width %>%'>
+    <%= test_case.title %>
+  </td>
+  <% (@column_set.keys & ::TestCase::VISIBLE_COLUMNS.keys).each do |name| %>
+    <td class="<%= generate_class_from_name(name) %>" title='<%= test_case.get_column_value(name) %>' style='width: <%= @column_set[name] %>%'>
+      <%= test_case.get_column_value(name) %>
+    </td>
+  <% end %>
+  <td class="select" style='width: <%= @column_set['edit_delete'] %>%'>
+    <div class="test-lead">
+      <% if policy(@project).tester_or_higher_rank? %>
+        <%= link_to destroy_case_confirm_path(test_case), remote: true, class: 'delete' do %>
+          <span class='icon-basket-icon'></span>
+        <% end %>
+        <%= link_to edit_test_case_path(test_case), remote: true, class: 'edit' do %>
+          <span class='icon-edit-icon'></span>
+        <% end %>
+      <% end %>
+    </div>
+  </td>
+</tr>

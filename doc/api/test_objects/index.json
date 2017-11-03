@@ -1,0 +1,55 @@
+{
+  "resource": "Test Objects",
+  "http_method": "GET",
+  "route": "/api/v1/test_objects",
+  "description": "Index",
+  "explanation": null,
+  "parameters": [
+    {
+      "required": true,
+      "name": "token",
+      "description": "Uniq project token"
+    },
+    {
+      "required": true,
+      "name": "auth_token",
+      "description": "User authenticity token"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "/api/v1/test_objects?token=esazRSTcFSdyX5L%2Fe%2BMyqMu%2BmWWH1yh316&auth_token=E%2FtmTYkqr0Fhr0zR24Ed2%2FKSpOFBl4kU45",
+      "request_body": null,
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+        "token": "esazRSTcFSdyX5L/e+MyqMu+mWWH1yh316",
+        "auth_token": "E/tmTYkqr0Fhr0zR24Ed2/KSpOFBl4kU45"
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "[\n  {\n    \"id\": 4,\n    \"file_file_name\": null,\n    \"file_content_type\": null,\n    \"file_file_size\": null,\n    \"file_updated_at\": null,\n    \"project_id\": 17,\n    \"user_id\": 43,\n    \"created_at\": \"2017-04-14T07:55:55.424Z\",\n    \"updated_at\": \"2017-04-14T07:55:55.424Z\",\n    \"link\": \"http://stokes.com\",\n    \"platform_version\": null,\n    \"package\": null,\n    \"min_sdk_version\": null,\n    \"sdk_version\": null,\n    \"identeficator\": null,\n    \"deleted_at\": null,\n    \"url\": \"http://stokes.com\"\n  },\n  {\n    \"id\": 5,\n    \"file_file_name\": null,\n    \"file_content_type\": null,\n    \"file_file_size\": null,\n    \"file_updated_at\": null,\n    \"project_id\": 17,\n    \"user_id\": 43,\n    \"created_at\": \"2017-04-14T07:55:55.480Z\",\n    \"updated_at\": \"2017-04-14T07:55:55.480Z\",\n    \"link\": \"http://adamskulas.com\",\n    \"platform_version\": null,\n    \"package\": null,\n    \"min_sdk_version\": null,\n    \"sdk_version\": null,\n    \"identeficator\": null,\n    \"deleted_at\": null,\n    \"url\": \"http://adamskulas.com\"\n  },\n  {\n    \"id\": 6,\n    \"file_file_name\": null,\n    \"file_content_type\": null,\n    \"file_file_size\": null,\n    \"file_updated_at\": null,\n    \"project_id\": 17,\n    \"user_id\": 43,\n    \"created_at\": \"2017-04-14T07:55:55.536Z\",\n    \"updated_at\": \"2017-04-14T07:55:55.536Z\",\n    \"link\": \"http://huels.net\",\n    \"platform_version\": null,\n    \"package\": null,\n    \"min_sdk_version\": null,\n    \"sdk_version\": null,\n    \"identeficator\": null,\n    \"deleted_at\": null,\n    \"url\": \"http://huels.net\"\n  },\n  {\n    \"id\": 7,\n    \"file_file_name\": \"example1.0.ipa\",\n    \"file_content_type\": \"application/zip\",\n    \"file_file_size\": 377393,\n    \"file_updated_at\": \"2017-04-14T07:55:55.600Z\",\n    \"project_id\": 17,\n    \"user_id\": 43,\n    \"created_at\": \"2017-04-14T07:55:55.828Z\",\n    \"updated_at\": \"2017-04-14T07:55:55.828Z\",\n    \"link\": null,\n    \"platform_version\": \"iOS9.3\",\n    \"package\": \"com.iov.IOV42\",\n    \"min_sdk_version\": \"iOS9.0\",\n    \"sdk_version\": null,\n    \"identeficator\": \"com.iov.IOV42:1:1.0\",\n    \"deleted_at\": null,\n    \"url\": \"itms-services://?action=download-manifest&url=http:///system/ios_build_plists/files/7cd3c116587d776594d7046ee3b37874d2edfc9c/7cd3c116587d776594d7046ee3b37874d2edfc9c/6f9dbebfef65d256960cf1cd3900b9d0410af354/original/manifest.plist\"\n  }\n]",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"2d5e94253e4d9484619429719e115abd\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "705227f0-51dd-46a1-a44a-31bb9407a607",
+        "X-Runtime": "0.076222",
+        "Content-Length": "1827"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"http://localhost:3000/api/v1/test_objects?token=esazRSTcFSdyX5L%2Fe%2BMyqMu%2BmWWH1yh316&auth_token=E%2FtmTYkqr0Fhr0zR24Ed2%2FKSpOFBl4kU45\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

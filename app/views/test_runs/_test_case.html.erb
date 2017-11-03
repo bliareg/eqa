@@ -1,0 +1,17 @@
+<tr class='test_case_item'>
+  <td class="checkbox">
+    <%= check_box_tag 'case', test_case.id, false, class: "checkbox module_checkbox",
+                                                   style: "width: #{@column_set['drag_checkbox']}%",
+                                                   id: "test-case-#{test_case.id}",
+                                                   data: { module_id: module_id } %>
+    <label for="test-case-<%= test_case.id %>" class="checkbox-label"></label>
+  </td>
+  <td class="id" style='width: <%= @column_set['id'] %>%'><%= test_case.id_in_project %></td> <!--id-->
+  <td class="test-title"><%= test_case.title %></td>
+    <!--title-->
+  <% (@column_set.keys & ::TestCase::VISIBLE_COLUMNS.keys).each do |name| %>
+    <td class="<%= generate_class_from_name(name) %>" style='width: <%= @column_set[name] %>%'>
+      <%= test_case.get_column_value(name) %>
+    </td>
+  <% end %>
+</tr>

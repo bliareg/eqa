@@ -1,0 +1,165 @@
+.select-project-members {
+  .title-block {
+    @extend %clearfix;
+
+    .title {
+      float: left;
+    }
+
+    .added-members {
+      float: right;
+      margin-right: 30px;
+      color: $added-members-text;
+      font-family: $bold-font-family;
+      font-weight: bold;
+      line-height: 30px;
+      @include rem(font-size, 14px);
+    }
+  }
+
+  .empty-table {
+    text-align: center;
+    color: $base-light-text;
+  }
+
+  &-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+
+    td {
+      vertical-align: middle;
+      padding-left: 0;
+      border: none;
+    }
+
+    .table-title {
+      color: $base-light-text;
+      @include rem(font-size, 14px);
+
+      td {
+        border-bottom: 1px solid $base-border;
+      }
+    }
+
+    .table-checkbox-label {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  .member {
+    td:first-child {
+      border-radius: 6px 0 0 6px;
+    }
+
+    td:nth-child(2){
+      width: 40%;
+    }
+
+    td:last-child {
+      border-radius: 0 6px 6px 0;
+    }
+
+    &:nth-child(2n) {
+      background-color: $row-member-bg-1;
+    }
+
+    &:nth-child(2n+1) {
+      background-color: $row-member-bg-2;
+    }
+
+    &-avatar {
+      width: 106px;
+    }
+
+    &-avatar img {
+      width: 60px;
+      height: 60px;
+      margin: 12px 0 12px 30px;
+      border-radius: 50%;
+    }
+
+    &-name {
+      max-width: 300px;
+      margin-bottom: 10px;
+      color: $base-text;
+      font-family: $bold-font-family;
+      font-weight: bold;
+      @include rem(font-size, 14px);
+      @extend %text-overflow;
+    }
+
+    &-email,
+    &-country {
+      margin: 0;
+      color: $base-light-text;
+      @include rem(font-size, 14px);
+    }
+
+    &-projects,
+    &-joined {
+      color: $base-text;
+      @include rem(font-size, 14px);
+    }
+
+    .btn-delete {
+      &:hover {
+        .delete {
+          color: darken($red-1, 10%)
+        }
+      }
+    }
+
+    span {
+      margin: 0 10px 3px 0;
+      vertical-align: middle;
+    }
+
+    .input_wrapper {
+      width: 150px;
+    }
+  }
+
+  .project-role {
+    width: 20%;
+
+    .role {
+      width: 150px;
+      height: 25px;
+      padding: 0 10px;
+      color: $selectmenu-small-text;
+      background-color: $selectmenu-small-button;
+      line-height: 25px;
+      text-align: center;
+      border-radius: 4px;
+      @include rem(font-size, 14px);
+      @extend  %text-overflow;
+    }
+  }
+
+  &-buttons {
+    margin-top: 20px;
+
+    .btn {
+      height: 40px;
+      line-height: 27px;
+    }
+  }
+
+  .modal-content-scroll {
+    .row {
+      height: 400px;
+    }
+  }
+
+  .member {
+    .input_wrapper {
+      .dd-container {
+        .dd-options {
+          position: relative !important;
+        }
+      }
+    }
+  }
+}

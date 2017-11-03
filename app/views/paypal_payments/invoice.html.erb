@@ -1,0 +1,133 @@
+<div class="_invoiceTemplate">
+  <div class="extractPdf">
+    <div class="_templateHeader">
+
+      <div class="_headerLeftPart">
+        <div class="_orgName"><b></b></div>
+        <div class="_orgLabel"></div>
+      </div>
+
+      <div class="_headerRightPart">
+        <div class="_entityBlock">
+          <div class="_entityTitle">INVOICE</div>
+          <div class="_entityNumber"><b><%= @payment.id %></b></div>
+          <div class="_companyInfo">
+            <div class="_companyInfoField">ThinkMobiles LLC</div>
+            <div class="_companyInfoField">Budapest, Hungary</div>
+          </div>
+        </div>
+        <div class="_balanceBlock">
+          <div class="_balanceTitle"><b></b></div>
+          <div class="_balanceValue"><b></b></div>
+        </div>
+      </div>
+    </div>
+    <div class="_templateDateBlock">
+      <div class="_rightPart">
+        <table class="_templateDateTable tableFixed">
+          <colgroup>
+            <col width="60%">
+            <col width="40%">
+          </colgroup>
+          <tbody>
+            <tr>
+              <td class="_dateLeftPart">
+                <div class="_billingBlock">
+                  <div class="_billingTitle">Bill to</div>
+                  <div class="_billingCustomerName"><%= @payment.user.name %></div>
+                  <div class="_billingCompanyAddress"><%= @payment.user.company %>, <%= @payment.user.street_address %>, <%= @payment.user.city %>, <%= @payment.user.state %>, <%= ISO3166::Country[@payment.user.country] %>, zip: <%= @payment.user.zip_code %>, Phone: <%= @payment.user.phone_number %></div>
+                </div>
+              </td>
+              <td class="_dateRightPart">
+                <table class="tableFixed">
+                  <colgroup>
+                    <col width="100%">
+                    <col width="100px">
+                  </colgroup>
+                  <tbody>
+                    <tr>
+                      <td>Invoice Date :</td>
+                      <td><%= @payment.updated_at.strftime('%d %b %Y') %></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <table class="_templateTable tableFixed">
+      <colgroup>
+        <col width="30px">
+        <col width="66%">
+        <col width="34%">
+        <col width="40px">
+        <col width="70px">
+        <col width="70px">
+        <col width="80px">
+      </colgroup>
+      <thead>
+      <tr>
+        <th>#</th>
+        <th>SKU</th>
+        <th>PERIOD</th>
+        <th>Qty</th>
+        <th>Unit Price</th>
+        <th>Discount</th>
+        <th>Amount</th>
+      </tr>
+      </thead>
+      <tbody>
+        <% if @full_discount %>
+          <tr>
+            <td>1</td>
+            <td>
+              <span>Licenses</span><br>
+              <span>(EasyQA Test Management Tool)</span>
+            </td>
+            <td>
+              <%= @payment.period_start.strftime('%d %b %Y') %> - <br>
+              <%= @payment.period_end.strftime('%d %b %Y') %>
+            </td>
+            <td><%= @payment.licenses_amount %></td>
+            <td>$<%= (@payment.standart_fee / 100.0).round(2) %></td>
+            <td>100%</td>
+            <td>$0.00</td>
+          </tr>
+        <% else %>
+          <% @items.each_with_index do |item, index| %>
+            <tr>
+              <td><%= index + 1 %></td>
+              <td>
+                <span>Licenses</span><br>
+                <span>(EasyQA Test Management Tool)</span>
+              </td>
+              <td>
+                <%= @info[index][:period_start] %> - <br>
+                <%= @info[index][:period_end] %>
+              </td>
+              <td><%= item[:quantity] %></td>
+              <td>$<%= (@info[index][:standart_fee] / 100.0).round(2) %></td>
+              <td><%= @info[index][:standart_fee] / 100.0 == item[:price] ? 0 : @payment.promocode.discount %>%</td>
+              <td>$<%= (item[:quantity] * item[:price]).round(2) %></td>
+            </tr>
+          <% end %>
+        <% end %>
+      </tbody>
+    </table>
+    <table class="_templateTableFooter tableFixed">
+      <colgroup>
+        <col width="100%">
+        <col width="100px">
+      </colgroup>
+      <tbody>
+      <tr class="_totalRow">
+        <td><b>Total</b></td>
+        <td><b>$<%= @payment.amount.round(2) %></b></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="clearfix"></div>
+</div>

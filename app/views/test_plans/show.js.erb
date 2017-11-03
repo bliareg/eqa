@@ -1,0 +1,11 @@
+$('.tab-pane-content-header').html("<%= j render 'projects/tab_pane_content_header' %>");
+$('.tab-pane-content-info .cases').html("<div class='cases-info'><div class='sortable-container root'><%= j render @current_plan.roots_test_modules %></div></div>");
+$('.plans-info-item').removeClass('active');
+$('.plans-info-item[data-plan-id=<%= @current_plan.id %>]').addClass('active');
+test_activity_js_actions();
+init_plan_togle_switcher();
+$('#jstree').replaceWith('<div id="jstree"></div>');
+TestModule.jstree.init(<%= raw @current_plan.jstree_data.to_json %>);
+testModuleWidth();
+TestModule.init();
+table_resizable();

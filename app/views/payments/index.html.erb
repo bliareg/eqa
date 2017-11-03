@@ -1,0 +1,21 @@
+<div class="tab payments">
+  <div class="card card-tab-content">
+    <div class="card-header">
+      <h2 class="card-header-title"><%= t 'payment_history' %></h2>
+    </div>
+    <table class="payment-table">
+      <thead>
+        <tr>
+          <th class="payment-date"><%= t(:date_small) %></th>
+          <th class="payment-amount"><%= t(:amount) %></th>
+          <th class="payment-type"><%= t(:summary) %></th>
+          <th><%= t(:status) %></th>
+        </tr>
+      </thead>
+      <tbody class="table-body">
+        <%= render @payments %>
+      </tbody>
+    </table>
+  </div>
+
+</div>

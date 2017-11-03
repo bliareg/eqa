@@ -1,0 +1,11 @@
+.testing-activities-item {
+  color: $base-light-text;
+  font-family: $base-font-family;
+  @include rem(font-size, 14px);
+
+  .title {
+    color: $base-light-text;
+    font-weight: 600;
+    @include rem(font-size, 16px);
+  }
+}

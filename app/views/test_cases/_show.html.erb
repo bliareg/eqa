@@ -1,0 +1,30 @@
+  <div class="modal-dialog modal-test-case-info issue-comments">
+    <div class="modal-content container">
+      <div class="modal-tabs">
+        <ul class="modal-tabs-list">
+          <li>
+            <a href="#testcaseInfo" class="change_class tab-active"><%= t('show_case') %></a>
+          </li>
+          <li>
+            <a href="#comments" class='change_class'><%= t 'comment.many' %>
+              <span class="comments-count"><%= @test_case.comments.count %></span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <span class="close">
+        <span class='icon-close-icon'></span>
+      </span>
+
+          <div class="modal-body">
+            <%= render 'test_case_tab' %>
+            <%= render partial: 'comments/comment_tab', locals:  { object: @test_case } %>
+          </div>
+
+    </div>
+  </div>
+
+<script type="text/javascript">
+  initialize_tabs()
+</script>

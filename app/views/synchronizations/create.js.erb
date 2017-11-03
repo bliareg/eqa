@@ -1,0 +1,9 @@
+hide_modal();
+
+$('.plugins-info-block')
+  .append($("<%= j render 'plugin_info_card', setting: @synchronization %>"));
+
+$('.plans-info .mCSB_container')
+  .append($("<%= j render 'plugin_preview_card', setting: @synchronization %>"));
+
+integrations_init();

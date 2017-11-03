@@ -1,0 +1,30 @@
+<div class="main-content-title">
+  <h2><%= t 'testing_activities' %></h2>
+</div>
+<div class="main-content-info test-plan-activity testing_activities">
+  <ul class="nav-tabs">
+    <li>
+      <%= link_to t('test_activities'),
+                  project_test_activities_path(@project),
+                  remote: true, class: "btn btn-gray highlight_link testing_activities_link" %>
+    </li>
+    <li>
+      <%= link_to t('test_plans'),
+                  project_test_plans_path(@project),
+                  remote: true,
+                  class: 'btn btn-gray link_profile_menu expanded highlight_link' %>
+    </li>
+    <li>
+      <%= link_to t('test_run'),
+                  project_test_runs_path(@project),
+                  remote: true, class: 'btn btn-gray highlight_link test_runs_nav_link' %>
+    </li>
+    <li>
+      <%= link_to t('test_reports'),
+                  project_test_reports_path(@project),
+                  remote: true, class: 'btn btn-gray highlight_link' %>
+    </li>
+  </ul>
+<div class="tab-content" id="tab_content">
+  <%= yield %>
+</div>

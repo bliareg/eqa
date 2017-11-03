@@ -1,0 +1,97 @@
+$(MODAL_CLASS).html("<%= j render 'synchronize_progressbar' %>");
+
+var progress_path = "<%= progress_info_path(@job_id) %>",
+    success_objects = [],
+    failed_objects = [],
+    is_stoped = false,
+    progress = 0,
+    total_objects = 0,
+    messages = [];
+
+$('#synchronizationProgress').progressbar({
+  value: 0,
+  complete: function() {
+    if ($('.info-block.error').length){
+      $('.status').next('.text').text("<%= t 'failed' %>");
+    } else {
+      $('.status').next('.text').text("<%= t 'complete' %>");
+    }
+    $('.sync_break').hide();
+    $('.sync_ok').show();
+    update_test_objects_content('<%= @project.id %>')
+  },
+  create: function() {
+    $('.status').next('.text').text("working...");
+  }
+});
+
+$('.sync_break').click(function() {
+  $.ajax({
+    type: 'DELETE',
+    url: "<%= kill_job_path(@job_id) %>",
+    success: function() {
+      is_stoped = true;
+      $('#synchronizationProgress').progressbar({ value: 100 });
+      var success_element = $("<%= j render 'success_synchronization_message' %>");
+      success_element.find('h4').text("<%= t 'breaked_synchronize' %>");
+      $('.status').next('.text').text("<%= t 'breaked' %>");
+      success_element.appendTo('.btn-block');
+    }
+  });
+});
+
+progressBarLoad();
+
+function progressBarLoad() {
+  if ( is_stoped ) {
+    return ;
+  }
+
+  $.ajax({
+    url: progress_path,
+    success: function(data) {
+      progress_rounded = Math.round(progress)
+      if (total_objects == 0) { total_objects = data.total / 100 }
+
+      if (data.progress <= progress_rounded && progress_rounded < 99) {
+        progress += 1 / total_objects;
+      } else if (data.progress > progress_rounded){
+        progress = data.progress
+      }
+
+      $('#synchronizationProgress').progressbar({ value: progress_rounded });
+      $('.received').prev('.percent').text(progress_rounded + '%');
+      add_completed_plugin_box(data.completed_objects);
+
+      if (data.message != null ) {
+        messages = data.message.split(': ');
+        $('.file-name').next('.text').text(messages[0]);
+        $('.status').next('.text').text(messages[1]);
+      }
+
+      if ( progress_rounded < 100 ) {
+        setTimeout(progressBarLoad, 2000);
+      }
+    }
+  });
+}
+
+var success_element, fail_element;
+function add_completed_plugin_box(response_completed) {
+
+  response_completed['success'].diff(success_objects).forEach(function(plugin_message) {
+    success_element = $("<%= j render 'success_synchronization_message' %>")
+    success_element.find('h4').text(plugin_message);
+    success_element.appendTo('.btn-block');
+  })
+
+  response_completed['fail'].diff(failed_objects).forEach(function(plugin_message) {
+    fail_element = $("<%= j render 'error_connection_message' %>")
+    fail_element.find('h4').text(plugin_message);
+    fail_element.find('p').remove();
+    fail_element.appendTo('.btn-block');
+  })
+
+  success_objects = response_completed['success']
+  failed_objects = response_completed['fail']
+}

@@ -1,0 +1,20 @@
+<% monthly_fee = (Paymentable::MONTHLY_PRICE * @billing.licenses_amount) / 100.0 %>
+
+<div class="payments_block">
+  <%= render partial: 'users/payment_block', locals: { monthly_fee: monthly_fee } %>
+</div>
+
+<div class="tab payments">
+  <div class="row">
+    <div class="col m-12 licenses_block">
+      <%= render partial: 'users/licenses_block', locals: { monthly_fee: monthly_fee } %>
+    </div>
+    <!-- block 5 -->
+  </div>
+</div>
+
+<script type="text/javascript">
+  if (document.body.scrollLoaded) {
+    init_payments_page();
+  }
+</script>

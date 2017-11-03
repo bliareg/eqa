@@ -1,0 +1,25 @@
+<div class="modal-dialog add-project">
+  <div class="modal-content container">
+    <div class="title-main">
+      <div id='info_notice'></div>
+      <h3><%= t 'project.edit_project' %></h3>
+      <span class="close">
+        <span class='icon-close-icon'></span>
+      </span>
+    </div>
+    <div class="modal-body">
+      <%= form_for(@project, url: project_path(@project),
+                             validate: true,
+                             html: { method: :put,
+                                     remote: true,
+                                     data: { "project-id": @project.id },
+                                     class: 'form_with_dropzone edit_project' }) do |form| %>
+        <div class="row">
+          <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+          <%= render 'form_fields', f: form %>
+        </div>
+        <%= form.submit t('save_changes'), class: 'btn btn-green' %>
+        <span class="btn btn-white-green cancel"><%= t('cancel') %></span>
+      <% end %>
+  </div>
+</div>

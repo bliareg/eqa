@@ -1,0 +1,8 @@
+<col class="drag" style='width: <%= @column_set['drag_icon'] %>%'>
+<col class="checkbox" style='width: <%= @column_set['drag_checkbox'] %>%'>
+<col class="id" style='width: <%= @column_set['id'] %>%'>
+<col class="test-title" style='width: <%= @column_set['title'] %>%'>
+<% (@column_set.keys & ::TestCase::VISIBLE_COLUMNS.keys).each do |column_name| %>
+  <col class='<%= generate_class_from_name(column_name) %>' style='width: <%= @column_set[column_name] %>%'>
+<% end %>
+<col class="select" style='width: <%= @column_set['edit_delete'] %>%'>

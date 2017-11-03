@@ -1,0 +1,77 @@
+{
+  "resource": "Test Modules",
+  "http_method": "PUT",
+  "route": "/api/v1/test_modules/:id",
+  "description": "Update",
+  "explanation": null,
+  "parameters": [
+    {
+      "required": true,
+      "name": "auth_token",
+      "description": "User authenticity token"
+    },
+    {
+      "required": true,
+      "name": "token",
+      "description": "Uniq project token"
+    },
+    {
+      "required": true,
+      "name": "id",
+      "description": "Test module id"
+    },
+    {
+      "name": "test_module",
+      "description": "Test module attributes"
+    },
+    {
+      "scope": "test_module",
+      "name": "title",
+      "description": "Title of the test module"
+    },
+    {
+      "scope": "test_module",
+      "name": "description",
+      "description": "Description of the test module"
+    },
+    {
+      "scope": "test_module",
+      "name": "parent_id",
+      "description": "Id of parent test module. If you give this parameter, this test module will be nested in parent test module"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "PUT",
+      "request_path": "/api/v1/test_modules/9",
+      "request_body": "{\"token\":\"zP40TIc2RNDNNI+eASElxGuQwXxnxt8K18\",\"test_module\":{\"title\":\"DQar\",\"description\":\"Much to learn you still have my old padawan. ... This is just the beginning!\"},\"auth_token\":\"wrpus/ZJ5qJHNoKLFGOZWGz+4hUzzBL057\"}",
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"parent_id\": null,\n  \"id\": 9,\n  \"depth\": 0,\n  \"test_plan_id\": 2,\n  \"created_by\": 55,\n  \"title\": \"DQar\",\n  \"description\": \"Much to learn you still have my old padawan. ... This is just the beginning!\",\n  \"lft\": 15,\n  \"rgt\": 16,\n  \"children_count\": null,\n  \"created_at\": \"2017-04-14T07:56:15.435Z\",\n  \"updated_at\": \"2017-04-14T07:56:15.435Z\",\n  \"position\": 0\n}",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"f6ca8ff4002d57beb313c44ab1dc7f4f\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "ea2e37ac-9f2c-44e8-b04b-1679accd386a",
+        "X-Runtime": "0.067738",
+        "Content-Length": "309"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"http://localhost:3000/api/v1/test_modules/9\" -d '{\"token\":\"zP40TIc2RNDNNI+eASElxGuQwXxnxt8K18\",\"test_module\":{\"title\":\"DQar\",\"description\":\"Much to learn you still have my old padawan. ... This is just the beginning!\"},\"auth_token\":\"wrpus/ZJ5qJHNoKLFGOZWGz+4hUzzBL057\"}' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

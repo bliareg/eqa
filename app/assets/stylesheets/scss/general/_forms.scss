@@ -1,0 +1,458 @@
+// Form elements style
+input,
+textarea {
+  padding-left: 10px;
+  outline-color: $inputWrapFocusBorder;
+}
+
+textarea {
+  font-family: $base-font-family;
+  padding: 5px 10px;
+}
+
+input[type="url"],
+input[type="email"],
+input[type="text"],
+input[type="search"],
+input[type="password"],
+input[type="number"],
+input[type="tel"],
+textarea {
+  width: 100%;
+  color: $base-light-text;
+  background: $white;
+  border: 1px solid $base-border;
+  border-radius: 4px;
+  box-shadow: inset 1px 2px 3px $form-box-shadow;
+  outline: none;
+}
+
+textarea {
+  resize: none;
+}
+
+input[type="url"],
+input[type="email"],
+input[type="text"],
+input[type="search"],
+input[type="password"],
+input[type="number"],
+input[type="tel"] {
+  height: 40px;
+  line-height: 20px;
+  vert-align: middle;
+}
+
+select {
+  width: 100%;
+  height: 40px;
+  color: $base-light-text;
+  background: $white;
+  border: 1px solid $base-border;
+  border-radius: 4px;
+}
+
+option {
+  color: $base-light-text;
+}
+
+//style for checkbox, radio button
+
+input[type="checkbox"],
+input[type="radio"] {
+  display: none;
+}
+
+.input_wrapper {
+  position: relative;
+  width: 100%;
+  margin-bottom: 15px;
+  @include rem(font-size, 14px);
+
+  label {
+    display: inline-block;
+    margin-bottom: 7px;
+    color: $inputLabelText;
+    width: 90%;
+    cursor: pointer;
+  }
+
+  select,
+  .ui-selectmenu-button,
+  .dd-container {
+    cursor: pointer;
+  }
+
+  input[type="url"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="text"],
+  input[type="search"],
+  input[type="password"],
+  select,
+  textarea,
+  .ui-selectmenu-button,
+  .dd-container {
+    color: $inputText;
+    line-height: 30px;
+    border: 1px solid $base-border;
+    border-radius: 4px;
+    transition: all .3s;
+
+    .dd-options {
+      max-height: 170px;
+
+      .key-press-point {
+        background-color: $select-item-hover-bg;
+      }
+    }
+  }
+
+  .fake-input {
+    opacity: 0;
+    height: 0;
+    width: 0;
+  }
+
+  &:hover, &:focus {
+    input, select, textarea, .ui-selectmenu-button, .dd-container {
+      border: 1px solid $inputWrapFocusBorder;
+    }
+  }
+}
+
+.ddslick-top {
+  .dd-options {
+    bottom: 40px;
+  }
+}
+
+.disabled-select {
+  pointer-events: none;
+
+  .checkbox,
+  .radio {
+    &:checked + label:before {
+      border: 1px solid $input-checked-disable-bg;
+      background-color: $input-checked-disable-bg;
+    }
+  }
+}
+
+// Small dropdown -------------
+.org-members,
+.member,
+.status {
+  .input_wrapper {
+    margin: 0;
+
+    .dd-container {
+      border: none;
+
+      .dd-select {
+        box-shadow: none;
+      }
+
+      .dd-selected {
+        padding: 0;
+        height: 22px;
+        background-color: $selectmenu-small-button;
+
+        .dd-selected-text {
+          color: $selectmenu-small-text;
+          line-height: 12px !important;
+          vertical-align: text-top;
+          @include rem(font-size, 12px);
+        }
+      }
+
+      .dd-option {
+        height: 22px;
+
+        .dd-option-text {
+          color: $inputText;
+          line-height: 12px !important;
+          vertical-align: text-top;
+          @include rem(font-size, 12px);
+        }
+
+        &:hover {
+          .dd-option-text {
+            font-weight: 600;
+          }
+        }
+      }
+
+      .dd-pointer {
+        transform: translate(0, -25%);
+      }
+
+      .dd-pointer-down {
+        border-top: solid 5px $selectmenu-small-text;
+      }
+
+      .dd-pointer-up {
+        top: 25%;
+        border-bottom: solid 5px $selectmenu-small-text !important;
+      }
+    }
+  }
+}
+
+// ----------------------------
+
+.checkbox,
+.radio {
+
+  &:not(:checked) + label,
+  &:checked + label {
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+    vertical-align: middle;
+  }
+
+  &:not(:checked) + label:before,
+  &:checked + label:before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 2px;
+    width: 16px;
+    height: 16px;
+    background-color: $white;
+    border: 1px solid $input-unchecked-border;
+    border-radius: 4px;
+    box-shadow: inset 0 -5px 6px $checked-box-shadow;
+  }
+
+  &:checked + label:before {
+    border: 1px solid $input-checked-border;
+    background-color: $input-checked-bg;
+  }
+
+  &:not(:checked) + label:after,
+  &:checked + label:after {
+    content: '\f00c';
+    position: absolute;
+    top: 2px;
+    left: 3px;
+    font-family: $font-awesome;
+    font-size: 11px;
+    transition: all .2s;
+  }
+
+  &:not(:checked) + label:after {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  &:checked + label:after {
+    color: $white;
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.radio {
+
+  &:not(:checked) + label:before,
+  &:checked + label:before {
+    top: 2px;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+  }
+
+  &:not(:checked) + label:after,
+  &:checked + label:after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 6px;
+    left: 4px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background-color: $white;
+  }
+}
+
+// Search ---------------------------
+
+.search-wrap {
+  position: relative;
+
+  input[type="search"] {
+    padding-right: 42px;
+    color: $input-search-text-color;
+    font-family: $light-font-family;
+  }
+
+  .search {
+    width: 270px;
+    height: 40px;
+    margin-right: 50px;
+
+    &-btn {
+      position: absolute;
+      top: 9px;
+      right: 70px;
+      padding: 0;
+      border: none;
+      background: transparent;
+    }
+  }
+
+  .ic-search {
+    color: $input-search-text-color;
+    @include rem(font-size, 18px);
+  }
+
+  &:hover {
+    .ic-search {
+      color: $input-search-hover;
+    }
+  }
+}
+
+// Switch ---------------------------
+
+.switch {
+  position: relative;
+  width: 60px;
+
+  &-label {
+    display: block;
+    border-radius: 15px;
+    cursor: pointer;
+    overflow: hidden;
+  }
+
+  &-inner {
+    display: block;
+    width: 200%;
+    margin-right: -100%;
+    transition: margin 0.3s ease-in 0s;
+
+    &:before,
+    &:after {
+      display: block;
+      float: left;
+      width: 50%;
+      height: 30px;
+      padding: 0;
+      line-height: 30px;
+      font-size: 15px;
+      font-family: $font-awesome;
+      box-sizing: border-box;
+    }
+
+    &:before {
+      content: "\f00d";
+      padding-left: 6px;
+      color: $white;
+      background-color: $input-switch-off;
+    }
+
+    &:after {
+      content: "\f00c";
+      padding-right: 6px;
+      color: $white;
+      background-color: $input-switch-on;
+      text-align: right;
+    }
+  }
+
+  &-btn {
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 26px;
+    margin: 2px;
+    background: $white;
+    border-radius: 15px;
+    transition: all 0.3s ease-in 0s;
+  }
+
+  &-checkbox:checked + .switch-label .switch-inner {
+    margin-left: -100%;
+  }
+
+  &-checkbox:checked + .switch-label .switch-btn {
+    right: 30px;
+  }
+}
+
+.field_with_errors {
+  textarea,
+  input {
+    border: 1px solid $error-message !important;
+  }
+
+  > div {
+    border: 1px solid $error-message !important;
+    border-radius: 4px;
+  }
+
+  .message {
+    width: 100%;
+    font-size: 10pt;
+    color: $error-message;
+  }
+}
+
+#personal_info_notice {
+  .error {
+    color: $error-message;
+  }
+
+  #personal_info_notice.success {
+    color: $btn-green;
+  }
+
+  #personal_info_notice p {
+    @include rem(font-size, 14px);
+  }
+}
+
+#error_notice {
+  color: $error-message;
+}
+
+#printLink {
+  cursor: pointer;
+}
+
+// braintree ----------------
+
+.hosted-field {
+  height: 40px;
+  width: 100%;
+  padding-left: 10px;
+  color: $base-light-text;
+  background: $white;
+  border: 1px solid $base-border;
+  border-radius: 4px;
+  box-shadow: inset 1px 2px 3px $form-box-shadow;
+  outline: none;
+
+  &:hover {
+    border-color: $inputWrapFocusBorder;
+  }
+}
+
+.braintree-hosted-fields-focused {
+  border: 1px solid $inputWrapFocusBorder;
+}
+
+.braintree-hosted-fields-invalid {
+  border: 1px solid $error-message;
+}
+
+.braintree-hosted-fields-valid {
+  border: 1px solid $inputWrapFocusBorder;
+}

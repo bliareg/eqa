@@ -1,0 +1,58 @@
+{
+  "resource": "Test Cases",
+  "http_method": "DELETE",
+  "route": "/api/v1/test_cases/:id",
+  "description": "Delete",
+  "explanation": null,
+  "parameters": [
+    {
+      "required": true,
+      "name": "auth_token",
+      "description": "User authenticity token"
+    },
+    {
+      "required": true,
+      "name": "token",
+      "description": "Uniq project token"
+    },
+    {
+      "required": true,
+      "name": "id",
+      "description": "Test case id"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "DELETE",
+      "request_path": "/api/v1/test_cases/10",
+      "request_body": "{\"token\":\"J8T9xwaY1PH+jSaTe/uS2b5NgLCx2v6t17\",\"auth_token\":\"dO+WrEX5xJoGIDESFB6soc+H54IWMFq+51\"}",
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"id\": 10,\n  \"test_plan_id\": 1,\n  \"module_id\": 1,\n  \"updated_by\": null,\n  \"title\": \"Whirlpool\",\n  \"case_type\": \"boundary\",\n  \"pre_steps\": \"1. Find Bail Organa \\n 2. Give him Gungan\",\n  \"steps\": \"1. Sit in a Flash Speeder\\n 2. Go to Alderaan\",\n  \"expected_result\": \"droid 'BB-8' say 'Only at the end do you realize the power of the Dark Side.'\",\n  \"created_at\": \"2017-04-14T07:56:10.296Z\",\n  \"updated_at\": \"2017-04-14T07:56:10.296Z\",\n  \"created_by\": 49,\n  \"id_in_project\": 7,\n  \"position\": 6\n}",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"172c40226fe2a158253d9c4d8d35d335\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "4952dc09-7178-43f6-8e68-3b743ad82b6d",
+        "X-Runtime": "0.122043",
+        "Content-Length": "438"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"http://localhost:3000/api/v1/test_cases/10\" -d '{\"token\":\"J8T9xwaY1PH+jSaTe/uS2b5NgLCx2v6t17\",\"auth_token\":\"dO+WrEX5xJoGIDESFB6soc+H54IWMFq+51\"}' -X DELETE \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

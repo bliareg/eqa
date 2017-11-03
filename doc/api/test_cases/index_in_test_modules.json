@@ -1,0 +1,65 @@
+{
+  "resource": "Test Cases",
+  "http_method": "GET",
+  "route": "/api/v1/:parent_name/:parent_id/test_cases",
+  "description": "Index in test modules",
+  "explanation": null,
+  "parameters": [
+    {
+      "required": true,
+      "name": "auth_token",
+      "description": "User authenticity token"
+    },
+    {
+      "required": true,
+      "name": "token",
+      "description": "Uniq project token"
+    },
+    {
+      "required": true,
+      "name": "parent_name",
+      "description": "Can be \"test_plan\" or \"test_module\""
+    },
+    {
+      "required": true,
+      "name": "parent_id",
+      "description": "Id of the parent"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "/api/v1/test_module/1/test_cases?token=J8T9xwaY1PH%2BjSaTe%2FuS2b5NgLCx2v6t17&auth_token=dO%2BWrEX5xJoGIDESFB6soc%2BH54IWMFq%2B51",
+      "request_body": null,
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+        "token": "J8T9xwaY1PH+jSaTe/uS2b5NgLCx2v6t17",
+        "auth_token": "dO+WrEX5xJoGIDESFB6soc+H54IWMFq+51"
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "[\n  {\n    \"id\": 1,\n    \"test_plan_id\": 1,\n    \"module_id\": 1,\n    \"updated_by\": null,\n    \"title\": \"Hoags Object\",\n    \"case_type\": \"boundary\",\n    \"pre_steps\": \"1. Find Count Dooku \\n 2. Give him Hutt\",\n    \"steps\": \"1. Sit in a Flash Speeder\\n 2. Go to Utapau\",\n    \"expected_result\": \"droid 'R2-Q5' say 'Shut him up or shut him down.'\",\n    \"created_at\": \"2017-04-14T07:56:08.439Z\",\n    \"updated_at\": \"2017-04-14T07:56:08.439Z\",\n    \"created_by\": 49,\n    \"id_in_project\": 1,\n    \"position\": 0\n  },\n  {\n    \"id\": 2,\n    \"test_plan_id\": 1,\n    \"module_id\": 1,\n    \"updated_by\": null,\n    \"title\": \"Pinwheel\",\n    \"case_type\": \"boundary\",\n    \"pre_steps\": \"1. Find Lando Calrissian \\n 2. Give him Mon Calamari\",\n    \"steps\": \"1. Sit in a Imperial Shuttle\\n 2. Go to Geonosis\",\n    \"expected_result\": \"droid 'LM-432' say 'Well, you said you wanted to be around when I made a mistake.'\",\n    \"created_at\": \"2017-04-14T07:56:08.613Z\",\n    \"updated_at\": \"2017-04-14T07:56:08.613Z\",\n    \"created_by\": 49,\n    \"id_in_project\": 2,\n    \"position\": 1\n  },\n  {\n    \"id\": 3,\n    \"test_plan_id\": 1,\n    \"module_id\": 1,\n    \"updated_by\": null,\n    \"title\": \"Pinwheel\",\n    \"case_type\": \"boundary\",\n    \"pre_steps\": \"1. Find Darth Caedus \\n 2. Give him Neimoidian\",\n    \"steps\": \"1. Sit in a Republic Cruiser\\n 2. Go to Endor\",\n    \"expected_result\": \"droid 'B4-D4' say 'Wars not make one great.'\",\n    \"created_at\": \"2017-04-14T07:56:08.712Z\",\n    \"updated_at\": \"2017-04-14T07:56:08.712Z\",\n    \"created_by\": 49,\n    \"id_in_project\": 3,\n    \"position\": 2\n  },\n  {\n    \"id\": 4,\n    \"test_plan_id\": 1,\n    \"module_id\": 1,\n    \"updated_by\": null,\n    \"title\": \"Sunflower\",\n    \"case_type\": \"boundary\",\n    \"pre_steps\": \"1. Find Poe Dameron \\n 2. Give him Mon Calamari\",\n    \"steps\": \"1. Sit in a ATT Battle Tank\\n 2. Go to Coruscant\",\n    \"expected_result\": \"droid 'ID9' say 'You'll find I'm full of surprises!'\",\n    \"created_at\": \"2017-04-14T07:56:08.801Z\",\n    \"updated_at\": \"2017-04-14T07:56:08.801Z\",\n    \"created_by\": 49,\n    \"id_in_project\": 4,\n    \"position\": 3\n  },\n  {\n    \"id\": 5,\n    \"test_plan_id\": 1,\n    \"module_id\": 1,\n    \"updated_by\": null,\n    \"title\": \"Milky Way\",\n    \"case_type\": \"boundary\",\n    \"pre_steps\": \"1. Find Poe Dameron \\n 2. Give him Jawa\",\n    \"steps\": \"1. Sit in a Millennium Falcon\\n 2. Go to Kamino\",\n    \"expected_result\": \"droid 'R2-D2' say 'You'll find I'm full of surprises!'\",\n    \"created_at\": \"2017-04-14T07:56:08.912Z\",\n    \"updated_at\": \"2017-04-14T07:56:08.912Z\",\n    \"created_by\": 49,\n    \"id_in_project\": 5,\n    \"position\": 4\n  },\n  {\n    \"id\": 6,\n    \"test_plan_id\": 1,\n    \"module_id\": 1,\n    \"updated_by\": null,\n    \"title\": \"Milky Way\",\n    \"case_type\": \"boundary\",\n    \"pre_steps\": \"1. Find Padme Amidala \\n 2. Give him Ewok\",\n    \"steps\": \"1. Sit in a TIE Interceptor\\n 2. Go to Coruscant\",\n    \"expected_result\": \"droid 'BB-8' say 'Aren't you a little short for a Stormtrooper?'\",\n    \"created_at\": \"2017-04-14T07:56:09.011Z\",\n    \"updated_at\": \"2017-04-14T07:56:09.011Z\",\n    \"created_by\": 49,\n    \"id_in_project\": 6,\n    \"position\": 5\n  }\n]",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"e9337ddd2719784f258844a7aa758ae0\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "1c1935d6-752b-439a-ac6e-5d9223245f60",
+        "X-Runtime": "0.243783",
+        "Content-Length": "2540"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"http://localhost:3000/api/v1/test_module/1/test_cases?token=J8T9xwaY1PH%2BjSaTe%2FuS2b5NgLCx2v6t17&auth_token=dO%2BWrEX5xJoGIDESFB6soc%2BH54IWMFq%2B51\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+module Statuses::ProjectStatusesHelper
+end

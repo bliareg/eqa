@@ -1,0 +1,27 @@
+<!-- block 1-->
+<% if @billing.payment_methods.present? %>
+  <div class="btn btn-green show_loader" id="add_licenses" data-licenses-amount='<%= @billing.licenses_amount %>'><%= t(:pay) %></div>
+<% end %>
+<!-- block 2 -->
+<th><%= t('payment.auto') %></th>
+<!-- block 3 -->
+<td>
+  <div class="switch">
+    <%= check_box_tag('autopayments', value = "1",
+        checked = @billing.autopayment, class: 'switch-checkbox') %>
+    <label class="switch-label" for="autopayments">
+      <span class="switch-inner"></span>
+      <span class="switch-btn"></span>
+    </label>
+  </div>
+</td>
+<!-- block 4 -->
+<% if @billing.payment_methods.present? && (@billing.trial_period? || @billing.expiring?) %>
+  <div class="btn btn-green show_loader" id="regular_payment"><%= t(:pay) %></div>
+<% end %> 
+<!-- block 5 -->
+<div class="col m-6">
+  <div class="card card-tab-content methods">
+    <%= render 'payment_methods_block' %>
+  </div>
+</div>

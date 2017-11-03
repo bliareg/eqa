@@ -1,0 +1,16 @@
+<div>
+  <div class="input_wrapper disabled disabled-select">
+    <label class="title"><%= t 'board_name' %></label>
+    <input type='url' value="<%= setting.board_name %>">
+  </div>
+  <div class="input_wrapper disabled disabled-select">
+    <label class="title"><%= t 'api_key' %></label>
+    <input type='url' value="<%= setting.api_key %>">
+  </div>
+  <div class="input_wrapper disabled disabled-select">
+    <label class="title"><%= t 'member_token' %></label>
+    <input type='url' value="<%= setting.member_token %>">
+  </div>
+  <%= render partial: 'synchronizations/setting_plugin_boxes_show',
+             locals: { setting: setting } %>
+</div>

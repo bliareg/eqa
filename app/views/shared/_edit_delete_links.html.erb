@@ -1,0 +1,14 @@
+<% if policy(@project).tester_or_higher_rank? %>
+  <div class="plans-icons-basket">
+    <%= link_to destroy_test_plan_confirm_path(@project, plan.id),
+        class: 'delete', remote: true do %>
+      <span class='icon-basket-icon'></span>
+    <% end %>
+  </div>
+  <div class="plans-icons-edit">
+    <%= link_to edit_test_plan_path(@project, plan.id, current_plan_id: @current_plan.id),
+        class: 'edit', remote: true do %>
+      <span class='icon-edit-icon'></span>
+    <% end %>
+  </div>
+<% end %>

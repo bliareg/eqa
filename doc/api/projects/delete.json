@@ -1,0 +1,53 @@
+{
+  "resource": "Projects",
+  "http_method": "DELETE",
+  "route": "/api/v1/projects/:id",
+  "description": "Delete",
+  "explanation": null,
+  "parameters": [
+    {
+      "required": true,
+      "name": "auth_token",
+      "description": "User authenticity token"
+    },
+    {
+      "required": true,
+      "name": "id",
+      "description": "Project id"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "DELETE",
+      "request_path": "/api/v1/projects/13",
+      "request_body": "{\"auth_token\":\"1fBCDPRuFQ9VIpyBCdf4zkxW3nD3Pnx427\"}",
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"id\": 13,\n  \"title\": \"Viva12\",\n  \"user_id\": 25,\n  \"organization_id\": 13,\n  \"deleted_at\": \"2017-04-14T07:55:39.303Z\",\n  \"created_at\": \"2017-04-14T07:55:38.919Z\",\n  \"updated_at\": \"2017-04-14T07:55:38.919Z\",\n  \"token\": \"yXbzrGRytjKo5fhMdA557HsSJfPMU7mt12\",\n  \"slug\": \"Organization13_Viva12\"\n}",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"b55b4bb5c1bc3ea33cf740ccc287f807\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "f33cf588-488f-415b-8726-80632f0823f7",
+        "X-Runtime": "0.094265",
+        "Content-Length": "256"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"http://localhost:3000/api/v1/projects/13\" -d '{\"auth_token\":\"1fBCDPRuFQ9VIpyBCdf4zkxW3nD3Pnx427\"}' -X DELETE \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

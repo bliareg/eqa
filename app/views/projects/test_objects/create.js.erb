@@ -1,0 +1,3 @@
+before_upload_test_object_action();
+after_upload_test_object_action(<%= raw @response.to_json %>);
+$('.builds-table').trigger('update');

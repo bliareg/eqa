@@ -1,0 +1,110 @@
+<div class="tab-pane tab testRun" id='test_run_list'>
+  <div class="tab-pane-content">
+    <%= link_to project_test_runs_path(@test_run.project_id), remote: true,
+                class: 'link-back btn-white-green' do %>
+      <i class="fa fa-angle-left" aria-hidden="true"></i>
+      <%= t('back') %>
+    <% end %>
+    <div class="testRun-nav">
+      <div class="id"><span class="value"></span></div>
+      <h3 class="title"><%= @test_run.title %></h3>
+      <ul class="list">
+        <li id="printLink">
+          <span class='icon-print-icon'></span>
+          <span><%= t 'print' %></span>
+        </li>
+        <% if authorize_to_edit_destroy?(@test_run) %>
+          <li>
+            <%= test_run_button_edit(@test_run, 'icon-edit-icon-blue') %>
+          </li>
+        <% end %>
+        <li>
+          <%= test_run_button_clone(@test_run) %>
+        </li>
+        <li>
+          <%= test_run_button_destroy(@test_run) %>
+        </li>
+      </ul>
+      <% if defined? @notification_status%>
+        <div class="switch">
+          <input <%= (@notification_status ? "checked" : "") %> type="checkbox" name="switch" class="switch-checkbox test-run-notification"
+                                                 id="switch1" data-test-run-id="<%=@test_run.id%>">
+            <label class="switch-label" for="switch1">
+                <span class="switch-inner"></span>
+                <span class="switch-btn"></span>
+            </label>
+        </div>
+        <span class="switch-subscribe"><%=t('test_run_notification_label')%></span>
+      <% end %>
+    </div>
+
+    <div class="testRun-chart">
+      <canvas id="test_run_statuses_calculating_chart" width="700" height="350""></canvas>
+      <% if @test_run.test_run_results.size.nonzero? %>
+        <%= chart_bottom_info(@test_run) %>
+      <% end %>
+    </div>
+    <div class="testRun-test">
+      <div class="testRun-test-header">
+        <%= link_to t('continue'), test_run_result_path(@test_run.first_untested_result(@column_visibility)),
+                    remote: true, class: 'continue-btn' if @test_run.first_untested_result(@column_visibility) %>
+                    
+        <%= link_to export_run_results_path(@test_run, { format: :csv }) do %>
+          <div class="export">
+            <span class='icon-export'></span><%= t 'export' %>
+          </div>
+        <% end %>
+
+        <%= link_to(edit_column_visibility_path(@column_visibility), remote: true) do %>
+          <div class="columns">
+            <span class='icon-table-icon'></span><%= t('columns') %>
+          </div>
+        <% end %>
+        <div class="sort-block">
+          <%= render partial: 'test_plans/sort_block' %>
+        </div>
+      </div>
+      <div class="testRun-test-info" data-test-run-id='<%= @test_run.id %>' >
+        <% @group_results.each do |test_plan, test_run_results| %>
+          <div class="cases-info-item testRun-test-item" id='run-for-test-plan-<%= test_plan.id %>'>
+            <div class="cases-info-item-inner">
+              <div class="cases-test module-item">
+                <div class="cases-test-header">        
+                  <%= render partial: 'test_runs/table/module_header',
+                           locals: { test_module: test_run_results,
+                                     test_plan: test_plan } %>          
+                   <div class="progress-bar">
+                    <div class="progress">
+                      <div class="passed" style="width: <%= @test_run.progress_width_for_test_plan(test_plan.id)[:pass] %>"></div>
+                      <div class="blocked" style="width: <%= @test_run.progress_width_for_test_plan(test_plan.id)[:block] %>"></div>
+                      <div class="failed" style="width: <%= @test_run.progress_width_for_test_plan(test_plan.id)[:fail] %>"></div>
+                      <div class="not-available" style="width: <%= @test_run.progress_width_for_test_plan(test_plan.id)[:na] %>"></div>
+                      <div class="untested" style="width: <%= @test_run.progress_width_for_test_plan(test_plan.id)[:untested] %>"></div>
+                    </div>
+                    <div class="passed-progress"><%= @test_run.progress_width_for_test_plan(test_plan.id)[:pass] %></div>
+                   </div>
+                </div>
+                <div class="cases-test-content">
+                  <div class="cases-test-content-item">
+
+                    <table class="resizable-table" data-columnable='<%= @column_visibility.id %>'>
+                      <%= render partial: 'test_runs/table/table', locals: {test_run_results: test_run_results} %>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  add_profile_table_links();
+  BuildDiagram(<%= raw @gon_values.to_json %>, <%= raw TestRunResult.status.options.to_h.keys.to_json %>);
+  test_run_notification_init();
+  TestRunResult.init_sortable();
+  testModuleWidth();
+</script>

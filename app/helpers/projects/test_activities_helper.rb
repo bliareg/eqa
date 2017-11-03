@@ -1,0 +1,2 @@
+module Projects::TestActivitiesHelper
+end

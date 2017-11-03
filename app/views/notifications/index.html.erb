@@ -1,0 +1,29 @@
+<div class="tab">
+  <div  class="card card-tab-content">
+    <div class="card-header">
+			<h2 class="card-header-title"><%= t('users.notifications')%></h2>
+    </div>
+    <div class="columns-wrapper">
+      <% @user_roles.each do |organization, all_roles| %>
+        <%= render partial: 'users/organization_row',
+                   locals: { organization: organization,
+                             roles: all_roles } %>
+      <% end %>
+    </div>
+  </div>
+  <div  class="card card-tab-content <%= function_hide(@user_roles) %>">
+    <div class="card-header">
+      <h2 class="card-header-title card-header-second-title">
+        <%= t('notifications_enabled') %>
+      </h2>
+    </div>
+    <div class="columns-wrapper">
+      <div class="card card-team notification-team">
+        <div class="title-block">
+          <p class="project-owner"><%= t('you_will_receive') %></p>
+        </div>
+        <button class="btn btn-red disable_email"><%= t('disable_email') %></button>
+      </div>
+    </div>
+  </div>
+</div>

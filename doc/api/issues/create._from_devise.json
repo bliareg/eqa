@@ -1,0 +1,115 @@
+{
+  "resource": "Issues",
+  "http_method": "POST",
+  "route": "/api/v1/projects/issues/create",
+  "description": "Create. From devise",
+  "explanation": null,
+  "parameters": [
+    {
+      "required": true,
+      "name": "token",
+      "description": "Uniq project token"
+    },
+    {
+      "name": "auth_token",
+      "description": "User authenticity token"
+    },
+    {
+      "required": true,
+      "name": "summary",
+      "description": "Issue summary"
+    },
+    {
+      "required": true,
+      "name": "deviceSerial",
+      "description": "Serial device number"
+    },
+    {
+      "required": true,
+      "name": "deviceModel",
+      "description": "Model of device"
+    },
+    {
+      "required": true,
+      "name": "osVersion",
+      "description": "Device system version"
+    },
+    {
+      "required": true,
+      "name": "test_object_id",
+      "description": "ID test object on site"
+    },
+    {
+      "name": "device",
+      "description": "Device version"
+    },
+    {
+      "name": "deviceBrand",
+      "description": "Brand of device"
+    },
+    {
+      "name": "deviceManufacturer",
+      "description": "Manufacturer of device"
+    },
+    {
+      "name": "description",
+      "description": "Issue description"
+    },
+    {
+      "name": "issue_type",
+      "description": "Type of issue"
+    },
+    {
+      "name": "priority",
+      "description": "Issue priority"
+    },
+    {
+      "name": "assigner_id",
+      "description": "Issue assigner ID"
+    },
+    {
+      "Type": "Multipart/Form-data",
+      "name": "test.jpg",
+      "description": "Name your upload image. Data type must be \"jpg\"."
+    },
+    {
+      "Type": "Multipart/Form-data",
+      "name": "test.mp4",
+      "description": "Name your upload video. Data type must be \"mp4\"."
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "POST",
+      "request_path": "/api/v1/projects/issues/create",
+      "request_body": "------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"token\"\r\n\r\nMWuTuH0gsXNrO6b9PXepf8CbPVrnbi6f3\r\n------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"auth_token\"\r\n\r\nj3rLlApItw9beE63SDYmeHIODn87JwoE20\r\n------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"summary\"\r\n\r\ntempora\r\n------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"deviceSerial\"\r\n\r\n1234567\r\n------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"deviceModel\"\r\n\r\nNexus 5X API 23\r\n------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"osVersion\"\r\n\r\n7.0\r\n------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"test_object_id\"\r\n\r\n2\r\n------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"deviceBrand\"\r\n\r\nAndroid\r\n------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"deviceManufacturer\"\r\n\r\nGenymotion\r\n------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"description\"\r\n\r\nEos minima debitis id est quae aut quo.\r\n------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"issue_type\"\r\n\r\nusability_problem\r\n------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"priority\"\r\n\r\nmedium\r\n------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"assigner_id\"\r\n\r\n14\r\n------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"test.jpg\"; filename=\"test.jpg\"\r\nContent-Type: image/jpeg\r\nContent-Length: 119260\r\n\r\n[uploaded data]\r\n------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"test.mp4\"; filename=\"test.mp4\"\r\nContent-Type: video/mp4\r\nContent-Length: 7532155\r\n\r\n[uploaded data]\r\n------------XnJLe9ZIbbGUYtzPQJ16u1--\r",
+      "request_headers": {
+        "Content-Type": "multipart/form-data; boundary=----------XnJLe9ZIbbGUYtzPQJ16u1",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "multipart/form-data; boundary=----------XnJLe9ZIbbGUYtzPQJ16u1",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"id\": 4,\n  \"summary\": \"tempora\",\n  \"description\": \"Eos minima debitis id est quae aut quo.\",\n  \"project_id\": 3,\n  \"issue_type\": \"usability_problem\",\n  \"priority\": \"medium\",\n  \"status_id\": 1,\n  \"reporter_id\": 13,\n  \"assigner_id\": 14,\n  \"created_at\": \"2017-04-14T07:55:06.723Z\",\n  \"updated_at\": \"2017-04-14T07:55:06.723Z\",\n  \"project_issue_number\": 3,\n  \"test_object_id\": 2,\n  \"log_file_id\": null,\n  \"spent_time\": \"1970-01-01T00:00:00.000Z\",\n  \"deleted_at\": null,\n  \"crash_id\": null,\n  \"attachments\": [\n    {\n      \"id\": 33,\n      \"created_at\": \"2017-04-14T07:55:06.916Z\",\n      \"updated_at\": \"2017-04-14T07:55:06.916Z\",\n      \"file_file_name\": \"test.mp4\",\n      \"file_content_type\": \"video/mp4\",\n      \"file_file_size\": 7532155,\n      \"file_updated_at\": \"2017-04-14T07:55:06.655Z\",\n      \"attachable_type\": \"Issue\",\n      \"attachable_id\": 4,\n      \"url\": \"/system/attachments/files/7cd3c116587d776594d7046ee3b37874d2edfc9c/7cd3c116587d776594d7046ee3b37874d2edfc9c/70ee1a9e9bc4c2c88abcebad9a6263d61c1432d7/original/test.mp4\"\n    },\n    {\n      \"id\": 32,\n      \"created_at\": \"2017-04-14T07:55:06.759Z\",\n      \"updated_at\": \"2017-04-14T07:55:06.759Z\",\n      \"file_file_name\": \"test.jpg\",\n      \"file_content_type\": \"image/jpeg\",\n      \"file_file_size\": 119260,\n      \"file_updated_at\": \"2017-04-14T07:55:06.376Z\",\n      \"attachable_type\": \"Issue\",\n      \"attachable_id\": 4,\n      \"url\": \"/system/attachments/files/7cd3c116587d776594d7046ee3b37874d2edfc9c/7cd3c116587d776594d7046ee3b37874d2edfc9c/e88ab54e2b9a276153f33c9382c70608b943b382/original/test.jpg\"\n    }\n  ]\n}",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"c163d7427c8318aa831562ccc50e77aa\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "db84cdb9-6478-4148-8c37-fd8de19f3cc2",
+        "X-Runtime": "2.592280",
+        "Content-Length": "1311"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"http://localhost:3000/api/v1/projects/issues/create\" -d '------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"token\"\r\n\r\nMWuTuH0gsXNrO6b9PXepf8CbPVrnbi6f3\r\n------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"auth_token\"\r\n\r\nj3rLlApItw9beE63SDYmeHIODn87JwoE20\r\n------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"summary\"\r\n\r\ntempora\r\n------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"deviceSerial\"\r\n\r\n1234567\r\n------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"deviceModel\"\r\n\r\nNexus 5X API 23\r\n------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"osVersion\"\r\n\r\n7.0\r\n------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"test_object_id\"\r\n\r\n2\r\n------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"deviceBrand\"\r\n\r\nAndroid\r\n------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"deviceManufacturer\"\r\n\r\nGenymotion\r\n------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"description\"\r\n\r\nEos minima debitis id est quae aut quo.\r\n------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"issue_type\"\r\n\r\nusability_problem\r\n------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"priority\"\r\n\r\nmedium\r\n------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"assigner_id\"\r\n\r\n14\r\n------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"test.jpg\"; filename=\"test.jpg\"\r\nContent-Type: image/jpeg\r\nContent-Length: 119260\r\n\r\n[uploaded data]\r\n------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"test.mp4\"; filename=\"test.mp4\"\r\nContent-Type: video/mp4\r\nContent-Length: 7532155\r\n\r\n[uploaded data]\r\n------------XnJLe9ZIbbGUYtzPQJ16u1--\r' -X POST \\\n\t-H \"Content-Type: multipart/form-data; boundary=----------XnJLe9ZIbbGUYtzPQJ16u1\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+<th class="<%= generate_class_from_name(column_name) %> sortable <%= class_for_sorting(column_name) %>"
+    style='width: <%= @column_set[column_name] %>%'
+    data-column='<%= column_name %>'
+    data-order="<%= set_column_order(column_name) %>">
+  <%= t("column_#{column_name}") %>
+  <span class="fa fa-sort"></span>
+</th>

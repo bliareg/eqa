@@ -1,0 +1,99 @@
+{
+  "resource": "Test Runs",
+  "http_method": "POST",
+  "route": "/api/v1/test_runs",
+  "description": "Create. Not tester or higher rank",
+  "explanation": null,
+  "parameters": [
+    {
+      "required": true,
+      "name": "auth_token",
+      "description": "User authenticity token"
+    },
+    {
+      "required": true,
+      "name": "token",
+      "description": "Uniq project token"
+    },
+    {
+      "required": true,
+      "name": "test_run",
+      "description": "Test run attributes"
+    },
+    {
+      "scope": "test_run",
+      "required": true,
+      "name": "title",
+      "description": "Title of the test plan"
+    },
+    {
+      "scope": "test_run",
+      "required": true,
+      "name": "assigner_id",
+      "description": "ID of assigner"
+    },
+    {
+      "scope": "test_run",
+      "name": "description",
+      "description": "Description of the test plan"
+    },
+    {
+      "scope": "test_run",
+      "name": "test_run_results_attributes",
+      "description": "Attributes of test cases. If you want include they to this test run"
+    },
+    {
+      "scope": "test_run_results_attributes",
+      "name": "test_plan_id",
+      "description": "If you send this parameter, all cases in this test plan was automaticlly added to this test run"
+    },
+    {
+      "scope": "test_run_results_attributes",
+      "name": "test_case_id",
+      "description": "Id of test cases, which you want to add"
+    },
+    {
+      "scope": "test_run_results_attributes",
+      "name": "id",
+      "description": "Id of test run result. Send this with parameter _destroy: true, if you want destroy this result for test case"
+    },
+    {
+      "scope": "test_run_results_attributes",
+      "name": "_destroy",
+      "description": "remove result with existing id. Set this parameter to true"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "POST",
+      "request_path": "/api/v1/test_runs",
+      "request_body": "{\"token\":\"iLlILCmfGKWUZxSy74V92zySUK627iF721\",\"test_run\":{\"title\":\"Endless Night\",\"description\":\"You'll find I'm full of surprises!\",\"assigner_id\":73,\"test_run_results_attributes\":[{\"test_plan_id\":16}]},\"auth_token\":\"GDdkcOk7HZv5BqoAAfDX1sP1oXqTkw2576\"}",
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 403,
+      "response_status_text": "Forbidden",
+      "response_body": "<!DOCTYPE html>\n<html>\n  <head>\n    <title>QualityDashboard</title>\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"/css/main.css\"/>\n  </head>\n  <body>\n    <header id=\"head_menu\" class=\"main-header\">\n      <div class=\"logo_title\">\n        <a href=\"/\">\n          <img src=\"/images/logo_main.png\" alt=\"Logo main\" />\n          <span>Easy QA</span>\n</a>      </div>\n      <div style=\"text-align: center\"> You have no permission to view this page or perform this action.</div>\n    </header>\n  </body>\n</html>\n",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Content-Type": "text/html; charset=utf-8",
+        "Cache-Control": "no-cache",
+        "X-Request-Id": "c9a1ff72-d2f8-49dd-8c7a-94f1d75e852b",
+        "X-Runtime": "0.073991",
+        "Content-Length": "505"
+      },
+      "response_content_type": "text/html; charset=utf-8",
+      "curl": "curl \"http://localhost:3000/api/v1/test_runs\" -d '{\"token\":\"iLlILCmfGKWUZxSy74V92zySUK627iF721\",\"test_run\":{\"title\":\"Endless Night\",\"description\":\"You\\u0027ll find I\\u0027m full of surprises!\",\"assigner_id\":73,\"test_run_results_attributes\":[{\"test_plan_id\":16}]},\"auth_token\":\"GDdkcOk7HZv5BqoAAfDX1sP1oXqTkw2576\"}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

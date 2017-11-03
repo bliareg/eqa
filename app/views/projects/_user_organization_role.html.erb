@@ -1,0 +1,11 @@
+<div class="title-block">
+  <%= image_tag org.logo.file.url(:thumb), class: 'card-org-logo' %>
+  <h2>
+    <%= link_to org.title, organization_path(org), class: "card-title" %>
+  </h2>
+  <p class="project-owner">
+  <% unless current_user.organization_role(org.id).nil? %>
+    <%= t('you_are') + ' ' + current_user.organization_role(org.id).role_text %> 
+  <% end %>
+  </p>
+</div>

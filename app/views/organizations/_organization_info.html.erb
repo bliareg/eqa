@@ -1,0 +1,14 @@
+<div id='organization_info'>
+  <%= link_to organization_projects_path(@organization) do %>
+    <div class="count-block">
+       <h2><%= t 'projects' %></h2>
+        <%= colored_count_span(@organization.projects.where(user_id: current_user.id).count) %>
+    </div>
+  <% end %>
+  <%= link_to organization_profile_members_path(@organization) do %>
+    <div class="count-block">
+      <h2><%= t 'members' %></h2>
+      <%= colored_count_span(@organization.members.size) %>
+    </div>
+  <% end %>
+</div>

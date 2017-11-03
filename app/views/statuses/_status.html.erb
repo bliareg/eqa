@@ -1,0 +1,12 @@
+<div class="agile_bord" data-project-status-id='<%= project_status.id %>' style='<%= status_visible(project_status) %>'>
+  <div class='agile_title' data-status-id='<%= status.id %>'>
+    <span><%= status.translate %>
+      (<span class='count' id='status-<%=status.id%>-count'><%= issues.size %></span>)
+    </span>
+    <%= edit_status_view(status) %>
+  </div>
+  <div class="change-bg-btn change-bg-<%= project_status.color %>"></div>
+  <div class='connectedSortable agile_content column-bg-<%= project_status.color %>' id='status-<%= status.id %>'>
+    <%= render issues.first(@per_page) %>
+  </div>
+</div>

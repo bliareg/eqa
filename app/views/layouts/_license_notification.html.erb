@@ -1,0 +1,22 @@
+<div class="notification-top-panel">
+  <div class="panel-inner">
+    <% if current_user.licenses.count.zero? %>
+      <span class="message"><%= t('empty_licenses') %></span>
+    <% elsif current_user.is_payment_expiring? %>
+      <span class="message">
+        <%= "#{t(:days_to_end, count: current_user.current_license.expires_in)} #{current_user.current_license.trial? ? t(:trial_version) : t(:paid_version)}".html_safe %>
+      </span>
+    <% elsif current_user.is_payment_expired? %>
+      <span class="message">
+        <% license = current_user.licenses.list.first %>
+        <%= "#{license&.trial? ? t(:trial_version_over) : t(:paid_version_over)}" %>
+      </span>
+    <% elsif current_user.current_license.present? && !current_user.current_license&.valid_team_size? %>
+      <span class="message">
+        <%= t('overlimit_users') % { licenses: current_user.current_license.number_of_licenses , members: current_user.team.size } %>
+      </span>
+    <% end %>
+    <%= link_to t(:view_plans), licenses_path, class: "btn top-panel-btn" %>
+  </div>
+  <span class="fa fa-times close close_notification" aria-hidden="true"></span>
+</div>

@@ -1,0 +1,39 @@
+<%= include_gon %>
+<div class="tab-pane-content testRun" id="testingActivities">
+  <div class="testing-activities-item">
+    <h3 class="title"><%= t('number_of_written_cases') %></h3>
+    <div class="chart">
+      <canvas id="test_cases_counting_chart" width="700" height="350"></canvas>
+    </div>
+  </div>
+  <br>
+  <div class="testing-activities-item">
+    <h3 class="title"><%= t('number_of_cases_passed') %></h3>
+    <div class="chart">
+      <canvas id="test_cases_status_calculating_chart" width="700" height="350"></canvas>
+    </div>
+  </div>
+  <% if @test_run_info.present? %>
+    <div class="testRun-box">
+      <h2 class="main-title"><%= t('latest_run') %></h2>
+      <div id='test_runs_list'>
+        <div class="testRun-box-item">
+          <div class="testRun-box-item-img">
+            <%= image_tag('projects.png') %>
+          </div>
+          <div class="testRun-box-item-info">
+            <%= link_to @test_run_info.title,
+                        test_run_path(@test_run_info.id),
+                        remote: true, class: 'title' %><br/>
+            <span class="user">
+              <%= @test_run_info.assigner.name%>
+              <span class="date">
+                <%= t('on') %> <%= @test_run_info.created_at.strftime('%d/%m/%Y') %>
+              </span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

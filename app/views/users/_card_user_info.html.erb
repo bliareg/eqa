@@ -1,0 +1,32 @@
+<div class="card card-user-info">
+  <%= image_tag current_user.avatar.file.url(:medium), class: 'avatar' %>
+  <div class="details">
+    <%= link_to current_user.name, edit_user_path, class: 'username', title: current_user.name %>
+    <p class="date">
+      <span>
+        <%= t 'users.date_registration' %>
+        <%= (current_user.created_at + timezone).strftime('%d/%m/%Y %H:%M') %>
+      </span>
+    </p>
+    <p class="date">
+      <span>
+        <%= t 'users.last_sign_in' %>
+        <%= (current_user.current_sign_in_at + timezone).strftime('%d/%m/%Y %H:%M') %>
+      </span>
+    </p>
+  </div>
+  <div class="count">
+    <%= link_to organizations_path, class: 'count-block' do %>
+    <h2><%= t 'organizations' %></h2>
+    <%= colored_count_span(current_user.organizations.size) %>
+    <% end %>
+    <%= link_to projects_path, class: 'count-block' do %>
+    <h2><%= t 'projects' %></h2>
+    <%= colored_count_span(current_user.all_projects.size) %>
+    <% end %>
+    <a href="#" class="count-block">
+      <h2><%= t 'employees' %></h2>
+      <%= colored_count_span(current_user.team.size.zero? ? 0 : current_user.team.size - 1) %>
+    </a>
+  </div>
+</div>

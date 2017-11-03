@@ -1,0 +1,2 @@
+module TestPlans::TestModulePositionsHelper
+end

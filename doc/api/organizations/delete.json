@@ -1,0 +1,53 @@
+{
+  "resource": "Organizations",
+  "http_method": "DELETE",
+  "route": "/api/v1/organizations/:id",
+  "description": "Delete",
+  "explanation": null,
+  "parameters": [
+    {
+      "required": true,
+      "name": "auth_token",
+      "description": "User authenticity token"
+    },
+    {
+      "required": true,
+      "name": "id",
+      "description": "Organization id"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "DELETE",
+      "request_path": "/api/v1/organizations/12",
+      "request_body": "{\"auth_token\":\"D0MlZLb4eDGuBDLsgs/fLf0aXd216wmx21\"}",
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"id\": 12,\n  \"title\": \"Organization12\",\n  \"description\": \"Organization12 - the best company in the world.\",\n  \"deleted_at\": \"2017-04-14T07:55:31.626Z\",\n  \"created_at\": \"2017-04-14T07:55:31.493Z\",\n  \"updated_at\": \"2017-04-14T07:55:31.493Z\",\n  \"slug\": \"Organization12\",\n  \"is_payment_expired\": false,\n  \"is_payment_expiring\": false\n}",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"9a6b3c582baabf26c1b8c87797c56a54\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "c83beb6d-ec61-4f74-9bf9-aa39ed10aee0",
+        "X-Runtime": "0.118501",
+        "Content-Length": "297"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"http://localhost:3000/api/v1/organizations/12\" -d '{\"auth_token\":\"D0MlZLb4eDGuBDLsgs/fLf0aXd216wmx21\"}' -X DELETE \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

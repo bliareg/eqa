@@ -1,0 +1,34 @@
+<div class="tab-pane tab testRun" id='test_run_list'>
+  <div class="tab-pane-content">
+    <%= new_test_run_link(@project) %>
+    <div class="testRun-box new">
+      <h2 class="main-title"><%= t('new_test_runs') %></h2>
+      <div class='test_runs_list'>
+      <% if @test_runs['new'] %>
+        <%= render partial: 'test_run_item',
+                   collection: @test_runs['new'].to_a, as: :run %>
+      <% end %>
+      </div>
+    </div>
+
+    <div class="testRun-box active">
+      <h2 class="main-title"><%= t('active_test_runs') %></h2>
+      <div class='test_runs_list'>
+        <% if @test_runs['active'] %>
+          <%= render partial: 'test_run_item',
+                     collection: @test_runs['active'].to_a, as: :run %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="testRun-box finished">
+      <h2 class="main-title"><%= t('finished_test_runs') %></h2>
+      <div class='test_runs_list'>
+        <% if @test_runs['finished'] %>
+          <%= render partial: 'test_run_item',
+                     collection: @test_runs['finished'].to_a, as: :run %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

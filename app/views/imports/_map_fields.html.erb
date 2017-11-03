@@ -1,0 +1,61 @@
+<div class="modal-dialog map-fields">
+  <div class="modal-content container">
+    <div class="title-main">
+      <h3><%= t('map_fields') %></h3>
+      <p><%= t('select_the_csv_fields_to_import') %></p>
+      <span class="close">
+        <span class='icon-close-icon'></span>
+      </span>
+    </div>
+    <div class="modal-content-scroll">
+      <div class="modal-body">
+        <div class="row">
+          <div class="col xs-12">
+            <%= form_tag(import_path, method: :post, remote: true, id: 'parse_csv') do %>
+              <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+              <%= hidden_field_tag :object, @object_name %>
+              <%= hidden_field_tag :separator, params[:separator] %>
+              <%= hidden_field_tag :test_plan_id, @test_plan_id if defined?(@test_plan_id) %>
+              <table class="map-fields-table">
+                <tr class="table-title">
+                  <td><%= @object_name.capitalize %> <%= t('field') %></td>
+                  <td></td>
+                  <td><%= t('csv_field') %></td>
+                </tr>
+                <% @model_fields.each do |(field_text, field_value)| %>
+                  <tr class="field">
+                    <td>
+                      <p class="field-name"><%= t(field_value) %></p>
+                    </td>
+                    <td>
+                      <span class='icon-arrow'></span>
+                    </td>
+                    <td>
+                      <div class="input_wrapper drop-arr">
+                        <%= select_tag "#{@object_name}[#{field_value}]",
+                                       options_for_select(@csv_headers, substitute_value(@csv_headers, field_value)),
+                                       required: field_is_required?(@object_name, field_value),
+                                       prompt: t('dont_map_this_field'),
+                                       class: 'import_select chosen-select', multiple: true ,
+                                      'data-placeholder' => t('select_some_options') %>
+                      </div>
+                    </td>
+                  </tr>
+                <% end -%>
+              </table>
+            <% end -%>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="btn-group">
+      <button type="button" class="btn btn-grey btn-big " id="start-import"><%= t('begin_import') %></button>
+      <span class='btn btn-white-green btn-big back_import_button'><%= t('back') %></span>
+    </div>
+  </div>
+</div>
+<script>
+  $(document).ready(function() {
+    Import.map_fields.init();
+  });
+</script>

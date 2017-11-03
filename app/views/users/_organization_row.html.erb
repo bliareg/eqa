@@ -1,0 +1,19 @@
+<div class="card card-team notification-team">
+  <div class="title-block">
+    <%= image_tag organization.logo.file.url(:medium), class: 'card-org-logo' %>
+    <h2 class="card-title"><%= organization.title %></h2>
+    <p class="project-owner"><%=t('you_are') + " " + current_user.organization_role(organization.id).role.text %></p>
+    <div class="enable-all">
+      <span class=""><%= t('users.notifications')%></span>
+      <span class="btn-white-green enable_all">
+        <span class="fa fa-check check" aria-hidden="true"></span>
+        <%= t('enable_all')%>
+      </span>
+      <span class="btn-white-red disable_all">
+        <span class="fa fa-close delete" aria-hidden="true"></span>
+        <%= t('disable_all')%>
+      </span>
+    </div>
+  </div>
+  <%= render partial: "users/role", collection: roles %>
+</div>

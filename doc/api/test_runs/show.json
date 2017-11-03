@@ -1,0 +1,60 @@
+{
+  "resource": "Test Runs",
+  "http_method": "GET",
+  "route": "/api/v1/test_runs/:id",
+  "description": "Show",
+  "explanation": null,
+  "parameters": [
+    {
+      "required": true,
+      "name": "auth_token",
+      "description": "User authenticity token"
+    },
+    {
+      "required": true,
+      "name": "token",
+      "description": "Uniq project token"
+    },
+    {
+      "required": true,
+      "name": "id",
+      "description": "Test run id"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "/api/v1/test_runs/7?token=iLlILCmfGKWUZxSy74V92zySUK627iF721&auth_token=U85xBxcJVooIl4Q%2BlDzmHCRzvLgkfrDH75",
+      "request_body": null,
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+        "token": "iLlILCmfGKWUZxSy74V92zySUK627iF721",
+        "auth_token": "U85xBxcJVooIl4Q+lDzmHCRzvLgkfrDH75"
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"id\": 7,\n  \"project_id\": 22,\n  \"assigner_id\": 73,\n  \"title\": \"Blithe Spirit\",\n  \"description\": \"You know, that little droid is going to cause me a lot of trouble.\",\n  \"created_at\": \"2017-04-14T07:56:34.855Z\",\n  \"updated_at\": \"2017-04-14T07:56:34.855Z\",\n  \"run_status\": \"new\",\n  \"reporter_id\": 73\n}",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"84f680c091e0e6b327e01100e26af0c0\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "856b531a-8c3b-4b4c-9c61-c3bddbaf7b95",
+        "X-Runtime": "0.052209",
+        "Content-Length": "264"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"http://localhost:3000/api/v1/test_runs/7?token=iLlILCmfGKWUZxSy74V92zySUK627iF721&auth_token=U85xBxcJVooIl4Q%2BlDzmHCRzvLgkfrDH75\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "resource": "Roles",
+  "http_method": "PUT",
+  "route": "/api/v1/roles/:id",
+  "description": "Update project role",
+  "explanation": null,
+  "parameters": [
+    {
+      "required": true,
+      "name": "auth_token",
+      "description": "User authenticity token"
+    },
+    {
+      "required": true,
+      "name": "id",
+      "description": "Role id"
+    },
+    {
+      "name": "role",
+      "description": "Role in project. Must be \"developer\", \"tester\", \"viewer\" or \"project_manager\""
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "PUT",
+      "request_path": "/api/v1/roles/60",
+      "request_body": "{\"role\":\"tester\",\"auth_token\":\"cjIywkHBYO+p8g1cKyauxei27w/zjdtr33\"}",
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"organization_id\": 14,\n  \"role\": \"tester\",\n  \"project_id\": 15,\n  \"user_id\": 32,\n  \"id\": 60,\n  \"created_at\": \"2017-04-14T07:55:41.334Z\",\n  \"updated_at\": \"2017-04-14T07:55:45.455Z\",\n  \"is_subscribed\": null,\n  \"deleted_at\": null\n}",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"e73bd57cb0f606970bac5aee0a45cec1\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "c0119fed-0804-48ea-a250-96a352fb6f9d",
+        "X-Runtime": "0.073143",
+        "Content-Length": "194"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"http://localhost:3000/api/v1/roles/60\" -d '{\"role\":\"tester\",\"auth_token\":\"cjIywkHBYO+p8g1cKyauxei27w/zjdtr33\"}' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

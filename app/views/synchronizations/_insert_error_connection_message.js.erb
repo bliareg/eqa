@@ -1,0 +1,12 @@
+var error_message = $('<%= j render "error_connection_message" %>');
+error_message.find('p').text('<%= @synchronization.errors.messages[:bad_connection][0] %>');
+
+if ($('.info-block.error').length == 0) {
+  var current_max_height = parseInt($('.modal-content-scroll').css('max-height'));
+
+  $('.modal-content-scroll').css({
+    'max-height': (current_max_height - 80) + 'px'
+  });
+}
+
+$('.error_connection_block').html(error_message);

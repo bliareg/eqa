@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="11" height="14" viewBox="0 0 11 14">
+  <defs>
+    <style>
+      .delete{
+        fill: #e87878;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="icon" class="delete" d="M839,450c0,0.856.493,2,1.357,2h6.286c0.864,0,1.357-1.144,1.357-2v-8h-9v8Zm10-11h-3l-1-1h-3l-1,1h-3v2h11v-2Z" transform="translate(-838 -438)"/>
+</svg>

@@ -1,0 +1,7 @@
+---
+
+- name: Copy application linked files
+  hosts: rails
+  remote_user: "{{ deploy_user }}"
+  roles:
+    - role: linked_files

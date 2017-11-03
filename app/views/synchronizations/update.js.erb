@@ -1,0 +1,3 @@
+hide_modal();
+$('.plugins-card[data-id=<%= @synchronization.name + @synchronization.id.to_s %>]')
+  .replaceWith($("<%= j render 'plugin_info_card', setting: @synchronization %>"));

@@ -1,0 +1,30 @@
+---
+
+- name: Install PostgreSQL
+  hosts: all
+  remote_user: "{{ deploy_user }}"
+  become: yes
+  roles:
+    - role: ANXS.postgresql
+      postgresql_version: 9.5
+      postgresql_encoding: 'UTF-8'
+      postgresql_locale: 'en_US.UTF-8'
+      postgresql_admin_user: 'postgres'
+      postgresql_default_auth_method: 'trust'
+      postgresql_databases:
+        - name: "{{ app_name }}_production"
+          owner: "{{ app_name }}"
+          hstore: yes
+      postgresql_database_extensions:
+        - db: "{{ app_name }}_production"
+          extensions:
+            - hstore
+      postgresql_users:
+        - name: "{{ app_name }}"
+          pass: "{{ user_password_sha_512 }}"
+          encrypted: yes
+      postgresql_user_privileges:
+        - name: "{{ app_name }}"
+          db: "{{ app_name }}_production"
+          priv: "ALL"
+          role_attr_flags: "CREATEDB,NOSUPERUSER"

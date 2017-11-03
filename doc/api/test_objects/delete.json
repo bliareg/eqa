@@ -1,0 +1,58 @@
+{
+  "resource": "Test Objects",
+  "http_method": "DELETE",
+  "route": "/api/v1/test_objects/:id",
+  "description": "Delete",
+  "explanation": null,
+  "parameters": [
+    {
+      "required": true,
+      "name": "token",
+      "description": "Uniq project token"
+    },
+    {
+      "required": true,
+      "name": "id",
+      "description": "Test object ID"
+    },
+    {
+      "required": true,
+      "name": "auth_token",
+      "description": "User authenticity token"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "DELETE",
+      "request_path": "/api/v1/test_objects/7",
+      "request_body": "{\"token\":\"esazRSTcFSdyX5L/e+MyqMu+mWWH1yh316\",\"auth_token\":\"E/tmTYkqr0Fhr0zR24Ed2/KSpOFBl4kU45\"}",
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"id\": 7,\n  \"file_file_name\": null,\n  \"file_content_type\": null,\n  \"file_file_size\": null,\n  \"file_updated_at\": null,\n  \"project_id\": 17,\n  \"user_id\": 43,\n  \"created_at\": \"2017-04-14T07:55:55.828Z\",\n  \"updated_at\": \"2017-04-14T07:55:55.828Z\",\n  \"link\": null,\n  \"platform_version\": \"iOS9.3\",\n  \"package\": \"com.iov.IOV42\",\n  \"min_sdk_version\": \"iOS9.0\",\n  \"sdk_version\": null,\n  \"identeficator\": \"com.iov.IOV42:1:1.0\",\n  \"deleted_at\": \"2017-04-14T07:56:04.299Z\",\n  \"url\": null\n}",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"e45eedbf9ebbdb0001b7f3228f07e5d5\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "8683a745-b0c3-4798-9eda-38618cf2918f",
+        "X-Runtime": "0.143419",
+        "Content-Length": "410"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"http://localhost:3000/api/v1/test_objects/7\" -d '{\"token\":\"esazRSTcFSdyX5L/e+MyqMu+mWWH1yh316\",\"auth_token\":\"E/tmTYkqr0Fhr0zR24Ed2/KSpOFBl4kU45\"}' -X DELETE \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

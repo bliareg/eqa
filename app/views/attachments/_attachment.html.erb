@@ -1,0 +1,9 @@
+<div class="preview_item" data-attachment-id='<%= attachment.id %>'>
+  <span data-dz-name>
+    <%= link_to attachment.file_file_name,
+                attachment.file.url,
+                class: 'file-name',
+                target: '_blank' %>
+  </span>
+  <span class="remove delete_attachment icon-basket-icon"></span>
+</div>

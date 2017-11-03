@@ -1,0 +1,6 @@
+$('#dashboard').html("<%= j render file: 'organizations/members.html.erb' %>");
+projects_left_manu_action('<%= request.path %>');
+$('.load-block').hide();
+init_organization_members();
+custom_select();
+init_change_roles();

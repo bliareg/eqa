@@ -1,0 +1,65 @@
+<div class="modal-dialog select-project-members">
+  <div class="modal-content container">
+    <div class="title-block title-main">
+      <h3 class="title"><%= t 'maillist_header' %></h3>
+      <h3 class="added-members">
+        <%= "#{t 'added'} #{@members.size} #{t 'members'}" %>
+      </h3>
+      <span class="close">
+        <span class='icon-close-icon'></span>
+      </span>
+    </div>
+    <div class="modal-content-scroll">
+      <div class="modal-body">
+        <div class="row">
+          <div class="col xs-12">
+            <table class="select-project-members-table" id="send_link">
+              <tr class="table-title">
+                <td colspan="2"><%= t 'member_names' %></td>
+                <td><%= t 'projects' %></td>
+                <td><%= t 'joined_at' %></td>
+                <td>
+                  <input type="checkbox" id="checkbox" class="checkbox">
+                  <label for="checkbox" class="table-checkbox-label"></label>
+                </td>
+              </tr>
+              <!-- ===== Member ===== -->
+              <% @members.each do |member| %>
+                <tr class="member">
+                  <td class="member-avatar">
+                    <%= image_tag member.avatar.file.url(:medium) %>
+                  </td>
+                  <td>
+                    <p class="member-name"><%= member.name %></p>
+                    <p class="member-email"><%= member.email %></p>
+                    <p class="member-country"><%= member.country %></p>
+                  </td>
+                  <td class="member-projects"><%= member.all_projects.size %></td>
+                  <td class="member-joined">
+                    <%= member.roles
+                              .find_by_project_id(@project.id)
+                              .created_at
+                              .strftime("%d/%m/%Y") %>
+                  </td>
+                  <td>
+                    <input type="checkbox" id="checkbox<%= member.id %>" class="checkbox">
+                    <label for="checkbox<%= member.id %>" class="table-checkbox-label"></label>
+                  </td>
+                </tr>
+              <% end %>
+            </table>
+          </div>
+        </div>
+      </div> <!--modal-body-->
+    </div>
+    <div class="select-project-members-buttons">
+      <%= button_tag t('send_link'), class: 'btn btn-green send_link_to_email inactive', 'data-test-object-id' => @test_object.id, disabled: true %>
+      <button type="button" class="btn btn-white-green cancel">
+        <%= t('cancel') %>
+      </button>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+  Checkboxes.preventClickWhenCheckboxesNotChecked.init($('.send_link_to_email'), $('.member .checkbox'));
+</script>

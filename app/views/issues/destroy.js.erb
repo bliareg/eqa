@@ -1,0 +1,5 @@
+<% if request.referrer =~ /crashes/ %>
+  $('.log-file-btn-<%= @issue.log_file_id %>').children()
+                                              .replaceWith("<%= j crash_action_button(@project, @issue.log_file) %>");
+<% end %>
+disappear_modal();

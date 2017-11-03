@@ -1,0 +1,60 @@
+{
+  "resource": "Test Modules",
+  "http_method": "GET",
+  "route": "/api/v1/test_plans/:test_plan_id/test_modules",
+  "description": "Index",
+  "explanation": null,
+  "parameters": [
+    {
+      "required": true,
+      "name": "auth_token",
+      "description": "User authenticity token"
+    },
+    {
+      "required": true,
+      "name": "token",
+      "description": "Uniq project token"
+    },
+    {
+      "required": true,
+      "name": "test_plan_id",
+      "description": "ID of test plan"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "/api/v1/test_plans/2/test_modules?token=zP40TIc2RNDNNI%2BeASElxGuQwXxnxt8K18&auth_token=wrpus%2FZJ5qJHNoKLFGOZWGz%2B4hUzzBL057",
+      "request_body": null,
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+        "token": "zP40TIc2RNDNNI+eASElxGuQwXxnxt8K18",
+        "auth_token": "wrpus/ZJ5qJHNoKLFGOZWGz+4hUzzBL057"
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "[\n  {\n    \"id\": 2,\n    \"test_plan_id\": 2,\n    \"created_by\": 55,\n    \"title\": \"Sullust\",\n    \"description\": \"Always pass on what you have learned.\",\n    \"parent_id\": null,\n    \"lft\": 3,\n    \"rgt\": 4,\n    \"depth\": 0,\n    \"children_count\": null,\n    \"created_at\": \"2017-04-14T07:56:14.456Z\",\n    \"updated_at\": \"2017-04-14T07:56:14.456Z\",\n    \"position\": 0\n  },\n  {\n    \"id\": 3,\n    \"test_plan_id\": 2,\n    \"created_by\": 55,\n    \"title\": \"Dagobah\",\n    \"description\": \"Adventure. Excitement. A Jedi craves not these things.\",\n    \"parent_id\": null,\n    \"lft\": 5,\n    \"rgt\": 6,\n    \"depth\": 0,\n    \"children_count\": null,\n    \"created_at\": \"2017-04-14T07:56:14.500Z\",\n    \"updated_at\": \"2017-04-14T07:56:14.500Z\",\n    \"position\": 0\n  },\n  {\n    \"id\": 4,\n    \"test_plan_id\": 2,\n    \"created_by\": 55,\n    \"title\": \"Hosnian Prime\",\n    \"description\": \"To answer power with power, the Jedi way this is not. In this war, a danger there is, of losing who we are.\",\n    \"parent_id\": null,\n    \"lft\": 7,\n    \"rgt\": 8,\n    \"depth\": 0,\n    \"children_count\": null,\n    \"created_at\": \"2017-04-14T07:56:14.544Z\",\n    \"updated_at\": \"2017-04-14T07:56:14.544Z\",\n    \"position\": 0\n  },\n  {\n    \"id\": 5,\n    \"test_plan_id\": 2,\n    \"created_by\": 55,\n    \"title\": \"Mustafar\",\n    \"description\": \"Always pass on what you have learned.\",\n    \"parent_id\": null,\n    \"lft\": 9,\n    \"rgt\": 10,\n    \"depth\": 0,\n    \"children_count\": null,\n    \"created_at\": \"2017-04-14T07:56:14.588Z\",\n    \"updated_at\": \"2017-04-14T07:56:14.588Z\",\n    \"position\": 0\n  },\n  {\n    \"id\": 6,\n    \"test_plan_id\": 2,\n    \"created_by\": 55,\n    \"title\": \"Utapau\",\n    \"description\": \"Do. Or do not. There is no try.\",\n    \"parent_id\": null,\n    \"lft\": 11,\n    \"rgt\": 12,\n    \"depth\": 0,\n    \"children_count\": null,\n    \"created_at\": \"2017-04-14T07:56:14.634Z\",\n    \"updated_at\": \"2017-04-14T07:56:14.634Z\",\n    \"position\": 0\n  },\n  {\n    \"id\": 7,\n    \"test_plan_id\": 2,\n    \"created_by\": 55,\n    \"title\": \"Mustafar\",\n    \"description\": \"Truly wonderful, the mind of a child is.\",\n    \"parent_id\": null,\n    \"lft\": 13,\n    \"rgt\": 14,\n    \"depth\": 0,\n    \"children_count\": null,\n    \"created_at\": \"2017-04-14T07:56:14.677Z\",\n    \"updated_at\": \"2017-04-14T07:56:14.677Z\",\n    \"position\": 0\n  }\n]",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"6099137b3818b4a3745a4ffdd7a54fc4\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "ec31b7fa-9574-4de4-aab5-2b896b24f208",
+        "X-Runtime": "0.220248",
+        "Content-Length": "1729"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"http://localhost:3000/api/v1/test_plans/2/test_modules?token=zP40TIc2RNDNNI%2BeASElxGuQwXxnxt8K18&auth_token=wrpus%2FZJ5qJHNoKLFGOZWGz%2B4hUzzBL057\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

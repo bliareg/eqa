@@ -1,0 +1,19 @@
+<% content_for :my_projects do %>
+  true
+<% end %>
+
+<div class="main-content <%= notification_class %>">
+  <%= render 'platform_filters' %>
+  <%= content_tag(:p, t('no_projects_found')) if @projects.empty? %>
+  <% @projects.group_by(&:organization).each do |org, projects| %>
+    <div class="card card-team">
+      <%= render partial: 'user_organization_role',
+                 locals: { org: org } %>
+      <% projects.each do |project| %>
+        <%= render partial: 'organization_project_info',
+                   locals: { project: project, org: org } %>
+      <% end %>
+    </div>
+  <% end %>
+  <%= paginate @projects %>
+</div>

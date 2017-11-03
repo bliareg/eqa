@@ -1,0 +1,60 @@
+{
+  "resource": "Issues",
+  "http_method": "GET",
+  "route": "/api/v1/issues/:id",
+  "description": "Show",
+  "explanation": null,
+  "parameters": [
+    {
+      "required": true,
+      "name": "token",
+      "description": "Uniq project token"
+    },
+    {
+      "required": true,
+      "name": "auth_token",
+      "description": "User authenticity token"
+    },
+    {
+      "required": true,
+      "name": "id",
+      "description": "Issue ID"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "/api/v1/issues/10?token=e7fOD6Cr%2Fw7nVfgUv31cvt91wNZUPOo48&auth_token=b10sJhy7rHH%2FeJpvKNE%2B6W%2Bfko9Wg%2Bz931",
+      "request_body": null,
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+        "token": "e7fOD6Cr/w7nVfgUv31cvt91wNZUPOo48",
+        "auth_token": "b10sJhy7rHH/eJpvKNE+6W+fko9Wg+z931"
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"id\": 10,\n  \"summary\": \"aut\",\n  \"description\": \"Aut cumque et perspiciatis dignissimos explicabo.\",\n  \"project_id\": 8,\n  \"issue_type\": \"crash\",\n  \"severity\": \"high\",\n  \"priority\": \"high\",\n  \"status_id\": 1,\n  \"reporter_id\": null,\n  \"assigner_id\": null,\n  \"created_at\": \"2017-03-23T09:20:45.966Z\",\n  \"updated_at\": \"2017-03-23T09:20:45.966Z\",\n  \"project_issue_number\": 1,\n  \"test_object_id\": null,\n  \"log_file_id\": null,\n  \"spent_time\": \"1970-01-01T00:00:00.000Z\",\n  \"deleted_at\": null,\n  \"crash_id\": null\n}",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"5cbd398cfd051ca297aee93128310be4\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "6a7abf52-b796-40b3-8d0f-3e76cf9681a9",
+        "X-Runtime": "0.049125",
+        "Content-Length": "435"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"http://localhost:3000/api/v1/issues/10?token=e7fOD6Cr%2Fw7nVfgUv31cvt91wNZUPOo48&auth_token=b10sJhy7rHH%2FeJpvKNE%2B6W%2Bfko9Wg%2Bz931\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

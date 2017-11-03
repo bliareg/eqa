@@ -1,0 +1,5 @@
+---
+
+- name: Rename monit config for sidekiq
+  command: mv /etc/monit/conf.d/sidekiq__standalone.conf /etc/monit/conf.d/sidekiq__standalone0.conf
+  notify: reload monit

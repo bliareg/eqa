@@ -1,0 +1,10 @@
+<div class="tab-pane-content delete-project">
+  <%= image_tag(image_path("warning-icon.png"), class: 'warning-icon') %>
+  <div class="warning-description">
+    <p class="warning-description-title"><%= t('deleting_project') %></p>
+    <p class="warning-description-text"><%= t('permanent_action') %></p>
+    <p class="warning-description-text"><%= t('no_member') %></p>
+  </div>
+  <%= link_to t('delete_project'), destroy_project_confirm_path(@project),
+                                   class: "btn btn-red", remote: true %>
+</div>

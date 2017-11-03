@@ -1,0 +1,8 @@
+---
+
+- name: Create linked directories
+  file:
+    path: "{{ deploy_folder }}{{ app_name }}/shared/{{ item }}"
+    state: directory
+  with_items:
+    - "{{ linked_directories }}"

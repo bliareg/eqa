@@ -1,0 +1,8 @@
+<svg id="SvgjsSvg1008" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+     xmlns:svgjs="http://svgjs.com/svgjs" width="15" height="14">
+    <defs id="SvgjsDefs1009"></defs>
+    <path id="SvgjsPath1010"
+          class="test-run-list-svg"
+          d="M985 329L984 329L984 326L975 326L975 329L974 329C973.062 329 972 327.933 972 327L972 323C972 322.067 973.062 321 974 321L975 321L975 323L984 323L984 321L985 321C985.937 321 987 322.067 987 323L987 327C987 327.933 985.937 329 985 329ZM983 332L976 332L976 327L983 327ZM976 318L983 318L983 322L976 322ZM982 328L977 328L977 329L982 329ZM982 330L977 330L977 331L982 331Z "
+          fill="#243746" transform="matrix(1,0,0,1,-972,-318)"></path>
+</svg>

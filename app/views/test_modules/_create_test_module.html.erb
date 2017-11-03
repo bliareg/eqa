@@ -1,0 +1,31 @@
+<div class="modal-dialog modal-add-module">
+  <div class="modal-content">
+    <div class="title-main">
+      <h3><%= text %></h3>
+      <span class="close">
+        <span class='icon-close-icon'></span>
+      </span>
+    </div>
+    <div class="modal-body">
+      <%= form_for(@test_module, url: url, validate: true, html: { method: method }, remote: true) do |f| %>
+        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+        <%= f.hidden_field :created_by, value: current_user.id %>
+        <%= f.hidden_field :parent_id, value: params[:parent_id] unless params[:parent_id].nil? %>
+        <%= f.hidden_field :test_plan_id, value: (@test_module.test_plan_id || params[:test_plan]) %>
+        <%= hidden_field_tag :project_id, @project.id %>
+        <div class="field module-title">
+          <%= f.label :title, class: 'title star'%>
+          <%= f.text_field :title, autofocus: true, validate: true %>
+        </div>
+        <div class="field module-description">
+          <%= f.label :description, class: 'title' %>
+          <%= f.text_area :description %>
+        </div>
+        <div class="actions btn-group">
+          <%= f.submit t('save_module'), class: 'submit_project btn btn-green' %>
+          <span class="btn btn-white-green cancel"><%= t('cancel') %></span>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

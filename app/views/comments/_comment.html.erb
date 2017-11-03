@@ -1,0 +1,35 @@
+<div class="comment-block" data-comment-id="<%= comment.id %>" >
+  <div class="comment-header">
+    <%= comment_user_info(comment) %>
+    <span class="comment-date"><%= comment.created_at.strftime("%d.%m.%Y") %></span>
+    <span class="comment-time"><%= (comment.created_at + timezone).strftime("%H:%M") %></span>
+    <div class="edit-buttons">
+      <% if policy(comment).update? && !comment.deleted? && !comment.is_history %>
+        <a href='javascript:;' class="edit destroy_comment_btn">
+          <span class='icon-delete-icon-small'></span>
+        </a>
+        <a href='javascript:;' class="edit edit_comment_btn">
+          <span class='icon-edit-icon-small'></span>
+        </a>
+      <% end %>
+    </div>
+  </div>
+  <div class="comment-text">
+    <% if comment.is_history %>
+       <ul class="comment-history">
+        <%= parse_comment_body(comment.body, comment.commentable_type) %>
+      </ul>
+    <% else %>
+      <p class="displayText"><%= comment.deleted? ? t('message_was_deleted') : comment.body %></p>
+      <ul class="comment-history">
+        <% comment.history.each do |version| %>
+          <li class="comment-history-item">
+            <%= comment_action(version.event) %>
+            <%= find_user_from_version(version) %>
+            <%= (version.created_at + timezone).strftime("%d.%m.%Y #{t('at')} %H:%M") %><br>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="modal-dialog add-organization">
+  <div class="modal-content container">
+    <div class="title-main">
+      <div id='info_notice'></div>
+      <h3><%= t('add_organization') %></h3>
+      <span class="close">
+        <span class='icon-close-icon'></span>
+      </span>
+    </div>
+    <div class="modal-body">
+      <%= form_for(@organization, url: organizations_path,
+                                  validate: true,
+                                  html: { method: :post, class: 'form_with_dropzone' },
+                                  remote: true) do |form| %>
+        <div class="row">
+          <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+          <%= render 'form_fields', f: form %>
+        </div>
+        <%= form.submit t('add_new_organization'), class: 'btn btn-green' %>
+        <span class="btn btn-white-green cancel"><%= t('cancel') %></span>
+      <% end %>
+    </div>
+  </div>
+</div>

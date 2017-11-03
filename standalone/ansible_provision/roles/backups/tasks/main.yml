@@ -1,0 +1,40 @@
+- name: Install ruby2.3-dev
+  become: yes
+  apt:
+    name: ruby2.3-dev
+
+- name: Install backup gem
+  become: yes
+  shell: "gem install {{ item }} -v 4.4.0"
+  with_items:
+    - backup
+
+- name: Create backups directory
+  file:
+    path: "{{ deploy_folder }}{{ app_name }}/backups"
+    state: directory
+    owner: deploy
+    mode: 0755
+
+- name: Create backups directory
+  file:
+    path: "{{ deploy_folder }}{{ app_name }}/backups/models"
+    state: directory
+    owner: deploy
+    mode: 0755
+
+- name: Upload backups config
+  template:
+    src: templates/config.rb
+    dest: "{{ deploy_folder }}{{ app_name }}/backups/config.rb"
+
+- name: Upload backups model
+  template:
+    src: templates/backup_model.rb
+    dest: "{{ deploy_folder }}{{ app_name }}/backups/models/{{ app_name }}.rb"
+
+- name: Setup cron task for daily backups
+  cron:
+    special_time: daily
+    name: "{{ app_name }} db daily backup"
+    job: "/var/lib/gems/2.3.0/gems/backup-4.4.0/bin/backup perform -t {{ app_name }} --config-file {{ deploy_folder }}{{ app_name }}/backups/config.rb"

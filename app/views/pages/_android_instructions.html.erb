@@ -1,0 +1,46 @@
+  <h2 class="card-sdk-integrations-title"><%= t 'generate_a_project_token' %></h2>
+  <p><%= t 'token_is_a_unique_identifier_of_your_project' %> <%= link_to('EasyQA test management tool', "https://app.geteasyqa.com/users/sign_in?utm_source=internal&utm_medium=GetEasyQA&utm_campaign=easyqa-sdk", target: :_blank) %>.</p>
+  <div class="token-block">
+    <div class="token">
+      <span><%= @project.token %></span>
+      <div class="copy-token">
+        <a class="btn-white-green" data-copied-text="<%= t('copied') %>" data-copy-link-text="<%= t 'copy_link' %>"><%= t 'copy_token' %></a>
+      </div>
+    </div>
+  </div>
+  <p><%= t 'you_just_need_to_click_on_copy_token_button_to_copy_the_token_to_the_clipboard' %></p>
+  <p><%= t 'the_refreshment_is_needed_in_case_one_of_your_team_members' %></p>
+  <p><%= t 'easyqa_sdk_will_block_its_work_without_a_correct_token' %></p>  
+  <h2 class="card-sdk-integrations-title"><%= t 'integrate_sdk' %></h2>
+  <p><%= t 'to_start_the_integration_process_just_add_the_dependency' %></p>    
+  <li> <%= t 'add_url_of_EasyQA_repository' %> </li>
+  <div class="token-block">  
+    <div class="token"> 
+      <span> http://repository.geteasyqa.com/artifactory/public/</span>
+    <div class="copy-token">
+      <a class="btn-white-green" data-copied-text="<%= t('copied') %>" data-copy-link-text="<%= t 'copy' %>"><%= t 'copy' %></a>
+    </div>
+    </div>
+  </div>
+  <li> <%= t 'add_the_dependency' %> </li>
+  <div class="token-block">  
+    <div class="token"> 
+      <span> compile 'com.geteasyqa:easyqa:1.1.11' </span>
+    <div class="copy-token">
+      <a class="btn-white-green" data-copied-text="<%= t('copied') %>" data-copy-link-text="<%= t 'copy' %>"><%= t 'copy' %></a>
+    </div>
+    </div>
+  </div>
+  <%= image_tag('easyqa_android_sdk_build_gradle.png', class: 'instruction-img') %>
+  <p><%= t 'open_the_application_class_of_your_project_and_add_the_following_code' %></p>
+  <div class="token-block">  
+  <div class="token"> 
+    <span> EasyQA.install(this, "project token"); </span>
+  <div class="copy-token">
+    <a class="btn-white-green" data-copied-text="<%= t('copied') %>" data-copy-link-text="<%= t 'copy' %>"><%= t 'copy' %></a>
+  </div>
+  </div>
+</div>  
+  <%= image_tag('android-instruction-3.png', class: 'instruction-img') %>
+  <p><%= t 'paste_your_unique_token_into_the_place_project_token' %></p>
+  <p><%= t 'after_that_you_can_create_your_app_build_and_upload_it' %>  <%= link_to('EasyQA test management tool', "https://app.geteasyqa.com/users/sign_in?utm_source=internal&utm_medium=GetEasyQA&utm_campaign=easyqa-sdk", target: :_blank) %>.</p>

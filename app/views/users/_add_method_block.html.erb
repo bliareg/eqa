@@ -1,0 +1,26 @@
+<%= include_gon %>
+<%= form_tag payment_methods_path, id: "checkout",  method: :post do %>
+  <div class="input_wrapper">
+    <div id='paypal-button'>
+    </div>
+  </div>
+  <div class="input_wrapper">
+    <label class="" for="card-number"><%= t(:card_number) %></label>
+    <div class="hosted-field" id="card-number"></div>
+  </div>
+  <div class="field-wrapper">
+    <div class="input_wrapper">
+      <label class="" for="expiration-date"><%= t(:expiration_date) %></label>
+      <div class="hosted-field" id="expiration-date"></div>
+    </div>
+    <div class="input_wrapper">
+      <label class="" for="cvv"><%= t(:cvv) %></label>
+      <div class="hosted-field" id="cvv"></div>
+    </div>
+  </div>
+  <%= submit_tag t(:add), class: 'btn btn-green show_loader', id: 'add_payment_method' %>
+<% end %>
+
+<script type="text/javascript">
+  init_payments_page();
+</script>

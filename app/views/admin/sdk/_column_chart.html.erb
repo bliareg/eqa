@@ -1,0 +1,41 @@
+<div id='<%= category %>'></div>
+
+<script type="text/javascript">
+  $(function () {
+    Highcharts.chart('<%= category %>', {
+
+        chart: {
+            type: 'column'
+        },
+
+        title: {
+            text: false
+        },
+
+        xAxis: {
+            categories: ['<%= category %>']
+        },
+
+        yAxis: {
+            allowDecimals: false,
+            min: 0,
+            title: false
+        },
+
+        tooltip: {
+            formatter: function () {
+                return '<b>' + this.x + '</b><br/>' +
+                    this.series.name + ': ' + this.y
+            }
+        },
+
+        series: [{
+            name: 'Android',
+            data: <%= [android] %>
+        }, {
+            name: 'iOS',
+            data: <%= [ios] %>
+        }]
+    });
+});
+</script>

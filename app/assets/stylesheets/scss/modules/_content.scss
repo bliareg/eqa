@@ -1,0 +1,60 @@
+// Style for project content
+
+.container-full {
+  position: relative;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+body.mCustomScrollbar {
+  overflow-x: auto !important;
+}
+
+.container-full, .wrapper {
+  height: 100%;
+}
+
+.content-with-sidebar {
+  padding-left: 200px;
+}
+
+.main-content {
+  padding: 10px 10px 15px 10px;
+  margin-top: $header-height;
+  background-color: $main-content-bg;
+  transition: margin-top 250ms ease-in-out 0s;
+
+  &-title {
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    background-color: $base-bg;
+    border-radius: 5px;
+
+    h2 {
+      color: #333;
+      text-transform: capitalize;
+      @include rem(font-size, 24px);
+    }
+  }
+
+  &.with-top-panel {
+    margin-top: calc(#{$header-height} + #{$top-panel-height});
+  }
+}
+
+.content-with-sidebar {
+  position: relative;
+  z-index: 5;
+
+  .main-content {
+    height: calc(100% - #{$header-height});
+    overflow: auto;
+    min-height: 450px;
+  }
+}
+.safariFix {
+  display: flex;
+}

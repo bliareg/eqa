@@ -1,0 +1,62 @@
+<div id="container2"></div>
+
+<script type="text/javascript">
+  $(function () {
+    Highcharts.chart('container2', {
+
+        chart: {
+            type: 'column'
+        },
+
+        title: {
+            text: false
+        },
+
+        xAxis: {
+            categories: <%= raw users_data.keys %>
+        },
+
+        yAxis: {
+            allowDecimals: false,
+            min: 0,
+            title: false
+        },
+
+        tooltip: {
+            formatter: function () {
+                return '<b>' + this.x + '</b><br/>' +
+                    this.series.name + ': ' + this.y + '<br/>' +
+                    'Total: ' + this.point.stackTotal;
+            }
+        },
+
+        plotOptions: {
+            column: {
+                stacking: 'normal'
+            }
+        },
+
+        series: [{
+            name: 'Registrations',
+            data: <%= raw users_data.values %>,
+            stack: 'registr'
+        }, {
+            name: '22-28',
+            data: <%= raw twenty_two_twenty_eight.values %>,
+            stack: 'visit'
+        }, {
+            name: '15-21',
+            data: <%= raw fiveteen_twenty_one.values %>,
+            stack: 'visit'
+        }, {
+            name: '8-14',
+            data: <%= raw eight_fourteen.values %>,
+            stack: 'visit'
+        }, {
+            name: '1-7',
+            data: <%= raw one_seven.values %>,
+            stack: 'visit'
+        }]
+    });
+});
+</script>

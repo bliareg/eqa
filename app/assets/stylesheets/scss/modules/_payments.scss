@@ -1,0 +1,403 @@
+.payments {
+
+  &.card-tab-content {
+    .card-header-title {
+      float: none;
+      margin-bottom: 20px;
+    }
+  }
+
+  .block-subtitle {
+    @include rem(font-size, 18px);
+    @include rem(margin-bottom, 20px);
+    font-family: $base-font-family;
+
+    span {
+      font-family: $bold-font-family;
+      font-weight: bold;
+    }
+  }
+
+  .licenses {
+    padding: 0;
+
+    .card-header {
+      padding: 35px 25px 0;
+    }
+
+    &.with-month-number {
+
+      .quantity {
+        flex-basis: auto;
+        width: auto;
+
+        input {
+          width: 150px;
+        }
+      }
+
+      .month-number-block {
+        margin-left: 30px;
+
+        input {
+          width: 150px;
+        }
+      }
+    }
+  }
+
+  .licenses-top-block {
+    display: flex;
+    padding: 0 25px 20px;
+    line-height: 40px;
+    flex-wrap: wrap;
+
+    .input_wrapper {
+      display: flex;
+      flex-basis: 40%;
+      margin: 0 30px 0 0;
+
+      label {
+        margin-right: 15px;
+        width: auto;
+      }
+    }
+
+    .error-message {
+      margin-top: 15px;
+    }
+
+    .monthly-fee span {
+      @include rem(font-size, 18px);
+      margin-left: 15px;
+      color: $text-accent;
+      font-family: $bold-font-family;
+      font-weight: bold;
+    }
+  }
+
+  .licenses-bottom-block {
+    position: relative;
+    //padding: 20px 25px 40px; // old version
+    padding: 20px 25px; //new version
+    background: $payment-block-bg;
+    border-radius: 0 0 6px 6px;
+
+    // new version -----
+    > div {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    // -----------------
+
+    .block-subtitle {
+      margin: 0; //new version
+    }
+
+    .total-price {
+      @include rem(font-size, 18px);
+      //margin-right: 15px; //old version
+      margin: 0 30px 0 15px; //new v
+      //line-height: 32px; // old v
+      line-height: 1.5; // new v
+      color: $text-accent;
+      font-family: $bold-font-family;
+      font-weight: bold;
+    }
+
+    .close {
+      position: absolute;
+      color: $white;
+      top: 10px;
+      right: 10px;
+    }
+
+    #paypal-button-container-add {
+      height: 30px;
+    }
+  }
+// new version --------
+  .promo-code-block {
+    width: 150px; // here you can chance width of input
+    margin: 0;
+
+    input[type="text"] {
+      height: 33px;
+      // padding-right: 34px; // if need checkbox, if don't - remove this line
+      background: #fbfbfb;
+      line-height: 20px;
+    }
+
+    .checkbox-wrap {
+      position: absolute;
+      right: -5px;
+      top: -1px;
+    }
+  }
+
+// --------------------
+
+  .methods {
+    padding: 35px 0 40px;
+
+    .card-header {
+      padding: 0 25px;
+      margin-bottom: 20px;
+
+      .card-header-title {
+        margin-bottom: 10px;
+      }
+    }
+
+    .btn-wrapper {
+      text-align: center;
+
+      .btn-white-green {
+        @include rem(font-size, 16px);
+        cursor: pointer;
+      }
+    }
+  }
+
+  .methods-list {
+    margin-bottom: 15px;
+  }
+
+  .method-item {
+    display: flex;
+    justify-content: space-between;
+    line-height: 26px;
+    padding: 15px 25px;
+    border-top: 1px solid $base-border;
+
+    .radio:not(:checked) + label,
+    .card-number {
+      vertical-align: top;
+    }
+
+    .card-icon {
+      @include rem(font-size, 26px);
+      margin-right: 15px;
+    }
+
+    .delete-method {
+      line-height: 26px;
+      color: $delete-method;
+      cursor: pointer;
+
+      &:hover {
+        color: darken($delete-method, 10%);
+      }
+    }
+
+    &:last-child {
+      border-bottom: 1px solid $base-border;
+    }
+
+  }
+
+  .regular-payments {
+
+    .value {
+      margin-top: 7px;
+      font-family: $bold-font-family;
+      font-weight: bold;
+    }
+
+    .accent {
+      color: $text-accent;
+    }
+
+    .btn-green {
+      padding: 3px 15px;
+    }
+
+    .switch {
+      width: 50px;
+
+      &-inner {
+        &:before,
+        &:after {
+          height: 25px;
+          line-height: 25px;
+          font-size: 14px;
+        }
+      }
+
+      &-btn {
+        width: 21px;
+      }
+
+      &-checkbox:checked + .switch-label .switch-btn {
+        right: 25px;
+      }
+    }
+
+    .table-title {
+      color: $base-text;
+      font-family: $bold-font-family;
+      font-weight: bold;
+      @include rem(font-size, 16px);
+
+      .link {
+        color: #28bd8b;
+      }
+
+      &:first-child {
+        margin-bottom: 20px;
+      }
+    }
+
+    &-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0 10px;
+
+      th, td {
+        color: $base-text;
+        border: none;
+        @include rem(font-size, 14px);
+      }
+
+      thead {
+        th {
+          height: 35px;
+          color: $base-text;
+          font-family: $bold-font-family;
+          font-weight: bold;
+          vertical-align: bottom;
+          border-bottom: 1px solid $base-border;
+          text-transform: uppercase;
+          @include rem(font-size, 14px);
+
+          &:first-child {
+            padding-left: 2em;
+          }
+
+          &.th-small{
+            min-width: 100px;
+            width: 100px;
+          }
+        }
+      }
+
+      tbody {
+        background-color: $test-object-bg;
+
+        td {
+          height: 50px;
+
+          &.price{
+            width: 100px;
+            min-width: 100px;
+          }
+
+          &:first-child {
+            padding-left: 2em;
+            border-radius: 6px 0 0 6px;
+          }
+
+          &:last-child {
+            border-radius: 0 6px 6px 0;
+          }
+        }
+      }
+
+      .month-number-block {
+        width: 60px;
+        margin: 0;
+
+        input[type="number"] {
+          height: 33px;
+          background: #fbfbfb;
+          line-height: 20px;
+        }
+      }
+
+      .pay-pal-btn-wrap {
+        display: flex;
+        align-items: center;
+
+        #paypal-button-container-regular {
+          height: 24px;
+        }
+      }
+    }
+  }
+
+  .add-method-block {
+    display: none;
+    padding: 0 25px;
+
+    .field-wrapper {
+      display: flex;
+      justify-content: space-between;
+
+      .input_wrapper {
+        float: left;
+        width: 49%;
+      }
+    }
+
+    .btn-green {
+      padding: 7px 20px;
+    }
+  }
+
+  .message {
+    @include rem(font-size, 14px);
+    flex-basis: 100%;
+    display: block;
+    line-height: 1.5;
+  }
+
+  .error-message {
+    color: $error-message;
+  }
+}
+
+.payment-table {
+  width: 100%;
+
+  @include rem(font-size, 14px);
+
+  th {
+    border-top: none;
+    font-family: $bold-font-family;
+    font-weight: bold;
+
+    &:first-child {
+      padding-left: 1.5em;
+    }
+  }
+
+  .table-body tr {
+    height: 50px;
+
+    &:nth-child(2n) {
+      background-color: $test-reports-item-bg;
+      border-radius: 6px;
+    }
+
+    td {
+      border: none;
+
+      &:first-child {
+        padding-left: 1.5em;
+        color: $base-text;
+        border-radius: 6px 0 0 6px;
+      }
+
+      &:last-child {
+        color: $test-reports-text;
+        border-radius: 0 6px 6px 0;
+      }
+
+      &.payment-amount {
+        font-family: $bold-font-family;
+        font-weight: bold;
+      }
+    }
+  }
+}

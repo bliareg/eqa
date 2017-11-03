@@ -1,0 +1,9 @@
+if ($('.project-settings-title').length) {
+  $('#content').html("<%= j render file: 'projects/settings/index.html.erb' %>");
+} else {
+  $('.main-content').html("<%= j render file: 'projects/settings/index.html.erb', layout: 'layouts/projects/_settings' %>");
+  $('.settings-info-link').addClass('active');
+  notifications_init();
+}
+projects_left_manu_action('<%= request.path %>');
+$('.load-block').hide();

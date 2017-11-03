@@ -1,0 +1,4 @@
+<% if policy(@project).not_viewer? %>
+  <span class="card-overview-second-title"><%= t('project.invite') %></span>
+  <%= @project.add_project_members_link(current_user) %>
+<% end %>

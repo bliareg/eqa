@@ -1,0 +1,10 @@
+---
+
+- name: Prepare Capistrano deploy
+  hosts: all
+  remote_user: "{{ deploy_user }}"
+  # become: yes
+  vars:
+    linked_directories: ['log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'public/system', 'config']
+  roles:
+    - { role: predeploy }

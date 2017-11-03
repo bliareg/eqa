@@ -1,0 +1,60 @@
+{
+  "resource": "Test Cases",
+  "http_method": "GET",
+  "route": "/api/v1/test_modules/:test_module_id/test_cases",
+  "description": "Index",
+  "explanation": null,
+  "parameters": [
+    {
+      "required": true,
+      "name": "auth_token",
+      "description": "User authenticity token"
+    },
+    {
+      "required": true,
+      "name": "token",
+      "description": "Uniq project token"
+    },
+    {
+      "required": true,
+      "name": "test_module_id",
+      "description": "Test module ID"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "/api/v1/test_modules/1/test_cases?token=WE3okpzAhzBy%2BLe7EcCXMpVJpzWu72iB82&auth_token=reKepqdnW0gsYj9vKxqX24C3HDqc8qRW317",
+      "request_body": null,
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+        "token": "WE3okpzAhzBy+Le7EcCXMpVJpzWu72iB82",
+        "auth_token": "reKepqdnW0gsYj9vKxqX24C3HDqc8qRW317"
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "[\n  {\n    \"id\": 1,\n    \"test_plan_id\": 1,\n    \"module_id\": 1,\n    \"updated_by\": null,\n    \"title\": \"Pinwheel\",\n    \"case_type\": \"boundary\",\n    \"pre_steps\": \"1. Find Luke Skywalker \\n 2. Give him Ithorian\",\n    \"steps\": \"1. Sit in a Vulture Droid\\n 2. Go to Coruscant\",\n    \"expected_result\": \"droid 'B2-RP' say 'I find your lack of faith disturbing.'\",\n    \"created_at\": \"2017-04-06T09:22:29.690Z\",\n    \"updated_at\": \"2017-04-06T09:22:29.690Z\",\n    \"created_by\": 307,\n    \"id_in_project\": 1,\n    \"position\": 0\n  },\n  {\n    \"id\": 2,\n    \"test_plan_id\": 1,\n    \"module_id\": 1,\n    \"updated_by\": null,\n    \"title\": \"Blackeye\",\n    \"case_type\": \"boundary\",\n    \"pre_steps\": \"1. Find Chewbacca \\n 2. Give him Sullustan\",\n    \"steps\": \"1. Sit in a Naboo Royal Starship\\n 2. Go to Yavin\",\n    \"expected_result\": \"droid 'NR-N99' say 'Who's the more foolish; the fool, or the fool who follows him?'\",\n    \"created_at\": \"2017-04-06T09:22:29.863Z\",\n    \"updated_at\": \"2017-04-06T09:22:29.863Z\",\n    \"created_by\": 307,\n    \"id_in_project\": 2,\n    \"position\": 1\n  },\n  {\n    \"id\": 3,\n    \"test_plan_id\": 1,\n    \"module_id\": 1,\n    \"updated_by\": null,\n    \"title\": \"Andromeda\",\n    \"case_type\": \"boundary\",\n    \"pre_steps\": \"1. Find Watto \\n 2. Give him Jawa\",\n    \"steps\": \"1. Sit in a Speeder Bike\\n 2. Go to Yavin\",\n    \"expected_result\": \"droid 'C-3PO' say 'Judge me by my size, do you?'\",\n    \"created_at\": \"2017-04-06T09:22:30.108Z\",\n    \"updated_at\": \"2017-04-06T09:22:30.108Z\",\n    \"created_by\": 307,\n    \"id_in_project\": 3,\n    \"position\": 2\n  },\n  {\n    \"id\": 4,\n    \"test_plan_id\": 1,\n    \"module_id\": 1,\n    \"updated_by\": null,\n    \"title\": \"Pinwheel\",\n    \"case_type\": \"boundary\",\n    \"pre_steps\": \"1. Find Sheev Palpatine \\n 2. Give him Mon Calamari\",\n    \"steps\": \"1. Sit in a Sith Infiltrator\\n 2. Go to Mustafar\",\n    \"expected_result\": \"droid '327-T' say 'Shut him up or shut him down.'\",\n    \"created_at\": \"2017-04-06T09:22:30.202Z\",\n    \"updated_at\": \"2017-04-06T09:22:30.202Z\",\n    \"created_by\": 307,\n    \"id_in_project\": 4,\n    \"position\": 3\n  },\n  {\n    \"id\": 5,\n    \"test_plan_id\": 1,\n    \"module_id\": 1,\n    \"updated_by\": null,\n    \"title\": \"Sunflower\",\n    \"case_type\": \"boundary\",\n    \"pre_steps\": \"1. Find Sebulba \\n 2. Give him Ithorian\",\n    \"steps\": \"1. Sit in a Sandcrawler\\n 2. Go to Lothal\",\n    \"expected_result\": \"droid '4-LOM' say 'Strike me down, and I will become more powerful than you could possibly imagine.'\",\n    \"created_at\": \"2017-04-06T09:22:30.294Z\",\n    \"updated_at\": \"2017-04-06T09:22:30.294Z\",\n    \"created_by\": 307,\n    \"id_in_project\": 5,\n    \"position\": 4\n  },\n  {\n    \"id\": 6,\n    \"test_plan_id\": 1,\n    \"module_id\": 1,\n    \"updated_by\": null,\n    \"title\": \"Sunflower\",\n    \"case_type\": \"boundary\",\n    \"pre_steps\": \"1. Find Sebulba \\n 2. Give him Jawa\",\n    \"steps\": \"1. Sit in a Sandcrawler\\n 2. Go to Hoth\",\n    \"expected_result\": \"droid 'B1' say 'Never tell me the odds!'\",\n    \"created_at\": \"2017-04-06T09:22:30.380Z\",\n    \"updated_at\": \"2017-04-06T09:22:30.380Z\",\n    \"created_by\": 307,\n    \"id_in_project\": 6,\n    \"position\": 5\n  }\n]",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"e9802127f5bf0195dc8a9b3cd3dd0843\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "505feedc-82f0-45ec-891f-18c9007befad",
+        "X-Runtime": "0.270618",
+        "Content-Length": "2541"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"http://localhost:3000/api/v1/test_modules/1/test_cases?token=WE3okpzAhzBy%2BLe7EcCXMpVJpzWu72iB82&auth_token=reKepqdnW0gsYj9vKxqX24C3HDqc8qRW317\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

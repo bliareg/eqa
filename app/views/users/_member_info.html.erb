@@ -1,0 +1,5 @@
+<td>
+  <p class="member-name"><%= member.invitation_token.nil? ? member.name : t(:not_confirmed) %></p>
+  <p class="member-email"><%= member.email %></p>
+  <p class="member-country"><%= member.country %></p>
+</td>

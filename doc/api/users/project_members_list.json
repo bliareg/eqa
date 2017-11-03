@@ -1,0 +1,49 @@
+{
+  "resource": "Users",
+  "http_method": "GET",
+  "route": "/api/v1/projects/members_list",
+  "description": "Project members list",
+  "explanation": null,
+  "parameters": [
+    {
+      "required": true,
+      "name": "token",
+      "description": "Uniq project token"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "/api/v1/projects/members_list?token=f7gfwpdvePdzh548huoj8xhs1kW49dGt22",
+      "request_body": null,
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+        "token": "f7gfwpdvePdzh548huoj8xhs1kW49dGt22"
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"users\": [\n    {\n      \"name\": \"Fausto Beatty\",\n      \"email\": \"sophie.gusikowski@steuber.biz\",\n      \"id\": 79\n    },\n    {\n      \"name\": \"Heath Denesik\",\n      \"email\": \"vincent.stiedemann@nitzsche.info\",\n      \"id\": 84\n    },\n    {\n      \"name\": \"Micaela Thiel\",\n      \"email\": \"joyce.reichel@runte.co\",\n      \"id\": 80\n    }\n  ]\n}",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"faaa67dc2e69c1230477fe938f8e5258\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "f46b70c3-c4c8-4f1b-9a92-de70e206c836",
+        "X-Runtime": "0.106175",
+        "Content-Length": "226"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"http://localhost:3000/api/v1/projects/members_list?token=f7gfwpdvePdzh548huoj8xhs1kW49dGt22\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

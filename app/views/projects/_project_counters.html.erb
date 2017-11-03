@@ -1,0 +1,33 @@
+<% if project.test_objects.empty? %>
+  <%= link_add_test_object(project, 'btn-ghost') %>
+<% else %>
+  <div class="project-build">
+    <span><%= truncate(project.test_objects[-1].file_file_name, length: 15) %></span>
+    <p class="builds"><%= project.test_objects.size %> build(s)</p>
+  </div>
+
+  <div class="project-count">
+    <div class="count-block">
+      <h2><%= t('test_objects') %></h2>
+      <span><%= project.test_objects.size %></span>
+    </div>
+
+    <div class="count-block">
+      <h2><%= t('test_cases') %></h2>
+      <span><%= project.test_cases.size %></span>
+    </div>
+
+    <div class="count-block">
+      <h2><%= t('issues_word') %></h2>
+      <span><%= project.issues.size %></span>
+    </div>
+
+    <div class="count-block">
+      <h2><%= t('crashes') %></h2>
+      <span><%= project.log_files.size %></span>
+    </div>
+  </div>
+<% end %>
+
+
+

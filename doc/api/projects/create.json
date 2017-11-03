@@ -1,0 +1,64 @@
+{
+  "resource": "Projects",
+  "http_method": "POST",
+  "route": "/api/v1/projects",
+  "description": "Create",
+  "explanation": null,
+  "parameters": [
+    {
+      "required": true,
+      "name": "auth_token",
+      "description": "User authenticity token"
+    },
+    {
+      "required": true,
+      "name": "organization_id",
+      "description": "Organization id"
+    },
+    {
+      "required": true,
+      "name": "project",
+      "description": "Project attributes"
+    },
+    {
+      "scope": "project",
+      "required": true,
+      "name": "title",
+      "description": "Title of the project"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "POST",
+      "request_path": "/api/v1/projects",
+      "request_body": "{\"organization_id\":13,\"project\":{\"title\":\"Example project\"},\"auth_token\":\"1fBCDPRuFQ9VIpyBCdf4zkxW3nD3Pnx427\"}",
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"id\": 11,\n  \"title\": \"Example project\",\n  \"user_id\": 25,\n  \"organization_id\": 13,\n  \"deleted_at\": null,\n  \"created_at\": \"2017-04-14T07:55:37.970Z\",\n  \"updated_at\": \"2017-04-14T07:55:37.970Z\",\n  \"token\": \"tk2dlGvuzNuMCQS1E1FfviKWAVaKYGEl\",\n  \"slug\": \"Organization13_Example_project\"\n}",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"21de2923ea1a681088e06ee4bbdd9fa5\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "e3cbe495-cb53-41da-b0ee-4aa66931e63d",
+        "X-Runtime": "0.373380",
+        "Content-Length": "250"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"http://localhost:3000/api/v1/projects\" -d '{\"organization_id\":13,\"project\":{\"title\":\"Example project\"},\"auth_token\":\"1fBCDPRuFQ9VIpyBCdf4zkxW3nD3Pnx427\"}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

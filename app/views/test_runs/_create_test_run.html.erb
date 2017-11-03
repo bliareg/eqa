@@ -1,0 +1,80 @@
+<!-- Modal content -->
+<div class="modal-dialog modal-add-test-run" data-test-run-id='<%= @test_run.id %>'>
+  <%= form_for(@test_run, url: url,
+               html: { method: url_method },
+               remote: true,
+               validate: true) do |f| %>
+    <div class="modal-content">
+      <div class="title-main">
+        <h3><%= title %></h3>
+        <span class="close">
+          <span class='icon-close-icon'></span>
+        </span>
+      </div>
+      <div class='modal-content-scroll'>
+        <div class="modal-body">
+          <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+          <%= f.hidden_field :project_id, value: @project.id %>
+          <div class="name">
+            <%= f.label :title, class: 'title star' %>
+            <%= f.text_field :title, autofocus: true, validate: true %>
+            <span class="example"><%= t 'test_run_example.title' %></span>
+          </div>
+          <div class="assign">
+            <div class="input_wrapper drop-arr" id='user-select-data' data-default-id='<%= @test_run.assigner_id %>'>
+            <%= f.label :assigner_id, class: 'star' %>
+            <%= f.select :assigner_id,
+                         users_select(@project.members.with_roles([Role.tester_value, Role.admin_value, Role.project_manager_value, Role.owner_value])),
+                         { include_blank: t('choose_user') },
+                         id: 'assignedTestRun', class: 'validate_select',
+                         validate: true %>
+            </div>
+            <span class="example"><%= t 'test_run_example.assigned_to' %></span>
+          </div>
+          <div class="description">
+            <%= f.label :description %>
+            <%= f.text_area :description, rows: "5" %>
+            <span class="example"><%= t 'test_run_example.description' %></span>
+          </div>
+          <label for="json-validate"></label>
+          <div class="radio-btn-group json-validate" name="test_run[test_run_results_attributes]" id="json-validate">
+            <div class="radio-btn-group-item">
+              <%= f.radio_button :test_run_results, [{test_plan_id: ''}].to_json, name: 'test_run[test_run_results_attributes]', checked: @test_run.new_record?, class: 'radio', id: :include_all_test_cases %>
+              <%= label_tag :include_all_test_cases, t('include_all_test_cases'), class: 'title' %>
+              <div class="radio-btn-group-text">
+                <p><%= t 'test_run_example.include_all' %></p>
+              </div>
+              <div class="test-plan" style='<%= test_plan_select_tag_visibility %>'>
+                <div class="input_wrapper drop-arr">
+                  <%= label_tag  :test_plan_id, t('test_plan') %>
+                  <%= select_tag :test_plan_id, test_plans_for_select_tag_in_test_run,
+                                 include_blank: t('choose_test_plan'), id: 'testRunSelect' %>
+                </div>
+              </div>
+            </div>
+            <div class="radio-btn-group-item">
+              <%= f.radio_button :test_run_results, generate_value_for_test_run.to_json, name: 'test_run[test_run_results_attributes]', checked: !@test_run.new_record?, class: 'radio', id: :select_specific_test_cases %>
+              <%= label_tag :select_specific_test_cases, t('select_specific_test_cases'), class: 'title' %>
+              <div class="radio-btn-group-text">
+                <p><%= t 'test_run_example.select_specific' %></p>
+              </div>
+            </div>
+            <div class="change-selection" style='<%= change_selection_visibility %>'>
+              <%= t('test_case_included', count: @test_run.test_run_results.count).html_safe %> (
+                <%= link_to t('change_selection'), 'javascript:;', class: 'change', data: { run_id: @test_run.id } %>
+              )
+            </div>
+          </div>
+          <div class="btn-group">
+            <%= f.submit t('save'), class: 'btn btn-green' %>
+            <span class="btn btn-white-green cancel"><%= t('cancel') %></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="selectCases" class="modal-inner"></div>  <!--Modal inner close-->
+  <% end %>
+</div>
+<script type="text/javascript">
+  TestRun.validation.test_plan("<%= t 'cant_be_blank' %>");
+</script>

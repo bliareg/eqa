@@ -1,0 +1,8 @@
+    <ul id="check_boxes_list">
+      <% @test_modules.each do |title, id| %>
+          <li>
+            <%= check_box_tag 'module_ids[]', id %>
+            <%= h title %>
+          </li>
+      <% end %>
+    </ul>

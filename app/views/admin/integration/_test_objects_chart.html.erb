@@ -1,0 +1,43 @@
+<div id="container2"></div>
+
+<script type="text/javascript">
+  $(function () {
+    Highcharts.chart('container2', {
+
+        chart: {
+            type: 'column'
+        },
+
+        title: {
+            text: false
+        },
+
+        xAxis: {
+            categories: ['Test objects']
+        },
+
+        yAxis: {
+            allowDecimals: false,
+            min: 0,
+            title: false
+        },
+
+        tooltip: {
+            formatter: function () {
+                return '<b>' + this.x + '</b><br/>' +
+                    this.series.name + ': ' + this.y
+            }
+        },
+
+        
+
+        series: [{
+            name: 'Gitlab',
+            data: <%= [git_lab] %>
+        }, {
+            name: 'Github',
+            data: <%= [git_hub] %>
+        }]
+    });
+});
+</script>

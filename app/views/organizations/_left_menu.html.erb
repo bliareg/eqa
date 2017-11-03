@@ -1,0 +1,14 @@
+<div class="card card-tabs">
+  <ul class="card-tabs-list" id="left-menu">
+    <% @left_menu_links.each do |link, value| %>
+      <li class="card-tabs-list-item">
+        <%= link_to public_send("#{link}_path", @organization),
+                    remote: true,
+                    class: "item-content link_profile_menu show_loader" do%>
+          <%= organization_menu_image(link) %>
+          <span><%= value %></span>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</div>

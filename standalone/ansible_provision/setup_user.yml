@@ -1,0 +1,11 @@
+---
+
+# Add deploy user, ssh key, setup ohmyzsh and install nginx
+
+- name: Setup user
+  hosts: all
+  remote_user: root
+  become: yes
+  roles:
+    - { role: users }
+    - { role: manala.git }

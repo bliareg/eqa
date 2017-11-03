@@ -1,0 +1,14 @@
+<div class="card card-user-info">
+  <%= image_tag @organization.logo.file.url(:medium), class: 'avatar' %>
+  <div class="details-org">
+    <div class="input_wrapper drop-arr">
+      <%= collection_select(:organization, :slug,
+              Organization.with_user(current_user).compact.uniq, :slug, :title, {}, id: 'company') %>
+    </div>
+    <span class="your-role-title"><%= t 'you_are' %></span>
+    <span class="role"><%= "#{@organization.user_role(current_user)}" %></span>
+  </div>
+  <div class="count">
+    <%= render 'organization_info' %>
+  </div>
+</div>

@@ -1,0 +1,178 @@
+.project {
+  height: 110px;
+  margin: 10px 0;
+  padding-left: 10px;
+  background-color: $project-bg;
+  border-radius: 6px;
+  @extend %clearfix;
+
+  &-main-info {
+    display: block;
+    float: left;
+    width: 42%;
+    border-right: 1px solid $base-border;
+  }
+
+  &-logo {
+    float: left;
+    width: 70px;
+    height: 70px;
+    margin: 20px;
+    border-radius: 18px;
+    border: none;
+  }
+
+  .name-block {
+    float: left;
+  }
+
+  &-name {
+    display: block;
+    width: 210px;
+    margin: 20px 0;
+    color: $base-text;
+    font-family: $bold-font-family;
+    font-weight: bold;
+    @extend %text-overflow;
+    @include rem(font-size, 16px);
+  }
+
+  &-name:hover {
+    color: $project-name-hover;
+  }
+
+  &-title {
+    display: block;
+    width: 80%;
+    margin: 20px 0;
+    color: $base-text;
+    font-family: $bold-font-family;
+    font-weight: bold;
+    @extend %text-overflow;
+    @include rem(font-size, 16px);
+  }
+
+  &-title-color {    
+    display: block;
+    margin: 20px 0;
+    font-family: $bold-font-family;
+    font-weight: bold;
+    @extend %text-overflow;
+    @include rem(font-size, 16px);
+  }
+
+  .platform {
+    float: left;
+    min-width: 80px;
+    clear: both;
+    @include rem(font-size, 0);
+
+    > div {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      margin-right: 5px;
+      color: $white;
+      text-align: center;
+      border-radius: 50%;
+      @include rem(font-size, 12px);
+
+      span {
+        line-height: 20px;
+      }
+
+      &.android {
+        background-color: $android-platform;
+      }
+
+      &.apple {
+        background-color: $apple-platform;
+      }
+
+      &.globe {
+        background-color: $globe-platform;
+      }
+    }
+  }
+
+  .last-update {
+    float: left;
+    padding: 0 10px;
+    margin-left: 15px;
+    background-color: $project-last-update-bg;
+    color: $project-last-update-text;
+    font-family: $bold-font-family;
+    font-weight: bold;
+    text-align: center;
+    line-height: 20px;
+    border-radius: 4px;
+    @include rem(font-size, 12px);
+    @extend %text-overflow;
+  }
+
+  &-build {
+    float: left;
+    height: 110px;
+    width: 14%;
+    padding: 28px 5px 28px 50px;
+
+    > span {
+      display: block;
+      width: 90px;
+      color: $base-text;
+      font-family: $bold-font-family;
+      font-weight: bold;
+      line-height: 27px;
+      @extend %text-overflow;
+      @include rem(font-size, 16px);
+    }
+
+    .builds {
+      color: $base-light-text;
+      font-family: $light-font-family;
+      line-height: 27px;
+      @include rem(font-size, 14px);
+    }
+  }
+
+  &-count {
+    float: right;
+    width: 44%;
+
+    .count-block {
+      float: left;
+      width: 25%;
+      height: 110px;
+      padding: 18px 0;
+      border-left: 1px solid $project-count-block-border;
+      text-align: center;
+
+      > h2 {
+        color: $base-light-text;
+        text-transform: uppercase;
+        line-height: 40px;
+        @include rem(font-size, 12px);
+      }
+
+      > span {
+        color: $base-text;
+        font-family: $bold-font-family;
+        font-weight: bold;
+        line-height: 40px;
+        @include rem(font-size, 24px);
+      }
+    }
+  }
+
+  .btn {
+    margin: 39.5px 50px;
+  }
+}
+
+.org-projects {
+  .project {
+    &-build {
+      padding: 28px 20px;
+    }
+  }
+}

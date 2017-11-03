@@ -1,0 +1,9 @@
+if($(MODAL_CLASS).find('div.double-modal').length > 0) {
+  replace_modal_to_execute_test_run();
+} else {
+  <% if request.referrer =~ /crashes/ %>
+    $('.log-file-btn-<%= @issue.log_file_id %>').children()
+    .replaceWith("<%= j crash_action_button(@project, @issue.log_file) %>");
+  <% end %>
+  hide_modal();
+}

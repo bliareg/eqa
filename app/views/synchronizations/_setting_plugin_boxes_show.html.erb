@@ -1,0 +1,26 @@
+<div class="input_wrapper disabled disabled-select">
+  <p class="title"><%= t 'synchronize' %></p>
+  <div class='radio-item'>
+    <%= radio_button_tag(:synchronization_type,
+                         :all,
+                         setting.synchronization_type.all?,
+                         class: 'radio',
+                         name: 'all' + setting.name + setting.id.to_s) %>
+    <label class='title'><%= t 'all_issues' %></label>
+  </div>
+  <div class="radio-item">
+    <%= radio_button_tag(:synchronization_type,
+                         :only_pushed,
+                         setting.synchronization_type.only_pushed?,
+                         class: 'radio',
+                         name: 'only_pushed' + setting.name + setting.id.to_s) %>
+    <label class='title'><%= t 'pushed_issues' %></label>
+  </div>
+</div>
+<div class="input_wrapper disabled disabled-select">
+  <%= check_box_tag(:enable_synchronization,
+                       '',
+                       setting.enable_synchronization,
+                       class: 'checkbox') %>
+  <label><%= t 'automatic_synchronization' %></label>
+</div>

@@ -1,0 +1,10 @@
+var selector = "<%= params[:regular_block] == 'false' ? '_add' : '_regular' %>"
+<% if @amount.present? %>
+  $('#price_with_promocode' + selector).text('$' + '<%= @amount %>')
+<% elsif params[:regular_block] == 'false' %>
+  $('#price_with_promocode' + selector).text($('#new_fee').text())
+<% elsif params[:regular_block] == 'true' %>
+  $('#price_with_promocode' + selector).text($('#regular_monthly_fee').text())
+<% end %>
+$('#message_promocode' + selector).html("<%= j render partial: 'promocode_message' %>")
+$('.load-block').hide();

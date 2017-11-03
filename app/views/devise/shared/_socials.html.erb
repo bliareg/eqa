@@ -1,0 +1,14 @@
+<div class="sign-social-column">
+  <h2 class="sign-title"><%= t('sign_in_via') %></h2>
+  <ul class="sign-social">
+    <%- if devise_mapping.omniauthable? %>
+      <%- resource_class.omniauth_providers.each do |provider| %>
+        <li>
+          <%= link_to omniauth_authorize_path(resource_name, provider) do %>
+            <%= social_icon_span(provider) %>
+          <% end %>
+        </li>
+      <% end %>
+    <% end %>
+  </ul>
+</div>

@@ -1,0 +1,47 @@
+<div class="card card-crashes">
+  <h2 class="card-crashes-title"><%= t 'crashes' %></h2>
+  <table class="crashes-table" class="tablesorter">
+    <thead>
+      <tr class="crashes-table-title">
+        <th></th>
+        <th><%= t 'test_object' %>
+          <span class='fa fa-chevron-down' aria-hidden='true'></span>
+          <span class='fa fa-chevron-up' aria-hidden='true'></span>
+        </th>
+        <th><%= t 'phone_type' %>
+          <span class='fa fa-chevron-down' aria-hidden='true'></span>
+          <span class='fa fa-chevron-up' aria-hidden='true'></span>
+        </th>
+        <th><%= t 'log' %></th>
+        <th><%= t 'detected' %>
+          <span class='fa fa-chevron-down' aria-hidden='true'></span>
+          <span class='fa fa-chevron-up' aria-hidden='true'></span>
+        </th>
+        <th><%= t 'object_added' %>
+          <span class='fa fa-chevron-down' aria-hidden='true'></span>
+          <span class='fa fa-chevron-up' aria-hidden='true'></span>
+        </th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @log_files %>
+    </tbody>
+  </table>
+</div>
+<script type="text/javascript">
+  $('.crashes-table').tablesorter({
+    dateFormat : "ddmmyyyy",
+    sortList: [[4, 1]],
+    headers: {
+      0: { sorter: false       },
+      3: { sorter: false       },
+      4: { sorter: 'shortDate' },
+      5: { sorter: 'shortDate' },
+      6: { sorter: false       },
+      7: { sorter: false       }
+    },
+    cssChildRow: "test-crashes-details"
+  });
+</script>

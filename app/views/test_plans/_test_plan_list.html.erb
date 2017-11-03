@@ -1,0 +1,42 @@
+<% @test_plans.each do |plan| %>
+  <!-- plans info item  open-->
+  <div class="plans-info-item <%= active_plan?(@current_plan, plan) %>" data-plan-id="<%= plan.id %>">
+    <div class="plans-info-item-inner">
+      <%= link_to load_test_plan_path(@project, plan),
+                  class: ['plans-item-inner-left'], remote: true do %>
+        <h3 class="title"><%= plan.title %></h3>
+        <div class="author"><%= plan.owner.name %></div>
+        <% creation_date = plan.created_at.strftime('%m/%d/%Y') %>
+        <time datetime="<%= creation_date %>" class="date">
+          <%= creation_date %>
+        </time>
+      <% end %>
+      <!-- </a> -->
+      <div class="plans-item-inner-right">
+        <div class="plans-icons">
+          <%= render 'shared/edit_delete_links',
+                     plan: plan %>
+        </div>
+        <div class="plans-cases">
+          <p class="plans-cases-title"><%= t 'cases' %></p>
+          <p class="plans-cases-count cases_count">
+            <%= plan.test_cases.length %>
+          </p>
+        </div>
+        <div class="plans-modules">
+          <p class="plans-modules-title"><%= t 'modules' %></p>
+          <p class="plans-modules-count modules_count">
+            <%= plan.test_modules.length %>
+            </p>
+        </div>
+      </div>
+      <div class="plans-item-inner-bottom">
+        <% updator, update_date = test_plan_footer_info(plan) %>
+        <span class="latest-update">
+          <%= "#{t ('latest_update')}: #{updator}" %>
+        </span>
+        <span class="date"><%= update_date %></span>
+      </div>
+    </div>
+  </div>  <!-- plans info item  close-->
+<% end %>

@@ -1,0 +1,68 @@
+<div class="card card-tab-content tab payments">
+  <div class="card-header">
+    <h2 class="card-header-title"><%= t 'plans_and_billings' %></h2>
+  </div>
+ 
+  <div class="regular-payments">
+  <h3 class="table-title" ><%= t 'please_fill_billing_address_and_other_info' %> <a href="user/edit" class="link tab-active"><%= t 'personal_info_tab' %></a> <%= t 'of_my_profile_page' %></h3>
+  
+    <h3 class="table-title"><%= t('payment.next_regular') %></h3>
+    <table class="regular-payments-table">
+      <thead class="builds-table-title">
+        <tr>
+          <th><%= t(:date_caps) %></th>
+          <th><%= t('license.many_caps') %></th>
+          <% if @billing.trial_period? || @billing.expiring? %>
+            <th><%= t('number_of_months') %></th>
+          <% end %>
+          <th class="th-small"><%= t(:amount_caps) %></th>
+          <!-- block 2 -->
+          <% if @billing.trial_period? || @billing.expiring? %>
+            <th></th>
+            <th></th>
+            <th></th>
+          <% end %>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td class="value"><%= l(@billing.expired_at, format: '%d.%m.%Y') %></td>
+          <td class="value"><%= @billing.licenses_amount %></td>
+
+          <% if @billing.trial_period? || @billing.expiring? %>
+            <td>
+              <div class="input_wrapper month-number-block">
+                <%= number_field_tag :number_of_months, 1, in: 1...999999, max: 6,
+                                     onkeypress: 'return digitalValidation(value)',
+                                     autocomplete: :off, id: :number_of_months_regular,
+                                     data: { licenses_amount: @billing.licenses_amount } %>
+              </div>
+            </td>
+          <% end %>
+
+          <td id='regular_monthly_fee' class="value accent price" data-license-price='<%= Paymentable::MONTHLY_PRICE %>'>$<%= monthly_fee %></td>
+          <!-- block 3 -->
+          <% if @billing.trial_period? || @billing.expiring? %>
+            <td>
+              <div class="input_wrapper promo-code-block">
+                <input id='promocode_regular' type="text" maxlength="8" placeholder="<%= t('promocode.enter') %>">
+              </div>
+            </td>
+            <td class='value accent table-promocode'>
+              <div id='check_promocode_regular' class="btn btn-green show_loader"><%= t('promocode.apply') %></div>
+              <span class="total-price" id="price_with_promocode_regular">$<%= monthly_fee %></span>
+            </td>
+            <td class="pay-pal-btn-wrap">
+              <!-- block 4 -->
+              <% unless @pending_payments_exist %>
+                <div id="paypal-button-container-regular"></div>
+              <% end %>
+            </td>
+          <% end %>
+        </tr>
+      </tbody>
+    </table>
+    <div id='message_promocode_regular'></div>
+  </div>
+</div>

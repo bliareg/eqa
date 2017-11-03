@@ -1,0 +1,92 @@
+// Includes
+  @import "include/font-awesome";
+  @import "include/icomoon";
+  @import "include/customScrollbar";
+  @import "include/tree_folder";
+  @import "include/dropzone";
+  @import "include/jquery-ui-progressbar.min";
+  //@import "include/dropzone";
+
+// Variables
+  @import "utilities/color";
+  @import "utilities/fonts_var";
+  @import "utilities/variables";
+  @import "utilities/mixins";
+  @import "utilities/placeholder";
+  @import "utilities/vendor";
+
+// Base
+  @import "base/fonts";
+  @import "base/reset";
+  @import "base/base";
+  @import "base/typography";
+
+// Layouts
+  @import "layouts/container";
+  @import "layouts/grid";
+
+// General
+  @import "general/button";
+  @import "general/forms";
+  @import "general/general";
+  //@import "general/image";
+  @import "general/popup";
+  @import "general/table";
+  @import "general/tabs";
+  @import "general/modal";
+  @import "general/ui_custom";
+  @import "general/hover-block";
+
+// Modules
+  @import "modules/header";
+  @import "modules/navbars";
+  @import "modules/content";
+  @import "modules/footer";
+  @import "modules/sidebar";
+  @import "modules/sign";
+  @import "modules/test-plan-activity";
+  @import "modules/home-page";
+  @import "modules/my-projects";
+  @import "modules/manage_projects_members";
+  @import "modules/folder_tree";
+  @import "modules/test-plans";
+  @import "modules/pop_up_select_cases";
+  @import "modules/customScrollBar";
+  @import "modules/my-profile";
+  @import "modules/load-cloud-block";
+  @import "modules/pop_up_add_test_run";
+  @import "modules/test_reports";
+  @import "modules/test_reports_print";
+  @import "modules/test_run";
+  @import "modules/test_run_chart";
+  @import "modules/home-page-popups";
+  @import "modules/issues";
+  @import "modules/issues-popups";
+  @import "modules/org-manage";
+  @import "modules/project";
+  @import "modules/test_activities";
+  @import "modules/org-manage-3-popup";
+  @import "modules/crashes";
+  @import "modules/test-objects";
+  @import "modules/link-to-test-object-popup";
+  @import "modules/test_plan_activity_popups";
+  @import "modules/project-overview";
+  @import "modules/project-settings";
+  @import "modules/upload-object-popup";
+  @import "modules/sdk-integrations";
+  @import "modules/test-run-steps-popup";
+  @import "modules/restore-account-popup";
+  @import "modules/load-animation";
+  @import "modules/search-drop-down";
+  @import "modules/notification";
+  @import "modules/payments";
+  @import "modules/test-rail-configuration";
+  @import "modules/referal_program";
+
+// State
+  @import "state/animation";
+  @import "state/state";
+
+// Utilities
+  @import "utilities/color";
+

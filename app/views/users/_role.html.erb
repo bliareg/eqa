@@ -1,0 +1,39 @@
+<div class="project">
+  <div class="project-main-info">
+    <%= link_to project_path(role.project) do %>
+      <%= image_tag role.project.logo.file.url(:medium), class: 'project-logo' %>
+    <% end %>
+    <div class="name-block">
+      <%= link_to role.project.try(:title), project_path(role.project),
+                                            class: 'project-name' %>
+      <div class="platform">
+        <%= role.project.platforms.each do |platform| %>
+          <div class="<%= platform_icon(platform.name) %>">
+            <span class="fa fa-<%= platform_icon(platform.name) %>" aria-hidden="true"></span>
+          </div>
+        <% end %>
+      </div>
+      <div class="last-update">
+        <%= time_ago_in_words(role.project.updated_at) %>  <%= t 'ago' %>
+      </div>
+    </div>
+  </div>
+  <div class="project-role">
+    <span class="your-role-title"><%= t('your_role') %></span>
+    <span class="role"><%= role.role_text %></span>
+  </div>
+  <div class="project-switch">
+    <div class="switch">
+      <form action="">
+        <%= check_box_tag "", role.project_id,
+                              role.user.notification(id: role.project_id, type: "Project").turn_on,
+                              { class: 'switch-checkbox project_notification',
+                                id: "proj_#{role.project_id}" } %>
+        <label class="switch-label" for=<%="proj_#{role.project_id}"%>>
+          <span class="switch-inner"></span>
+          <span class="switch-btn"></span>
+        </label>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,2 @@
+module TestRuns::TestRunResultPositionsHelper
+end

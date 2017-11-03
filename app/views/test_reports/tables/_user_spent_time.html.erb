@@ -1,0 +1,15 @@
+<div class="report-info time-spent-info">
+	<table class="report-info-table time-spent-table table-details">
+		<thead>
+		<tr>
+			<th class="issue-id"><%= t 'issue_id' %></th>
+			<th class="issue-title"><%= t 'issue_summary' %></th>
+			<th class="issue-type"><%= t 'type' %></th>
+			<th class="issue-time"><%= t 'time_spent' %></th>
+		</tr>
+		</thead>
+		<tbody>
+		<%= render 'user_by_spent_time', user: user %>
+		</tbody>
+	</table>
+</div>

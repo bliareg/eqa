@@ -1,0 +1,42 @@
+<div id="container1"></div>
+
+<script type="text/javascript">
+  $(function () {
+    Highcharts.chart('container1', {
+      title: {
+          text: false,
+      },
+      xAxis: {
+          categories: <%= raw one_time.keys %>
+      },
+
+      yAxis: {
+        allowDecimals: false,
+        min: 0,
+        title: false
+      },
+      
+      plotOptions: {
+        line: {
+          marker: {
+            enabled: false
+          }
+        }
+      },
+      series: [{
+          name: '1 time',
+          data: <%= raw one_time.values %>
+      }, {
+          name: '2 times',
+          data: <%= raw two_times.values %>
+      }, {
+          name: '3 times',
+          data: <%= raw three_times.values %>
+      }, {
+          name: '4 times and more',
+          data: <%= raw four_times.values %>
+      }]
+    });
+  });
+
+</script>

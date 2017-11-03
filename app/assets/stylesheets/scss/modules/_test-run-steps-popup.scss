@@ -1,0 +1,131 @@
+.modal-test-run-steps {
+  width: 770px;
+
+  //.modal-content-scroll {
+  //  height: 380px;
+  //}
+
+  .test-run-info-table {
+    width: 100%;
+    @include rem(font-size, 14px);
+
+    ol {
+      padding-left: 15px;
+
+      li {
+        list-style: decimal;
+      }
+    }
+
+    tr {
+      height: 50px;
+
+      &:nth-child(2n+1) {
+        background-color: $project-count-block-bg;
+        border-radius: 6px;
+      }
+
+      &:nth-child(n+2) {
+        td {
+          vertical-align: top;
+        }
+      }
+
+      td {
+        border: none;
+
+        &:first-child {
+          width: 22%;
+          color: $base-text;
+          font-family: $bold-font-family;
+          font-weight: bold;
+          border-radius: 6px 0 0 6px;
+        }
+
+        &:last-child {
+          width: 78%;
+          color: $base-light-text;
+          border-radius: 0 6px 6px 0;
+        }
+      }
+    }
+  }
+
+  .mark-case-title {
+    white-space: normal;
+    word-break: break-all;
+    display: block;
+  }
+
+  .pass,
+  .failed,
+  .blocked,
+  .not-available {
+    // width: 115px;
+    height: 40px;
+    margin: 0 0 10px -15px;
+    padding: 10px;
+    color: $white;
+    border-radius: 4px;
+    @include rem(font-size, 14px);
+  }
+
+  .pass {
+    background-color: $pass-bg;
+  }
+
+  .failed {
+    background-color: $failed-bg;
+  }
+
+  .blocked {
+    background-color: $blocked-bg;
+  }
+
+  .not-available {
+    background-color: $not-available-bg;
+  }
+
+  .radio {
+    &:not(:checked) + label:before,
+    &:checked + label:before {
+      background-color: $white;
+      border: 1px solid $input-unchecked-border;
+    }
+
+    &:not(:checked) + label:after,
+    &:checked + label:after {
+      background-color: $green-1;
+    }
+  }
+
+  .btn-step {
+    color: $btn-green;
+    border-color: $btn-green;
+
+    &:hover {
+      color: darken($btn-green, 10%);
+      border-color: darken($btn-green, 10%);
+    }
+  }
+
+  .btn-prev {
+    float: left;
+  }
+
+  .btn-next {
+    float: right;
+  }
+
+  .radio-status-result {
+    .view-btn-group {
+      margin: 0 0 0 -15px;
+
+      .btn {
+        width: 100%;
+        margin: 5px 0;
+        padding: 10px 0;
+      }
+    }
+  }
+}

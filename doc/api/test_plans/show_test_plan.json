@@ -1,0 +1,60 @@
+{
+  "resource": "Test Plans",
+  "http_method": "GET",
+  "route": "/api/v1/test_plans/:id",
+  "description": "Show test plan",
+  "explanation": null,
+  "parameters": [
+    {
+      "required": true,
+      "name": "auth_token",
+      "description": "User authenticity token"
+    },
+    {
+      "required": true,
+      "name": "token",
+      "description": "Uniq project token"
+    },
+    {
+      "required": true,
+      "name": "id",
+      "description": "Test plan id"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "/api/v1/test_plans/18?token=IlAhyYWV1AsNjGHqEo7FBlE7Wenl7ZW28&auth_token=7WF%2F3oIjH3FiNozY2Jp7yz%2ByVT6acO4h25",
+      "request_body": null,
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+        "token": "IlAhyYWV1AsNjGHqEo7FBlE7Wenl7ZW28",
+        "auth_token": "7WF/3oIjH3FiNozY2Jp7yz+yVT6acO4h25"
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"id\": 18,\n  \"project_id\": 8,\n  \"created_by\": 22,\n  \"title\": \"O Pioneers!\",\n  \"description\": \"You'll find I'm full of surprises!\",\n  \"created_at\": \"2017-03-07T08:43:50.948Z\",\n  \"updated_at\": \"2017-03-07T08:43:50.948Z\"\n}",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"97c9abb9c65471c145e8bf14c9e20f6b\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "7401f231-2a86-4f0f-b4ee-3453626f6104",
+        "X-Runtime": "0.041739",
+        "Content-Length": "193"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"http://localhost:3000/api/v1/test_plans/18?token=IlAhyYWV1AsNjGHqEo7FBlE7Wenl7ZW28&auth_token=7WF%2F3oIjH3FiNozY2Jp7yz%2ByVT6acO4h25\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

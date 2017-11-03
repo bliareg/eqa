@@ -1,0 +1,2 @@
+module Projects::SettingsHelper
+end

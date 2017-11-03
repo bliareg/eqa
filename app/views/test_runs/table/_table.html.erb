@@ -1,0 +1,17 @@
+<thead>
+  <tr>
+    <% if @column_visibility.sort_order.nil? %>
+      <th class="drag-icon" style='width: <%= @column_set['drag_icon'] %>%' data-column='drag_icon'></th>
+    <% end %>
+    <th class="id sortable <%= class_for_sorting('id') %>" style='width: <%= @column_set['id'] %>%' data-column='id' data-order="<%= set_column_order('id') %>">ID <span class="fa fa-sort"></span></th>
+    <th class="test-title sortable <%= class_for_sorting('title') %>" style='width: <%= sorted_title_width %>%' data-column='title' data-order="<%= set_column_order('title') %>"><%= t('title') %> <span class="fa fa-sort"></span></th>
+
+    <%= render partial: 'test_runs/table/headers',
+                        collection: @column_set.keys & TestRunResult::VISIBLE_COLUMNS.keys,
+                        as: :column_name %>
+  </tr>
+</thead>
+<tbody class='result_sortable'>
+  <%= render partial: 'test_runs/table/test_run_result_case', collection: test_run_results, as: :result %>
+</tbody>
+            

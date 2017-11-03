@@ -1,0 +1,44 @@
+
+<%= form_for(@test_case, url: url, html: { method: method, class: 'check_result' }, remote: true) do |f| %>
+
+<div class="field">
+  <%= f.label :title %>:
+  <%=@test_case.title%>
+</div>
+<div class="field">
+  <%= f.label :case_type %>:
+  <%= @test_case.case_type %>
+</div>
+
+<div class="field">
+  <%= f.label :pre_steps %>:
+  <%= @test_case.pre_steps%>
+</div>
+<div class="field">
+  <%= f.label :steps %>:
+  <%= @test_case.steps %>
+</div>
+<div class="field">
+  <%= f.label :expected_result %>:
+  <%= @test_case.expected_result%>
+</div>
+<div class="field">
+  <%= f.label :current_state %>:
+  <h4><%= @case_result.status%></h4>
+</div>
+<div >
+  <%= f.label :pass  %><br />
+  <%= radio_button_tag 'result', '0' %>
+</div>
+<div >
+  <%= f.label :failed  %><br />
+  <%= radio_button_tag 'result', '4' %>
+</div>
+<div >
+  <%= f.label :blocked  %><br />
+  <%= radio_button_tag 'result', '1' %>
+</div>
+<div class="actions">
+  <%= f.submit "Save", class: 'submit_case' %>
+</div>
+<% end %>

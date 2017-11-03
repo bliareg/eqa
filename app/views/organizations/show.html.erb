@@ -1,0 +1,46 @@
+<div class="card card-tab-content org-profile tab">
+  <div class="card-header">
+    <%= image_tag @organization.logo.file.url(:medium), class: 'org-logo' %>
+    <h2 class="card-header-title"><%= @organization.title %></h2>
+    <%= @organization.change_organization_profile_link(current_user) %>
+  </div>
+  <div class="columns-wrapper">
+    <table class="org-profile-content">
+      <tr>
+        <td class="column-1"><%= t 'created_at' %></td>
+        <td class="column-2"><%= @organization.created_at.strftime('%d/%m/%Y') %></td>
+        <td class="column-3"><%= t 'current plan' %></td>
+        <td class="column-2"><%= t 'not_implemented' %></td>
+      </tr>
+      <tr>
+        <td class="column-1"><%= t 'created_by' %></td>
+        <td class="column-2"><%= @organization.owner.name %></td>
+        <td class="column-3"><%= t 'projects' %></td>
+        <td class="column-2 org-count"><%= @projects.size %></td>
+      </tr>
+      <tr>
+        <td class="column-1"></td>
+        <td class="column-2"></td>
+        <td class="column-3"><%= t 'members' %></td>
+        <td class="column-2 org-count"><%= @organization.members.size %></td>
+      </tr>
+       <tr>
+        <td class="column-1"><%= t 'description' %></td>
+        <td class="column-2"><%= @organization.description %></td>
+       </tr>
+    </table>
+
+    <div class="card">
+      <span class="token-title"><%= t 'token' %></span>
+      <div class="token-block">
+        <div class="token">
+          <span><%= @organization.token %></span>
+          <div class="copy-token" data-copied-text="<%= t('copied') %>" data-copy-link-text="<%= t 'copy_link' %>">
+            <a class="btn-white-green"><%= t 'copy_token' %></a>
+          </div>
+        </div>
+        <%= @organization.refresh_token_link(current_user) %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<div class='modules-and-cases modules-for-plan-<%= params[:test_plan_id] %>'>
+  <div class="contains contains-info">
+    <div id="jstree_demo_div_popUp_<%= params[:test_plan_id] %>" class="cases-info-modal">
+      <%= render partial: 'test_modules_item', collection: @root_modules, as: :test_module %>
+    </div><!-- folderTree-->
+  </div>
+  <div class="cases">
+    <div class="cases-info cases-info-modal">
+      <% @root_modules.each do |m| %>
+        <div class="cases-info-item">
+          <%= render partial: 'test_cases_item', collection: [m], as: :test_module %>
+        </div>
+      <% end %>
+    </div>  <!-- cases-info-->
+  </div>  <!-- cases mCustomScrollbar-->
+</div>

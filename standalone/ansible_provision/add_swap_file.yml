@@ -1,0 +1,11 @@
+---
+
+- name: Add swap file
+  hosts: all
+  remote_user: "{{ deploy_user }}"
+  become: yes
+  roles:
+    - role: kamaln7.swapfile
+      swapfile_size: 2GB
+      swapfile_swappiness: 10
+      swapfile_location: /mnt/swapfile

@@ -1,0 +1,11 @@
+[rails]
+# Your server IP address
+212.47.241.206
+
+# # Password for deploy_user (plain text)
+user_password_plain=D453efsb2_
+
+# # Server root account password
+# # password is not send anywhere else except your server
+# # and can be changed on server after project will be deployed
+root_password=923ewefu9feferf77iJH778ff459f93hdk8d42e63403e90f2a64a9eef407d32f5ee

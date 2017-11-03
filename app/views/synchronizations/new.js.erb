@@ -1,0 +1,7 @@
+cancel_btn = $('.new_integration_form .btn.cancel');
+$('.new_integration_form').html('<%= j render partial: "#{@plugin_name}_form", \
+                                              locals: { url: url_for(controller: :synchronizations, action: :create), \
+                                                        method_name: :post }%>');
+$('.new_integration_form').append(cancel_btn);
+cancel_btn.hide();
+bind_custom_scrollbar();

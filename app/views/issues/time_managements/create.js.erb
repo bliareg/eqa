@@ -1,0 +1,9 @@
+$('.spent-time-table tbody')
+  .append("<%= j render 'time_management', time_management: @time_management %>")
+$("#new_time_management .input_wrapper input[type='text']").val('');
+new_time_management = $('.spent-time-table tbody tr').last();
+
+scroll = new_time_management.parents(".modal-content-scroll").first();
+scroll.mCustomScrollbar('scrollTo', new_time_management);
+update_issue_spent_time_count('<%= @time_management.issue.spent_time_view %>',
+                              '<%= @time_management.issue.id %>')

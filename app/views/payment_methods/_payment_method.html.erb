@@ -1,0 +1,13 @@
+<li class="method-item">
+  <div class="">
+    <%= radio_button_tag 'payment_method', payment_method.id, payment_method.id == @billing.default_payment_method_id,
+                         class: 'radio show_loader' %>
+    <label class="title" for="payment_method_<%= payment_method.id %>">
+      <span class="card-icon" aria-hidden="true"><%= image_tag payment_method.img_url %></span>
+      <span class="card-number"><%= payment_method.text %></span>
+    </label>
+  </div>
+  <%= link_to payment_method, method: :delete, remote: true do %>
+    <span class="fa fa-times delete-method show_loader" aria-hidden="true"></span>
+  <% end %>
+</li>

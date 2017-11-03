@@ -1,0 +1,7 @@
+---
+
+- name: Create deploy user
+  include: users.yml
+
+- name: Setup user settings
+  include: user_settings.yml

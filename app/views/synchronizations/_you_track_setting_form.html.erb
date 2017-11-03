@@ -1,0 +1,58 @@
+<%= form_for(@synchronization, url: url, validate: true, method: method_name, remote: true) do |f| %>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <div class="modal-content-scroll">
+    <div class="modal-body">
+      <div class="row">
+        <div class="col xs-6">
+          <div class="input_wrapper">
+            <%= f.label :login, class: 'title star' %>
+            <%= f.text_field :login, validate: true %>
+          </div>
+        </div>
+        <div class="col xs-6">
+          <div class="input_wrapper">
+            <%= f.label :password, class: 'title star' %>
+            <%= f.password_field :password, validate: true %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col xs-12">
+          <div class="input_wrapper">
+            <%= f.label :service_pid, class: 'title star' %>
+            <%= f.text_field :service_pid, validate: true %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col xs-12">
+          <div class="input_wrapper">
+            <%= f.label :agile_board_name, class: 'title' %>
+            <%= f.text_field :agile_board_name %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col xs-12">
+          <div class="input_wrapper">
+            <%= f.label :sprint_name, class: 'title' %>
+            <%= f.text_field :sprint_name %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col xs-12">
+          <div class="input_wrapper">
+            <%= f.label :base_url, class: 'title star' %>
+            <%= f.text_field :base_url, validate: true %>
+          </div>
+        </div>
+      </div>
+      <%= render partial: 'setting_plugin_boxes', locals: { f: f } %>
+    </div>
+  </div>
+  <div class="actions btn-group">
+    <%= f.submit t('connect'), class: 'btn btn-green' %>
+    <span class="btn btn-white-green btn-big cancel"><%= t('cancel') %></span>
+  </div>
+<% end %>

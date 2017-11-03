@@ -1,0 +1,7 @@
+<tr>
+  <td class="payment-date"><%= l(payment.created_at, format: '%d %b %y') %></td>
+  <td class="payment-amount">$<%= payment.amount %></td>
+  <td class="payment-type"><%= summary(payment) %></td>
+  <td><%= payment.status.text %></td>
+</tr>
+        

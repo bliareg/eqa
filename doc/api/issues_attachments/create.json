@@ -1,0 +1,64 @@
+{
+  "resource": "Issues Attachments",
+  "http_method": "POST",
+  "route": "/api/v1/issues/:issue_id/attachments",
+  "description": "Create",
+  "explanation": null,
+  "parameters": [
+    {
+      "required": true,
+      "name": "token",
+      "description": "Uniq project token"
+    },
+    {
+      "required": true,
+      "name": "auth_token",
+      "description": "User authenticity token"
+    },
+    {
+      "Type": "Multipart/Form-data",
+      "required": true,
+      "name": "attachment",
+      "description": "Your attachment"
+    },
+    {
+      "required": true,
+      "name": "issue_id",
+      "description": "Issue ID"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "POST",
+      "request_path": "/api/v1/issues/1/attachments",
+      "request_body": "------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"token\"\r\n\r\nqWwKR6z00WPJvZCnWvgkoUfApVZJkj9I2\r\n------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"auth_token\"\r\n\r\nomk7dZqiXyN8axz/za4xQeRrCkcSyntW13\r\n------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"attachment\"; filename=\"test.jpg\"\r\nContent-Type: image/jpeg\r\nContent-Length: 119260\r\n\r\n[uploaded data]\r\n------------XnJLe9ZIbbGUYtzPQJ16u1--\r",
+      "request_headers": {
+        "Content-Type": "multipart/form-data; boundary=----------XnJLe9ZIbbGUYtzPQJ16u1",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "multipart/form-data; boundary=----------XnJLe9ZIbbGUYtzPQJ16u1",
+      "response_status": 201,
+      "response_status_text": "Created",
+      "response_body": "{\n  \"id\": 18,\n  \"created_at\": \"2017-04-14T07:54:48.722Z\",\n  \"updated_at\": \"2017-04-14T07:54:48.722Z\",\n  \"file_file_name\": \"test.jpg\",\n  \"file_content_type\": \"image/jpeg\",\n  \"file_file_size\": 119260,\n  \"file_updated_at\": \"2017-04-14T07:54:48.449Z\",\n  \"attachable_type\": \"Issue\",\n  \"attachable_id\": 1,\n  \"url\": \"/system/attachments/files/7cd3c116587d776594d7046ee3b37874d2edfc9c/7cd3c116587d776594d7046ee3b37874d2edfc9c/54d0df5d0e363826c7ed84444a06bacf7f20a337/original/test.jpg\"\n}",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"2f80c21a7a57354595c5401acc05235a\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "b256869d-59ca-4fcd-9d53-285c7ca29640",
+        "X-Runtime": "0.750890",
+        "Content-Length": "438"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"http://localhost:3000/api/v1/issues/1/attachments\" -d '------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"token\"\r\n\r\nqWwKR6z00WPJvZCnWvgkoUfApVZJkj9I2\r\n------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"auth_token\"\r\n\r\nomk7dZqiXyN8axz/za4xQeRrCkcSyntW13\r\n------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"attachment\"; filename=\"test.jpg\"\r\nContent-Type: image/jpeg\r\nContent-Length: 119260\r\n\r\n[uploaded data]\r\n------------XnJLe9ZIbbGUYtzPQJ16u1--\r' -X POST \\\n\t-H \"Content-Type: multipart/form-data; boundary=----------XnJLe9ZIbbGUYtzPQJ16u1\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

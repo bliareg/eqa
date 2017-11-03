@@ -1,0 +1,16 @@
+<div class="card-header">
+  <h2 class="card-header-title"><%= t(:payment_methods) %></h2>
+  <% if flash[:payment_method_error] %>
+    <span class="error-message"><%= flash[:payment_method_error] %></span>
+  <% end %>
+</div>
+<ul class="methods-list">
+  <%= render @billing.payment_methods %>
+</ul>
+<div class="add-method-block">
+  <%= render 'add_method_block' %>
+</div>
+<div class="btn-wrapper">
+  <button class="show-payment-method-form btn-white-green"><%= t(:add_new) %></button>
+  <button class="show-payment-method-form btn-white-green" style='display:none'><%= t(:hide_form) %></button>
+</div>

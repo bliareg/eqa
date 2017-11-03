@@ -1,0 +1,5 @@
+$('#content').html("<%= j render file: 'notifications/index.html.erb' %>");
+projects_left_manu_action('<%= request.path %>');
+$('.load-block').hide();
+notifications_init();
+all_notifications_title();

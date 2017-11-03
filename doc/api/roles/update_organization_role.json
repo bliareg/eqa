@@ -1,0 +1,57 @@
+{
+  "resource": "Roles",
+  "http_method": "PUT",
+  "route": "/api/v1/roles/:id",
+  "description": "Update organization role",
+  "explanation": null,
+  "parameters": [
+    {
+      "required": true,
+      "name": "auth_token",
+      "description": "User authenticity token"
+    },
+    {
+      "required": true,
+      "name": "id",
+      "description": "Role id"
+    },
+    {
+      "name": "role",
+      "description": "Role in organization. Must be \"user\" or \"admin\""
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "PUT",
+      "request_path": "/api/v1/roles/62",
+      "request_body": "{\"role\":\"admin\",\"auth_token\":\"cjIywkHBYO+p8g1cKyauxei27w/zjdtr33\"}",
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"organization_id\": 14,\n  \"role\": \"admin\",\n  \"project_id\": null,\n  \"id\": 62,\n  \"user_id\": 34,\n  \"created_at\": \"2017-04-14T07:55:42.684Z\",\n  \"updated_at\": \"2017-04-14T07:55:45.251Z\",\n  \"is_subscribed\": null,\n  \"deleted_at\": null\n}",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"0113be853aa464c3f42e73a4a46887ca\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "55e84cff-b291-461c-a11f-7fde7bf72923",
+        "X-Runtime": "0.169887",
+        "Content-Length": "195"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"http://localhost:3000/api/v1/roles/62\" -d '{\"role\":\"admin\",\"auth_token\":\"cjIywkHBYO+p8g1cKyauxei27w/zjdtr33\"}' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "resource": "Users",
+  "http_method": "GET",
+  "route": "/api/v1/users/show",
+  "description": "User show by email",
+  "explanation": null,
+  "parameters": [
+    {
+      "required": true,
+      "name": "email",
+      "description": "User email"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "/api/v1/users/show?email=sophie.gusikowski%40steuber.biz",
+      "request_body": null,
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+        "email": "sophie.gusikowski@steuber.biz"
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"name\": \"Fausto Beatty\",\n  \"email\": \"sophie.gusikowski@steuber.biz\",\n  \"id\": 79\n}",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"274cdffada21036e0f80937c895b1a7c\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "6b2ee036-ebc4-4758-b4ad-5e8edcec6ad2",
+        "X-Runtime": "0.017067",
+        "Content-Length": "72"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"http://localhost:3000/api/v1/users/show?email=sophie.gusikowski%40steuber.biz\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+.hover-block {
+  display: inline-block;
+  position: absolute;
+  margin: 0;
+  color: $white;
+  white-space: nowrap;
+  background: $hover-block;
+  border-radius: 3px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 350ms ease-in-out 0s;
+  z-index: 2051;
+  @include rem(font-size, 14px);
+
+  p {
+    margin: 0;
+  }
+
+  .main-info {
+    margin-bottom: 15px;
+    font-weight: 600;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid $hover-block;
+  }
+}
+
+a,
+button,
+.btn-resend,
+.btn-delete {
+  &:hover .hover-block {
+    opacity: 0.5;
+    visibility: visible;
+  }
+}

@@ -1,0 +1,1120 @@
+en:
+  Click to upload: Click to upload
+  about: about
+  about_us: About us
+  access_level: Access level
+  account_locked_p1: Account is locked
+  account_locked_p2: You can not log in.
+  account_locked_p3: Please connect EasyQA support team
+  account_locked_restore_password: You can not restore password.
+  active_admin:
+    filters:
+      predicates:
+        not_eq: Not equals
+  active_test_runs: Active test runs
+  activerecord:
+    attributes:
+      git_hub_setting:
+        access_token: Access token
+        branch: Branch
+        repository_url: Repository URL
+      git_lab_setting:
+        access_token: Access token
+        branch: Branch
+        project_url: Project URL
+      issue:
+        assign_to: Assign to
+        assigned_to: Assigned to
+        assigner: Assigner
+        build: Build
+        description: Description
+        document_updated_at: Document updated at
+        issue_type: Issue type
+        priority: Priority
+        project: Project
+        project_issue_number: Project issue number
+        reporter: Reporter
+        status: Status
+        status_id: Status
+        summary: Summary
+        test_object: Test object
+      jira_setting:
+        base_url: Base URL
+        board_name: Agile board name
+        password: Password
+        project_key: Project key
+        username: Username
+      organization:
+        description: Description
+        title: Title
+      project:
+        organization: Organization
+        title: Title
+      redmine_setting:
+        api_token: Api token
+        project_name: Project name
+      test_case:
+        case_type: Type
+        expected_result: Expected result
+        pre_steps: Pre-steps
+        steps: Steps
+        test_module: Module
+        title: Title
+      test_module:
+        description: Description
+        title: Title
+      test_plan:
+        description: Description
+        title: Title
+      test_run:
+        assigner_id: Assigner
+        description: Description
+        test_plan_id: Test plan
+        title: Title
+      test_run_result:
+        status: Status
+      trello_setting:
+        api_key: Api key
+        board_name: Board name
+        member_token: Member token
+      user:
+        company: Company
+        country: Country
+        current_password: Current password
+        email: Email
+        first_name: First name
+        last_name: Last name
+        password: New password
+        password_confirmation: Password confirmation
+        password_sample: Password
+        remember_me: Remember me
+        title: Title
+      you_track_setting:
+        agile_board_name: Agile board name
+        base_url: Base URL
+        login: Login
+        password: Password
+        service_pid: Project ID
+        sprint_name: Sprint name
+    errors:
+      models:
+        time_management:
+          attributes:
+            spent_time:
+              invalid_spent_time: Wrong format. For example, try 2h 30m
+        user:
+          attributes:
+            company:
+              unspaces: Invalid
+            street_address:
+              unspaces: Invalid
+            city:
+              unspaces: Invalid
+            state:
+              unspaces: Invalid
+            zip_code:
+              unspaces: Invalid
+            phone_number:
+              unspaces: Invalid
+    models:
+      comment: Comment
+      issue: Issue
+      log_file: Log file
+      project: Project
+      test_case: Test case
+      test_plan: Test plan
+      test_run: Test run
+      user: User
+  add: Add
+  add_case: Add case
+  add_column: Add column
+  add_comment: Add Comment
+  add_file: Add file
+  add_members: Add Members
+  add_module: Add module
+  add_new: + Add new
+  add_new_column: Add new column
+  add_new_organization: Add New Organization
+  add_new_plugin: Add new plugin
+  add_organization: Add organization
+  add_project: Add project
+  add_submodule: Add submodule
+  add_test_object: Add Test Object
+  add_test_run: Add test run
+  add_the_dependency: 'add the dependency:'
+  add_time: Add time
+  add_url_of_EasyQA_repository: 'add URL of EasyQA repository:'
+  added: added
+  added_licenses:
+    few: Added %{count} licenses
+    many: Added %{count} licenses
+    one: Added %{count} license
+    other: Added %{count} licenses
+  after_that_you_can_create_your_app_build_and_upload_it: After that, you can create your app’s build and upload it in Test Objects within your project in
+  agile_board_name: Agile Board Name
+  ago: ago
+  all: All
+  all_issues: All issues
+  all_rights: by THINKMOBILES. All rights reserved.
+  amount: Amount
+  amount_caps: AMOUNT
+  and: and
+  android_instructions: Android Instructions
+  android_instructions_details:
+    detail1: Open your project (for example, in Android Studio);
+    detail10: Generate test build and upload it on
+    detail11: Test Objects page
+    detail12: on EasyQA website <span>></span> your build is ready to track crashes.
+    detail2: 'Go to EasyQA website <span>></span> open your project <span>></span> SDK Intergations menu item <span>></span> Download library for Android projects:'
+    detail3: 'Add this library to your project:'
+    detail4: Select downloaded library <span>></span> Finish
+    detail5: Open Project Structure <span>></span> Select module of your application <span>></span> Click “Dependencies” tab <span>></span> Click “+” <span>></span> Module Dependency <span>></span> Select module “easyqa” <span>></span> Click OK
+    detail6: Go to EasyQA website <span>></span> open you project <span>></span> SDK Intergations menu item <span>></span> copy token
+    detail7: SDK Integrations
+    detail8: Token
+    detail9: 'Open the application class of you project and add a code in the onCreate method:'
+  android_sdk: Android SDK
+  api_key: API KEY
+  api_token: API Token
+  are_you_sure: Are you sure?
+  as: as
+  assigned_issues: Assigned to me
+  assigned_to: Assigned to
+  at: at
+  attachments: Attachments
+  automatic_synchronization: Automatic synchronization
+  back: Back
+  bad_connection: Bad connection
+  bad_token: Bad token
+  base_url: Base URL
+  begin_import: Begin import
+  blog: Blog
+  board_columns: Board Columns
+  board_name: Board Name
+  board_settings: Board settings
+  branch: Branch
+  breaked: Broken
+  breaked_synchronize: Synchronization was broken!
+  build_file_ipa_or_apk: Build file (IPA or APK)
+  build_version: Build version
+  builds: Builds
+  can_not_be_long: Can`t be long
+  can_not_be_zero: Can`t be zero
+  invalid_license: Invalid license
+  expired_license: License already expired
+  already_exists: Already exists
+  trial_already_exists: Trial license already exists
+  cancel: Cancel
+  cancel_my_account: Cancel my account
+  cant_be_blank: Can`t be blank
+  card_number: Card Number
+  cases: Cases
+  cases_by_module: Cases by module
+  cases_by_status: Cases by status
+  cases_by_type: Cases by type
+  cases_count: Cases
+  cases_down_case: cases
+  catch_crashes_and_report_bugs_from_mobile_apps: Catch crashes and report bugs from Mobile apps
+  change: Change
+  changed_from: changed from
+  change_organization: Change organization profile
+  change_selection: change selection
+  changed_from: changed from
+  check_all: Check All
+  choose_country: Choose your country
+  choose_emails_to_send_a_referral_link: Choose emails to send a referral link
+  choose_organization: Choose your organization
+  choose_plugin: Please choose integration plugin
+  choose_test_module: Choose test module
+  choose_test_object: choose object
+  choose_test_plan: Choose test plan
+  choose_test_run: Choose test run
+  choose_type_of_report: Choose type of report
+  choose_user: Choose user
+  chrome_extention_instructions: Chrome extention instructions
+  chrome_extention_instructions_details:
+    detail1: To add a chrome extension to your browser,
+    detail10: The user can change token or turn back to the first screen by pressing Settings icon and select Change token or Sign out.
+    detail2: just click on the link and click "Install"
+    detail3: . Now a logo of EasyQA should appear in the corner of your browser.
+    detail4: If you are the part of QA Team of developed web application and you are registered in EasyQA test management tool, you can report bugs after logging with your email and password. Just click <strong>Login</strong> button on the first screen and start to fill the data.
+    detail5: Type <strong>Project Token</strong>, which you have copied on <strong>Integrations</strong> page within your project
+    detail6: and <strong>Base URL</strong> (
+    detail7: '- if you use <strong>EasyQA Cloud</strong> or IP address of your <strong>EasyQA standalone server</strong>)'
+    detail8: 'If the data is valid, you will move the the third screen, where you need to type your registered email and the password:'
+    detail9: After successful login, you will be redirected to the screen, where you will be able to make screenshots and record videos. Your name will be displayed as a <strong>reporter name</strong> on the card on <strong>Issues page</strong> within your project.
+  click_here: click here
+  click_to_load: Click to load
+  click_the_link_below_to_unlock_your_account: 'Click the link below to unlock your account:'
+  close: Close
+  close_confirmation_message: Are you really want to close this popup? All unsaved changes will be lost.
+  closed: Closed
+  closed_issues: Closed issues
+  code_review: Code Review
+  column_assigned_to: Assigned to
+  column_created_by: Created By
+  column_created_on: Created On
+  column_default: Default
+  column_module: Module
+  column_settings: Column settings
+  column_status: Status
+  column_type: Type
+  column_updated_by: Updated By
+  column_updated_on: Updated On
+  columns: Columns
+  columns_visibility: Columns visibility
+  comment:
+    case_added_to: Test Case was added to Test Run %{test_run_name}
+    case_removed_from: Test Case was removed from Test Run %{test_run_name}
+    deleted_by: deleted by
+    issue_created: Issue was created
+    many: Comments
+    one: Comment
+    test_case_based_issue: Issue was created on the base of test case
+    test_case_created: Test Case was created
+    test_case_moved: Test Case was moved from module %{old_module} to %{new_module}
+    updated_by: updated by
+  company: Company
+  complete: Complete
+  confirm_email_p1: To do this go through the link that we have sent you in email.
+  confirm_email_p2: Or click 'Resend confirmation instructions' if you didn't receive any messages.
+  confirm_my_account: Confirm my account
+  confirm_your_account: Confirm your account
+  confirm_your_email: Confirm your email
+  confirm_your_password: Confirm your password
+  connect: Connect
+  connection_error_message: Connection failed. Please check your data or try again later
+  connection_failed: Connection failed
+  contact_us: Contact Us
+  contains: Contains
+  continue: Continue
+  convert_to_issue: Convert to issue
+  copied: Copied!
+  copy: Copy
+  clone: Clone
+  cloned: Cloned
+  copy_link: Copy link
+  copy_token: Copy token
+  country: Country
+  crash_on: Crash on
+  crash_summary: Crash summary
+  crashes: Crashes
+  crashes_by_build: Crashes by build
+  crashes_by_version: Crashes by version
+  crashes_count: Crashes count
+  crashes_report_label: Crashes by version diagram
+  create_bugs_tasks_improvements_etc_on_our_agile_board: Create bugs, tasks, improvements etc on our agile board
+  create_issues_on_easyqa: Create issues on EasyQA...
+  create_issues_on_plugin: Create issues on plugin...
+  create_new_organization: Create new organization
+  create_organization: Create organization
+  create_project: Create project
+  create_status: Create status
+  create_status_uniq_error: Your project already has the status of that name
+  create_test_object_error: Please add .apk or .ipa file or type a link
+  create_test_plan: Create test plan
+  create_test_plans_and_write_test_cases: Create test plans and write test cases
+  create_test_run: Create Test Run
+  create_user: Create User
+  created: Created
+  created_at: Created At
+  created_by: Created By
+  created_on: Created On
+  creator: Creator
+  csv_field: CSV field
+  current plan: Current plan
+  cvv: CVV
+  date_caps: DATE
+  date_of_tax_invoice_creation: 'Date of tax invoice creation:'
+  date_small: Date
+  date_word: Date
+  days_to_end:
+    few: There're <span class='accent'> %{count} DAYS</span> left till the end of
+    many: There're <span class='accent'> %{count} DAYS</span> left till the end of
+    one: There're <span class='accent'> %{count} DAY</span> left till the end of
+    other: There're <span class='accent'> %{count} DAYS</span> left till the end of
+  deactivate_account: Deactivate account
+  deactivate_text_1: You have an opportunity to restore your account during one year.
+  deactivate_text_2: All your data will be available.
+  deactivate_text_3: In a year all your info will be deleted.
+  deactivate_text_title: Are you sure you want to deactivate your account?
+  dear: Dear
+  delete: Delete
+  delete?: Delete?
+  delete_member: Delete member
+  delete_organization: Delete organization
+  delete_project: Delete project
+  delete_test_run_confirmation: Do you really want to delete test run?
+  deleted: deleted
+  deleting_organization: By deleting an organization you will delete all associated projects and test objects.
+  deleting_project: By deleting a project you will delete all associated test objects, issues and crashes.
+  description: Description
+  detected: Detected
+  device: Device
+  device_brand: device brand
+  device_manufacturer: device manufacturer
+  device_model: device model
+  device_serial: device serial
+  devices: Devices
+  devise:
+    confirmations:
+      new:
+        resend_confirmation_instructions: Resend confirmation instructions
+    failure:
+      already_authenticated: You are already signed in.
+      inactive: Your account is not activated yet.
+      invalid: Invalid %{authentication_keys} or password.
+      last_attempt: You have one more attempt before your account will be locked.
+      locked: Your account is locked.
+      not_found_in_database: Invalid %{authentication_keys} or password.
+      timeout: Your session expired. Please sign in again to continue.
+      token_is_invlaid: Confirmation token is invalid
+      unauthenticated: ''
+      unconfirmed: You have to confirm your email address before continuing.
+    mailer:
+      confirmation_instructions:
+        action: Confirm my account
+        greeting: Welcome %{recipient}!
+        instruction: 'You can confirm your account email for the EasyQA through the link below:'
+      reset_password_instructions:
+        action: Change my password
+        greeting: Hello %{recipient}!
+        instruction: Someone has requested a link to change your password, and you can do this through the link below.
+        instruction_2: If you didn't request this, please ignore this email.
+        instruction_3: Your password won't be changed until you access the link above and create a new one.
+        instruction_for_del_user: Your account was deleted. But
+      unlock_instructions:
+        action: Unlock my account
+        greeting: Hello %{recipient}!
+        instruction: 'Click the link below to unlock your account:'
+        message: Your account has been locked due to an excessive amount of unsuccessful sign in attempts.
+    passwords:
+      edit:
+        change_my_password: Change my password
+        change_your_password: Change your password
+        confirm_new_password: Confirm new password
+        new_password: New password
+      new:
+        forgot_your_password: Forgot your password?
+        send_me_reset_password_instructions: Send me reset password instructions
+    registrations:
+      edit:
+        are_you_sure: Are you sure?
+        cancel_my_account: Cancel my account
+        currently_waiting_confirmation_for_email: 'Currently waiting confirmation for: %{email}'
+        leave_blank_if_you_don_t_want_to_change_it: leave blank if you don't want to change it
+        title: Edit %{resource}
+        unhappy: Unhappy
+        update: Update
+        we_need_your_current_password_to_confirm_your_changes: we need your current password to confirm your changes
+      new:
+        sign_up: Sign up
+    sessions:
+      new:
+        sign_in: Sign in
+    shared:
+      links:
+        back: Back
+        didn_t_receive_confirmation_instructions: Didn't receive confirmation instructions?
+        didn_t_receive_unlock_instructions: Didn't receive unlock instructions?
+        forgot_your_password: Forgot your password?
+        sign_in: Sign in
+        sign_in_with_provider: Sign in with %{provider}
+        sign_up: Sign up
+    unlocks:
+      new:
+        resend_unlock_instructions: Resend unlock instructions
+  devise_word: device
+  disable_all: Disable all
+  disable_email: Disable email notifications
+  distribution_groups: Distribution Groups
+  dont_map_this_field: Don't map this field
+  download: Download
+  download_report: Download report
+  download_the_tax_invoice_in_pdf_format: Download the tax invoice in PDF format
+  drag_selected_column_here_to_remove: drag selected column here to remove
+  edit: Edit
+  edit_case: Edit case
+  edit_module: Edit module
+  edit_test_run: Edit test run
+  email: Email
+  email_confirmed: Email is already confirmed
+  employees: Employees
+  enable_all: Enable all
+  enter_email: Enter email
+  enter_email_to_restore_password: Enter your email to restore password
+  enter_new_password: Enter new password
+  enter_your_company: Enter your company
+  enter_your_email: Enter your email
+  enter_your_first_name: Enter your first name
+  enter_your_last_name: Enter your last name
+  enter_your_password: We accept A-Z a-z 0-9 . _ -
+  enter_your_password_sample: Enter your password
+  enumerize:
+    issue:
+      issue_type:
+        bug: Bug
+        crash: Crash
+        documentation: Documentation
+        feature: Feature
+        no_type: No type
+        task: Task
+        usability_problem: Usability Problem
+      priority:
+        critical: Critical
+        high: High
+        low: Low
+        medium: Medium
+    payment:
+      status:
+        fail: Fail
+        pending: Pending
+        success: Success
+    paypal_payment:
+      status:
+        fail: Fail
+        pending: Pending
+        success: Success
+    role:
+      role:
+        admin: Admin
+        developer: Developer
+        owner: Owner
+        pm: PM
+        project_manager: Project manager
+        tester: Tester
+        user: User
+        viewer: Viewer
+    test_case:
+      case_type:
+        boundary: Boundary
+        integration: Integration
+        localization: Localization
+        negative: Negative
+        positive: Positive
+        ui: UI
+    test_run_result:
+      status:
+        block: Blocked
+        fail: Failed
+        pass: Passed
+        na: N/A
+        untested: Untested
+    user:
+      country:
+        ua: Ukraine
+        uk: United Kingdom
+        usa: USA
+  error_csv_message: Invalid csv file/wrong separator
+  error_privileges_message: You have no rights for this operation. Only Owner or Admin can add projects.
+  error_select_organization_message: You haven't selected the organization
+  easyqa_sdk_will_block_its_work_without_a_correct_token: EasyQA SDK will block its work without a correct token.
+  easy_qa_team: EasyQA Team
+  execute_test_case: Execute Test Case
+  execute_testing_by_running_test_cases: Execute testing by running test cases
+  existing_user_to_organization_invitation_email_subject: Existing user to organization invitation email subject
+  expected_result_example: The expected result after executing the test case.
+  expiration_date: Expiration Date
+  start_date: Start Date
+  export: Export
+  failed: Failed
+  features: Features
+  field: field
+  file: File
+  finished_cases_by_module: Finished cases by module
+  finished_test_runs: Finished test runs
+  for: for
+  from_clients: From Clients
+  generate: Generate
+  generate_a_project_token: Generate a project token
+  generate_test_cases_report: Generate test cases report
+  generate_test_run_cases_report: Generate test run cases report
+  get_build: Get build
+  get_test_object: Get Test Object
+  git_hub_instructions:
+    chapter1: 'Go to: GitHub - Settings - Personal Access Tokens'
+    chapter2: and push Generate new token.
+    chapter3: In new window select scope repo.
+  git_lab_instructions:
+    chapter1: 'Go to: GitLab - Profile Settings - Access Token'
+    chapter2: and push Generate
+    chapter3: '*If you are not an owner or an admin of the project,'
+    chapter4: you can't delete issues
+  go_to: Go to
+  go_to_project: go to project
+  hello: Hello
+  hello_sample: Hello %{recipient}!
+  hide_form: Hide form
+  hi: Hi  
+  hours: hours
+  how_it_works: How it works
+  id: ID
+  if_you_have_any_questions_please_contact_our_product_manager: 'If you have any questions, please, contact our Product Manager Yana Gusti via email: yana.gusti@thinkmobiles.com'
+  import: Import
+  import_contacts_from: 'Import contacts from:'
+  import_issues: Import Issues
+  import_preview: Import preview
+  import_progress: Import progress
+  import_test_cases: Import Test cases
+  imported_as_an: imported as an
+  imported_from: Imported from
+  in: in
+  in_progress: In Progress
+  include_all_test_cases: Include all test cases
+  inform: inform
+  information: Information
+  install_link: Your link for installing App to mobile
+  instals: Installs
+  integrate_sdk: Integrate SDK
+  integration: Integration
+  integration_instruction: Integration instruction
+  integrations: Integrations
+  invitation: Invitation
+  invite:
+    add_members: Add Members
+    an_invitation: An invitation will be sent to new users.
+    success_resend: The invitation link was successfully sent.
+    default_text: I'd like to add You to my organization on EasyQA.
+    emails: Enter email addresses manually
+    error_1: was added to organization already
+    error_2: You have no available license for
+    existing_users: Existing users are gaining access to this organization immediately.
+    good_day: Good day!
+    licenses_left:
+      few: You have %{count} available licenses.
+      many: You have %{count} available licenses.
+      one: You have %{count} available license.
+      other: You have %{count} available licenses.
+    max_count: '* Max. 2000 characters'
+    no_licenses: You have no available licenses. But You still can add users, which are added in your other organizations
+    note: Note
+    or_new_line: or new line
+    to_separate: to separate e-mail addresses
+    use_separator: Use ,;
+  ios_instructions: iOS Instructions
+  ios_instructions_details:
+    detail1: 'To start the integration process, download iOS library on Integrations page within your project in EasyQA test management tool by clicking on the following button:'
+    detail10: and put in
+    detail11: After that you can create your app’s build and upload it in Test Objects within your project in
+    detail2: Extract downloaded .zip file and Add this library to your project by drag and dropping it to project folder in <strong>XCode:</strong>
+    detail3: 'Go to <strong>General</strong> settings and add EasyQA SDK as <strong>embedded framework</strong>. Click on ''+'' button:'
+    detail4: and select
+    detail5: Choose shown on picture radio buttons and click on <strong>Finish</strong> button. Paste to <strong>AppDelegate.m</strong> file next line
+    detail6: Go to EasyQA test management tool <span>></span> open your project <span>></span> <strong>Integrations</strong> menu item and copy token
+    detail7: Open <strong>AppDelegate.m</strong> file and paste to didFinishLaunchingWithOptions method next line
+    detail8: If you would like to upload your application to Test Flight or Apple Store with our <strong>EasyQASDK.framework</strong> you should add a run script phase.
+    detail9: 'Open <strong>Build Phases</strong> and tap on ''+'''' button and select <strong>New Run Script Phase</strong>:'
+  ios_sdk: iOS SDK
+  is_failed: failed
+  is_not_project_member: is not project member
+  is_synchronized: is synchronized!
+  issue:
+    bug: Bug
+    comments:
+      assigned_to: Assigned to
+    confirm_deletion: Are you sure you want to delete this issue?
+    crash: Crash
+    create_issue: Create issue
+    delete_error: Failed to delete issue!
+    deleted: Issue was successfully deleted!
+    documentation: Documentation
+    edit: Edit issue
+    email_destroy: Your issue "%{issue_summary}" was destroyed
+    email_new: 'You have a new issue %{link}: %{issue_summary}.'
+    email_update: Your issue "%{issue_summary}"(%{link}) was updated
+    feature: Feature
+    inform: inform.
+    new: Add new issue
+    no_type: No type
+    task: Task
+    usability_problem: Usability problem
+    your_issue: Your issue
+  issue_field: Issue field
+  issue_id: Issue ID
+  issue_summary: Issue Summary
+  issue_word: Issue
+  issues: Issues
+  issues_by_priority: Issues by priority
+  issues_by_status: Issues by status
+  issues_by_type: Issues by type
+  issues_summary: Issues summary
+  issues_word: Issues
+  joined_at: Joined At
+  king_regards: Kind regards,
+  language: Language
+  languages:
+    english: English
+    german: German
+    russian: Russian
+  last_updated: Last Updated
+  latest_build: Latest Object
+  latest_run: Latest test run
+  latest_update: Latest update
+  learn_more_how_to_use_easyqa: Learn more how to use EasyQA
+  leave_field_blank: Leave this field blank
+  license:
+    many: Licenses
+    many_caps: LICENSES
+    wrong_number: Wrong number of licenses
+    total_amount: 'Total number of licenses: '
+    additional_amount: 'Number of new licenses: '
+  licenses: license(s)
+  link: Link
+  link_to: Link to
+  link_to_object: Link to object
+  link_to_test_object: Link to test object
+  log: Log
+  log_error_handler_instructions: Server crash analytics instructions
+  log_error_handler_instructions_details:
+    detail1: 'it’s a gem for revealing  and processing bugs  in your server. Currently there are 3 variants of actions for bug revealing such as.: type in terminal, to write down in a separate document or send http request to the website. We’ll discuss about them in details a bit later.'
+    detail10: For example if  tid  is located in curly brackets and not at the start of the line
+    detail11: In case this  regexp is written in terminal, we need double screen version.
+    detail12: Gem finds out that the request has an error when finds the line which corresponds to regexp of the error
+    detail13: For example we need to catch not only  error 500, but also 404
+    detail14: To look through values by default you need to type
+    detail15: Time in settings by default  is given in seconds
+    detail16: Option <strong>--not_modify_timeout</strong>  means time for  thread to finish writing logs in this file, if timeout expires, and during this time file will not be changed at least once, so the file is sent to output, and if there are some errors it will be deleted.
+    detail17: Option <strong>--log_file_tracker_waiting</strong> means how often the checking cycle  of temporary files in each thread will take place
+    detail18: Option <strong>--debug_mode</strong> provides the data output in stdout about reading from stdin.
+    detail19: As it was mentioned above there are 3 ways of  data input
+    detail2: To make gem work , there should be  a constant output data flow. You can do this in two ways
+    detail20: In stdout is performed by default, if none of the output parameters was indicated
+    detail21: In the file if a parameter was indicated
+    detail22: For example
+    detail23: Into the network. For this you need to indicate a parameter
+    detail24: For example
+    detail25: http method post is used by default for  data sending, but it can be easily replaced
+    detail26: For example
+    detail27: Message is a  key by default, under which error is located , so parameter is responsible for this value
+    detail28: For example
+    detail29: If you need to send some additional parameters with an error so you can set them by means of options such as
+    detail3: To lead pipe to gem, e.g
+    detail30: Or
+    detail31: For example
+    detail32: Before sending all errors are encoded in <strong>Base64</strong>
+    detail4: This will ensure   stdout  of your program to stdin of gem. The minus of such an approach is that you can apply it only while launching your program which logs you want to track.
+    detail5: To show the way to your log file to program,e.g
+    detail6: So you can start tracking logs of your program without interrupting its work.
+    detail7: To output logs  in a correct way gem needs a unique identification of each request to server .In case the majority of servers are multithreaded and each new request is elaborated in a new flow , so the best suit for this will be thread identificator (tid). To add this unique identifier, e.g in Ruby on Rails framework you need to add only one line
+    detail8: After this in each line of output logs  tid is output. It looks like this
+    detail9: To find tid gem uses regexp <em>/^\[\d+\]/</em> But if the tid output way differs you can set it
+  logout: Log Out
+  maillist_header: Select Project members
+  manage_columns: Manage columns
+  map_fields: Map fields
+  member:
+    one: 1 member
+    other: '%{count} members'
+  member_name: Member name
+  member_names: Member names
+  member_token: Member token
+  members: Members
+  message: Message
+  message_was_deleted: This message was deleted
+  min_os_version: Min OS version
+  module: Module
+  modules: Modules
+  modules_and: modules and
+  modules_count: Modules
+  monthly_fee: Monthly Fee
+  must_be_emails_present: The email addresses must be present.
+  must_be_valid_link: Must be valid link
+  n_a: N/A
+  name: Name
+  new_integration: New integration
+  new_licenses: new licenses
+  new_status: New status
+  new_test_plan: New test plan
+  new_test_runs: New test runs
+  new_user: New user
+  new_user_to_organization_invitation_email_subject: New user to organization invitation email subject
+  next: Next
+  no_contacts: No contacts
+  no_member: No member accounts will be deleted.
+  no_permission_warning: You have no permission to view this page or perform this action.
+  no_plugins_for_build: If you want to add build, please, create synchronization with any git repository
+  no_projects_found: No project found
+  no_test_object: no test object
+  no_word: 'No'
+  non_assigned: Not assigned
+  none: None
+  not_confirmed: User is not confirmed
+  not_implemented: Not implemented
+  not_valid_apk_file_please_ensure_that_your_file_is_valid: Not valid apk file. Please ensure that your file is valid.
+  notifications_enabled: Email notifications are Enabled
+  number_of_cases_passed: Number of passed cases
+  number_of_written_cases: Number of written cases
+  number_of_months: Number of months
+  object_added: Added
+  object_title: Object title
+  of_my_profile_page: of My Profile page.
+  ok: OK
+  on_easyqa_since: On EasyQA since
+  on_my_profile_page: on My Profile page.
+  open_issues: Opened issues
+  open_the_application_class_of_your_project_and_add_the_following_code: 'Open the application class of your project and add the following code in the onCreate method:'
+  or: or
+  or_add_link: or Type Link
+  or_click_resend_set_up_password_instructions_if_you_didn`t_receive_any_messages: Or click 'Resend set up password instructions' if you didn't receive any messages.
+  or_drag_your_csv_file_here: or drag your csv file here
+  or_drag_your_image_here: or drag your image here
+  organization:
+    add_members: Add Organization Members
+    confirm_deletion: Are you sure you want to delete this organization?
+    edit_title_label: Organization Title*
+    members: Organization Members
+    no_members: Organization has no members
+    one: Organization
+    role: Organization Role
+  organization_members: Organization Members
+  organization_profile: Organization profile
+  organization_project: Organization / Project
+  organizations: My organizations
+  package_name: Package name
+  paid_version: paid version
+  paid_version_over: Your licenses are expired! Please, execute the monthly payment to continue to work!
+  paste_your_unique_token_into_the_place_project_token : Paste your unique token into the place project token.
+  empty_licenses: Please, add licenses to start your work with EasyQA.
+  overlimit_users: Your projects are locked because you have only %{licenses} license(s) for %{members} members. Please, remove # members or add # licenses to unlock your projects
+  pay: Pay
+  payment:
+    auto: AUTOPAYMENTS
+    many: Payments
+    next_regular: Next regular payment
+    one: Payment
+    regular: Regular payment
+    waiting: Wait for the last payment will be finished
+  payment_failed: Payment failed
+  payment_history: Payment History
+  payment_methods: Payment methods
+  payment_reminder: Payment reminder
+  payment_successful: Payment successful
+  permanent_action: This is permanent action. There is no way to undo this action.
+  personal_info_tab: Personal Info tab
+  phone_type: Phone OS
+  pivotal_instructions:
+    chapter1: 'Go to: PivotalTracker - Profile'
+    chapter2: You can find your API key at the bottom of the page
+  plans_and_billings: Plans & Billings
+  plans_and_billings_tab: Plans and Billings tab
+  platform: Platform
+  platforms: Platforms
+  please_check_your_email: Please, check your email!
+  please_check_your_paypal_account_to_proceed_your_payment: Please check your PayPal account to proceed your payment.
+  please_fill_billing_address_and_other_info: Please, fill Billing address and other info on 
+  please_set_up_your_password_to_continue_the_registration_process: 'Please, set up your password to continue the registration process:'
+  plugin: Plugin
+  plugin_for_integration_with: Plugin for integration with
+  plugin_integrations: Plugin Integrations
+  plugin_synchronization: Plugin Synchronization
+  plugins: Plugins
+  presteps: Pre-steps
+  presteps_example: The pre-steps of this test case.
+  presteps_example_with_ref: The pre-steps of this test case. Refer other test cases with [C#] (e.g. [C17]).
+  preview_report: Preview report
+  prices: Prices
+  pricing: Pricing
+  print: Print
+  privacy_policy: Privacy Policy
+  project:
+    activity: Last 30 days activity
+    add_new: Add New Project
+    confirm_deletion: Are you sure you want to delete this project?
+    edit_project: Edit project
+    invite: Invite users to this project
+    last_object: 'Last test object:'
+    last_updated: Last Updated At
+    latest_test_object: Latest test object
+    manage_members: Manage members
+    test_objects: Test objects
+    title: Project title
+  project_graphics: Project Graphics
+  project_history: Project History
+  project_id: Project ID
+  project_info: Project info
+  project_key: Project KEY
+  project_name: Project name
+  project_not_found: Project not found
+  project_notifications: Project notifications
+  project_overview: Project Overview
+  project_overview_graph_name: Last 30 days activity
+  project_role: Project Role
+  project_single: Project
+  project_spent_time: Project spent time
+  project_summary: Project Summary
+  project_url: Project URL
+  project_users_spent_time: Project users spent time
+  projects: Projects
+  promocode:
+    new: New promocode
+    apply: Apply
+    enter: Enter promo code
+    invalid: Promocode is invalid
+    discount: "%{discount}% discount"
+    number_of_licenses:
+      one: " for 1 license"
+      other: " for %{count} licenses"
+    number_of_months:
+      one: " for 1 month"
+      other: " for %{count} months"
+  pushed_issues: Pushed issues
+  qa_review: QA Review
+  quantity: Quantity
+  received: Received
+  redmine_instructions:
+    chapter1: 'Go to: Redmine - Administration - Settings - Authentication'
+    chapter2: tick the paragraph "Enable REST web service" and push "Save"
+    chapter3: 'Go to: Redmine - My account'
+    chapter4: You can find your API key on the right-hand pane
+  reduce_licenses: You want to reduce the number of your licenses to
+  referral_program: Referral program
+  refresh_token: Refresh token
+  registered_by_your_referral_link: registered by your referral link.
+  register_new_account: Register new account
+  reload: Reload
+  reopened: Reopened
+  report:
+    bug: Report a bug
+    found: Found a problem in EasyQA?
+    send: Send a report
+    to_project: Report a bug to EasyQA project
+  report_bug_error_message: <span>Sorry, but something went wrong. :(</span><span>Please, try again later.</span>
+  report_bug_success_message: <span>Bug was successfully reported!</span><span>Thanks for your attention.</span>
+  report_builder: Report builder
+  report_pdf: Report PDF
+  report_title: Report title
+  reportable:
+    all_spent_time: All spent time
+    crashes_count: Crashes count
+    issues_count: Issues count
+    modules_count: Modules count
+    test_cases_count: Test cases count
+    test_objects_count: Test objects count
+  reported_issues: Reported by me
+  reports:
+    issues:
+      by_priority: Issues by priority
+      by_status: Issues by status
+      by_type: Issues by type
+  required_fields: required fields
+  resend_confirmation_instructions: Resend confirmation instructions
+  resend_invite: Resend invite
+  resend_set_up_password_instructions: Resend set up password instructions
+  restore: Restore
+  restore_account: Restore account
+  restore_text_p1: You can restore your account with all the information that was in it.
+  restore_text_p2: If so then click restore account, if not, register a new account
+  restore_your_account: Restore your account
+  retry: Retry
+  save: Save
+  save_changes: Save changes
+  save_module: Save module
+  save_object: Save object
+  save_test_plan: Save test plan
+  sdk_integrations: SDK Integrations
+  sdk_version: SDK version
+  search: Search
+  search_issue: Search Issue
+  section: Section
+  section_on_my_profile_page: 'section on My profile page.'
+  select: Select
+  select_cases: Select cases
+  select_some_options: Select some options
+  select_specific_test_cases: Select specific test cases
+  select_the_csv_fields_to_import: Select fields from CSV file to import, then choose appropriate fields where data will be converted
+  send: Send
+  send_by_email: Send by email
+  send_email: Send email
+  send_link: Send link
+  send_reset_password_instructions: Send me reset password instructions
+  sent_you_an_invitation: sent you an invitation
+  separator: Separator
+  sessions: Sessions
+  settings: Settings
+  set_up_your_password: Set up your password
+  share_link: 'Share link:'
+  share_your_test_object: Share your test object
+  should_be_at_least_6_characters: Should be at least 6 characters
+  show: Show
+  show_all: Show all
+  show_case: Test case info
+  show_issue: Show issue
+  show_less: Show less
+  show_more: Show more
+  sign_in: Sign In
+  sign_in_via: Sign In via
+  sign_in_via_email: Sign In via Email
+  sign_up: Sign Up
+  sign_up_via_email: Sign Up via Email
+  size: Size
+  something_went_wrong_please_check_your_credentional: Something went wrong. Please check your credentional.
+  sort_by: Sort by
+  sprint_name: Sprint Name
+  started: Started
+  starting: Starting...
+  status: Status
+  status_sub_title: Selected field is used by at least one project that is not associated with this board. Renaming or adding new columns will affect all projects that use selected field.
+  status_uniq_name_error: must be unique in your project
+  steps_example: The required steps to execute the test case.
+  stop_import: Stop import
+  stop_synchronization: Stop synchronization
+  submitted: Submitted
+  subscribe: Subscribe
+  success: Success
+  summary: Summary
+  synchronization_progress: Synchronization progress
+  synchronize: Synchronize
+  synchronize_text: Synchronize
+  tax_invoice_id: 'Tax invoice ID:'
+  team: Team
+  term_and_cond: Term and Cond
+  term_and_conditions: Terms and Conditions
+  test_activities: Test activities
+  test_case: Test case
+  test_case_delete_confirmation: Are you sure you want to delete this test case ?
+  test_case_expected_result: Expected result
+  test_case_included:
+    one: <span>1</span> test case included
+    other: <span>%{count}</span> test cases included
+  test_case_steps: Steps
+  test_cases: Test cases
+  test_module: Test Module
+  test_object: Test Object
+  test_object_has_been_deleted_successfully: Test Object has been deleted successfully.
+  test_objects: Test Objects
+  test_plan: Test plan
+  test_plan_activity: Test plan activity
+  test_plans: Test plans
+  test_reports: Test reports
+  test_run: Test run
+  test_run_successfully_cloned: Test Run has been cloned successfully.
+  test_run_chart_info:
+    passed: passed
+    tests: tests
+    untested: untested
+  test_run_example:
+    assigned_to: User, who will execute testing, should be initially assigned. An email is sent to the user if email notifications are enabled.
+    description: Use to describe the purpose of this test run.
+    include_all: Select this option to include all test cases in this test run.
+    select_specific: You can alternatively select the test cases to include in this test run.
+    title: 'Example: Test Run 16/08/2016, Build 240 or Version 3.0'
+  test_run_mail:
+    destroy: Your test run "%{run_title}" was destroyed.
+    new: You have a new test run "%{run_title}".
+    update: Your test run "%{run_title}" was updated
+  test_run_notification_label: Test run notifications
+  test_run_result_status:
+    blocked: Blocked
+    failed: Failed
+    passed: Passed
+    untested: Untested
+    na: N/A
+  test_run_step_button:
+    finish: Finish test run
+    next: Next
+    prev: Prev
+  testing_activities: Testing activities
+  testong_activities: Testing Activities
+  thank_you: Thank you!
+  the_link_was_sent_successfully: <span>The link was sent successfully</span>
+  the_refreshment_is_needed_in_case_one_of_your_team_members: The refreshment is needed in case one of your team members leaves the project you will spare that person of the possibility to use the app (as the members use their devices to test the app).
+  this_is_friendly_reminder_about_your_payment_period_will_expire_in_three_days: This is a friendly reminding about your payment period will expire in 3 days.
+  time_spent: Time spent
+  time_word: Time
+  title: Title
+  to: to
+  to_be_discussed: To be discussed
+  to_do_this_click_the_link_that_we_have_sent_you_in_the_email: To do this, click the link that we have sent you in the email.
+  to_in: to
+  to_issues: Issues
+  to_na: to
+  to_start_the_integration_process_just_add_the_dependency: 'To start the integration process, just add the dependency in build.gradle file of your application:'
+  to_test_cases: Test cases
+  to_upload_builds_from_your_building: to upload your builds right from GitHub or GitLab repositories
+  to_user: to
+  to_view_the_transaction_log_just_log_into_the_easyqa_account_and_open_the: To view the transaction log just log into the EasyQA account and open the
+  token: Token
+  token_is_a_unique_identifier_of_your_project: Token is a unique identifier of your project. You can generate it on Integrations page within your project in
+  total: total
+  tracker_name: Tracker Name
+  tracker_not_found: Tracker not found
+  trello_instructions:
+    chapter1: Go to https://trello.com/1/appKey/generate
+    chapter2: Go to https://trello.com/1/appKey/generate
+    chapter3: Go through the link named 'Token' and press 'Allow'
+    chapter4: You can find your token at the bottom of the page
+  trial_started: Your 30 days trial started
+  trial_version: trial version
+  trial_version_over: Your trial is finished! Please, buy licenses to continue to work!
+  try_for_free: TRY FOR FREE
+  try_log_in: Try to Log In
+  turn_off_sync: Turn off sync
+  turn_on_notification: Turn on notifications
+  type: Type
+  un_subscribe: Unsubscribe
+  uniq_build_in_project_error: The test object with such parameters already exists. Please, change version name.
+  unlock_my_account: Unlock my account
+  update: Update
+  update_error: ' Changes were not saved, check whether entered data is correct '
+  update_issues_on_easyqa: Update issues on EasyQA...
+  update_success: Update Success
+  updated: updated
+  updated_by: Updated By
+  updated_on: Updated On
+  updates: Updates
+  upload_build: Upload new build
+  upload_csv_file: Upload CSV-file
+  upload_first_build: Upload first build
+  upload_first_object: Upload first object
+  upload_object: Upload object
+  user: User
+  user_created: User Created
+  user_spent_time: User spent time
+  users:
+    billings_info: Billings info
+    change_my_password: Change my password
+    change_password: Change password
+    confirm_new_password: Confirm new password
+    current_password: Current password
+    date_registration: 'Registration date:'
+    incorrect_password: Incorrect Current Password
+    last_sign_in: 'Last Sign In at:'
+    my_organizations: My Organizations
+    my_projects: My Projects
+    new_password: New password
+    notifications: Notifications
+    password_updated: Password updated
+    personal_information: Personal Information
+    profile: My Profile
+  users_list: List of users
+  validation_errors:
+    invite_user_undefined_email: one of the inserted emails is not valid
+  via: via
+  view_plans: VIEW PLANS
+  was_changed_from: was changed from
+  was_suspended: was suspended.
+  we_are_contacting_you_to_notify_you_that_your_password_has_been_changed: We are contacting you to notify you that your password has been changed.
+  we_have_prepared_an_electronic_tax_invoice_for_your_last_purchase: 'We have prepared an electronic tax invoice for your last purchase:'
+  yes_word: 'Yes'
+  you_are: You are
+  you_buy: You want to buy
+  you_can_also_use_our: You can also use our
+  you_can_register_in_easyqa_test_management_tool_and_organize_your_testing_process: 'You can register in EasyQA Test Management Tool and organize your testing process:'
+  you_can_review_your_payments_details_on: You can review your payments details on
+  you_can_paste_file_with_ctrl_v: You can paste file with ctrl+v
+  you_have_to_set_up_your_password_to_continue_the_registration_process: You have to set up your password to continue the registration process.
+  you_have_tried_to_pay_for_your_easyqa_license_but_the_transaction_was_not_successful: You have tried to pay for your EasyQA license(s), but the transaction was not successful.
+  you_just_need_to_click_on_copy_token_button_to_copy_the_token_to_the_clipboard: You just need to click on Copy token button to copy the token to the clipboard. The identifier is unique to each project and can be refreshed.
+  you_were_added_to_project: You were added to project
+  you_will_receive: You will receive email notifications on important system events, such as new build is available, billing errors, etc ...
+  yours: 'Yours'
+  your_account_has_been_locked_due_to_an_excessive_number_of_unsuccessful_sign_in_attempts: Your account has been locked due to an excessive number of unsuccessful sign in attempts.
+  your_mail_has_been_sent_successfully: Your Mail has been sent successfully
+  your_new_promocode_for_1_license_is: Your new promocode for 1 license is
+  your_organization_member_has_been_deleted_successfully: Your organization member has been deleted successfully.
+  your_participation_at_project: Your participation at project
+  your_password_has_been_changed: Your password has been changed
+  your_projects: Your projects
+  your_role: Your role
+  your_role_in_project: Your role in project
+  your_subscription_details: 'Your subscription details:'

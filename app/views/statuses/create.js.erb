@@ -1,0 +1,8 @@
+<% @per_page = IssuesController::ISSUES_ON_PAGE %>
+$('.issue_content .agile').append("<%= j render 'status', status: @status, \
+                                                          issues: [], \
+                                                          project_status: @project_status %>");
+$('.issue_content').mCustomScrollbar('update');
+$('.issue_content').mCustomScrollbar("scrollTo", $('.agile_bord').last());
+issues_agile_board_init();
+scroll_agile_board();

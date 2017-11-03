@@ -1,0 +1,29 @@
+<div class="modal-dialog issue-info issue-comments">
+  <div class="modal-content container">
+    <div class="modal-tabs">
+      <ul class="modal-tabs-list">
+        <li>
+          <a href="#issueInfo" class="tab-active">#<%= @issue.project_issue_number %></a>
+        </li>
+        <li>
+          <a href="#spentTime"><%= t 'time_spent' %>
+            <span class="spent-time-count"><%= @issue.spent_time_view %></span>
+          </a>
+        </li>
+        <li>
+          <a href="#comments"><%= t 'comment.many' %>
+            <span class="comments-count"><%= @issue.comments.count %></span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <span class="close">
+      <span class='icon-close-icon'></span>
+    </span>
+    <div class="modal-body">
+      <%= render 'issue_tab' %>
+      <%= render partial: 'comments/comment_tab', locals: {object: @issue } %>
+      <%= render 'issues/time_managements/index' %>
+    </div>
+  </div>
+</div>

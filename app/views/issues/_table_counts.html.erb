@@ -1,0 +1,8 @@
+<% Issue::DEFAULT_FILTERS.each do |filter| %>
+  <%= link_to issues_path(@project, filter: filter), remote: true do %>
+    <span class='<%= filter_active_class(filter) %>'>
+      <%= t(filter) %>
+      (<span id="filter-<%= filter %>-count"><%=  issues_count(filter) %></span>)
+    </span>
+  <% end %>
+<% end %>

@@ -1,0 +1,63 @@
+<td colspan="7" class="org-projects-table-wrap">
+  <table class="org-projects-table" data-user='<%= member.id %>'>
+    <colgroup>
+      <col width="12%">
+      <col width="22%">
+      <col width="27.5%">
+      <col width="0%">
+      <col width="18.7%">
+      <col width="13%">
+      <col width="6.8%">
+    </colgroup>
+    <thead class="table-title">
+      <tr>
+        <td><%= t 'project_single' %></td>
+        <td></td>
+        <td colspan="2"><%= t 'distribution_groups' %></td>
+        <td><%= t 'project_role' %></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </thead>
+    <tbody>
+      <% @data_projects[member.id].each do |project| %>
+        <tr class="org-project">
+          <td class="org-project-avatar">
+            <%= image_tag project.logo.file.url(:medium) %>
+          </td>
+          <td>
+            <p class="org-project-name"><%= project.title %></p>
+            <div class="platform">
+              <% project.platforms.each do |platform| %>
+                <div class="<%= platform_icon(platform.name) %>">
+                  <span class="fa fa-<%= platform_icon(platform.name) %>" aria-hidden="true">
+                    <span class="platform-info-block" data-title="<%= platform.name %>"></span>
+                  </span>
+                </div>
+              <% end %>
+            </div>
+          </td>
+          <td colspan="2" class="distribution-groups">
+            <%= t 'distribution_groups' %>
+          </td>
+          <td member='<%=member.id%>' organization='<%= @organization.id %>' project='<%= project.id %>'>
+            <% role = find_user_project_role(member, project.id) %>
+            <% if no_proj_permission?(project.id, member, role) %>
+              <span class="org-role"><%= role.text %></span>
+            <% else %>
+              <div class="input_wrapper drop-arr %>">
+                <%= role_selector(member, role, project.id, @organization.id) %>
+              </div>
+            <% end %>
+          </td>
+          <td>
+            <%= @organization.delete_project_member_role(member, project, role) %>
+          </td>
+          <td></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</td>
+
+

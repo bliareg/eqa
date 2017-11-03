@@ -1,0 +1,98 @@
+{
+  "resource": "Issues",
+  "http_method": "PUT",
+  "route": "/api/v1/issues/:id",
+  "description": "Update",
+  "explanation": null,
+  "parameters": [
+    {
+      "required": true,
+      "name": "token",
+      "description": "Uniq project token"
+    },
+    {
+      "required": true,
+      "name": "id",
+      "description": "Issue ID"
+    },
+    {
+      "required": true,
+      "name": "auth_token",
+      "description": "User authenticity token"
+    },
+    {
+      "name": "issue",
+      "description": "Issue attributes"
+    },
+    {
+      "scope": "issue",
+      "required": true,
+      "name": "summary",
+      "description": "Issue summary"
+    },
+    {
+      "scope": "issue",
+      "name": "test_object_id",
+      "description": "ID test object on site"
+    },
+    {
+      "scope": "issue",
+      "name": "description",
+      "description": "Issue description"
+    },
+    {
+      "scope": "issue",
+      "name": "issue_type",
+      "description": "Type of issue"
+    },
+    {
+      "scope": "issue",
+      "name": "priority",
+      "description": "Issue priority"
+    },
+    {
+      "scope": "issue",
+      "name": "severity",
+      "description": "Issue severity"
+    },
+    {
+      "scope": "issue",
+      "name": "assigner_id",
+      "description": "Issue assigner ID"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "PUT",
+      "request_path": "/api/v1/issues/14",
+      "request_body": "{\"token\":\"I1OqvyK4RtMet3YPDUp+ize4/cbGKDse11\",\"auth_token\":\"LXMvK7F2mm89Ot/Qdm6XlQPDWebYwgj643\",\"issue\":{\"summary\":\"facere\",\"description\":\"Non omnis qui culpa non deleniti tempore.\",\"issue_type\":2,\"severity\":3,\"priority\":2}}",
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"issue_type\": \"crash\",\n  \"priority\": \"lowest\",\n  \"severity\": \"low\",\n  \"project_id\": 11,\n  \"id\": 14,\n  \"summary\": \"aut\",\n  \"description\": \"Reprehenderit maxime dolorum aut.\",\n  \"status_id\": 1,\n  \"reporter_id\": null,\n  \"assigner_id\": null,\n  \"created_at\": \"2017-03-23T09:20:56.468Z\",\n  \"updated_at\": \"2017-03-23T09:20:56.468Z\",\n  \"project_issue_number\": 2,\n  \"test_object_id\": null,\n  \"log_file_id\": null,\n  \"spent_time\": \"1970-01-01T00:00:00.000Z\",\n  \"deleted_at\": null,\n  \"crash_id\": null\n}",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"6dddaea2b03a8120fa3b7e25e0824c1d\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "78b20dfa-4345-4855-811a-5272cf7feac7",
+        "X-Runtime": "0.107952",
+        "Content-Length": "421"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"http://localhost:3000/api/v1/issues/14\" -d '{\"token\":\"I1OqvyK4RtMet3YPDUp+ize4/cbGKDse11\",\"auth_token\":\"LXMvK7F2mm89Ot/Qdm6XlQPDWebYwgj643\",\"issue\":{\"summary\":\"facere\",\"description\":\"Non omnis qui culpa non deleniti tempore.\",\"issue_type\":2,\"severity\":3,\"priority\":2}}' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+// Popup style
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: var('popup', 'width');
+  height: var('popup', 'height');
+  transform: translate(-50%, -50%);
+  z-index: 1050;
+
+  &-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($black, .8);
+    z-index: 1040;
+  }
+
+  &-wrap {
+    height: 100%;
+    border: {
+      width: 1px;
+      style: solid;
+      color: $base-border;
+    }
+
+    background-color: $white;
+    box-shadow: 0 0 20px 0 rgba($black, .2), 0 5px 5px 0 rgba($black, .24);
+  }
+
+  &-head {
+    position: relative;
+    height: var('popup','head');
+    padding: 15px;
+    border-bottom: {
+      width: 1px;
+      style: solid;
+      color: $base-border;
+    }
+
+    h3 {
+      margin: 0;
+      padding-right: var('popup','close');
+    }
+
+    .close {
+      position: absolute;
+      top: 50%;
+      right: 15px;
+      width: var('popup','close');
+      height: var('popup','close');
+      filter: alpha(opacity=20);
+      opacity: .2;
+      transform: translate(0,-50%);
+
+      &:hover {
+        filter: alpha(opacity=80);
+        opacity: .8;
+      }
+    }
+  }
+
+  &-body {
+    height: calc(100% - #{var('popup','foot')} - #{var('popup','head')});
+    padding: 15px;
+    margin-bottom: var('popup','foot');
+    overflow-y: auto;
+  }
+
+  &-foot {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: var('popup','foot');
+    padding: 15px;
+    border-top: {
+      width: 1px;
+      style: solid;
+      color: $base-border;
+    }
+  }
+}

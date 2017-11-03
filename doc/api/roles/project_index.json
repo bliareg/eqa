@@ -1,0 +1,60 @@
+{
+  "resource": "Roles",
+  "http_method": "GET",
+  "route": "/api/v1/organizations/:organization_id/roles",
+  "description": "Project Index",
+  "explanation": null,
+  "parameters": [
+    {
+      "required": true,
+      "name": "auth_token",
+      "description": "User authenticity token"
+    },
+    {
+      "required": true,
+      "name": "organization_id",
+      "description": "Organization id"
+    },
+    {
+      "required": true,
+      "name": "token",
+      "description": "Project token"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "/api/v1/organizations/14/roles?token=XCw2751cS5aza3VedVxy6W%2FhhrnaVaj314&auth_token=cjIywkHBYO%2Bp8g1cKyauxei27w%2Fzjdtr33",
+      "request_body": null,
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+        "token": "XCw2751cS5aza3VedVxy6W/hhrnaVaj314",
+        "auth_token": "cjIywkHBYO+p8g1cKyauxei27w/zjdtr33"
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "[\n  {\n    \"id\": 58,\n    \"organization_id\": 14,\n    \"project_id\": 15,\n    \"user_id\": 31,\n    \"role\": \"owner\",\n    \"created_at\": \"2017-04-14T07:55:40.719Z\",\n    \"updated_at\": \"2017-04-14T07:55:40.719Z\",\n    \"is_subscribed\": null,\n    \"deleted_at\": null\n  },\n  {\n    \"id\": 60,\n    \"organization_id\": 14,\n    \"project_id\": 15,\n    \"user_id\": 32,\n    \"role\": \"developer\",\n    \"created_at\": \"2017-04-14T07:55:41.334Z\",\n    \"updated_at\": \"2017-04-14T07:55:41.334Z\",\n    \"is_subscribed\": null,\n    \"deleted_at\": null\n  },\n  {\n    \"id\": 64,\n    \"organization_id\": 14,\n    \"project_id\": 15,\n    \"user_id\": 36,\n    \"role\": \"viewer\",\n    \"created_at\": \"2017-04-14T07:55:43.680Z\",\n    \"updated_at\": \"2017-04-14T07:55:43.680Z\",\n    \"is_subscribed\": null,\n    \"deleted_at\": null\n  }\n]",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"f80e10151fc2a28f2a3b0695af8bd025\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "4ca00aff-14d8-4377-9962-2eba1fecad65",
+        "X-Runtime": "0.070785",
+        "Content-Length": "588"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"http://localhost:3000/api/v1/organizations/14/roles?token=XCw2751cS5aza3VedVxy6W%2FhhrnaVaj314&auth_token=cjIywkHBYO%2Bp8g1cKyauxei27w%2Fzjdtr33\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

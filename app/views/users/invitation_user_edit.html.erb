@@ -1,0 +1,47 @@
+<% content_for :sign_menu do %>
+  <%= render 'layouts/invitation_menu' %>
+<% end %>
+<div id="content">
+  <div class="main-content">
+    <div class="card card-tab-content sign">
+      <div id='personal_info_notice'></div>
+      <%= form_for(@user, url: invitation_user_update_path(@user),
+                          validate: true,
+                          html: { method: :put,
+                                  remote: true }) do |f| %>
+        <div class="input_wrapper">
+          <%= f.label :first_name, class: 'title star' %>
+          <%= f.text_field :first_name, validate: true, autofocus: true %>
+        </div>
+        <div class="input_wrapper">
+          <%= f.label :last_name, class: 'title star' %>
+          <%= f.text_field :last_name, validate: true, autofocus: true %>
+        </div>
+        <div class="input_wrapper">
+          <%= f.label :email, class: 'title star' %>
+          <%= f.email_field :email, validate: { uniqueness: false }, autofocus: true %>
+        </div>
+        <div class="input_wrapper">
+          <%= f.label :company %>
+          <%= f.text_field :company %>
+        </div>
+        <div class="input_wrapper drop-arr">
+          <%= f.label :country, class: 'title' %>
+          <%= country_select('user', 'country', {}, id: 'countryMyProfile') %>
+        </div>
+        <div class="input_wrapper">
+          <%= f.label :password, class: 'title star' %>
+          <input type="password" style="display:none;">
+          <%= f.password_field :password, validate: true, autocomplete: "off" %>
+        </div>
+        <div class="input_wrapper">
+          <%= f.label :password_confirmation, class: 'title star' %>
+          <%= f.password_field :password_confirmation, validate: true, autocomplete: false %>
+        </div>
+        <div class="actions">
+          <%= f.submit t('create_user'), class: "btn btn-green" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

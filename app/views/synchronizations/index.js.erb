@@ -1,0 +1,4 @@
+$('#content').html("<%= j render file: 'synchronizations/index.html.erb' %>");
+window.history.pushState({}, '', '<%= request.path %>');
+integrations_init();
+$('.load-block').hide();

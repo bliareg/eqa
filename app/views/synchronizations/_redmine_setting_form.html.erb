@@ -1,0 +1,56 @@
+<%= form_for(@synchronization, url: url, validate: true, method: method_name, remote: true) do |f| %>
+  <%= hidden_field_tag :plugin_name, @plugin_name %>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <div class="modal-content-scroll">
+    <div class="modal-body">
+      <div class="row">
+        <div class="col xs-12">
+          <div class="input_wrapper">
+            <%= f.label :base_url, class: 'title star' %>
+            <%= f.text_field :base_url, validate: true %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col xs-11">
+          <div class="input_wrapper">
+            <%= f.label :api_key, class: 'title star' %>
+            <%= f.text_field :api_key, validate: true %>
+          </div>
+        </div>
+        <div class="col xs-1 more-info">
+          <div class="img-info-wrap">
+            <%= image_tag('ico-small.png') %>
+            <div class="hover-block">
+              <p class="main-info">
+                <%= t 'redmine_instructions.chapter1' %><br>
+                <%= t 'redmine_instructions.chapter2' %><br>
+                <%= t 'redmine_instructions.chapter3' %><br>
+                <%= t 'redmine_instructions.chapter4' %>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col xs-6">
+          <div class="input_wrapper">
+            <%= f.label :project_name, class: 'title star' %>
+            <%= f.text_field :project_name, validate: true %>
+          </div>
+        </div>
+        <div class="col xs-6">
+          <div class="input_wrapper">
+            <%= f.label :tracker_name, class: 'title star' %>
+            <%= f.text_field :tracker_name %>
+          </div>
+        </div>
+      </div>
+      <%= render partial: 'setting_plugin_boxes', locals: { f: f } %>
+    </div>
+  </div>
+  <div class="actions btn-group">
+    <%= f.submit t('connect'), class: 'btn btn-green' %>
+    <span class="btn btn-white-green btn-big cancel"><%= t('cancel') %></span>
+  </div>
+<% end %>

@@ -1,0 +1,55 @@
+{
+  "resource": "Test Runs",
+  "http_method": "GET",
+  "route": "/api/v1/test_runs",
+  "description": "Index",
+  "explanation": null,
+  "parameters": [
+    {
+      "required": true,
+      "name": "auth_token",
+      "description": "User authenticity token"
+    },
+    {
+      "required": true,
+      "name": "token",
+      "description": "Uniq project token"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "/api/v1/test_runs?token=iLlILCmfGKWUZxSy74V92zySUK627iF721&auth_token=U85xBxcJVooIl4Q%2BlDzmHCRzvLgkfrDH75",
+      "request_body": null,
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+        "token": "iLlILCmfGKWUZxSy74V92zySUK627iF721",
+        "auth_token": "U85xBxcJVooIl4Q+lDzmHCRzvLgkfrDH75"
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "[\n  {\n    \"id\": 2,\n    \"project_id\": 22,\n    \"assigner_id\": 73,\n    \"title\": \"Death Be Not Proud\",\n    \"description\": \"Judge me by my size, do you?\",\n    \"created_at\": \"2017-04-14T07:56:34.118Z\",\n    \"updated_at\": \"2017-04-14T07:56:34.118Z\",\n    \"run_status\": \"new\",\n    \"reporter_id\": 73\n  },\n  {\n    \"id\": 3,\n    \"project_id\": 22,\n    \"assigner_id\": 73,\n    \"title\": \"The Road Less Traveled\",\n    \"description\": \"Truly wonderful, the mind of a child is.\",\n    \"created_at\": \"2017-04-14T07:56:34.241Z\",\n    \"updated_at\": \"2017-04-14T07:56:34.241Z\",\n    \"run_status\": \"new\",\n    \"reporter_id\": 73\n  },\n  {\n    \"id\": 4,\n    \"project_id\": 22,\n    \"assigner_id\": 73,\n    \"title\": \"To a God Unknown\",\n    \"description\": \"If you're saying that coming here was a bad idea, I'm starting to agree with you.\",\n    \"created_at\": \"2017-04-14T07:56:34.364Z\",\n    \"updated_at\": \"2017-04-14T07:56:34.364Z\",\n    \"run_status\": \"new\",\n    \"reporter_id\": 73\n  },\n  {\n    \"id\": 5,\n    \"project_id\": 22,\n    \"assigner_id\": 73,\n    \"title\": \"Brandy of the Damned\",\n    \"description\": \"Truly wonderful, the mind of a child is.\",\n    \"created_at\": \"2017-04-14T07:56:34.495Z\",\n    \"updated_at\": \"2017-04-14T07:56:34.495Z\",\n    \"run_status\": \"new\",\n    \"reporter_id\": 73\n  },\n  {\n    \"id\": 6,\n    \"project_id\": 22,\n    \"assigner_id\": 73,\n    \"title\": \"Bury My Heart at Wounded Knee\",\n    \"description\": \"I find your lack of faith disturbing.\",\n    \"created_at\": \"2017-04-14T07:56:34.650Z\",\n    \"updated_at\": \"2017-04-14T07:56:34.650Z\",\n    \"run_status\": \"new\",\n    \"reporter_id\": 73\n  },\n  {\n    \"id\": 7,\n    \"project_id\": 22,\n    \"assigner_id\": 73,\n    \"title\": \"Blithe Spirit\",\n    \"description\": \"You know, that little droid is going to cause me a lot of trouble.\",\n    \"created_at\": \"2017-04-14T07:56:34.855Z\",\n    \"updated_at\": \"2017-04-14T07:56:34.855Z\",\n    \"run_status\": \"new\",\n    \"reporter_id\": 73\n  }\n]",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"8721e0d3c04c8b877c844f7dd2ba1ad1\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "0a39a20e-a803-4437-b468-5f5e8e68b2d4",
+        "X-Runtime": "0.145862",
+        "Content-Length": "1527"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"http://localhost:3000/api/v1/test_runs?token=iLlILCmfGKWUZxSy74V92zySUK627iF721&auth_token=U85xBxcJVooIl4Q%2BlDzmHCRzvLgkfrDH75\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

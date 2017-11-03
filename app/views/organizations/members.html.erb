@@ -1,0 +1,65 @@
+<div class="card card-tab-content org-members tab">
+  <div class="card-header">
+    <h2 class="card-header-title"><%= t 'organization.members' %></h2>
+    <%= @organization.add_organization_members_link(current_user) %>
+    <div class="search-wrap"> 
+    <%= form_tag(organization_profile_members_path(@organization), method: :get, class: 'search-form', remote: true, autocomplete: "off") do %>
+        <%= text_field_tag :search, params[:search], placeholder: "Search", id: "search"%>
+        <%= button_tag(type: 'submit', class: 'search-btn') do %>
+         <span class="fa fa-search ic-search" aria-hidden="true"></span>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="columns-wrapper">
+    <div class="tables-wrap">
+      <table class="org-members-table" data-organization='<%= @organization.id %>'>
+        <colgroup>
+          <col width="12%">
+          <col width="25%">
+          <col width="10%">
+          <col width="16%">
+          <col width="18%">
+          <col width="12%">
+          <col width="7%">
+        </colgroup>
+        <thead class="table-title">
+          <tr>
+            <td class='members-count'>
+              (<span><%= @members.length %></span> <%= t 'total' %>)
+            </td>
+            <td><%= t 'member_name' %></td>
+            <td><%= t 'projects' %></td>
+            <td><%= t 'joined_at' %></td>
+            <td><%= t 'organization.role' %></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </thead>
+        <tbody>
+          <% @members.each do |member| %>
+            <% if member == @organization.owner %>
+              <%= render 'owner_row', owner: @organization.owner %>
+            <% else %>
+              <tr class="member" member ="<%= member.id %>">
+                <%= render partial: 'member_row',
+                           locals: { member: member, member_organization_role: member.organization_role(@organization.id) } %>
+              </tr>
+              <tr>
+                <% if @data_projects[member.id].present? %>
+                      <%= render partial: 'member_project_row',
+                                 locals: { member: member,
+                                 member_organization_role: member.organization_role(@organization.id) } %>
+                <% end %>
+              </tr>
+            <% end %>
+          <% end %>
+        </tbody>
+      </table>
+      <% if @members.empty? %>
+        <center><h4>No members found</h4></center>
+      <% end %>
+    </div>
+  </div>
+</div>

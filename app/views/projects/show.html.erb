@@ -1,0 +1,76 @@
+<%= include_gon %>
+<div class="card card-overview">
+  <div class="row">
+    <div class="col m-7">
+      <div class="overview-main-title-block">
+        <h2 class="card-overview-title"><%= t('project_overview') %></h2>
+        <%= link_add_test_object(@project) %>
+      </div>
+      <table class="overview-details">
+        <colgroup>
+          <col width="30%">
+          <col width="70%">
+        </colgroup>
+        <tr>
+          <td><%= t('platform') %></td>
+          <td>
+            <div class="platform">
+              <% @project.platforms.each do |platform| %>
+                <div class="<%= platform_icon(platform.name) %>">
+                  <span class="fa fa-<%= platform_icon(platform.name) %>" aria-hidden="true">
+                    <span class="platform-info-block" data-title="<%= platform.name %>"></span>
+                  </span>
+                </div>
+              <% end %>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><%= t('last_updated') %></td>
+          <td>
+            <div class="last-update">
+              <%= time_ago_in_words(@project.updated_at) %> <%= t('ago') %>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><%= t('project.last_object') %></td>
+          <% last_object = @project.test_objects.last  %>
+          <td><%= last_object ? (last_object.link || last_object.file_file_name) : t('no_test_object')%></td>
+        </tr>
+        <tr>
+          <td><%= t('access_level') %></td>
+          <td><%= @project.user_role(current_user) %></td>
+        </tr>
+      </table>
+    </div>
+    <div class="col m-5">
+      <%= render 'projects/invitation' %>
+      <div class="project-overview-count">
+        <div class="count-block">
+          <h3><%= t('test_objects') %></h3>
+          <span><%= @project.test_objects.count %></span>
+        </div>
+        <div class="count-block">
+          <h3><%= t('test_cases') %></h3>
+          <span><%= @project.test_cases.count %></span>
+        </div>
+      <div class="count-block">
+        <h3><%= t('issues_word') %></h3>
+        <span><%= @project.issues.count %></span>
+      </div>
+      <div class="count-block">
+        <h3><%= t('crashes') %></h3>
+        <span><%= @project.log_files.count %></span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row chart-block">
+  <div class="col m-12">
+    <div class="overview-chart">
+      <canvas id="project_overview_diagram"></canvas>
+    </div>
+  </div>
+</div>
+</div>

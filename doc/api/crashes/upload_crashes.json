@@ -1,0 +1,109 @@
+{
+  "resource": "Crashes",
+  "http_method": "POST",
+  "route": "/projects/upload_crashes",
+  "description": "Upload crashes",
+  "explanation": null,
+  "parameters": [
+    {
+      "required": true,
+      "name": "token",
+      "description": "Uniq project token"
+    },
+    {
+      "required": true,
+      "name": "packageName",
+      "description": "Application package name"
+    },
+    {
+      "required": true,
+      "name": "buildVersionCode",
+      "description": "Application version code"
+    },
+    {
+      "required": true,
+      "name": "buildVersionName",
+      "description": "Application version name"
+    },
+    {
+      "required": true,
+      "name": "deviceSerial",
+      "description": "Serial device number"
+    },
+    {
+      "required": true,
+      "name": "deviceModel",
+      "description": "Model of device"
+    },
+    {
+      "required": true,
+      "name": "osVersion",
+      "description": "Device system version"
+    },
+    {
+      "name": "crashesData",
+      "description": "Data of crashes"
+    },
+    {
+      "scope": "crashesData",
+      "name": "createdAt",
+      "description": "Date of created log file in timestamp"
+    },
+    {
+      "scope": "crashesData",
+      "name": "fileName",
+      "description": "Name log file"
+    },
+    {
+      "scope": "crashesData",
+      "name": "logFile",
+      "description": "Log file in base 64 encoding"
+    },
+    {
+      "name": "device",
+      "description": "Device version"
+    },
+    {
+      "name": "deviceBrand",
+      "description": "Brand of device"
+    },
+    {
+      "name": "deviceManufacturer",
+      "description": "Manufacturer of device"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "POST",
+      "request_path": "/projects/upload_crashes",
+      "request_body": "{\"token\":\"x5J7HOdsdhuQPEZopc1Lp7pJ/fndXGPn1\",\"packageName\":\"com.thinkmobiles.android.easyqa\",\"buildVersionCode\":\"10\",\"buildVersionName\":\"1.1.10_debug\",\"deviceSerial\":\"1234567\",\"deviceModel\":\"Nexus 5X API 23\",\"osVersion\":\"7.0\",\"crashesData\":[{\"createdAt\":\"1473334063084\",\"fileName\":\"Android-test-log.txt\",\"logFile\":\"H4sIAAAAAAAAAJ1STU8CMRA966/ogcOamIaVRYTbZl0DiYBuxIO3oTvuFrrt2hYi/95C+QiIieE0\\n09d5r/NeOoMlUAGyoNlCWl5h+s2wtlzJHklfBglJs2yckXGSTLIsfbwl/fg9JU+T0fUVWMJURW3J\\n5bxSUy7QUJC5VjynCGb1BTRmli+5XaXu+BpT1Frp4AScuQ167fDmEkFgDI1pRM3mWdWwdYlqI6R6\\nIc8KRpEX3PGVoX3XC9S03NQEhJgCmwc7eEPrtLp/8nJuarCsHDojUOAxsdv+xXtWqnbXwpVg23uv\\n0cPxLNT13thbqRFyWgE/+NpiPv4o7Hj2bP8fNH4KZJYO0ZYqp1wu1RyDETg2Eg8e0t09yqVFLUGs\\nN/1YFcriQHLb8OOxzGNdmHVGbut1xoeRbVB39//V9GZOBe5DJ/ADXWh+4tQCAAA=\\n\"}],\"deviceBrand\":\"Android\",\"deviceManufacturer\":\"Genymotion\"}",
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"message\": \"Success\"\n}",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"0ec14c19bec9cdd6d6863682b6a23b4e\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "0e8b1c56-4a25-464d-afa1-794334724a23",
+        "X-Runtime": "0.920500",
+        "Content-Length": "21"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"http://localhost:3000/projects/upload_crashes\" -d '{\"token\":\"x5J7HOdsdhuQPEZopc1Lp7pJ/fndXGPn1\",\"packageName\":\"com.thinkmobiles.android.easyqa\",\"buildVersionCode\":\"10\",\"buildVersionName\":\"1.1.10_debug\",\"deviceSerial\":\"1234567\",\"deviceModel\":\"Nexus 5X API 23\",\"osVersion\":\"7.0\",\"crashesData\":[{\"createdAt\":\"1473334063084\",\"fileName\":\"Android-test-log.txt\",\"logFile\":\"H4sIAAAAAAAAAJ1STU8CMRA966/ogcOamIaVRYTbZl0DiYBuxIO3oTvuFrrt2hYi/95C+QiIieE0\\n09d5r/NeOoMlUAGyoNlCWl5h+s2wtlzJHklfBglJs2yckXGSTLIsfbwl/fg9JU+T0fUVWMJURW3J\\n5bxSUy7QUJC5VjynCGb1BTRmli+5XaXu+BpT1Frp4AScuQ167fDmEkFgDI1pRM3mWdWwdYlqI6R6\\nIc8KRpEX3PGVoX3XC9S03NQEhJgCmwc7eEPrtLp/8nJuarCsHDojUOAxsdv+xXtWqnbXwpVg23uv\\n0cPxLNT13thbqRFyWgE/+NpiPv4o7Hj2bP8fNH4KZJYO0ZYqp1wu1RyDETg2Eg8e0t09yqVFLUGs\\nN/1YFcriQHLb8OOxzGNdmHVGbut1xoeRbVB39//V9GZOBe5DJ/ADXWh+4tQCAAA=\\n\"}],\"deviceBrand\":\"Android\",\"deviceManufacturer\":\"Genymotion\"}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+<div class='plugins-card' data-id='<%= setting.name + setting.id.to_s %>'
+                          style='<%= hide_card(setting) %>'>
+  <%= render 'synchronizations/' + setting.name.sub('setting', 'info'), setting: setting %>
+</div>

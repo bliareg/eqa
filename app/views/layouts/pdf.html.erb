@@ -1,0 +1,13 @@
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <%= stylesheet_link_tag wicked_pdf_assets_base64_from_public_css("print_reports.css") %>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="content-wrapper">
+        <%= yield %>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+<tr data-time-management-id='<%= time_management.id %>'>
+  <td class="col-date"><%= time_management.created_at.strftime('%d/%m/%y') %></td>
+  <td class="col-spent-time">
+    <span class="spent-time-count"><%= time_management.spent_time_view %></span>
+  </td>
+  <td class="col-user">
+    <%= image_tag time_management.user.avatar.file.url(:medium), class: 'avatar' %>
+    <span class="user-name"><%= time_management.user.name %></span>
+  </td>
+  <td class="col-comment"><%= time_management.comment %></td>
+  <td class="col-edit">
+    <div class="edit-buttons">
+      <% if policy(time_management).update? %>
+        <a href='javascript:;' class="edit destroy_spent_time_btn">
+          <span class='icon-delete-icon-small'></span>
+        </a>
+        <a href='javascript:;' class="edit edit_spent_time_btn">
+          <span class='icon-edit-icon-small'></span>
+        </a>
+      <% end %>
+    </div>
+  </td>
+</tr>

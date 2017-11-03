@@ -1,0 +1,22 @@
+.main_tabs {
+  float: left;
+  width: 300px;
+  @include rem(font-size, 14px);
+
+  li {
+    display: inline-block;
+    margin: 0 20px;
+
+    a {
+      display: block;
+      height: $header-height;
+      color: $inactive-tab-color;
+      font-size: 14px;
+      text-transform: capitalize;
+    }
+
+    &.active a {
+      border-bottom: 4px solid $btn-green;
+    }
+  }
+}

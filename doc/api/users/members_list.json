@@ -1,0 +1,49 @@
+{
+  "resource": "Users",
+  "http_method": "GET",
+  "route": "/api/v1/projects/members_list",
+  "description": "Members list",
+  "explanation": null,
+  "parameters": [
+    {
+      "required": true,
+      "name": "token",
+      "description": "Uniq project token"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "/api/v1/projects/members_list?token=YD3OjD0Zd4AwzIgTIoXk5jZdrxGkugiJ22",
+      "request_body": null,
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+        "token": "YD3OjD0Zd4AwzIgTIoXk5jZdrxGkugiJ22"
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"users\": [\n    {\n      \"name\": \"Celestine Bechtelar\",\n      \"email\": \"norris.tillman@abernathykeler.biz\",\n      \"id\": 79\n    },\n    {\n      \"name\": \"Jaqueline Torp\",\n      \"email\": \"alene@pfeffer.name\",\n      \"id\": 84\n    },\n    {\n      \"name\": \"Tyrell Howe\",\n      \"email\": \"roger@ruel.org\",\n      \"id\": 80\n    }\n  ]\n}",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"4e31131c5903982bf2fe88f24e05b764\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "b402d134-58e7-4bb4-9c68-e76ebba14fe6",
+        "X-Runtime": "0.146311",
+        "Content-Length": "213"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"http://localhost:3000/api/v1/projects/members_list?token=YD3OjD0Zd4AwzIgTIoXk5jZdrxGkugiJ22\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

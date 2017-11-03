@@ -1,0 +1,58 @@
+{
+  "resource": "Issues Attachments",
+  "http_method": "DELETE",
+  "route": "/api/v1/attachments/:id",
+  "description": "Delete",
+  "explanation": null,
+  "parameters": [
+    {
+      "required": true,
+      "name": "token",
+      "description": "Uniq project token"
+    },
+    {
+      "required": true,
+      "name": "auth_token",
+      "description": "User authenticity token"
+    },
+    {
+      "required": true,
+      "name": "id",
+      "description": "Attachment ID"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "DELETE",
+      "request_path": "/api/v1/attachments/21",
+      "request_body": "{\"token\":\"qWwKR6z00WPJvZCnWvgkoUfApVZJkj9I2\",\"auth_token\":\"omk7dZqiXyN8axz/za4xQeRrCkcSyntW13\"}",
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"id\": 21,\n  \"created_at\": \"2017-04-14T07:54:50.008Z\",\n  \"updated_at\": \"2017-04-14T07:54:50.008Z\",\n  \"file_file_name\": null,\n  \"file_content_type\": null,\n  \"file_file_size\": null,\n  \"file_updated_at\": null,\n  \"attachable_type\": \"Issue\",\n  \"attachable_id\": 1,\n  \"url\": \"/images/issues.png\"\n}",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"b21ca25ed9a66caabe7c869bea8613cd\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "2ccf2cdc-182a-423c-b186-8879987379bf",
+        "X-Runtime": "0.252777",
+        "Content-Length": "252"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"http://localhost:3000/api/v1/attachments/21\" -d '{\"token\":\"qWwKR6z00WPJvZCnWvgkoUfApVZJkj9I2\",\"auth_token\":\"omk7dZqiXyN8axz/za4xQeRrCkcSyntW13\"}' -X DELETE \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

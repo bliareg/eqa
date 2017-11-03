@@ -1,0 +1,64 @@
+{
+  "resource": "Statuses",
+  "http_method": "POST",
+  "route": "/api/v1/statuses",
+  "description": "Create",
+  "explanation": null,
+  "parameters": [
+    {
+      "required": true,
+      "name": "auth_token",
+      "description": "User authenticity token"
+    },
+    {
+      "required": true,
+      "name": "token",
+      "description": "Uniq project token"
+    },
+    {
+      "required": true,
+      "name": "status_object",
+      "description": "Status attributes"
+    },
+    {
+      "scope": "status_object",
+      "required": true,
+      "name": "name",
+      "description": "Status name"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "POST",
+      "request_path": "/api/v1/statuses",
+      "request_body": "{\"token\":\"qRexM7UIpU2ew7Z+dMLyyvb00x4LGOJw15\",\"status_object\":{\"name\":\"connecting\"},\"auth_token\":\"ww8a6t5AQoWmNy/cO2nRYwBeuV+lrJTN39\"}",
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"id\": 55,\n  \"name\": \"connecting\",\n  \"created_at\": \"2017-04-14T07:55:50.907Z\",\n  \"updated_at\": \"2017-04-14T07:55:50.907Z\"\n}",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"734938f68dafdc2eac7512d664c0afbd\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "119399bc-dfa3-4310-93dd-23d3eafcd76f",
+        "X-Runtime": "0.108126",
+        "Content-Length": "109"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"http://localhost:3000/api/v1/statuses\" -d '{\"token\":\"qRexM7UIpU2ew7Z+dMLyyvb00x4LGOJw15\",\"status_object\":{\"name\":\"connecting\"},\"auth_token\":\"ww8a6t5AQoWmNy/cO2nRYwBeuV+lrJTN39\"}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+<div class="tab-pane-content select-project-members">
+  <div class="manage-members-btn">
+    <%= @project.add_project_members_link(current_user, true) %>
+  </div>
+  <table class="select-project-members-table">
+    <tr class="table-title">
+      <td colspan="2"><%= t('member_name')%></td>
+      <td><%= t('projects') %></td>
+      <td><%= t('joined_at') %></td>
+      <td><%= t('project_role') %></td>
+    </tr>
+    <% @members.each do |member| %>
+      <% role_title = member.project_role_from_roles(@project) %>
+      <% next if role_title == 'owner' %>
+      <tr class="member">
+        <td class="member-avatar">
+          <%= image_tag member.avatar.file.url(:medium) %>
+        </td>
+        <%= render partial: 'users/member_info', locals: {member: member} %>
+        <td class="member-projects"><%= member.organization_projects(@project.organization_id).size %></td>
+        <td class="member-joined"><%= member.first_project_role(@project).created_at.strftime('%m/%d/%Y') %></td>
+        <td class="project-role">
+          <div class="role"><%= role_title.text %></div>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+</div>

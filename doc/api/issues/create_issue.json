@@ -1,0 +1,119 @@
+{
+  "resource": "Issues",
+  "http_method": "POST",
+  "route": "/api/v1/projects/issues/create",
+  "description": "Create issue",
+  "explanation": null,
+  "parameters": [
+    {
+      "required": true,
+      "name": "token",
+      "description": "Uniq project token"
+    },
+    {
+      "name": "auth_token",
+      "description": "User authenticity token"
+    },
+    {
+      "required": true,
+      "name": "summary",
+      "description": "Issue summary"
+    },
+    {
+      "required": true,
+      "name": "deviceSerial",
+      "description": "Serial device number"
+    },
+    {
+      "required": true,
+      "name": "deviceModel",
+      "description": "Model of device"
+    },
+    {
+      "required": true,
+      "name": "osVersion",
+      "description": "Device system version"
+    },
+    {
+      "required": true,
+      "name": "test_object_id",
+      "description": "ID test object on site"
+    },
+    {
+      "name": "device",
+      "description": "Device version"
+    },
+    {
+      "name": "deviceBrand",
+      "description": "Brand of device"
+    },
+    {
+      "name": "deviceManufacturer",
+      "description": "Manufacturer of device"
+    },
+    {
+      "name": "description",
+      "description": "Issue description"
+    },
+    {
+      "name": "issue_type",
+      "description": "Type of issue"
+    },
+    {
+      "name": "priority",
+      "description": "Issue priority"
+    },
+    {
+      "name": "severity",
+      "description": "Issue severity"
+    },
+    {
+      "name": "assigner_id",
+      "description": "Issue assigner ID"
+    },
+    {
+      "Type": "Multipart/Form-data",
+      "name": "test.jpg",
+      "description": "Name your upload image. Data type must be \"jpg\"."
+    },
+    {
+      "Type": "Multipart/Form-data",
+      "name": "test.mp4",
+      "description": "Name your upload video. Data type must be \"mp4\"."
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "POST",
+      "request_path": "/api/v1/projects/issues/create",
+      "request_body": "------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"token\"\r\n\r\nPyoPIfOX4M77hcj0607DGsJU9jzlZ7/e4\r\n------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"auth_token\"\r\n\r\nTSyy+t6ilVCVzEIaZbGoI52K32Ry9c1d15\r\n------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"summary\"\r\n\r\nnatus\r\n------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"deviceSerial\"\r\n\r\n1234567\r\n------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"deviceModel\"\r\n\r\nNexus 5X API 23\r\n------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"osVersion\"\r\n\r\n7.0\r\n------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"test_object_id\"\r\n\r\n6\r\n------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"deviceBrand\"\r\n\r\nAndroid\r\n------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"deviceManufacturer\"\r\n\r\nGenymotion\r\n------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"description\"\r\n\r\nSunt odio enim soluta voluptatem quis quam laudantium.\r\n------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"issue_type\"\r\n\r\nbug\r\n------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"priority\"\r\n\r\nmedium\r\n------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"severity\"\r\n\r\nmedium\r\n------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"assigner_id\"\r\n\r\n11\r\n------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"test.jpg\"; filename=\"test.jpg\"\r\nContent-Type: image/jpeg\r\nContent-Length: 119260\r\n\r\n[uploaded data]\r\n------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"test.mp4\"; filename=\"test.mp4\"\r\nContent-Type: video/mp4\r\nContent-Length: 7532155\r\n\r\n[uploaded data]\r\n------------XnJLe9ZIbbGUYtzPQJ16u1--\r",
+      "request_headers": {
+        "Content-Type": "multipart/form-data; boundary=----------XnJLe9ZIbbGUYtzPQJ16u1",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "multipart/form-data; boundary=----------XnJLe9ZIbbGUYtzPQJ16u1",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"message\": \"success\"\n}",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"838a7c62adda8d131d694ae13ba2c5b7\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "e0ec2c50-bd6e-4dd5-ac9a-1f6111862bc7",
+        "X-Runtime": "2.142583",
+        "Content-Length": "21"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"http://localhost:3000/api/v1/projects/issues/create\" -d '------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"token\"\r\n\r\nPyoPIfOX4M77hcj0607DGsJU9jzlZ7/e4\r\n------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"auth_token\"\r\n\r\nTSyy+t6ilVCVzEIaZbGoI52K32Ry9c1d15\r\n------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"summary\"\r\n\r\nnatus\r\n------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"deviceSerial\"\r\n\r\n1234567\r\n------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"deviceModel\"\r\n\r\nNexus 5X API 23\r\n------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"osVersion\"\r\n\r\n7.0\r\n------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"test_object_id\"\r\n\r\n6\r\n------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"deviceBrand\"\r\n\r\nAndroid\r\n------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"deviceManufacturer\"\r\n\r\nGenymotion\r\n------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"description\"\r\n\r\nSunt odio enim soluta voluptatem quis quam laudantium.\r\n------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"issue_type\"\r\n\r\nbug\r\n------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"priority\"\r\n\r\nmedium\r\n------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"severity\"\r\n\r\nmedium\r\n------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"assigner_id\"\r\n\r\n11\r\n------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"test.jpg\"; filename=\"test.jpg\"\r\nContent-Type: image/jpeg\r\nContent-Length: 119260\r\n\r\n[uploaded data]\r\n------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"test.mp4\"; filename=\"test.mp4\"\r\nContent-Type: video/mp4\r\nContent-Length: 7532155\r\n\r\n[uploaded data]\r\n------------XnJLe9ZIbbGUYtzPQJ16u1--\r' -X POST \\\n\t-H \"Content-Type: multipart/form-data; boundary=----------XnJLe9ZIbbGUYtzPQJ16u1\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

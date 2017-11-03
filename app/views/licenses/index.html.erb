@@ -1,0 +1,26 @@
+<div class="payments_block">
+  <%= render partial: 'form' %>
+</div>
+
+<div class="tab payments">
+  <div class="card card-tab-content">
+    <div class="card-header">
+      <h2 class="card-header-title"><%= t(:licenses).capitalize %></h2>
+    </div>
+    <table class="payment-table">
+      <thead>
+        <tr>
+          <%# <th class="payment-date"><%= t(:date_small) %1></th> %>
+          <%# <th class="payment-amount"><%= t(:amount) %1></th> %>
+          <%# <th class="payment-type"><%= t(:summary) %1></th> %>
+          <th><%= t(:expiration_date) %></th>
+          <th><%= t(:start_date) %></th>
+          <th><%= t(:amount) %></th>
+      </thead>
+      <tbody class="table-body">
+        <%= render @licenses %>
+      </tbody>
+    </table>
+  </div>
+
+</div>

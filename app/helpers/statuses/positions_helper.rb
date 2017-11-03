@@ -1,0 +1,2 @@
+module Statuses::PositionsHelper
+end

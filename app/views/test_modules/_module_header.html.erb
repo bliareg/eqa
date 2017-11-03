@@ -1,0 +1,15 @@
+<span class="test-caret"></span>
+<span class="test-name">
+  <%= test_module.title %>
+  <span class="number">(<%= cases_count(test_module)%>)</span>
+</span>
+<div class="test-lead">
+<% if policy(@project).tester_or_higher_rank? %>
+  <%= link_to destroy_module_confirm_path(test_module), remote: true, class: 'delete' do %>
+    <span class='icon-basket-icon'></span>
+  <% end %>
+  <%= link_to edit_test_module_path(test_module), remote: true, class: 'edit' do %>
+    <span class='icon-edit-icon'></span>
+  <% end %>
+<% end %>
+</div>

@@ -1,0 +1,11 @@
+---
+
+- name: Install redis
+  hosts: all
+  remote_user: "{{ deploy_user }}"
+  become: yes
+  vars:
+    - redis_port: 6379
+    - redis_bind_interface: 127.0.0.1
+  roles:
+    - { role: DavidWittman.redis }

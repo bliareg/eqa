@@ -1,0 +1,8 @@
+---
+
+- name: Change ruby for Nginx
+  hosts: rails
+  remote_user: root
+  become: yes
+  roles:
+    - role: nginx_setup

@@ -1,0 +1,7 @@
+<% if @payment_methods.size == 0 %>
+  <% monthly_fee = (1000 * @billing.licenses_amount) / 100.0 %>
+  $('.licenses_block').html("<%= j render partial: 'users/licenses_block', locals: { monthly_fee: monthly_fee } %>");
+<% end %>
+$('ul.methods-list').html("<%= j render @payment_methods %>");
+$('.load-block').hide();
+

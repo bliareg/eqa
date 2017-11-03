@@ -1,0 +1,10 @@
+if ($('.test-plan-activity .testing_activities').length) {
+  $('#tab_content').html("<%= j render file: 'projects/test_activities/index.html.erb' %>");
+} else {
+  $('.main-content').html("<%= j render file: 'projects/test_activities/index.html.erb', \
+                                        layout: 'layouts/_test_activities' %>");
+  projects_left_manu_action('<%= request.path %>');
+  $('.testing_activities_link').addClass('active');
+}
+test_activity_js_actions('<%= request.path %>')
+init_test_activities_diagrams();

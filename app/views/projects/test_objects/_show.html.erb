@@ -1,0 +1,22 @@
+<div class="modal-dialog link-to-test-object upload-build">
+  <div class="modal-content">
+    <div class="title-main">
+      <h3><%= t 'link_to_test_object' %></h3>
+      <span class="close">
+        <span class='icon-close-icon'></span>
+      </span>
+    </div>
+    <div class="modal-body">
+      <% if @test_object.link.present? %>
+        <%= link_to @test_object.link, "http://#{@test_object.link}", class: 'btn-white-green link-to-object' %>
+      <% else %>
+        <%= download_build_links %>
+      <% end %>
+      <div class="btns-block">
+        <button class="btn btn-green link_inform_copy_link"><%= t 'copy_link' %></button>
+        <%= link_to t('send_by_email'), new_test_object_mailer_path(@test_object), remote: true, class: 'btn btn-green btn-send' %>
+        <button type="button" class="btn btn-white-green cancel"><%= t('cancel') %></button>
+      </div>
+    </div>
+  </div>
+</div>

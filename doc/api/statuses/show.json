@@ -1,0 +1,60 @@
+{
+  "resource": "Statuses",
+  "http_method": "GET",
+  "route": "/api/v1/statuses/:id",
+  "description": "Show",
+  "explanation": null,
+  "parameters": [
+    {
+      "required": true,
+      "name": "auth_token",
+      "description": "User authenticity token"
+    },
+    {
+      "required": true,
+      "name": "token",
+      "description": "Uniq project token"
+    },
+    {
+      "required": true,
+      "name": "id",
+      "description": "Status id"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "/api/v1/statuses/1?token=qRexM7UIpU2ew7Z%2BdMLyyvb00x4LGOJw15&auth_token=ww8a6t5AQoWmNy%2FcO2nRYwBeuV%2BlrJTN39",
+      "request_body": null,
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+        "token": "qRexM7UIpU2ew7Z+dMLyyvb00x4LGOJw15",
+        "auth_token": "ww8a6t5AQoWmNy/cO2nRYwBeuV+lrJTN39"
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"id\": 1,\n  \"name\": \"Submited\",\n  \"created_at\": \"2017-04-14T07:54:28.954Z\",\n  \"updated_at\": \"2017-04-14T07:54:28.954Z\"\n}",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"82568831b1a19e25ca8d299d2c7049f5\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "67bbe45c-745f-49ef-85f5-a84011309b02",
+        "X-Runtime": "0.053577",
+        "Content-Length": "106"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"http://localhost:3000/api/v1/statuses/1?token=qRexM7UIpU2ew7Z%2BdMLyyvb00x4LGOJw15&auth_token=ww8a6t5AQoWmNy%2FcO2nRYwBeuV%2BlrJTN39\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

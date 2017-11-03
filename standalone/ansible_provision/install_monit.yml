@@ -1,0 +1,9 @@
+---
+
+- name: Setup monit
+  hosts: all
+  remote_user: root
+  become: yes
+  roles:
+    - { role: pgolm.monit }
+    - { role: setup_monit }

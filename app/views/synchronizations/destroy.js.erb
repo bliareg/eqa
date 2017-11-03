@@ -1,0 +1,4 @@
+hide_modal();
+
+$('.plugins-card[data-id=<%= @synchronization.name + @synchronization.id.to_s %>]').remove();
+$('.plans-info-item[data-id=<%= @synchronization.name + @synchronization.id.to_s %>]').remove();

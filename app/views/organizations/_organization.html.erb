@@ -1,0 +1,32 @@
+<div class="organization">
+  <div class="organization-main-info">
+    <%= link_to organization_path(organization) do %>
+      <%= image_tag organization.logo.file.url(:medium), class: 'organization-logo' %>
+    <% end %>
+    <div class="name-block">
+      <%= link_to organization.title, organization_path(organization),
+                                      class: 'organization-name' %>
+      <span class="organization-created">
+        <%= t('created') + ': ' + organization.created_at.strftime('%d/%m/%Y') %>
+      </span>
+      <span class="organization-owner">
+        <%= t('enumerize.role.role.owner') + ': ' + organization.owner.name %>
+      </span>
+    </div>
+  </div>
+
+  <div class="organization-count">
+    <%= link_to organization_projects_path(organization) do %>
+      <div class="count-block">
+        <h2><%= t 'projects' %></h2>
+        <span><%= organization.projects.count %></span>
+      </div>
+    <% end %>
+    <%= link_to organization_profile_members_path(organization) do %>
+      <div class="count-block">
+        <h2><%= t 'employees' %></h2>
+        <span><%= organization.employees_count.to_s %></span>
+      </div>
+    <% end %>
+  </div>
+</div>

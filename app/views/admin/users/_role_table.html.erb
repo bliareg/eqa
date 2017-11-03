@@ -1,0 +1,12 @@
+<table>
+  <tbody>
+    <% proj_roles.each do |key, value| %>
+      <%= render 'role', organization: key, roles: value, org_roles: org_roles %>
+    <% end %>
+    <% if org_roles.present? %>
+      <% org_roles.each do |key, value| %>
+        <%= render 'role', organization: key, roles: {}, org_roles: org_roles %>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,28 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 20
+  username: <%= ENV['DB_USER_NAME'] %>
+  password: <%= ENV['DB_USER_PASSWD'] %>
+  port: 5432
+  host: localhost
+
+development:
+  <<: *default
+  database: quality_development
+
+test:
+  <<: *default
+  database: quality_test
+
+production:
+  <<: *default
+  database: quality_production
+
+staging:
+  <<: *default
+  database: quality_production
+
+demo:
+  <<: *default
+  database: quality_demo

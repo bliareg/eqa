@@ -1,0 +1,20 @@
+<div>
+  <div class="input_wrapper disabled disabled-select">
+    <label class="title"><%= t 'project_id' %></label>
+    <input type='url' value="<%= setting.service_pid %>">
+  </div>
+  <div class="input_wrapper disabled disabled-select">
+    <label class="title"><%= t 'agile_board_name' %></label>
+    <input type='url' value="<%= setting.agile_board_name %>">
+  </div>
+  <div class="input_wrapper disabled disabled-select">
+    <label class="title"><%= t 'sprint_name' %></label>
+    <input type='url' value="<%= setting.sprint_name %>">
+  </div>
+  <div class="input_wrapper disabled disabled-select">
+    <label class="title"><%= t 'base_url' %></label>
+    <input type='url' value="<%= setting.base_url %>">
+  </div>
+  <%= render partial: 'synchronizations/setting_plugin_boxes_show',
+             locals: { setting: setting } %>
+</div>

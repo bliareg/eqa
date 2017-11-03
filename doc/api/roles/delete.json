@@ -1,0 +1,53 @@
+{
+  "resource": "Roles",
+  "http_method": "DELETE",
+  "route": "/api/v1/roles/:id",
+  "description": "Delete",
+  "explanation": null,
+  "parameters": [
+    {
+      "required": true,
+      "name": "auth_token",
+      "description": "User authenticity token"
+    },
+    {
+      "required": true,
+      "name": "id",
+      "description": "Role id"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "DELETE",
+      "request_path": "/api/v1/roles/60",
+      "request_body": "{\"auth_token\":\"cjIywkHBYO+p8g1cKyauxei27w/zjdtr33\"}",
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"id\": 60,\n  \"organization_id\": 14,\n  \"project_id\": 15,\n  \"user_id\": 32,\n  \"role\": \"developer\",\n  \"created_at\": \"2017-04-14T07:55:41.334Z\",\n  \"updated_at\": \"2017-04-14T07:55:41.334Z\",\n  \"is_subscribed\": null,\n  \"deleted_at\": \"2017-04-14T07:55:45.552Z\"\n}",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"ed3f3f0c6744df3fb8584ac57fa460fe\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "9f732966-ac56-4b0d-b700-4e276509d3ff",
+        "X-Runtime": "0.063624",
+        "Content-Length": "219"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"http://localhost:3000/api/v1/roles/60\" -d '{\"auth_token\":\"cjIywkHBYO+p8g1cKyauxei27w/zjdtr33\"}' -X DELETE \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

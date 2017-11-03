@@ -1,0 +1,21 @@
+<div class="plans">
+  <!--<h3 class="title"><%= t 'test_plans' %></h3>-->
+  <div class ="newtestplanlink" > <%= new_test_plan_link %> </div>
+</div>
+<div class="cases">
+  <!--<h3 class="title"><%= t 'test_cases' %></h3>-->
+  <%= render partial: 'projects/add_links' %>
+</div>
+<div class="contains">
+  <h3 class="title"><%= t 'contains' %></h3>
+  <div class="title-info">
+    <%= t 'modules_count' %> -
+    <span class="number modules_count">
+      <%= @current_plan.try { test_modules.count } || 0 %>
+    </span>
+    <%= t 'cases_count' %> -
+    <span class="number cases_count">
+      <%= @current_plan.try { test_cases.count } || 0 %>
+    </span>
+  </div>
+</div>

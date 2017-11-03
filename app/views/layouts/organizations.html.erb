@@ -1,0 +1,32 @@
+<% content_for :application do %>
+  <div class="content-wrapper">
+    <div class="container-full">
+      <div class="row">
+        <div class="main-content <%= notification_class %> col m-12">
+          <%= render 'profile_header' %>
+          <div class="container-full">
+            <div class="row">
+              <div class="col m-3" id='organizations-left-menu'>
+                <% @left_menu_links = @organization.left_menu(current_user) %>
+                <%= render 'left_menu' %>
+              </div>
+              <div class="col m-9">
+                <div class="card-wrapper">
+                  <div class="load-block">
+                    <div class="loader-wrap">
+                      <div class="loader"></div>
+                    </div>
+                  </div>
+                  <div id="dashboard">
+                    <%= content_for?(:organizations) ? yield(:organizations) : yield %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+<%= render template: 'layouts/application' %>

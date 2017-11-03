@@ -1,0 +1,105 @@
+.modal-add-test-plan,
+.modal-add-module {
+  width: 570px;
+
+  .module-description,
+  .plan-description {
+    margin-top: 20px;
+
+    textarea {
+      height: 140px;
+    }
+  }
+}
+
+.modal-test-case-info,
+.modal-add-case {
+  width: 770px;
+
+  //.modal-content-scroll {
+  //  min-height: 380px;
+  //}
+
+  .case-title,
+  .case-selection {
+    margin-bottom: 20px;
+  }
+
+  .btn {
+    height: 40px;
+  }
+
+  .case-selection {
+
+    &-item {
+      float: left;
+      width: 49%;
+      margin-right: 2%;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  textarea {
+    height: 100px;
+  }
+}
+
+.modal-test-case-info {
+
+  .edit {
+    float: right;
+    margin: 35px 20px 0 0;
+
+    span {
+      font-size: 25px;
+      color: $btn-green;
+
+      &.icon-delete-icon{
+        color: $btn-red;
+      }
+    }
+  }
+
+  .input_wrapper {
+    .dd-container {
+      .dd-pointer-down {
+        border: solid 5px transparent;
+      }
+    }
+  }
+}
+
+.modal-delete {
+  margin-top: 100px;
+  width: 370px;
+
+  .title-main {
+    h3 {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+  }
+
+  .btn-group {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .delete-info {
+    color: $base-light-text;
+    line-height: 40px;
+    @include rem(font-size, 14px);
+  }
+}
+
+.column-settings {
+  width: 370px;
+  margin-top: 100px;
+
+  &-item {
+    margin-bottom: 10px;
+    @include rem(font-size, 14px);
+  }
+}

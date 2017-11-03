@@ -1,0 +1,222 @@
+<div class="card card-tab-content tab">    
+  <% if current_user.organizations.any? { |a| a.owner.id == current_user.id } %>
+    <div class="card-billing-info">
+      <div class="columns-wrapper">
+        <%= form_for(current_user, url: user_path, method: :patch,
+            remote: true, validate: true, authenticity_token: true, html: { class: "form-wrapper" }) do |f| %>
+          <div class="card-form-column left-side">
+            <h3 class="card-header-title"><%= t 'users.billings_info' %></h3>
+            <div class="input_wrapper">
+              <%= f.label :company %>
+              <%= f.text_field :company, autofocus: true, validate: true %>
+            </div>
+            <div class="input_wrapper">
+              <%= f.label :street_address %>
+              <%= f.text_field :street_address, validate: true %>
+            </div>
+            <div class="input_wrapper">
+              <%= f.label :city %>
+              <%= f.text_field :city, validate: true %>
+            </div>
+            <div class="input_wrapper">
+              <%= f.label :state %>
+              <%= f.text_field :state, validate: true %>
+            </div>
+            <div class="input_wrapper drop-arr">
+              <%= f.label :country %>
+              <%= f.country_select :country, { except: EasyQA::Constants::Countries::EXCEPT }, {autocomplete: 'off'}, { id: 'countryMyProfile' } %>
+            </div>
+            <div class="input_wrapper zip-code">
+              <%= f.label :zip_code %>
+              <%= f.text_field :zip_code, validate: true %>
+            </div>
+            <div class="input_wrapper">
+              <%= f.label :phone_number %>
+              <%= f.text_field :phone_number, validate: true %>
+            </div>
+
+            <div class="actions">
+              <%= f.submit t('save'), class: "btn btn-green" %>
+            </div>
+            <%= link_to t('deactivate_account'),
+                deactivate_confirmation_path,
+                remote: :true,
+                class: 'btn btn-red deactivate' %>
+          </div>
+          <div class="card-form-column right-side">
+            <h3 class="card-header-title"><%= t 'users.personal_information' %></h3>
+            <div class="input_wrapper">
+              <%= f.label :first_name %>
+              <%= f.text_field :first_name, autofocus: true, validate: true %>
+            </div>
+            <div class="input_wrapper">
+              <%= f.label :last_name %>
+              <%= f.text_field :last_name, validate: true %>
+            </div>
+            <div class="input_wrapper">
+              <%= f.label :email %>
+              <%= f.email_field :email, validate: { uniqueness: false } %>
+            </div>
+            <div class="card-form-languages">
+              <span class="languages-title"><%= t 'language' %></span>
+              <ul class="languages-btn">
+                <li>
+                  <%= f.radio_button :locale, :en %>
+                  <%= f.label :locale_en, t('languages.english'), class: 'btn btn-white-green language_label' %>
+                </li>
+                <li>
+                  <%= f.radio_button :locale, :ru %>
+                  <%= f.label :locale_ru, t('languages.russian'), class: 'btn btn-white-green language_label' %>
+                </li>
+              </ul>
+            </div>
+          </div>
+        <% end %>
+        <div class="dropzone-wrapper">
+          <%= form_for(current_user, url: user_path,
+                                     html: { method: :patch, class: 'dropzone', id: "upload_avatar" },
+                                     remote: true, authenticity_token: true) do |f| %>
+            <div class="card-image-load">
+              <% if current_user.avatar.file.exists? %>
+                <div class="dz-preview dz-image-preview">
+                  <div class="dz-image">
+                    <%= image_tag(current_user.avatar.file.url(:medium), data: { "dz-thumbnail": true }) %>
+                    <div class="dz-success-mark">
+                      <i class="fa fa-times-circle-o fa-4x" aria-hidden="true"></i>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+              <div style='<%= users_upload_instructions_visible %>' class='load_avatar_instruction'>
+                <span class='icon-load-cloud ic-svg reload'></span>
+                <span class='btn load-btn'><%= t 'click_to_load' %></span>
+                </br>
+                <span class="load-description"><%= t 'or_drag_your_image_here' %></span>
+              </div>
+            </div>
+            <div class="dz-error-message">
+              <span class="data-dz-errormessage">
+                You cant upload file more than 2 Megabytes.
+              </span>
+            </div>
+            <div class="card-image-btns">
+              <a href="javascript:;" class="btn-reload btn-white-green">
+                <span class='icon-reload-icon ic-svg reload load-btn'></span>
+                <%= t 'reload' %>
+              </a>
+              <%= link_to destroy_avatar_path(current_user.id),
+                          class: 'btn-delete btn-white-red',
+                          id: 'destroy_avatar',
+                          remote: true,
+                          method: :put,
+                          style: avatar_destroy_disable,
+                          data: { confirm: t('are_you_sure') } do %>
+                <span class='icon-delete-icon ic-svg delete'></span>
+                <%= t 'delete' %>
+              <% end %>
+            </div>
+          <% end %>        
+        </div> 
+      </div>
+    </div> 
+  <% else %>      
+    <div class="card-header">
+      <h2 class="card-header-title"><%= t 'users.personal_information' %></h2>
+    </div>
+    <div class="columns-wrapper">
+      <div class="card-form-column">
+        <%= form_for(current_user, url: user_path, method: :patch,
+                     remote: true, validate: true, authenticity_token: true) do |f| %>
+          <div id='personal_info_notice'></div>
+          <div class="input_wrapper">
+            <%= f.label :first_name %>
+            <%= f.text_field :first_name, autofocus: true, validate: true %>
+          </div>
+          <div class="input_wrapper">
+            <%= f.label :last_name %>
+            <%= f.text_field :last_name, validate: true %>
+          </div>
+          <div class="input_wrapper">
+            <%= f.label :email %>
+            <%= f.email_field :email, validate: { uniqueness: false } %>
+          </div>
+          <div class="input_wrapper">
+            <%= f.label :company %>
+            <%= f.text_field :company %>
+          </div>
+          <div class="input_wrapper drop-arr">
+            <%= f.label :country %>
+            <%= f.country_select :country, { except: EasyQA::Constants::Countries::EXCEPT }, {autocomplete: 'off'}, { id: 'countryMyProfile' } %>
+          </div>
+          <div class="card-form-languages">
+            <span class="languages-title"><%= t 'language' %></span>
+            <ul class="languages-btn">
+              <li>
+                <%= f.radio_button :locale, :en %>
+                <%= f.label :locale_en, t('languages.english'), class: 'btn btn-white-green language_label' %>
+              </li>
+              <li>
+                <%= f.radio_button :locale, :ru %>
+                <%= f.label :locale_ru, t('languages.russian'), class: 'btn btn-white-green language_label' %>
+              </li>
+            </ul>
+          </div>
+          <div class="actions">
+            <%= f.submit t('save'), class: "btn btn-green" %>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="card-image-column">
+        <%= form_for(current_user, url: user_path,
+                                     html: { method: :patch, class: 'dropzone', id: "upload_avatar" },
+                                     remote: true, authenticity_token: true) do |f| %>
+            <div class="card-image-load">
+              <% if current_user.avatar.file.exists? %>
+                <div class="dz-preview dz-image-preview">
+                  <div class="dz-image">
+                    <%= image_tag(current_user.avatar.file.url(:medium), data: { "dz-thumbnail": true }) %>
+                    <div class="dz-success-mark">
+                      <i class="fa fa-times-circle-o fa-4x" aria-hidden="true"></i>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+              <div style='<%= users_upload_instructions_visible %>' class='load_avatar_instruction'>
+                <span class='icon-load-cloud ic-svg reload'></span>
+                <span class='btn load-btn'><%= t 'click_to_load' %></span>
+                </br>
+                <span class="load-description"><%= t 'or_drag_your_image_here' %></span>
+              </div>
+            </div>
+            <div class="dz-error-message">
+              <span class="data-dz-errormessage">
+                You cant upload file more than 2 Megabytes.
+              </span>
+            </div>
+            <div class="card-image-btns">
+              <a href="javascript:;" class="btn-reload btn-white-green">
+                <span class='icon-reload-icon ic-svg reload load-btn'></span>
+                <%= t 'reload' %>
+              </a>
+              <%= link_to destroy_avatar_path(current_user.id),
+                          class: 'btn-delete btn-white-red',
+                          id: 'destroy_avatar',
+                          remote: true,
+                          method: :put,
+                          style: avatar_destroy_disable,
+                          data: { confirm: t('are_you_sure') } do %>
+                <span class='icon-delete-icon ic-svg delete'></span>
+                <%= t 'delete' %>
+              <% end %>
+            </div>
+          <% end %> 
+      </div>
+      <%= link_to t('deactivate_account'),
+                  deactivate_confirmation_path,
+                  remote: :true,
+                  class: 'btn btn-red deactivate' %>
+    </div>
+  <% end %>
+</div>
+<script type="text/javascript">init_upload_avatar_dropzone()</script>

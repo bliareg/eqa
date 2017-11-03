@@ -1,0 +1,22 @@
+<div class="modal-dialog restore-your-account">
+  <div class="modal-content">
+    <div class="title-main">
+      <h3><%= t 'please_check_your_email' %></h3>
+      <span class="close">
+        <span class='icon-close-icon'></span>
+      </span>
+    </div>
+    <div class="modal-body">
+      <div class="description">
+          <p><%= t 'you_have_to_set_up_your_password_to_continue_the_registration_process' %></p> 
+          <p><%= t 'to_do_this_click_the_link_that_we_have_sent_you_in_the_email' %></p>
+          <p><%= t 'or_click_resend_set_up_password_instructions_if_you_didn`t_receive_any_messages' %></p>
+      </div>
+      <%= link_to t('resend_set_up_password_instructions'), 
+                  resend_path(email: params[:email]),
+                  remote: true, 
+                  method: :get, 
+                  class: "btn btn-link" %>
+    </div>
+  </div>
+</div>

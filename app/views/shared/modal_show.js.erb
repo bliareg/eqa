@@ -1,0 +1,6 @@
+<% response.headers['Cache-Control'] = 'no-cache, no-store' %>
+if ($(MODAL_CLASS).is(':visible')) {
+  open_modal('<%= j render local_assigns.except(:params) %>')
+} else {
+  open_modal('<%= j render local_assigns.except(:params) %>', false, '<%= request.fullpath %>')
+}

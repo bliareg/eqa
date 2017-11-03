@@ -1,0 +1,18 @@
+<div id="my_organization" class="card card-tab-content tab">
+  <div class="card-header">
+    <h2 class="card-header-title">
+      <%= t 'organizations' %>
+    </h2>
+    <% unless current_user.is_payment_expired %>
+      <%= link_to t('create_new_organization'), new_organization_path,
+                  remote: true, method: :get,
+                  class: 'btn btn-green card-header-btn' %>
+    <% end %>
+  </div>
+  <div class="columns-wrapper">
+    <%= render current_user.organizations.select { |organization| organization.owner == current_user } %>
+  </div>
+  <div class="columns-wrapper">
+    <%= render current_user.organizations.select { |organization| organization.owner != current_user } %>
+  </div>
+</div>

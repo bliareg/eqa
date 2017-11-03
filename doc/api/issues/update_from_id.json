@@ -1,0 +1,96 @@
+{
+  "resource": "Issues",
+  "http_method": "PUT",
+  "route": "/api/v1/issues/:id",
+  "description": "Update from id",
+  "explanation": null,
+  "parameters": [
+    {
+      "required": true,
+      "name": "token",
+      "description": "Uniq project token"
+    },
+    {
+      "required": true,
+      "name": "id",
+      "description": "Issue ID"
+    },
+    {
+      "required": true,
+      "name": "auth_token",
+      "description": "User authenticity token"
+    },
+    {
+      "name": "summary",
+      "description": "Issue summary"
+    },
+    {
+      "name": "test_object_id",
+      "description": "ID test object on site"
+    },
+    {
+      "name": "description",
+      "description": "Issue description"
+    },
+    {
+      "name": "issue_type",
+      "description": "Type of issue"
+    },
+    {
+      "name": "priority",
+      "description": "Issue priority"
+    },
+    {
+      "name": "status_id",
+      "description": "Status ID"
+    },
+    {
+      "name": "assigner_id",
+      "description": "Issue assigner ID"
+    },
+    {
+      "Type": "Multipart/Form-data",
+      "name": "test.jpg",
+      "description": "Name your upload image. Data type must be \"jpg\"."
+    },
+    {
+      "Type": "Multipart/Form-data",
+      "name": "test.mp4",
+      "description": "Name your upload video. Data type must be \"mp4\"."
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "PUT",
+      "request_path": "/api/v1/issues/6",
+      "request_body": "------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"token\"\r\n\r\nMWuTuH0gsXNrO6b9PXepf8CbPVrnbi6f3\r\n------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"auth_token\"\r\n\r\nj3rLlApItw9beE63SDYmeHIODn87JwoE20\r\n------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"summary\"\r\n\r\nconsequatur\r\n------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"test_object_id\"\r\n\r\n2\r\n------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"description\"\r\n\r\nEt est exercitationem dolore tenetur.\r\n------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"issue_type\"\r\n\r\nfeature\r\n------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"priority\"\r\n\r\nmedium\r\n------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"status_id\"\r\n\r\n6\r\n------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"assigner_id\"\r\n\r\n14\r\n------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"test.jpg\"; filename=\"test.jpg\"\r\nContent-Type: image/jpeg\r\nContent-Length: 119260\r\n\r\n[uploaded data]\r\n------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"test.mp4\"; filename=\"test.mp4\"\r\nContent-Type: video/mp4\r\nContent-Length: 7532155\r\n\r\n[uploaded data]\r\n------------XnJLe9ZIbbGUYtzPQJ16u1--\r",
+      "request_headers": {
+        "Content-Type": "multipart/form-data; boundary=----------XnJLe9ZIbbGUYtzPQJ16u1",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "multipart/form-data; boundary=----------XnJLe9ZIbbGUYtzPQJ16u1",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"issue_type\": \"feature\",\n  \"priority\": \"medium\",\n  \"project_id\": 3,\n  \"summary\": \"consequatur\",\n  \"description\": \"Et est exercitationem dolore tenetur.\",\n  \"assigner_id\": 14,\n  \"status_id\": 6,\n  \"test_object_id\": 2,\n  \"id\": 6,\n  \"reporter_id\": null,\n  \"created_at\": \"2017-04-14T07:55:16.098Z\",\n  \"updated_at\": \"2017-04-14T07:55:18.480Z\",\n  \"project_issue_number\": 3,\n  \"log_file_id\": null,\n  \"spent_time\": \"1970-01-01T00:00:00.000Z\",\n  \"deleted_at\": null,\n  \"crash_id\": null,\n  \"attachments\": [\n    {\n      \"id\": 41,\n      \"created_at\": \"2017-04-14T07:55:18.777Z\",\n      \"updated_at\": \"2017-04-14T07:55:18.777Z\",\n      \"file_file_name\": \"test.mp4\",\n      \"file_content_type\": \"video/mp4\",\n      \"file_file_size\": 7532155,\n      \"file_updated_at\": \"2017-04-14T07:55:18.335Z\",\n      \"attachable_type\": \"Issue\",\n      \"attachable_id\": 6,\n      \"url\": \"/system/attachments/files/7cd3c116587d776594d7046ee3b37874d2edfc9c/7cd3c116587d776594d7046ee3b37874d2edfc9c/aefa844b10566ba26d454371c443445e23690971/original/test.mp4\"\n    },\n    {\n      \"id\": 40,\n      \"created_at\": \"2017-04-14T07:55:18.514Z\",\n      \"updated_at\": \"2017-04-14T07:55:18.514Z\",\n      \"file_file_name\": \"test.jpg\",\n      \"file_content_type\": \"image/jpeg\",\n      \"file_file_size\": 119260,\n      \"file_updated_at\": \"2017-04-14T07:55:18.037Z\",\n      \"attachable_type\": \"Issue\",\n      \"attachable_id\": 6,\n      \"url\": \"/system/attachments/files/7cd3c116587d776594d7046ee3b37874d2edfc9c/7cd3c116587d776594d7046ee3b37874d2edfc9c/8edbce8f93e6b764813670e5bea6f8ca1c12611a/original/test.jpg\"\n    }\n  ]\n}",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"7c05ae478a797ad4f2a1c145e6ef8d9b\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "5ee419df-1d43-4a82-b24a-598255421688",
+        "X-Runtime": "2.151096",
+        "Content-Length": "1305"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"http://localhost:3000/api/v1/issues/6\" -d '------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"token\"\r\n\r\nMWuTuH0gsXNrO6b9PXepf8CbPVrnbi6f3\r\n------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"auth_token\"\r\n\r\nj3rLlApItw9beE63SDYmeHIODn87JwoE20\r\n------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"summary\"\r\n\r\nconsequatur\r\n------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"test_object_id\"\r\n\r\n2\r\n------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"description\"\r\n\r\nEt est exercitationem dolore tenetur.\r\n------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"issue_type\"\r\n\r\nfeature\r\n------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"priority\"\r\n\r\nmedium\r\n------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"status_id\"\r\n\r\n6\r\n------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"assigner_id\"\r\n\r\n14\r\n------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"test.jpg\"; filename=\"test.jpg\"\r\nContent-Type: image/jpeg\r\nContent-Length: 119260\r\n\r\n[uploaded data]\r\n------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"test.mp4\"; filename=\"test.mp4\"\r\nContent-Type: video/mp4\r\nContent-Length: 7532155\r\n\r\n[uploaded data]\r\n------------XnJLe9ZIbbGUYtzPQJ16u1--\r' -X PUT \\\n\t-H \"Content-Type: multipart/form-data; boundary=----------XnJLe9ZIbbGUYtzPQJ16u1\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+<div class="content-wrapper">
+  <div class="container-full">
+    <div class="row">
+      <div class="main-content col m-12">
+        <div class="sign">
+          <div class="sign-tabs">
+            <h1 class="forgot-password">
+              <%= t 'devise.passwords.edit.change_your_password' %>
+            </h1>
+          </div>
+          <div class="sign-form-column">
+            <%= form_for(resource,
+                         as: resource_name,
+                         url: password_path(resource_name),
+                         html: { method: :put, class: 'sign-form' }, 
+                         validate: true) do |f| %>
+              <%= f.hidden_field :reset_password_token %>
+              <h2 class="sign-title"><%= t 'enter_new_password' %></h2>
+              <div class="field input_wrapper">
+                <%= f.label :password do %>
+                  <%= t 'users.new_password' %><sup>*</sup>
+                <% end %>
+                <%= f.password_field :password, placeholder: t('enter_your_password'), autofocus: true, autocomplete: "off", validate: true %>
+                <span class="hint-display"> <%= t 'should_be_at_least_6_characters' %> </span>
+              </div>
+              <div class="field input_wrapper">
+                <%= f.label :password_confirmation do %>
+                  <%= t 'users.confirm_new_password' %><sup>*</sup>
+                <% end %>
+                <%= f.password_field :password_confirmation, autocomplete: "off" %>
+              </div>
+              <div class="forgot-password-sign-block">
+                <%= link_to t('sign_in'), new_user_session_path, class: 'btn-white-green' %>
+                <%= link_to t('sign_up'), new_user_registration_path, class: 'btn-white-green' %>
+              </div>
+              <div class="actions">
+                <%= if resource.password.nil? 
+                  f.submit t('save'), class: 'btn btn-green change-submit' 
+                else 
+                  f.submit t('users.change_my_password'), class: 'btn btn-green change-submit'
+                end %>
+              </div>
+            <% end %>
+          </div>
+          <% unless Rails.env.standalone? %>
+            <%= render "devise/shared/socials" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<div class="notification open">
+  <div class="description-block long-desc">
+    <%= message.html_safe %>
+  </div>
+  <div class="buttons-block">
+    <%= link_to(t('retry'), retry_link,
+                            class: 'btn btn-white-green retry-btn',
+                            method: :post,
+                            remote: true) if defined? retry_link %>
+    <%= link_to(t('turn_off_sync'), turn_off_sync_link,
+                                    class: 'btn btn-white-green retry-btn',
+                                    method: :put,
+                                    remote: true) if defined? turn_off_sync_link %>
+    <span class='icon-close-icon close_notification'></span>
+  </div>
+</div>

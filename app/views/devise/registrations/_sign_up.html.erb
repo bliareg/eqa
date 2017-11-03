@@ -1,0 +1,37 @@
+<div class="sign-form-column">
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), validate: true, html: { id: 'new_user_registration' }) do |f| %>
+    <h2 class="sign-title"><%= t('sign_up_via_email') %></h2>
+    <span class="hint"> - <%= t 'required_fields' %></span>
+    
+    <div class="input_wrapper">
+      <%= f.label :first_name, class: 'star' %>
+      <%= f.text_field :first_name, placeholder: t('enter_your_first_name'), validate: true %>
+    </div>
+    <div class="input_wrapper">
+      <%= f.label :last_name, class: 'star' %>
+      <%= f.text_field :last_name, placeholder: t('enter_your_last_name'), validate: true %>
+    </div>
+    <div class="input_wrapper">
+      <%= f.label :email, for: 'registration_user_email', class: 'star' %>
+      <%= f.email_field :email, placeholder: t('enter_your_email'), id: 'registration_user_email', validate: true %>     
+    </div>
+    <div class="input_wrapper">
+      <%= f.label :company %>
+      <%= f.text_field :company, placeholder: t('enter_your_company') %>
+    </div>    
+    <div class="input_wrapper drop-arr">
+      <%= f.label :country %>
+      <%= country_select('user',
+                         'country',
+                         { except: EasyQA::Constants::Countries::EXCEPT, include_blank: t('choose_country') },
+                         id: 'country') %> 
+    </div>
+
+    <input type="checkbox" class="checkbox" id="check-sign-up">
+        <!-- <label for="check-sign-up" class="sign-up-checkbox-label"><%= t('term_and_conditions') %></label> -->
+    <%= f.submit t('devise.registrations.new.sign_up'), class: 'btn btn-green sign-submit send_invite_sign_up' %>
+  <% end %>
+</div>
+<% unless Rails.env.standalone? %>
+  <%= render "devise/shared/socials" %>  
+<% end %>

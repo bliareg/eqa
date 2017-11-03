@@ -1,0 +1,28 @@
+<tr>
+  <% if @column_visibility.sort_order.nil? %>
+    <th class="drag" style='width: <%= @column_set['drag_icon'] %>%' data-column='drag_icon'></th>
+    <th class="checkbox" style='width: <%= @column_set['drag_checkbox'] %>%' data-column='drag_checkbox'>
+      <input type="checkbox" class="checkbox" id="checkbox-test_module<%= test_module.id %>"/>
+      <label for="checkbox-test_module<%= test_module.id %>" class="checkbox-label"></label>
+    </th>
+  <% end %>
+  <th class="id sortable <%= class_for_sorting('id') %>" style='width: <%= @column_set['id'] %>%' data-column='id'
+                                                                     data-order="<%= set_column_order('id') %>">
+    <%= t 'id' %>
+    <span class="fa fa-sort"></span>
+  </th>
+  <th class="test-title sortable <%= class_for_sorting('title') %>" style='width: <%= sorted_title_width %>%' data-column='title'
+                                                                              data-order="<%= set_column_order('title') %>">
+    <%= t 'title' %>
+    <span class="fa fa-sort"></span>
+  </th>
+  <% (@column_set.keys & ::TestCase::VISIBLE_COLUMNS.keys).each do |name| %>
+    <th class="<%= generate_class_from_name(name) %> sortable <%= class_for_sorting(name) %>"
+        style='width: <%= @column_set[name] %>%' data-column='<%= name %>'
+                                                 data-order="<%= set_column_order(name) %>">
+      <%= t("column_#{name}") %>
+      <span class="fa fa-sort"></span>
+    </th>
+  <% end %>
+  <th class='select' style='width: <%= @column_set['edit_delete'] %>%' data-column='edit_delete'></th>
+</tr>

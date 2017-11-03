@@ -1,0 +1,5 @@
+$('.tab-content').html("<%= j render file: 'test_runs/show.html.erb' %>");
+$('.testing_activities .nav-tabs a').removeClass('active');
+$('.testing_activities .nav-tabs a.test_runs_nav_link').addClass('active');
+test_activity_js_actions('<%= request.path %>');
+table_resizable();

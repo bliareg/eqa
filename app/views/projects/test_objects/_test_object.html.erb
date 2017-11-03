@@ -1,0 +1,51 @@
+<tr class="test-object" data-test-object-id='<%= test_object.id %>'>
+  <td><%= destroy_test_object_button(test_object) %></td>
+  <td>
+    <span class="test-object-version"><%= test_object.file_file_name || test_object.link %></span>
+  </td>
+  <td><%= test_object.issues.count %></td>
+  <td><%= test_object.log_files.count %></td>
+  <td><%= test_object.platform_version %></td>
+  <td><%= test_object.user.name %></td>
+  <td class="builds-added">
+    <%= (test_object.created_at + timezone).strftime("%d/%m/%y %H:%M:%S") %>
+  </td>
+  <td>
+    <%= link_to t('link_to_object'), test_object_path(test_object),
+                                     remote: true,
+                                     class: 'btn btn-green' %>
+  </td>
+  <%= chevron_for(test_object) %>
+</tr>
+<% if test_object.file_file_name %>
+  <tr class="test-object-child-row">
+    <td colspan="8" class="builds-added-details-wrap">
+      <table class="builds-added-details">
+        <colgroup>
+        <col width="14%">
+        <col width="54%">
+        <col width="16%">
+        <col width="16%">
+        </colgroup>
+        <tr>
+          <td><%= t 'package_name' %>:</td>
+          <td><%= test_object.package %></td>
+          <td><%= t 'sdk_version' %>:</td>
+          <td><%= test_object.sdk_version %></td>
+        </tr>
+        <tr>
+          <td><%= t 'min_os_version' %>:</td>
+          <td><%= test_object.min_sdk_version %></td>
+          <td><%= t 'size' %>:</td>
+          <td><%= calculate_size_in_mb(test_object.file) %></td>
+        </tr>
+        <tr>
+          <td><%= t 'object_title' %>:</td>
+          <td><%= test_object.file_file_name %></td>
+          <td><%= t 'build_version' %>:</td>
+          <td><%= test_object.identeficator.split(':').last %></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+<% end %>

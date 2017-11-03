@@ -1,0 +1,73 @@
+{
+  "resource": "Roles",
+  "http_method": "POST",
+  "route": "/api/v1/organizations/:organization_id/roles",
+  "description": "Create project role by user email",
+  "explanation": null,
+  "parameters": [
+    {
+      "required": true,
+      "name": "auth_token",
+      "description": "User authenticity token"
+    },
+    {
+      "required": true,
+      "name": "organization_id",
+      "description": "Organization id"
+    },
+    {
+      "required": true,
+      "name": "token",
+      "description": "Project token"
+    },
+    {
+      "required": true,
+      "name": "role",
+      "description": "Role in project. Must be \"developer\", \"tester\", \"viewer\" or \"project_manager\""
+    },
+    {
+      "required": true,
+      "name": "user_id",
+      "description": "User id"
+    },
+    {
+      "required": true,
+      "name": "email",
+      "description": "User email"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "POST",
+      "request_path": "/api/v1/organizations/14/roles",
+      "request_body": "{\"token\":\"XCw2751cS5aza3VedVxy6W/hhrnaVaj314\",\"role\":\"developer\",\"email\":\"doug_jaskolski@schuster.net\",\"auth_token\":\"cjIywkHBYO+p8g1cKyauxei27w/zjdtr33\"}",
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"id\": 73,\n  \"organization_id\": 14,\n  \"project_id\": 15,\n  \"user_id\": 34,\n  \"role\": \"developer\",\n  \"created_at\": \"2017-04-14T07:55:45.085Z\",\n  \"updated_at\": \"2017-04-14T07:55:45.085Z\",\n  \"is_subscribed\": null,\n  \"deleted_at\": null\n}",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"9a0ade8977b7ec85cf1611e9b3a1c0fb\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "d835bf3f-baaa-42b1-8cbb-ac23f80cc044",
+        "X-Runtime": "0.151339",
+        "Content-Length": "197"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"http://localhost:3000/api/v1/organizations/14/roles\" -d '{\"token\":\"XCw2751cS5aza3VedVxy6W/hhrnaVaj314\",\"role\":\"developer\",\"email\":\"doug_jaskolski@schuster.net\",\"auth_token\":\"cjIywkHBYO+p8g1cKyauxei27w/zjdtr33\"}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

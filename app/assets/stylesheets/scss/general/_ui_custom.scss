@@ -1,0 +1,112 @@
+.ui-front {
+  z-index: 2000;
+}
+
+.input_wrapper {
+  .ui-selectmenu-button {
+    width: 100%;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .dd-container {
+    .dd-select {
+      border: none;
+      box-shadow: inset 1px 2px 3px rgba($black, .08);
+    }
+
+    .dd-selected, .dd-option {
+      padding: 0;
+      border-radius: 2px;
+      height: 40px;
+
+      .dd-selected-image,
+      .dd-option-image{
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        vertical-align: middle;
+        overflow: hidden;
+        margin: 7px 5px;
+      }
+
+      .dd-selected-text,
+      .dd-option-text{
+        line-height: 40px !important;
+        font: 14px $base-font-family;
+        color: $inputText;
+        padding: 0 0 0 10px;
+        transition: all .3s;
+        margin-bottom: 0;
+      }
+    }
+
+    .dd-pointer-down {
+      border-top: solid 5px $inputDropArr;
+    }
+
+    .dd-pointer-up {
+      border-bottom: solid 5px $inputDropArr !important;
+    }
+
+    .dd-option {
+      padding: 0;
+      border-bottom-width: 0;
+    }
+
+    .dd-options {
+      box-shadow: 0;
+      margin-top: 1px;
+      border: 1px solid $inputWrapBorder;
+    }
+
+    &:hover {
+      box-shadow: inset 1px 1.7px 3px rgba($black, .08);
+    }
+  }
+
+  .ui-button {
+    background: transparent;
+
+    &:focus, &:hover {
+      background: transparent;
+    }
+  }
+}
+
+.ui-selectmenu-menu {
+  .ui-menu-item {
+    .ui-menu-item-wrapper {
+      height: 40px;
+      line-height: 40px;
+      font: 14px $base-font-family;
+      color: $inputText;
+      padding: 10px;
+      transition: all .3s;
+    }
+
+    .ui-state-active {
+      background-color: $inputWrapHoverBg;
+      border: none;
+      margin: 0;
+    }
+
+    .ui-widget-content {
+      border: 1px solid $inputWrapBorder;
+    }
+
+    .avatar_ico {
+      display: inline-block;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      vertical-align: middle;
+      overflow: hidden;
+      background-position: 50% 50%;
+      background-size: cover;
+    }
+  }
+}
+

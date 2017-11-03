@@ -1,0 +1,69 @@
+{
+  "resource": "Test Plans",
+  "http_method": "POST",
+  "route": "/api/v1/test_plans",
+  "description": "Create",
+  "explanation": null,
+  "parameters": [
+    {
+      "required": true,
+      "name": "auth_token",
+      "description": "User authenticity token"
+    },
+    {
+      "required": true,
+      "name": "token",
+      "description": "Uniq project token"
+    },
+    {
+      "required": true,
+      "name": "test_plan",
+      "description": "Test plan attributes"
+    },
+    {
+      "scope": "test_plan",
+      "required": true,
+      "name": "title",
+      "description": "Title of the test plan"
+    },
+    {
+      "scope": "test_plan",
+      "name": "description",
+      "description": "Description of the test plan"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "POST",
+      "request_path": "/api/v1/test_plans",
+      "request_body": "{\"token\":\"ik9VEIVPp9OENkR2MLKQHcZaLNHc9wOB19\",\"test_plan\":{\"title\":\"What's Become of Waring\",\"description\":\"Only at the end do you realize the power of the Dark Side.\"},\"auth_token\":\"9CTdg05aLDiF/E6cRUO5Y0hahoHcq6lv63\"}",
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"id\": 9,\n  \"project_id\": 20,\n  \"created_by\": 61,\n  \"title\": \"What's Become of Waring\",\n  \"description\": \"Only at the end do you realize the power of the Dark Side.\",\n  \"created_at\": \"2017-04-14T07:56:20.671Z\",\n  \"updated_at\": \"2017-04-14T07:56:20.671Z\"\n}",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"995a358206aa7cb3e60379aff283b219\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "7112f909-1287-48be-af3a-c72deab78e08",
+        "X-Runtime": "0.144524",
+        "Content-Length": "229"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"http://localhost:3000/api/v1/test_plans\" -d '{\"token\":\"ik9VEIVPp9OENkR2MLKQHcZaLNHc9wOB19\",\"test_plan\":{\"title\":\"What\\u0027s Become of Waring\",\"description\":\"Only at the end do you realize the power of the Dark Side.\"},\"auth_token\":\"9CTdg05aLDiF/E6cRUO5Y0hahoHcq6lv63\"}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

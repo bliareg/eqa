@@ -1,0 +1,58 @@
+<h3 class="title-main"><%= t 'preview_report' %></h3>
+<div class="preview-wrap">
+<% @reports[:charts].each do |chart| %>  
+    <div class="report-info">
+      <table class="report-info-table table-info">       
+        <% if params[:parent_name]=='TestPlan' %>
+          <tr>
+            <td><%= t 'test_plan' %>:</td> 
+            <td><%= @parent.title %></td>
+          </tr>  
+        <% elsif params[:parent_name]=='TestRun' %> 
+          <tr>
+            <td><%= t 'test_run' %>:</td> 
+            <td><%= @parent.title %></td>
+          </tr> 
+        <% end %>
+        <tr>
+          <td><%= t 'report_title' %>:</td> 
+          <td class='report-title'><%= t chart[:label] %></td>
+        </tr>
+        <tr>
+          <td class="table-item"><%= t 'description' %>:</td>
+          <td>
+              <%= chart[:description] %>
+          </td>
+        </tr>
+        <tr>
+          <td class="table-item"><%= t(@reports[:data][:users_row_name] || 'users_list') %>:</td>
+          <td>
+            <ul>
+              <% @reports[:data][:users].each do |user| %>
+                <li class="user">
+                  <%= image_tag(user.avatar.file.url, class: 'avatar') %>
+                  <span><%= user.name %></span>
+                </li>
+              <% end %>
+            </ul>
+          </td>
+        </tr>
+      </table>   
+    </div>
+    <div class="chart">
+    </div>
+    <% if chart[:table] %>
+      <%= render 'test_reports/tables/' + chart[:table][:name], chart[:table][:key] => chart[:table][:item] %>
+    <% end %>  
+<% end %>
+      <button type="button" class="btn btn-green download-pdf"><%= t 'download' %></button>
+      <button type="button" class="btn btn-green print-reports"><%= t 'print' %></button>
+      <button type="button" class="btn btn-green send-email"> <%= t 'send_email' %> </button>
+      </div>
+<script>
+  $(document).ready(function() {
+    reports = <%= raw @reports[:charts].to_json %>
+    drawCanvas(reports);
+    generate_pdf();
+  });
+</script>

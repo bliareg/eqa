@@ -1,0 +1,4 @@
+crash = $('.test-crash[data-log-file-id=<%= @log_file.id %>]');
+crash.next().remove();
+crash.remove();
+$('.crashes-table').trigger('update')

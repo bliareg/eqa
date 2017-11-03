@@ -1,0 +1,8 @@
+<% if flash[:error] %>
+  <div class='field_with_errors'>
+    <span class='message'>
+      <%= flash[:error] %>
+      <% flash.delete(:error) %>
+    </span>
+  </div>
+<% end %>

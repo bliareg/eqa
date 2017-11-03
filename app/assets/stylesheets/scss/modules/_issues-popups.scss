@@ -1,0 +1,1198 @@
+// Issue modal style
+
+.report-a-bug,
+.import-case,
+.add_issue,
+.issue-info {
+  max-width: 770px;
+
+  .input_wrapper {
+    .desc {
+      height: 100px;
+      font: 13px $base-font-family;
+    }
+
+    .desc-block {
+      height: 120px;
+      padding: 5px 10px;
+      border: 1px solid $base-border;
+      border-radius: 4px;
+      box-shadow: inset 1px 1.7px 3px $form-box-shadow;
+    }
+  }
+
+  .dropzone {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    margin-bottom: 10px;
+    border: 2px dashed $inputWrapBorder;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    transition: all .3s;
+
+    &:hover {
+      border: 2px dashed $inputWrapFocusBorder;
+    }
+
+    .pre_upload {
+      text-decoration: none;
+      top: 50%;
+      margin-top: -30px;
+
+      span {
+        color: $inputUploadText;
+      }
+    }
+  }
+
+  .issue-attachments {
+
+    .btn-wrapper {
+      float: left;
+      display: flex;
+      align-items: center;
+    }
+
+    .attachment-hint {
+      color: #B3B9BC;
+      margin-left: 5px;
+    }
+
+    .btn-green {
+      height: 30px;
+      padding: 5px 15px;
+      margin: 5px;
+      border-radius: 6px;
+
+      .fa-paperclip {
+        padding-right: 5px;
+      }
+    }
+  }
+
+  .preview {
+    margin-left: -5px;
+
+    .preview_item {
+      position: relative;
+      float: left;
+      height: 30px;
+      background-color: $previewBg;
+      border-radius: 6px;
+      border: 1px solid $base-border;
+      padding: 0 25px 0 5px;
+      overflow: hidden;
+      margin: 5px;
+
+      .clip {
+        position: absolute;
+        left: 0;
+        width: 30px;
+        height: 100%;
+        text-align: center;
+        background-color: $previewClipBg;
+
+        .progress {
+          position: absolute;
+          left: 0;
+          top: 0;
+          height: 100%;
+          width: 0;
+          background-color: $previewClipBg;
+          z-index: 1;
+        }
+
+        i {
+          position: relative;
+          z-index: 10;
+          color: $white;
+        }
+      }
+
+      .remove {
+        width: 15px;
+        height: 16px;
+        position: absolute;
+        right: 5px;
+        top: 50%;
+        font-size: 15px;
+        color: $btn-red;
+        margin-top: -8px;
+        cursor: pointer;
+      }
+
+      .file-name {
+        display: inline-block;
+        max-width: 140px;
+        color: $previewFileNameText;
+        line-height: 28px;
+        vertical-align: bottom;
+        @extend %text-overflow;
+        @include rem(font-size, 14px);
+      }
+    }
+  }
+}
+
+.add_issue {
+  .btn-group {
+    float: right;
+  }
+}
+
+.modal-tabs {
+  border-bottom: 1px solid $sign-lines;
+  height: 50px;
+  padding: 0 20px;
+
+  li {
+    display: inline-block;
+
+    a {
+      margin-right: 25px;
+      color: $sign-inactive-link;
+      line-height: 50px;
+      @include rem(font-size, 16px);
+    }
+  }
+
+  .tab-active {
+    padding-bottom: 10px;
+    color: $base-text;
+    font-family: $bold-font-family;
+    font-weight: bold;
+    border-bottom: 4px solid $sign-link-color;
+  }
+}
+
+.spent-time-count,
+.comments-count {
+  display: inline-block;
+  padding: 2px 9px;
+  margin-left: 10px;
+  color: $white;
+  line-height: 17px;
+  background: $commentCount;
+  border-radius: 4px;
+  @include rem(font-size, 12px);
+}
+
+.spent-time-count {
+  background: $spentTimeCount;
+}
+
+.add_issue,
+.issue-info {
+
+  .modal-content-scroll {
+    height: 370px;
+  }
+
+  .input_wrapper {
+    .dd-container {
+
+      .dd-selected {
+        height: 40px;
+
+        .dd-selected-text {
+          max-width: 164px;
+          @extend %text-overflow;
+        }
+      }
+
+      .dd-option {
+        height: 40px;
+
+        .dd-option-text {
+          max-width: 164px;
+          @extend %text-overflow;
+        }
+      }
+    }
+  }
+
+  .issue-priority,
+  .issue-type {
+
+    .dd-selected {
+      .dd-selected-text {
+        color: $white;
+      }
+    }
+
+    .dd-pointer-down {
+      border-top: solid 5px $white;
+    }
+
+    .dd-pointer-up {
+      border-bottom: solid 5px $white !important;
+    }
+
+    &.documentation {
+      .dd-selected {
+        background-color: $agileTypeDocumentation;
+      }
+    }
+
+    &.task {
+      .dd-selected {
+        background-color: $agileTypeTask;
+      }
+    }
+
+    &.feature {
+      .dd-selected {
+        background-color: $agileTypeFeature;
+      }
+    }
+
+    &.usability_problem {
+      .dd-selected {
+        background-color: $agileTypeProblem;
+      }
+    }
+
+    &.bug {
+      .dd-selected {
+        background-color: $agileTypeBug;
+      }
+    }
+
+    &.crash {
+      .dd-selected {
+        background-color: $agileTypeCrash;
+      }
+    }
+
+    &.no_type {
+      .dd-selected {
+        background-color: transparent;
+
+        .dd-selected-text {
+          color: $base-text;
+        }
+      }
+
+      .dd-pointer-down {
+        border-top: solid 5px $inputDropArr;
+      }
+
+      .dd-pointer-up {
+        border-bottom: solid 5px $inputDropArr !important;
+      }
+    }
+
+    // --- Issue Severity ---
+
+    &.low {
+      .dd-selected {
+        background-color: $agileCardLow;
+      }
+    }
+
+    &.medium {
+      .dd-selected {
+        background-color: $agileCardMedium;
+      }
+    }
+
+    &.high {
+      .dd-selected {
+        background-color: $agileCardHigh;
+      }
+    }
+
+    &.critical {
+      .dd-selected {
+        background-color: $agileCardCritical;
+      }
+    }
+  }
+}
+
+.issue-info {
+
+  .modal-content {
+    padding: 20px 0 0 0;
+  }
+
+  .row-wrap {
+    padding: 0 19px;
+  }
+
+  .avatar {
+    width: 24px;
+    height: 24px;
+    margin: 0 7px 0 7px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .spent-time-tab {
+    padding: 0 20px;
+    margin-bottom: 20px;
+  }
+
+  .input_wrapper {
+    margin-bottom: 0;
+
+    input[type="submit"] {
+      padding: 11px 21px;
+    }
+  }
+
+  .edit-buttons {
+    float: right;
+
+    .edit {
+      float: right;
+      display: block;
+      height: 30px;
+      width: 30px;
+      padding: 5px 8px;
+      margin: -5px 0 0 10px;
+      border-radius: 4px;
+      border: 1px solid $base-border;
+
+      span {
+        font-size: 15px;
+        color: $btn-green;
+
+        &.icon-delete-icon-small {
+          color: $btn-red;
+        }
+      }
+    }
+  }
+
+  &-block {
+    margin-top: 10px;
+    @include rem(font-size, 14px);
+
+    .row {
+      min-height: 50px;
+      margin: 0 4px 5px 4px;
+      padding-top: 15px;
+      padding-bottom: 10px;
+      border-radius: 6px;
+
+      &:nth-child(2n+1) {
+        background-color: $issueModalBg;
+      }
+
+      .col {
+        &:first-child {
+          font-family: $bold-font-family;
+          font-weight: bold;
+          //line-height: 40px;
+        }
+
+        &:last-child {
+          color: $base-light-text;
+        }
+      }
+    }
+
+    .issue-title {
+      //display: block;
+      //max-width: 550px;
+      //line-height: 40px;
+      font-family: $bold-font-family;
+      font-weight: bold;
+      //@extend %text-overflow;
+    }
+
+    .started {
+      float: left;
+      margin: 0 10px;
+      font-family: $bold-font-family;
+      font-weight: bold;
+    }
+
+    .started-time {
+      float: left;
+    }
+
+    .avatar {
+      float: left;
+      margin: 7px;
+    }
+
+    .user-name {
+      float: left;
+      display: block;
+      max-width: 139px;
+      @extend %text-overflow;
+    }
+
+    .description {
+      &-field {
+        min-height: 60px;
+        height: 60px;
+        overflow: hidden;
+      }
+
+      .show-all {
+        display: block;
+        margin-top: 5px;
+      }
+
+      &.empty {
+        .description-field {
+          height: auto;
+          min-height: 0;
+        }
+
+        .show-all {
+          display: none;
+        }
+      }
+    }
+
+    .open-all {
+      height: 100%;
+    }
+
+    .assigned-to {
+
+      .col {
+        line-height: 40px;
+      }
+
+      .input_wrapper {
+        width: 230px;
+      }
+    }
+  }
+
+  .edit-block {
+    background: linear-gradient(to bottom, $white 204px, $issueModalBg 100%);
+
+    .row {
+      margin-bottom: 0;
+
+      &:nth-child(2n+1) {
+        background-color: transparent;
+      }
+    }
+
+    .edit-inner-wrap {
+      background: $issueModalBg;
+      border-top: 1px solid $base-border;
+    }
+
+    .issue-attachments {
+      padding-top: 0;
+    }
+  }
+
+  .spent-time-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+
+    tr {
+      //height: 50px;
+
+      &:nth-child(even) {
+        background-color: $issueModalBg;
+      }
+    }
+
+    th {
+      color: $base-text;
+      font-family: $bold-font-family;
+      font-weight: bold;
+      vertical-align: bottom;
+      background: $base-bg;
+      border-top: none;
+      border-bottom: 1px solid $base-border;
+      @include rem(font-size, 14px);
+    }
+
+    td {
+      border: none;
+      @include rem(font-size, 14px);
+
+      &:first-child {
+        border-radius: 6px 0 0 6px;
+      }
+
+      &:last-child {
+        color: $spentTimeText;
+        border-radius: 0 6px 6px 0;
+      }
+    }
+
+    .col-date {
+      color: $spentTimeText;
+      font-family: $base-font-family;
+      white-space: nowrap;
+    }
+
+    .col-spent-time {
+      white-space: nowrap;
+      text-align: center;
+
+      .spent-time-count {
+        margin: 0;
+      }
+    }
+
+    .col-user {
+      max-width: 150px;
+      @extend %text-overflow;
+    }
+
+    .col-comment {
+      width: 320px;
+    }
+
+    .col-edit {
+      width: 85px;
+      vertical-align: top;
+
+      .edit-buttons {
+        float: none;
+
+        .edit {
+          margin: 0 0 0 5px;
+        }
+      }
+    }
+  }
+
+  .preview_item {
+    position: relative;
+    float: left;
+    height: 30px;
+    margin: 5px;
+    background-color: $previewBg;
+    border-radius: 6px;
+    border: 1px solid $base-border;
+    padding: 0 25px 0 5px;
+    overflow: hidden;
+
+    .file-name {
+      display: inline-block;
+      max-width: 140px;
+      color: $previewFileNameText;
+      line-height: 28px;
+      @extend %text-overflow;
+      @include rem(font-size, 14px);
+    }
+
+    .remove {
+      width: 15px;
+      height: 16px;
+      position: absolute;
+      right: 5px;
+      top: 50%;
+      color: $btn-red;
+      font-size: 15px;
+      margin-top: -8px;
+      cursor: pointer;
+    }
+  }
+
+  .tab-header {
+    padding-bottom: 10px;
+    @extend %clearfix;
+
+    .input_wrapper {
+      float: left;
+      margin-bottom: 0;
+
+      &:first-child {
+        width: 17.8571%;
+      }
+
+      &:nth-child(2) {
+        width: 64.5604%;
+        margin: 0 1.7857%;
+      }
+
+      &:last-child {
+        width: 14.0110%;
+
+        .btn {
+          padding: 0 20px;
+          height: 40px;
+        }
+
+        .btn-green {
+          line-height: 36px;
+        }
+      }
+    }
+
+    &-edit {
+      .input_wrapper {
+        &:nth-child(2) {
+          width: 59.0659%;
+          margin: 0 1.7857%;
+        }
+
+        &:last-child {
+          width: 19.5055%;
+
+          .btn {
+            display: inline-block;
+          }
+
+          .btn-white-green {
+            padding: 10px 0;
+            margin-left: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  .tab-footer {
+    padding: 10px 20px;
+    background: #f4f5f6;
+    @extend %clearfix;
+
+    .input_wrapper {
+      float: left;
+      margin-bottom: 0;
+
+      &:first-child {
+        width: 79.6703%;
+        margin-right: 1.6484%;
+      }
+
+      &:last-child {
+        width: 18.6813%;
+
+        .btn {
+          padding: 0 20px;
+          height: 40px;
+        }
+
+        .btn-green {
+          line-height: 36px;
+        }
+      }
+    }
+
+    .btn-group {
+      float: right;
+      margin: 0;
+    }
+  }
+
+  .edit-field {
+    .spent-time-count {
+      background: $editField;
+    }
+
+    .col-comment {
+      color: $editField;
+      font-style: italic;
+    }
+
+    .edit-buttons {
+      float: right;
+
+      .edit {
+        &:last-child {
+          background: $editField;
+
+          span {
+            color: $white;
+          }
+
+          #SvgjsPath1010 {
+            fill: $white;
+          }
+        }
+      }
+    }
+
+    .comment-text {
+      p {
+        font-style: italic;
+        color: $editField;
+      }
+    }
+  }
+
+}
+
+//---------------------------------------------
+
+.issue-comments {
+  position: relative;
+
+  .modal-body {
+    padding-top: 20px;
+  }
+
+  .comments-tab {
+    padding-bottom: 62px;
+
+    .tab-footer {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      z-index: 2000;
+
+      .input_wrapper {
+        &:last-child {
+          position: absolute;
+          right: 10px;
+          bottom: 10px;
+        }
+      }
+    }
+  }
+
+  .add-comment {
+    display: block;
+    padding: 8px;
+    min-height: 40px;
+    height: 40px;
+    max-height: 90px;
+    line-height: 1.5;
+    @include rem(font-size, 14px);
+  }
+}
+
+.comment-block {
+  min-height: 80px;
+  padding: 15px;
+  margin: 0 20px;
+  border-radius: 6px;
+
+  &:nth-child(2n+1) {
+    background: $commentBlockBg;
+  }
+
+  &:last-child {
+    margin-bottom: 15px;
+  }
+
+  .comment-header {
+    @extend %clearfix;
+
+    .avatar {
+      float: left;
+      display: block;
+      width: 26px;
+      height: 26px;
+      margin-right: 9px;
+      border-radius: 50%;
+
+      img {
+        object-fit: cover;
+      }
+    }
+
+    .comment-author {
+      float: left;
+      margin: 0;
+      max-width: 400px;
+      color: #333333;
+      line-height: 26px;
+      font-family: $bold-font-family;
+      font-weight: bold;
+      @include rem(font-size, 14px);
+      @extend %text-overflow;
+    }
+
+    .comment-date,
+    .comment-time {
+      float: left;
+      margin-left: 20px;
+      color: $commentTime;
+      line-height: 26px;
+      @include rem(font-size, 14px);
+    }
+
+    .comment-time {
+      margin-left: 5px;
+      font-family: $bold-font-family;
+      font-weight: bold;
+    }
+  }
+
+  .comment-text {
+    margin: 15px 0 0 42px;
+
+    p {
+      margin-bottom: 5px;
+      color: $base-light-text;
+      @include rem(font-size, 14px);
+    }
+
+    .comment-history {
+
+      &-item {
+        display: block;
+        @include rem(font-size, 12px);
+
+        .changes-name {
+          font-family: $bold-font-family;
+          font-weight: bold;
+        }
+
+        .changes {
+          font-style: italic;
+        }
+
+        &:before {
+          display: inline-block;
+          content: "\f111";
+          margin: 5px;
+          font-family: $font-awesome;
+          font-style: normal;
+          font-size: 3px;
+          vertical-align: bottom;
+        }
+      }
+    }
+  }
+}
+
+.issue-info-tab,
+.comments-tab {
+
+  .modal-content-scroll.mCustomScrollbar {
+
+    .mCSB_scrollTools_vertical {
+      .mCSB_dragger_bar {
+        width: 3px;
+      }
+    }
+  }
+}
+
+.comment-edit {
+  .tab-footer {
+    .input_wrapper {
+
+      &:first-child {
+        width: 79.1209%;
+        margin-right: 1.6484%;
+      }
+
+      &:last-child {
+        width: 19.5055%;
+
+        .btn-white-green {
+          padding: 10px 0;
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+}
+
+.locale-ru {
+  .comment-edit {
+    .tab-footer {
+      .input_wrapper {
+
+        &:first-child {
+          width: 73.8461%;
+        }
+
+        &:last-child {
+          width: 24.5055%;
+        }
+      }
+    }
+  }
+}
+
+//---------------------------------------------
+
+.import-case {
+  max-width: 600px;
+  //
+  //.modal-content-scroll {
+  //  height: 260px;
+  //}
+
+  .dropzone {
+    min-height: 80px;
+    height: 80px;
+  }
+
+  .dd-container {
+    .dd-options {
+      max-height: 120px;
+    }
+  }
+}
+
+.import-preview,
+.map-fields {
+  max-width: 770px;
+
+  .row {
+    height: 250px;
+  }
+
+  .title-main {
+    p {
+      margin-bottom: 10px;
+      color: $base-text;
+      @include rem(font-size, 14px);
+    }
+  }
+
+  &-table {
+    width: 100%;
+    color: $base-text;
+
+    tr {
+      td {
+        border: none;
+      }
+    }
+
+    .issue-number,
+    .table-title {
+      font-family: $bold-font-family;
+      font-weight: bold;
+      @include rem(font-size, 16px);
+    }
+
+    .issue-number {
+      td {
+        text-align: right;
+        border-bottom: 2px solid $base-border;
+      }
+    }
+
+    .issue,
+    .field {
+      height: 70px;
+
+      td:first-child {
+        width: 45%;
+        border-radius: 6px 0 0 6px;
+      }
+
+      td:last-child {
+        width: 45%;
+        border-radius: 0 6px 6px 0;
+      }
+
+      .assign-to,
+      .field-name,
+      .field-info {
+        margin: 0;
+        max-width: 300px;
+        @extend %text-overflow;
+      }
+
+      .assign-to,
+      .field-name {
+        font-family: $bold-font-family;
+        font-weight: bold;
+        @include rem(font-size, 14px);
+      }
+
+      .field-info {
+        color: $base-light-text;
+        @include rem(font-size, 13px);
+
+        span {
+          font-family: $bold-font-family;
+          font-weight: bold;
+        }
+      }
+
+      .input_wrapper {
+        margin: 0;
+
+        input {
+          padding-left: 10px;
+          pointer-events: none;
+          background-color: $importInputBg;
+          box-shadow: none;
+          @include rem(font-size, 14px);
+        }
+
+        &:hover, &:focus {
+          input {
+            border: 1px solid $base-border;
+          }
+        }
+
+        .dd-container {
+          .dd-options {
+            max-height: 80px;
+          }
+        }
+      }
+    }
+  }
+
+  .field {
+    &:nth-child(2n) {
+      background-color: $importTableRowBg;
+    }
+  }
+
+  .issue {
+    &:nth-child(2n-1) {
+      background-color: $importTableRowBg;
+    }
+  }
+}
+
+.report-a-bug {
+  .input_wrapper {
+    margin-bottom: 12px;
+  }
+
+  .dropzone {
+    min-height: 80px;
+    height: 80px;
+  }
+}
+
+.synchronization {
+  width: 770px;
+
+  button {
+    position: relative;
+
+    .hover-block {
+      bottom: calc(100% + 10px);
+      left: 0;
+      min-width: 600px;
+      max-width: 700px;
+      padding: 10px;
+      white-space: normal;
+
+      &:after {
+        bottom: -6px;
+        left: 15px;
+      }
+    }
+
+    &:hover {
+      .hover-block {
+        opacity: .9;
+      }
+    }
+  }
+
+  .title-main {
+    h3 {
+      margin-bottom: 10px;
+    }
+  }
+
+  &-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+
+    th, td {
+      color: $base-text;
+      border: none;
+      @include rem(font-size, 13px);
+    }
+
+    .table-title {
+      th {
+        padding-top: 0;
+        color: $base-text;
+        font-family: $bold-font-family;
+        font-weight: bold;
+        vertical-align: bottom;
+        border-bottom: 1px solid $base-border;
+        @include rem(font-size, 14px);
+
+        &:first-child {
+          padding-left: 1.5em;
+        }
+
+        &:last-child {
+          text-align: right;
+
+          .btn-white-green {
+            margin-right: 5px;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    .table-field {
+      background-color: $test-object-bg;
+
+      td {
+        height: 50px;
+
+        &:first-child {
+          padding-left: 1.5em;
+          border-radius: 6px 0 0 6px;
+        }
+
+        &:last-child {
+          text-align: right;
+          border-radius: 0 6px 6px 0;
+        }
+      }
+
+      .plugin-name {
+        max-width: 300px;
+        @extend %text-overflow;
+      }
+
+      .member-name {
+        max-width: 140px;
+        @extend %text-overflow;
+      }
+
+      .time-added {
+        color: $plugin-added-color;
+      }
+    }
+  }
+
+
+}
+
+// Modal grid ------
+
+.row-wrap {
+  @extend %clearfix;
+
+  .input_wrapper {
+    float: left;
+  }
+
+  .col-6 {
+    width: 49.3132%;
+
+    &:first-child {
+      margin-right: 1.3736%;
+    }
+  }
+
+  .col-3 {
+    width: 23.9698%;
+
+    &:not(:last-child) {
+      margin-right: 1.3736%;
+    }
+  }
+}
+
+#spentTime-1,
+#spentTime,
+#comments-1,
+#comments {
+  display: none;
+}

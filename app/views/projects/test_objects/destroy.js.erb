@@ -1,0 +1,6 @@
+test_object = $('.test-object[data-test-object-id=<%= @test_object.id %>]');
+test_object.next().remove();
+test_object.remove();
+element_html = "<%= j render partial: 'shared/push_up_notification', locals: { message: t('test_object_has_been_deleted_successfully') } %>"
+$('body').append($(element_html));
+$('.builds-table').trigger('update');

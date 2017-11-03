@@ -1,0 +1,53 @@
+<div class="tab-pane tab testReports">
+  <div class="tab-pane-content">
+    <div class="tab-pane-content-inner">
+      <div class="test-reports-item" data-project-id='<%= @project.id %>'>
+        <h3 class="title-main"><%= t 'report_builder' %></h3>
+        <div class="test-reports-item-cases">
+          <div class='input_wrapper'>
+            <label for="report-type" class="title">
+              <%= t 'choose_type_of_report' %>
+            </label>
+            <%= select_tag :report_type,
+                           report_type_options,
+                           include_blank: t('choose_type_of_report'),
+                           id: 'report-type' %>
+            <button type="button" id='report-button' class="btn btn-green btn-nonActive"><%= t 'generate' %></button>
+          </div>
+          <div id='second_selectors' class='input_wrapper' style="display: none;">
+            <label for="test-plan-report" class="title">
+              <%= t 'choose_test_plan' %>
+            </label>
+            <%= select_tag :test_plan,
+                           sanitize_collection_titles(@test_plans),
+                           include_blank: t('choose_test_plan'),
+                           id: 'test-plan-report' %>
+            <label for="user-report" class="title">
+              <%= t 'choose_user' %>
+            </label>
+            <%= select_tag :user,
+                           users_select(@project.members),
+                           include_blank: t('choose_user'),
+                           id: 'user-report' %>
+            <label for="test-run-report" class="title">
+              <%= t 'choose_test_run' %>
+            </label>
+            <%= select_tag :test_run,
+                           sanitize_collection_titles(@test_runs),
+                           include_blank: t('choose_test_run'),
+                           id: 'test-run-report' %>
+          </div>
+        </div>
+      </div>
+      <div class="test-reports-item preview-report">
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+  init_test_reports()
+</script>
+
+
+
+

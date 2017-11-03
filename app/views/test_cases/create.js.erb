@@ -1,0 +1,27 @@
+<% @current_plan = @test_plan %>
+<% @project = @test_plan.project %>
+var test_case = $('<%= j render @test_case %>');
+var module_table = $('.cases-info-item-inner[data-id=<%= @test_module.id %>]').children('.cases-test');
+module_table.children('.cases-test-content')
+            .find('tbody')
+            .append(test_case);
+
+module_table.parents('.cases-test')
+            .add(module_table)
+            .children('.cases-test-header')
+            .find('.number')
+            .each(function(i, val) {
+  var number_text = $(val).text();
+  var number = parseInt(number_text.substring(1, number_text.length-1)) + 1
+  $(val).text('(' + number + ')')
+});
+selector = $('div.plans-info-item[data-plan-id=<%= @test_plan.id %>] p.cases_count');
+selector.text(parseInt(selector.text()) + 1 );
+$('span.cases_count').text( $('.test_case_item').length);
+sortable_case_init();
+$('.mCustomScrollbar').mCustomScrollbar('update');
+table_resizable();
+<% unless @test_case.previous_changes.empty? %>
+$('.plans-info').children().find('.active .plans-item-inner-bottom .latest-update').text('<%= j test_plan_footer_info(@current_plan).first %>')
+$('.plans-info').children().find('.active .plans-item-inner-bottom .date').text('<%= j test_plan_footer_info(@current_plan).second %>')
+<% end %>

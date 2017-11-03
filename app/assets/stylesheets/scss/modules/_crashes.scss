@@ -1,0 +1,216 @@
+.card-crashes {
+  padding: 30px 20px;
+
+  &-title {
+    color: $base-text;
+    font-family: $bold-font-family;
+    font-weight: bold;
+    @include rem(font-size, 24px);
+  }
+
+  .crashes-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+
+    th, td {
+      color: $base-text;
+      border: none;
+      @include rem(font-size, 13px);
+    }
+
+    th {
+      .fa {
+        color: $crashes-sorter-color;
+        cursor: pointer;
+
+        &:hover {
+          color: $crashes-sorter-hover;
+        }
+      }
+    }
+
+    &-title {
+      th {
+        height: 50px;
+        color: $base-text;
+        font-family: $bold-font-family;
+        font-weight: bold;
+        vertical-align: bottom;
+        border-bottom: 1px solid $base-border;
+        @include rem(font-size, 14px);
+
+        &:first-child {
+          padding-left: 2em;
+        }
+      }
+    }
+
+    .test-crash {
+      background-color: $test-object-bg;
+
+      td {
+        height: 50px;
+
+        &:first-child {
+          padding-left: 2em;
+          border-radius: 6px 0 0 6px;
+        }
+
+        &:last-child {
+          border-radius: 0 6px 6px 0;
+        }
+      }
+
+      .test-object-version {
+        display: block;
+        width: 120px;
+        @extend %text-overflow;
+      }
+
+      .crashes-log-download {
+        display: block;
+        width: 150px;
+        margin: 0;
+        color: $link-hover;
+        @extend %text-overflow;
+
+        span{
+          margin-right: 5px;
+          font-size: 14px;
+          color: $btn-green;
+        }
+
+        &:hover {
+          text-decoration: underline;
+          color: darken($btn-green, 10%);
+
+          span {
+            color: darken($btn-green, 10%);
+          }
+        }
+      }
+
+      .crashes-added {
+        color: $crashes-added-color;
+      }
+
+      .btn {
+        padding: 3px 10px;
+        @include rem(font-size, 13px);
+      }
+      &:hover .ico-delete span {
+        color: $btn-red;
+      }
+      .ico-delete span {
+        transition: all .2s;
+        font-size: 20px;
+        color: $grey-36;
+
+        &:hover {
+          color: $red-2;
+        }
+      }
+
+      .chevron {
+        border-left: 1px solid $base-border;
+      }
+
+      .chevron-down,
+      .chevron-up {
+        display: block;
+        color: $chevron-up-down-color;
+        text-align: center;
+        cursor: pointer;
+
+        &:before {
+          content: "\f078";
+          font-family: $font-awesome;
+        }
+      }
+
+      .chevron-up {
+        &:before {
+          content: "\f077";
+          font-family: $font-awesome;
+        }
+      }
+
+      .btn {
+        padding: 3px 10px;
+        @include rem(font-size, 13px);
+      }
+    }
+
+    .crash-details-wrap {
+      padding: 0;
+
+      .crash-details {
+        display: none;
+        width: 100%;
+        margin-bottom: 30px;
+
+        tr {
+          height: 30px;
+
+          &:nth-child(2n+1) {
+            background-color: $test-object-bg;
+          }
+
+          &:last-child {
+            border-bottom: 1px solid $base-border;
+          }
+        }
+
+        td {
+          color: $base-text;
+          border: none;
+          @include rem(font-size, 13px);
+
+          &:first-child {
+            padding-left: 2em;
+            border-radius: 6px 0 0 6px;
+          }
+
+          &:last-child {
+            border-radius: 0 6px 6px 0;
+          }
+
+          &:nth-child(1) {
+            font-family: $bold-font-family;
+            font-weight: bold;
+          }
+
+          &:nth-child(3) {
+            font-family: $bold-font-family;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+
+    .tablesorter-headerDesc {
+      .fa-chevron-up {
+        display: none;
+      }
+    }
+
+    .tablesorter-headerAsc {
+      .fa-chevron-down {
+        display: none;
+      }
+    }
+
+    //.tablesorter-headerUnSorted {
+    //  .fa {
+    //    display: inline-block;
+    //  }
+    //}
+
+    .sorter-false {
+      .fa {
+        display: none;
+      }
+    }
+  }
+}

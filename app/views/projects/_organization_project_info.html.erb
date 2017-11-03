@@ -1,0 +1,27 @@
+<div class="project">
+  <div class="project-main-info">
+    <%= link_to project_path(project) do %>
+      <%= image_tag project.logo.file.url(:medium), class: 'project-logo' %>
+    <% end %>
+    <div class="name-block">
+      <%= link_to project_path(project), class: 'project-name' do %>
+        <%= project.try(:title) %>
+      <% end %>
+      <div class="platform">
+        <% project.platforms.each do |platform| %>
+          <div class="<%= platform_icon(platform.name) %>">
+            <span class="fa fa-<%= platform_icon(platform.name) %>" aria-hidden="true">
+              <span class="platform-info-block" data-title="<%= platform.name %>"></span>
+            </span>
+          </div>
+        <% end %>
+      </div>
+      <div class="last-update">
+        <%= time_ago_in_words(project.updated_at) %>  <%= t 'ago' %>
+      </div>
+    </div>
+  </div>
+  <div class="project_counters" data-project-id="<%= project.id %>">
+    <%= render 'projects/project_counters', project: project %>
+  </div>
+</div>

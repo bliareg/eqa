@@ -1,0 +1,436 @@
+.details-org {
+  float: left;
+  width: 330px;
+  padding-top: 15px;
+
+  .input_wrapper {
+    margin: 10px 0;
+  }
+
+  .your-role-title {
+    color: $base-light-text;
+    font-family: $light-font-family;
+    @include rem(font-size, 14px);
+  }
+
+  .role {
+    color: $base-text;
+    font-family: $bold-font-family;
+    font-weight: bold;
+    @include rem(font-size, 14px);
+  }
+}
+
+//Organization profile ============================
+
+.org-profile {
+  .card-header {
+    .org-logo {
+      float: left;
+      width: 90px;
+      height: 90px;
+      margin-right: 20px;
+      border-radius: 50%;
+      border: none;
+    }
+
+    &-title {
+      margin: 30px 0;
+    }
+
+    &-btn {
+      margin: 25px 0;
+      line-height: 25px;
+    }
+  }
+
+  &-content {
+    width: 100%;
+    margin: 20px 0;
+    color: $base-text;
+    @include rem(font-size, 14px);
+
+    tr {
+      height: 50px;
+
+      &:nth-child(2n+1) {
+        background-color: $org-content-row-bg;
+        border-radius: 6px;
+      }
+
+      td {
+        border: none;
+
+        &:first-child {
+          border-radius: 6px 0 0 6px;
+        }
+
+        &:last-child {
+          border-radius: 0 6px 6px 0;
+        }
+      }
+
+      .column-1,
+      .column-3 {
+        width: 15%;
+        font-family: $bold-font-family;
+        font-weight: bold;
+      }
+
+      .column-2 {
+        width: 35%;
+      }
+
+      .column-3 {
+        width: 15%;
+      }
+
+      .org-count {
+        color: $org-table-count;
+      }
+    }
+  }
+}
+
+//Organization members ==============================
+
+.org-members,
+.org-projects {
+
+  .card-header-btn {
+    line-height: 25px;
+  }
+
+  .search-wrap {
+    float: right;
+
+    .search {
+      margin-right: 25px;
+    }
+
+    .search-form {
+      margin-right: 65px;
+    }
+
+    .search-btn {
+      right: 40px;
+    }
+  }
+
+  &-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+
+    td {
+      padding-left: 0;
+      vertical-align: middle;
+      border: none;
+    }
+
+    .table-title {
+      color: $base-light-text;
+      @include rem(font-size, 14px);
+
+      td {
+        border-bottom: 1px solid $base-border;
+      }
+    }
+
+    .org-project,
+    .member {
+      background-color: $org-content-row-bg;
+
+      td:first-child {
+        border-radius: 6px 0 0 6px;
+      }
+
+      td:last-child {
+        border-radius: 0 6px 6px 0;
+      }
+    }
+
+    .input_wrapper {
+      width: 150px;
+    }
+
+    .org-role {
+      display: block;
+      width: 150px;
+      height: 22px;
+      padding-left: 10px;
+      background-color: $selectmenu-small-button;
+      color: $selectmenu-small-text;
+      line-height: 22px !important;
+      vertical-align: text-top;
+      border-radius: 2px;
+      @include rem(font-size, 12px);
+    }
+
+    .btn-delete,
+    .btn-resend {
+      position: relative;
+      margin: 0 5px 3px 5px;
+      cursor: pointer;
+
+      span {
+        margin: 0 5px;
+      }
+    }
+
+    .hover-block {
+      top: -35px;
+      left: 8px;
+      padding: 4px 15px 5px;
+      transform: translate(-50%, 0);
+
+      &:after {
+        bottom: -6px;
+        left: 50%;
+        transform: translate(-50%, 0);
+      }
+    }
+
+    span {
+      margin: 0 5px 3px 0;
+    }
+  }
+
+}
+
+.org-members-table {
+  .member {
+
+    td:last-child {
+      padding: 0.4em;
+      border-left: 1px solid $base-border;
+    }
+
+    &-avatar {
+      width: 106px;
+    }
+
+    &-avatar img {
+      width: 60px;
+      height: 60px;
+      margin: 12px 0 12px 30px;
+      border-radius: 50%;
+    }
+
+    &-name {
+      width: 240px;
+      margin-bottom: 10px;
+      color: $base-text;
+      font-family: $bold-font-family;
+      font-weight: bold;
+      @extend %text-overflow;
+      @include rem(font-size, 14px);
+    }
+
+    &-email,
+    &-country {
+      width: 210px;
+      margin: 0;
+      color: $base-light-text;
+      @extend %text-overflow;
+      @include rem(font-size, 14px);
+    }
+
+    &-projects,
+    &-joined {
+      color: $base-text;
+      @include rem(font-size, 14px);
+    }
+
+    .chevron-down,
+    .chevron-up {
+      display: block;
+      color: $chevron-up-down-color;
+      text-align: center;
+      cursor: pointer;
+
+      &:before {
+        content: "\f078";
+        font-family: $font-awesome;
+      }
+    }
+
+    .chevron-up {
+      &:before {
+        content: "\f077";
+        font-family: $font-awesome;
+      }
+    }
+  }
+}
+
+td.org-projects-table-wrap {
+  padding: 0 0 0 30px;
+
+  .org-projects-table {
+    display: none;
+
+    td {
+      padding: 0 0.5em 0 0;
+    }
+
+    .table-title {
+      td {
+        padding: 0.5em 0.5em 0.5em 0;
+      }
+    }
+
+    .org-project {
+      &-avatar {
+        width: 106px;
+      }
+
+      &-avatar img {
+        width: 60px;
+        height: 60px;
+        margin: 10px 0 10px 30px;
+        border-radius: 18px;
+      }
+
+      &-name {
+        margin-bottom: 10px;
+        color: $base-text;
+        font-family: $bold-font-family;
+        font-weight: bold;
+        @include rem(font-size, 16px);
+      }
+
+      .platform {
+        float: left;
+        min-width: 80px;
+        clear: both;
+        @include rem(font-size, 0);
+
+        > div {
+          display: inline-block;
+          width: 20px;
+          height: 20px;
+          margin-right: 10px;
+          color: $white;
+          text-align: center;
+          border-radius: 50%;
+          @include rem(font-size, 12px);
+
+          & > span {
+            line-height: 20px;
+            position: relative;
+            margin-left: 5px;
+
+            .platform-info-block {
+              &:before {
+                content: attr(data-title);
+                display: inline-block;
+                position: absolute;
+                top: -30px;
+                left: 25px;
+                transform: translateX(-50%);
+                padding: 0 20px;
+                color: $white;
+                white-space: nowrap;
+                background: #b7b7b7;
+                border-radius: 3px;
+                opacity: 0;
+                visibility: hidden;
+                transition: all 350ms ease-in-out 0s;
+                z-index: 20;
+                @include rem(font-size, 14px);
+              }
+              &:after {
+                content: '';
+                position: absolute;
+                top: -10px;
+                left: -1px;
+                opacity: 0;
+                visibility: hidden;
+                width: 0;
+                height: 0;
+                border-left: 6px solid transparent;
+                border-right: 6px solid transparent;
+                border-top: 6px solid #b7b7b7;
+                transition: all 350ms ease-in-out 0s;
+              }
+            }
+
+            &:hover {
+              .platform-info-block {
+                &:before,
+                &:after {
+                  opacity: 0.9;
+                  visibility: visible;
+                }
+              }
+            }
+          }
+
+          &.android {
+            background-color: $android-platform;
+          }
+
+          &.apple {
+            background-color: $apple-platform;
+          }
+
+          &.globe {
+            background-color: $globe-platform;
+          }
+        }
+      }
+
+      .distribution-groups {
+        color: $base-light-text;
+        @include rem(font-size, 14px);
+      }
+    }
+  }
+}
+
+// Delete organization ============================
+
+.org-delete {
+  .warning-icon {
+    float: left;
+    margin-right: 20px;
+  }
+
+  .warning-description {
+    float: left;
+    margin-bottom: 90px;
+    color: $delete-organization;
+
+    &-title {
+      line-height: 14px;
+      font-family: $bold-font-family;
+      font-weight: bold;
+      @include rem(font-size, 16px);
+    }
+
+    &-text {
+      margin: 0;
+      @include rem(font-size, 14px);
+    }
+  }
+}
+
+#projects,
+#organizationMembers,
+#plansAndBillings,
+#paymentHistory,
+#deleteOrganization {
+  display: none;
+}
+
+#orgRole1-menu {
+  .ui-menu-item {
+    .ui-menu-item-wrapper {
+      height: 25px;
+      padding: 3px 10px;
+      line-height: 14px;
+    }
+  }
+}
+

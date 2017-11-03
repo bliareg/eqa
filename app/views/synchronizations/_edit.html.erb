@@ -1,0 +1,15 @@
+<div class="modal-dialog add-plugin">
+  <div class="modal-content container">
+    <div class="title-main">
+      <h3><%= t 'new_integration' %></h3>
+      <span class="close">
+        <span class='icon-close-icon'></span>
+      </span>
+    </div>
+    <%= render partial: "#{@plugin_name}_form",
+               locals: { url: synchronization_path(@synchronization.name,
+                                                   @synchronization.id),
+                         method_name: :put } %>
+    <div class='error_connection_block'></div>
+  </div>
+</div>

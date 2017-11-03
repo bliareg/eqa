@@ -1,0 +1,60 @@
+<!-- Modal content -->
+<div class="modal-dialog modal-select-cases modal-select-cases-show">
+  <div class="modal-content">
+    <div class="title-main">
+      <h3><%= t('select_cases') %></h3>
+      <span class="close">
+        <span class="icon-close-icon"></span>
+      </span>
+    </div>
+
+    <div class="modal-body">
+      <div class="modal-select-cases-header">
+        <div class="plans">
+          <h3 class="title"><%= t('test_plans') %></h3>
+        </div>
+
+        <div class="select">
+          <h3 class="title"> <%= t('select') %>:</h3>
+          <a href="javascript:;" class="select-item checked-all-modules"><%= t('all') %></a>
+          <a href="javascript:;" class="select-item unchecked-all-modules"><%= t('none') %></a>
+        </div>
+        <div class="cases">
+          <h3 class="title"><%= t('test_cases') %></h3>
+        </div>
+      </div>
+      <div class="modal-select-cases-info">
+        <div class="plans">
+          <div class="plans-info cases-info-modal">
+            <% @plans.each do |test_plan|%>
+              <div class="plans-info-item" >
+                <div class="plans-info-item-inner test_run_test_plan_cart" data-plan-id="<%= test_plan.id %>" data-project-id='<%= project_id %>' data-run-id='<%= @test_run.try(:id) %>' id='plan-id-<%= test_plan.id %>' >
+                  <div class="plans-item-inner-left grow">
+                    <h3 class="title"><%= test_plan.title %></h3>
+                    <div class="author"><%= test_plan.owner.name %></div>
+                    <time datetime="2016-05-03" class="date"><%= test_plan.created_at.strftime('%Y-%m-%d') %></time>
+                  </div>
+                </div>
+              </div>  <!-- plans info item  close-->
+            <% end %>
+          </div>      <!-- plans-->
+        </div>
+        <%= render partial: 'modules_and_cases_list' %>
+      </div> <!-- tab-pane-content-info-->
+      <div class="btn-group">
+          <button type="button" class="btn btn-green save_select_cases" data-project-id='<%= project_id %>'
+          data-url='<%= url %>' data-method='<%= method %>'><%= t('ok') %></button>
+          <button type="button" class="btn btn-white-green close_selection_test_cases"><%= t('cancel') %></button>
+      </div>
+    </div> <!--modal-body-->
+  </div>
+</div>
+
+<script>
+  $(document).ready(function () {
+    jstree_test_run_init('<%= params[:test_plan_id] %>');
+  });
+  $(document).ready(function() {
+    bind_custom_scrollbar();
+  });
+</script>

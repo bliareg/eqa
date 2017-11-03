@@ -1,0 +1,55 @@
+{
+  "resource": "Test Plans",
+  "http_method": "GET",
+  "route": "/api/v1/test_plans",
+  "description": "Index",
+  "explanation": null,
+  "parameters": [
+    {
+      "required": true,
+      "name": "auth_token",
+      "description": "User authenticity token"
+    },
+    {
+      "required": true,
+      "name": "token",
+      "description": "Uniq project token"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "/api/v1/test_plans?token=ik9VEIVPp9OENkR2MLKQHcZaLNHc9wOB19&auth_token=9CTdg05aLDiF%2FE6cRUO5Y0hahoHcq6lv63",
+      "request_body": null,
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+        "token": "ik9VEIVPp9OENkR2MLKQHcZaLNHc9wOB19",
+        "auth_token": "9CTdg05aLDiF/E6cRUO5Y0hahoHcq6lv63"
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "[\n  {\n    \"id\": 3,\n    \"project_id\": 20,\n    \"created_by\": 61,\n    \"title\": \"The Daffodil Sky\",\n    \"description\": \"I have a bad feeling about this.\",\n    \"created_at\": \"2017-04-14T07:56:19.471Z\",\n    \"updated_at\": \"2017-04-14T07:56:19.471Z\"\n  },\n  {\n    \"id\": 4,\n    \"project_id\": 20,\n    \"created_by\": 61,\n    \"title\": \"The Heart Is Deceitful Above All Things\",\n    \"description\": \"If you're saying that coming here was a bad idea, I'm starting to agree with you.\",\n    \"created_at\": \"2017-04-14T07:56:19.583Z\",\n    \"updated_at\": \"2017-04-14T07:56:19.583Z\"\n  },\n  {\n    \"id\": 5,\n    \"project_id\": 20,\n    \"created_by\": 61,\n    \"title\": \"Gone with the Wind\",\n    \"description\": \"That is why you fail.\",\n    \"created_at\": \"2017-04-14T07:56:19.715Z\",\n    \"updated_at\": \"2017-04-14T07:56:19.715Z\"\n  },\n  {\n    \"id\": 6,\n    \"project_id\": 20,\n    \"created_by\": 61,\n    \"title\": \"Jacob Have I Loved\",\n    \"description\": \"Aren't you a little short for a Stormtrooper?\",\n    \"created_at\": \"2017-04-14T07:56:19.837Z\",\n    \"updated_at\": \"2017-04-14T07:56:19.837Z\"\n  },\n  {\n    \"id\": 7,\n    \"project_id\": 20,\n    \"created_by\": 61,\n    \"title\": \"The Violent Bear It Away\",\n    \"description\": \"I have a bad feeling about this.\",\n    \"created_at\": \"2017-04-14T07:56:19.949Z\",\n    \"updated_at\": \"2017-04-14T07:56:19.949Z\"\n  },\n  {\n    \"id\": 8,\n    \"project_id\": 20,\n    \"created_by\": 61,\n    \"title\": \"A Time of Gifts\",\n    \"description\": \"Now, witness the power of this fully operational battle station.\",\n    \"created_at\": \"2017-04-14T07:56:20.069Z\",\n    \"updated_at\": \"2017-04-14T07:56:20.069Z\"\n  }\n]",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"514aa482deeb10c6ad643c6adf0c2054\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "4c1a3453-6597-4eab-a6ee-0f32341b166e",
+        "X-Runtime": "0.161437",
+        "Content-Length": "1300"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"http://localhost:3000/api/v1/test_plans?token=ik9VEIVPp9OENkR2MLKQHcZaLNHc9wOB19&auth_token=9CTdg05aLDiF%2FE6cRUO5Y0hahoHcq6lv63\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

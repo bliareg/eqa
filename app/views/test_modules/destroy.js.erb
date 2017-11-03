@@ -1,0 +1,26 @@
+var selector = $('.cases-info-item-inner[data-id=<%= @test_module.id %>]');
+var selector_parents = selector.parents('.cases-info-item-inner');
+selector.first().parent().remove();
+modules_count = $('.cases-test-header').length;
+$('span.modules_count').html(modules_count);
+$('span.cases_count').html($('.test_case_item').length);
+selector = $('div.plans-info-item[data-plan-id=<%= @current_plan.id %>] p.modules_count');
+selector.html($('.cases-test-header').length);
+selector = $('div.plans-info-item[data-plan-id=<%= @current_plan.id %>] p.cases_count');
+selector.html($('.test_case_item').length);
+selector_parents.each(function() {
+  $(this).children('.cases-test')
+    .children('.cases-test-header')
+    .find('.number')
+    .html('(' + $(this).find('.test_case_item').length + ')');
+})
+bind_custom_scrollbar();
+init_plan_togle_switcher();
+hide_modal();
+$('.mCustomScrollbar').mCustomScrollbar('update');
+if (modules_count == 0) $('.add_case_btn').addClass('btn-nonActive');
+TestModule.jstree.delete_item('<%= @test_module.id %>');
+<% unless @test_module.deleted_at.nil? %>
+$('.plans-info').children().find('.active .plans-item-inner-bottom .latest-update').text('<%= j test_plan_footer_info(@current_plan).first %>')
+$('.plans-info').children().find('.active .plans-item-inner-bottom .date').text('<%= j test_plan_footer_info(@current_plan).second %>')
+<% end %>

@@ -1,0 +1,141 @@
+.share-box {
+  .email-sender {
+    margin-bottom: 20px;
+
+    form {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    .input-field {
+      flex: 1 0 auto;
+
+      input {
+        width: 100%;
+        margin: 0;
+        border-radius: 4px 0 0 4px;
+      }
+    }
+
+    .btn-box {
+      flex: 0 1 150px;
+
+      input {
+        width: 100%;
+        margin: 0;
+        border-radius: 0 4px 4px 0;
+      }
+    }
+  }
+
+  .contact-imports {
+    display: flex;
+    align-items: center;
+
+    h4 {
+      margin-right: 10px;
+      font-family: $base-font-family;
+      font-size: 16px;
+      font-weight: normal;
+    }
+
+    &-list {
+      display: flex;
+
+      li {
+        margin-right: 10px;
+      }
+    }
+  }
+
+  .separator {
+    position: relative;
+    margin: 15px 0;
+    text-align: center;
+
+    &:before,
+    &:after {
+      position: absolute;
+      content: '';
+      top: 50%;
+      width: 47%;
+      height: 1px;
+      background: $base-border;
+    }
+
+    &:before {
+      left: 0;
+    }
+
+    &:after {
+      right: 0;
+    }
+
+    span {
+      color: $grey-7;
+      font-size: 14px;
+      font-weight: bold;
+    }
+  }
+
+  .share-link {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+
+    h4 {
+      flex: 0 0 auto;
+      margin-right: 10px;
+      font-size: 16px;
+    }
+
+    .token {
+      margin: 0;
+      flex: 0 0 60%;
+
+      span {
+        width: inherit;
+        padding-right: 10px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+
+      .copy-token {
+
+        .btn-white-green {
+          text-decoration: none;
+        }
+
+        &:hover {
+          .btn-white-green {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+
+    .btn-box {
+      flex: 0 1 150px;
+      margin-left: 40px;
+
+      .btn {
+        width: 100%;
+        margin-left: 0;
+
+        &:before {
+          position: absolute;
+          left: 15px;
+        }
+
+        &:after {
+          content: 'Facebook';
+          font-family: "opensans bold", sans-serif;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+

@@ -1,0 +1,6 @@
+<tr>
+  <td class="payment-date"><%= l(paypal_payment.created_at + timezone, format: '%d %B %Y') %></td>
+  <td class="payment-amount">$<%= paypal_payment.amount %></td>
+  <td class="payment-type"><%= summary(paypal_payment) %></td>
+  <td><%= paypal_payment.status.text %></td>
+</tr>

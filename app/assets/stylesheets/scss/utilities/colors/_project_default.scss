@@ -1,0 +1,37 @@
+$colors-default: (
+        'green' : #28bd8b,
+        'light-grey' : #e2e2e2,
+        'grey' : #666666,
+        'dark-grey' : #333333
+);
+
+$colors-state: (
+        'red' : #f44336,
+        'green' : #28bd8b,
+        'blue' : #0088cc,
+        'orange' : #ff9800
+);
+
+// Default --------------
+$black: #000000 !default;
+$white: #ffffff !default;
+// -----------------------
+
+$colors: (
+        'default' : $colors-default,
+        'state' : $colors-state
+);
+
+// usage: color("name_of_color", "type_of_color")
+// to avoid to repeating map-get($colors, ...)
+
+@function color($color, $type) {
+  @if map-has-key($colors, $color) {
+    $curr_color: map-get($colors, $color);
+    @if map-has-key($curr_color, $type) {
+      @return map-get($curr_color, $type);
+    }
+  }
+  @warn "Unknown `#{$type}` in #{$color}.";
+  @return null;
+}

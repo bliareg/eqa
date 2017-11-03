@@ -1,0 +1,514 @@
+@import "colors/project_default";
+
+// Base ------------------
+$base-bg            : $white;
+$base-text          : color('default','dark-grey'); // #333
+$base-light-text    : color('default','grey'); // #666
+//$base-link        : color('default','blue');
+$base-border        : color('default','light-grey'); // #e2e2e2
+// -----------------------
+
+// ------- PROJECT ----------------- //
+
+// General ---------------
+
+$grey-1 :       #f4f5f6;
+$grey-2 :       #e1e2e3;
+$grey-3 :       #eaedf0;
+
+$grey-4 :       #e2e3e4;
+$grey-5 :       #b7b7b7;
+$grey-6 :       #333333; // - $base-text
+$grey-7 :       #666666; // - $base-light-text
+$grey-8 :       #999999;
+$grey-9 :       #e0e0e0;
+$grey-10:       #b5bac8;
+$grey-11:       #e2e2e2; // - $base-border
+$grey-12:       #b6b6b6;
+$grey-13:       #f4f5f7;
+$grey-14:       #8d9097;
+$grey-15:       #7a7a7a;
+$grey-16:       #a1a1a1;
+$grey-17:       #0f181e;
+$grey-18:       #f6f6f6;
+$grey-19:       #d2d2d2;
+$grey-20:       #eeeff3;
+$grey-21:       #f2f2f2;
+$grey-22:       #fefefe;
+$grey-23:       #cacaca;
+$grey-24:       #e4e5e9;
+$grey-25:       #dedfe3;
+$grey-26:       #dfdfdf;
+$grey-27:       #959697;
+$grey-28:       #888888;
+$grey-29:       #fff3f3;
+$grey-30:       #808080;
+$grey-31:       #bdbdbd;
+$grey-32:       #90a4ae;
+$grey-33:       #f5f5f5;
+$grey-34:       #cfd8dc;
+$grey-35:       #dddddd;
+$grey-36:       #E0E2E3;
+
+$green-1:       #28bd8b;
+$green-2:       #209971;
+$green-3:       #88a960;
+$green-4:       #5dba19;
+$green-5:       #22b58d;
+$green-6:       #edf7ff;
+$green-7:       #22b56b;
+$green-8:       #2e7d32;
+$green-9:       #81c784;
+$green-10:      #c8e6c9;
+
+$blue-1 :       #62687e;
+$blue-2 :       #1caefd;
+$blue-3 :       #1f64fb;
+$blue-4 :       #243746;
+$blue-5 :       #4867aa;
+$blue-6 :       #007ab5;
+$blue-7 :       #7d8395;
+$blue-8 :       #3ac2fa;
+$blue-9 :       #3a6cfa;
+$blue-10:       #4a708f;
+$blue-11:       #152029;
+$blue-12:       #5653e8;
+$blue-13:       #0f181f;
+$blue-14:       #0277bd;
+$blue-15:       #4db6ac;
+$blue-16:       #64b5f6;
+$blue-17:       #90caf9;
+$blue-18:       #bbdefb;
+$blue-19:       #2a465b;
+
+
+$violet-1:      #c43ed4;
+$violet-2:      #9575cd;
+$violet-3:      #ba68c8;
+$violet-4:      #e1bee7;
+$violet-5:      #8b118b;
+
+$red-1 :        #e87878;
+$red-2 :        #e15b5b;
+$red-3 :        #bd2828;
+$red-4 :        #e33e2b;
+$red-5 :        #fffcee;
+$red-6 :        #ec4646;
+$red-7 :        #fa3a3a;
+$red-8 :        #eb4343;
+$red-9 :        #c62828;
+$red-10:        #e57373;
+$red-11:        #ffebee;
+
+$orange-1:      #faa63a;
+$orange-2:      #fa7e3a;
+$orange-3:      #ff8f00;
+$orange-4:      #e3af5b;
+$orange-5:      #ffb74d;
+$orange-6:      #ffe0b2;
+
+$yellow-1:      #f5d566;
+$yellow-2:      #dce775;
+$yellow-3:      #f0f4c3;
+
+$brown-1:      #a1887f;
+$brown-2:      #d7ccc8;
+
+$rgba-1 :       rgba($white, .8);
+$rgba-2 :       rgba($black, .08);
+$rgba-3 :       rgba($white, .5);
+$rgba-4 :       rgba($white, .7);
+$rgba-5 :       rgba($black, .06);
+$rgba-6 :       rgba($black, .2);
+$rgba-7 :       rgba($black, .5);
+$rgba-8 :       rgba($black, .3);
+$rgba-9 :       rgba($black, .1);
+$rgba-10:       rgba($black, .175);
+
+
+// Issues ----------------
+$issueTitile              : $grey-6;
+$issueHeadBorder          : $grey-11;
+$activeBtn                : $grey-12;
+$issueHeadBorder          : $grey-11;
+
+$agileTitle               : $grey-6;
+$agileCardActive          : $violet-2;
+
+$agileBorder              : $grey-11;
+
+$agileCardLow             : $blue-14;
+$agileCardMedium          : $green-8;
+$agileCardHigh            : $orange-3;
+$agileCardCritical        : $red-9;
+
+$agileTypeDocumentation   : $grey-31;
+$agileTypeTask            : $blue-16;
+$agileTypeFeature         : $blue-15;
+$agileTypeProblem         : $violet-2;
+$agileTypeBug             : $orange-4;
+$agileTypeCrash           : $red-10;
+
+$removeColumnText         : $grey-8;
+$removeColumnHoverText    : $red-1;
+
+$issueModalSub            : $grey-7;
+$issueModalCardItemBorder : $grey-11;
+$issueModalCardItemText   : $grey-6;
+$colorPickerActive        : $grey-6;
+$issueModalBg             : $grey-1;
+
+$previewItemBg            : $grey-1;
+$previewClipBg            : $green-1;
+$previewFileNameText      : $green-1;
+
+$importInputBg            : $grey-1;
+$importTableRowBg         : $grey-1;
+
+$commentBlockBg           : $grey-1;
+$commentTime              : $grey-8;
+$commentCount             : $green-1;
+
+$spentTimeCount           : $grey-12;
+$spentTimeText            : $grey-28;
+
+$editField                : $green-1;
+
+$colorPickerShadow        : $rgba-6;
+
+$colorPicker-1 : $grey-9;
+$colorPicker-2 : $red-10;
+$colorPicker-3 : $blue-17;
+$colorPicker-4 : $green-9;
+$colorPicker-5 : $violet-3;
+$colorPicker-6 : $yellow-2;
+$colorPicker-7 : $orange-5;
+$colorPicker-8 : $brown-1;
+$colorPicker-9 : $grey-32;
+
+$columnBg-1 : $grey-33;
+$columnBg-2 : $red-11;
+$columnBg-3 : $blue-18;
+$columnBg-4 : $green-10;
+$columnBg-5 : $violet-4;
+$columnBg-6 : $yellow-3;
+$columnBg-7 : $orange-6;
+$columnBg-8 : $brown-2;
+$columnBg-9 : $grey-34;
+
+// Form ------------------
+$inputWrapBg              : $grey-21;
+$inputWrapHoverBg         : $grey-13;
+$inputWrapBorder          : $grey-11;
+$inputWrapFocusBorder     : $green-1;
+$inputText                : $grey-7;
+$inputLabelText           : $grey-6;
+$inputDropArr             : $grey-14;
+$inputPlaceholder         : $grey-8;
+$inputUploadText          : $grey-7;
+$inputDisabledBg          : $grey-21;
+$previewBg                : $grey-1;
+$previewClipBg            : $green-1;
+$input-unchecked-border   : $grey-12;
+$input-checked-border     : $green-1;
+$input-checked-bg         : $green-1;
+$input-checked-disable-bg : $grey-12;
+$input-search-text-color  : $grey-8;
+$input-search-hover       : $green-1;
+$input-search-box-shadow  : $rgba-2;
+$input-switch-off         : $red-1;
+$input-switch-on          : $green-1;
+$form-box-shadow          : $rgba-2;
+$checked-box-shadow       : $rgba-5;
+$textarea-description     : $grey-8;
+
+// Buttons ---------------
+$btn-red                  : $red-1;
+$btn-blue                 : $blue-4;
+$btn-text                 : $white;
+$btn-green                : color('default','green');
+$btn-white                : $white;
+$btn-gray                 : $grey-12;
+// -----------------------
+
+// Social ----------------
+$facebook-color           : $blue-5;
+$google-plus-color        : $red-4;
+$linkedin-color           : $blue-6;
+// -----------------------
+
+// Modal -----------------
+$modal-sub-star           : $red-3;
+$modal-example-color      : $grey-8;
+$modal-border             : $rgba-6;
+$modal-box-shadow         : $rgba-7;
+$modal-bg-shadow          : $rgba-8;
+
+// -----------------------
+
+// Tables ----------------
+$table-bg                 : lighten(color('default','light-grey'), 20%);
+$table-bg-hover           : lighten(color('default','light-grey'), 10%);
+$table-border             : $base-border;
+$table-caption            : color('default','grey');
+// -----------------------
+
+// Tabs ------------------
+$inactive-tab-color       : $blue-1;
+// -----------------------
+
+// Builds ----------------
+$test-object-bg           : $grey-1;
+$chevron-up-down-color    : $grey-14;
+$builds-added-color       : $grey-8;
+// -----------------------
+
+// Content ----------------
+$main-content-bg          : $grey-1;
+// -----------------------
+
+// Crashes ----------------
+$table-bg                 : $grey-1;
+$link-hover               : $green-1;
+$crashes-added-color      : $grey-8;
+$crashes-sorter-color     : $green-1;
+$crashes-sorter-hover     : $green-2;
+// -----------------------
+
+// Custom Scroll bar -----
+$history-list-dragger-bar-bg  : $grey-16;
+$plans-dragger-bar-bg         : $grey-15;
+$history-list-dragger-rail-bg : $grey-9;
+// -----------------------
+
+// Folder tree -----
+$jstree-hovered           : $green-1;
+$folder-title             : $white;
+// -----------------------
+
+// Footer ----------------
+$footer-copyright         : $grey-5;
+$footer-nav               : $blue-1;
+$footer-border            : $grey-4;
+// -----------------------
+
+// Header ----------------
+$profile-name             : $blue-1;
+$header-border            : $grey-2;
+$log-out-bg               : $grey-3;
+$log-out-hover-bg         : $blue-7;
+$logo-title-bg            : $grey-17;
+$logo-title-dark-text     : $blue-13;
+$logo-title-active-bg     : $grey-12;
+$header-btn-border        : $grey-9;
+
+$top-panel-bg             : $violet-5;
+// -----------------------
+
+// Home page -------------
+$count-block-border       : $grey-9;
+$count-block-hover-bg     : $green-1;
+$count-number             : $grey-10;
+$count-active-number      : $green-1;
+$history-list-bg          : $grey-18;
+$history-list-box-shadow  : $rgba-2;
+$history-list-border      : $grey-9;
+$history-list-item-border : $grey-19;
+$history-project-name     : $green-1;
+// -----------------------
+
+// Platform --------------
+$android-platform         : $green-3;
+$apple-platform           : $blue-2;
+$globe-platform           : $blue-3;
+// -----------------------
+
+// Project-block ---------
+$project-last-update-bg     : $grey-12;
+$project-last-update-text   : $white;
+$project-owner              : $grey-8;
+$project-bg                 : $grey-1;
+$project-name-hover         : $green-1;
+$project-count-block-border : $grey-9;
+$project-count-block-bg     : $grey-1;
+$delete-project             : $red-2;
+// -----------------------
+
+// Load cloud block-------
+$load-btn                 : $grey-12;
+$load-btn-border          : $grey-12;
+$load-description         : $grey-8;
+$load-hover               : $green-1;
+// -----------------------
+
+// Manage project members-
+$added-members-text       : $grey-8;
+$row-member-bg-1          : $grey-13;
+$row-member-bg-2          : $red-5;
+// -----------------------
+
+// ui-select small menu --
+$selectmenu-small-button  : $green-1;
+$selectmenu-small-text    : $white;
+$select-item-hover-bg     : $grey-13;
+$select-items-list-shadow : $grey-35;
+// -----------------------
+
+// My Profile ------------
+$tab-list-item-text          : $green-1;
+$tab-list-item-active        : $green-1;
+$tab-list-item-border-active : $green-2;
+$languages-btn-active        : $grey-12;
+$notification-check-all      : $green-1;
+$notification-uncheck-all    : $red-1;
+// -----------------------
+
+// Organization ----------
+$organization-row-bg      : $grey-1;
+$organization-name-hover  : $green-1;
+$organization-count-border: $grey-9;
+// -----------------------
+
+// Nav Bar/Side bar ---------------
+$nav-menu-text             : $rgba-1;
+$nav-menu-btn-hover        : $blue-4;
+$nav-menu-btn-border-hover : $green-1;
+$dragger-bar-bg            : $rgba-3;
+$dragger-onDrag-bar-bg     : $rgba-4;
+$side-bar-bg               : $blue-11;
+$side-bar-logo-block-border: $blue-4;
+// -----------------------
+
+// Org Manage ------------
+$org-content-row-bg       : $grey-1;
+$org-table-count          : $green-1;
+$delete-organization      : $red-2;
+// -----------------------
+
+// Test Plan Activity ------------
+
+    // tab-pane-content-header ---
+$plan-activity-header-bg    : $blue-4;
+$plan-activity-header-text  : $grey-22;
+$plan-activity-header-border: $blue-10;
+$info-hover-block           : $blue-4;
+    // ---------------------------
+
+$nav-tabs-active-border   : $white;
+$nav-tabs-active-bg       : $white;
+$nav-tabs-active-text     : $blue-1;
+$info-border              : $grey-9;
+$cases-info-border        : $grey-20;
+$cases-test-box-shadow    : $rgba-9;
+$caret-down               : $grey-8;
+$test-name-number         : $grey-8;
+$add-task-link            : $green-1;
+$main-item-bg             : $grey-18;
+$main-item-column-text    : $grey-8;
+$item-id                  : $grey-8;
+
+$change-selection-bg      : $grey-1;
+$change-selection-link    : $green-1;
+
+$modal-select-cases-border: $blue-10;
+$ui-selectmenu-text       : $grey-22;
+$cases-info-bg            : $grey-20;
+
+$test-reports-item-bg     : $grey-1;
+$test-reports-text        : $grey-28;
+
+$test-run-main-title-bg   : $grey-13;
+$test-run-info-title      : $green-1;
+$test-run-info-edit       : $green-1;
+
+
+$table-row-checked       : $red-5;
+$table-row-hover         : $green-6;
+
+$test-run-passed         : $green-1;
+$test-run-retest         : $yellow-1;
+$test-run-blocked        : $grey-28;
+$test-run-untested       : $grey-13;
+$test-run-failed         : $red-1;
+$test-run-not-available  : $blue-16;
+
+$test-run-progress       : $grey-13;
+
+// Test run chart-------
+
+$test-run-nav-bg          : $grey-13;
+$test-run-nav-id-bg       : $blue-4;
+$test-run-nav-list-border : $grey-26;
+$test-run-nav-list-hover  : $green-1;
+$test-run-header-bg       : $blue-4;
+$test-run-header-border   : $blue-10;
+$test-run-dd-color        : $grey-29;
+$test-run-dd-border       : $grey-30;
+$test-run-dd-bg           : $blue-4;
+$test-run-test-info-bg    : $grey-20;
+$test-run-test-info-border: $grey-9;
+$filter-select-list-shadow: $rgba-10;
+$filter-select-list-text  : $blue-4;
+$filter-select-list-hover : $grey-20;
+
+// Plans-info-----------
+
+$item-hover-bg               : $grey-20;
+$item-inner-hover-border     : $grey-16;
+$item-inner-bottom-block-text: $grey-8;
+$plans-toggle                : $grey-16;
+$plans-toggle-bg             : $grey-24;
+$plans-toggle-bg-hover       : $grey-25;
+$plans-toggle-border         : $grey-23;
+
+// --------------------------------
+
+// Sign In & Sign Up -----
+$sign-lines               : $grey-9;
+$sign-inactive-link       : $blue-1;
+$sign-link-color          : $green-1;
+// -----------------------
+
+// Progressbar -----------
+$progressbar-bg           : $grey-1;
+$ui-widget-header         : $green-1;
+// -----------------------
+
+// Token -----------------
+$token-bg                 : $grey-1;
+$sdk-platform-bg          : $green-1;
+
+// Notification ----------
+$notification-bg          : $blue-4;
+$notification-box-shadow  : $rgba-7;
+// -----------------------
+
+// Integration -----------
+$block-bg                 : $grey-1;
+$successMessage           : $green-1;
+$errorMessage             : $red-2;
+$plugin-added-color       : $grey-8;
+// -----------------------
+
+// Error-message ---------
+$error-message            : $red-4;
+
+// Test Run Steps Pop-up -
+$pass-bg                  : $green-1;
+$failed-bg                : $red-1;
+$blocked-bg               : $grey-28;
+$not-available-bg         : $blue-16;
+// -----------------------
+
+$deactivate-account       : $red-2;
+$hover-block              : $grey-5;
+
+// Payments --------------
+
+$text-accent      : $green-1;
+$payment-block-bg : rgba($blue-19, .2);
+$delete-method    : $red-1;
+
+
+
+

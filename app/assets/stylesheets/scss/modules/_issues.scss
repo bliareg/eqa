@@ -1,0 +1,621 @@
+.chosen-container.up .chosen-drop {
+  top: auto;
+  bottom: 100%;
+}
+
+.issue_inner {
+  background-color: $base-bg;
+  padding: 30px 20px;
+  border-radius: 5px;
+  position: relative;
+  z-index: 6;
+  @extend %clearfix;
+
+  .head_title_top {
+    h2 {
+      display: inline-block;
+      line-height: 40px;
+      margin-right: 20px;
+      color: $issueTitile;
+      @include rem(font-size, 24px);
+    }
+
+    .btn {
+      vertical-align: top;
+    }
+
+    .search-wrap {
+      float: right;
+
+      .search {
+        width: 270px;
+        margin-right: 60px;
+        box-shadow: inset 1px 1.7px 3px $input-search-box-shadow;
+
+        &-btn {
+          right: 30px;
+
+          & > span {
+            font-size: 22px;
+          }
+        }
+      }
+    }
+
+    .icon-wrap {
+      float: right;
+
+      .btn {
+        height: 40px;
+        width: 40px;
+        margin-left: 6px;
+        padding: 8px 10px;
+      }
+
+      .synchronize,
+      .export,
+      .import {
+        .hover-block {
+          top: -40px;
+          left: -16px;
+          padding: 8px 15px;
+          @include rem(font-size, 13px);
+
+          &:after {
+            bottom: -6px;
+            left: 30px;
+          }
+        }
+      }
+
+      .synchronize {
+        .hover-block {
+          left: auto;
+          right: -20px;
+
+          &:after {
+            left: auto;
+            right: 33px;
+          }
+        }
+      }
+    }
+  }
+
+  .head_title_middle {
+    margin-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid $issueHeadBorder;
+
+    .filters {
+      padding: 10px 20px;
+      border-radius: 6px;
+      @extend .btn-big;
+
+      &.active {
+        background-color: $activeBtn;
+        color: $white;
+      }
+    }
+  }
+
+  .head_title_bottom {
+    padding: 10px 0;
+    @extend %clearfix;
+
+    .btn {
+      padding: 3px 15px;
+    }
+
+    .add-column {
+      float: right;
+
+      span {
+        margin-right: 5px;
+      }
+    }
+
+    .columns-visibility {
+      float: left;
+      position: relative;
+
+      .drop-arrow {
+        &:after {
+          content: '\f0d7';
+          margin-left: 5px;
+          font-family: $font-awesome;
+        }
+      }
+
+      .arrow-up {
+        &:after {
+          content: '\f0d8'
+        }
+      }
+
+      .columns-list {
+        display: none;
+        position: absolute;
+        max-height: 194px;
+        width: 162px;
+        margin: 5px 0;
+        padding: 5px 0;
+        background: $base-bg;
+        border: 1px solid $base-border;
+        border-radius: 4px;
+        overflow: hidden;
+        z-index: 50;
+
+        li {
+          padding: 5px 10px;
+          max-width: 160px;
+          @include rem(font-size, 12px);
+          @extend %text-overflow;
+
+          .checkbox-label {
+            line-height: 16px;
+            vertical-align: inherit;
+          }
+
+          .checkbox {
+            &:not(:checked) + label:before,
+            &:checked + label:before {
+              top: 0;
+            }
+
+            &:not(:checked) + label:after,
+            &:checked + label:after {
+              top: 1px;
+            }
+          }
+
+          &:hover {
+            font-family: $bold-font-family;
+            font-weight: bold;
+            background: $select-item-hover-bg;
+          }
+        }
+      }
+    }
+
+    .remove-column {
+      display: none;
+      float: right;
+      padding: 10px 30px;
+      color: $removeColumnText;
+      border-radius: 4px;
+      border: 2px dashed $base-border;
+      @include rem(font-size, 14px);
+
+      .delete {
+        color: $removeColumnText;
+      }
+
+      &.hover {
+        color: $removeColumnHoverText;
+        border-color: $removeColumnHoverText;
+
+        .delete {
+          color: $removeColumnHoverText;
+        }
+      }
+    }
+  }
+
+  .issue_content {
+    height: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  .agile {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+
+    .agile_bord {
+      //display: flex;
+      //flex-wrap: wrap;
+      position: relative;
+      flex: 1 0 auto;
+      width: 120px;
+      margin: 0 3px;
+    }
+
+    .agile_title {
+      //flex-basis: 100%;
+      //display: flex;
+      //align-items: flex-end;
+      display: table-cell;
+      width: 100%;
+      height: 45px;
+      padding-bottom: 5px;
+      vertical-align: bottom;
+      color: $agileTitle;
+      cursor: move;
+      @include rem(font-size, 14px);
+      @extend %text-overflow;
+
+      @media screen and (max-width: 1400px) {
+        @include rem(font-size, 12px);
+      }
+
+      .input_wrapper {
+        margin: 0;
+
+        input[type='text'] {
+          height: 22px;
+          @include rem(font-size, 12px);
+        }
+      }
+    }
+
+    .change-bg-btn {
+      //flex-basis: 100%;
+      //max-width: 100%;
+      height: 6px;
+      cursor: pointer;
+
+      &.change-bg-1 {
+        background: $colorPicker-1;
+      }
+
+      &.change-bg-2 {
+        background: $colorPicker-2;
+      }
+
+      &.change-bg-3 {
+        background: $colorPicker-3;
+      }
+
+      &.change-bg-4 {
+        background: $colorPicker-4;
+      }
+
+      &.change-bg-5 {
+        background: $colorPicker-5;
+      }
+
+      &.change-bg-6 {
+        background: $colorPicker-6;
+      }
+
+      &.change-bg-7 {
+        background: $colorPicker-7;
+      }
+
+      &.change-bg-8 {
+        background: $colorPicker-8;
+      }
+
+      &.change-bg-9 {
+        background: $colorPicker-9;
+      }
+    }
+
+    .agile_content {
+      //flex-basis: 100%;
+      //max-width: 100%;
+      padding: 10px 5px;
+      //height: 100%;
+      height: calc(100% - 30px);
+      min-height: 150px;
+
+      &.full {
+        height: 100%;
+      }
+
+      &.column-bg-1 {
+        background: $columnBg-1;
+      }
+
+      &.column-bg-2 {
+        background: $columnBg-2;
+      }
+
+      &.column-bg-3 {
+        background: $columnBg-3;
+      }
+
+      &.column-bg-4 {
+        background: $columnBg-4;
+      }
+
+      &.column-bg-5 {
+        background: $columnBg-5;
+      }
+
+      &.column-bg-6 {
+        background: $columnBg-6;
+      }
+
+      &.column-bg-7 {
+        background: $columnBg-7;
+      }
+
+      &.column-bg-8 {
+        background: $columnBg-8;
+      }
+
+      &.column-bg-9 {
+        background: $columnBg-9;
+      }
+    }
+
+    .agile_card {
+      cursor: pointer;
+      margin-bottom: 25px;
+
+      .card_header {
+        @extend %clearfix;
+
+        p {
+          float: left;
+          margin: 0;
+          padding: 0 5px;
+          font-size: 11px;
+          line-height: 20px;
+          color: $white;
+          & + p {
+            float: right;
+          }
+        }
+
+        &.low {
+          background-color: $agileCardLow;
+        }
+
+        &.medium {
+          background-color: $agileCardMedium;
+        }
+
+        &.high {
+          background-color: $agileCardHigh;
+        }
+
+        &.critical {
+          background-color: $agileCardCritical;
+        }
+      }
+
+      .card_content {
+        background-color: $base-bg;
+      }
+
+      .card_message {
+        padding: 10px 5px;
+
+        p {
+          margin: 0;
+          font-size: 13px;
+          word-wrap: break-word;
+        }
+      }
+
+      .card_person {
+        display: flex;
+        align-items: center;
+        padding: 10px 5px;
+        border-top: 1px solid $agileBorder;
+        border-bottom: 1px solid $agileBorder;
+        @extend %clearfix;
+
+        .avatar {
+          width: 24px;
+          height: 24px;
+          margin-right: 5px;
+          border-radius: 50%;
+          object-fit: cover;
+
+          img {
+            width: 100%;
+          }
+        }
+
+        .name {
+          width: 65%;
+          font-size: 11px;
+          margin: 0;
+        }
+      }
+
+      .type {
+        text-align: center;
+        font-size: 11px;
+        line-height: 20px;
+        margin: 0;
+        background-color: $base-bg;
+
+        &.no_type {
+          color: $base-text;
+          background-color: $base-bg;
+        }
+
+        &.documentation {
+          color: $white;
+          background-color: $agileTypeDocumentation;
+        }
+
+        &.task {
+          color: $white;
+          background-color: $agileTypeTask;
+        }
+
+        &.feature {
+          color: $white;
+          background-color: $agileTypeFeature;
+        }
+
+        &.usability_problem {
+          color: $white;
+          background-color: $agileTypeProblem;
+        }
+
+        &.bug {
+          color: $white;
+          background-color: $agileTypeBug;
+        }
+
+        &.crash {
+          color: $white;
+          background-color: $agileTypeCrash;
+        }
+      }
+
+      &.active {
+        box-shadow: 0 1px 6px #9575cd;
+      }
+    }
+
+    .fix-title {
+      position: fixed;
+      top: 70px;
+      background-color: #fff;
+    }
+  }
+}
+
+.color-picker {
+  display: none;
+  position: absolute;
+  top: 55px;
+  left: 2px;
+  width: 160px;
+  padding: 5px;
+  background: $base-bg;
+  border-radius: 6px;
+  box-shadow: 0 0 15px $colorPickerShadow;
+  z-index: 20;
+
+  .color-list {
+    @extend %noIndent;
+    @extend %clearfix;
+
+    li {
+      float: left;
+      margin: 5px;
+      border-radius: 4px;
+      overflow: hidden;
+      border: 1px solid transparent;
+
+      .color-item {
+        display: block;
+        width: 38px;
+        height: 38px;
+        cursor: pointer;
+        border-radius: 4px;
+
+        &.item-1 {
+          background: $colorPicker-1;
+        }
+
+        &.item-2 {
+          background: $colorPicker-2;
+        }
+
+        &.item-3 {
+          background: $colorPicker-3;
+        }
+
+        &.item-4 {
+          background: $colorPicker-4;
+        }
+
+        &.item-5 {
+          background: $colorPicker-5;
+        }
+
+        &.item-6 {
+          background: $colorPicker-6;
+        }
+
+        &.item-7 {
+          background: $colorPicker-7;
+        }
+
+        &.item-8 {
+          background: $colorPicker-8;
+        }
+
+        &.item-9 {
+          background: $colorPicker-9;
+        }
+      }
+
+      &.active {
+        border-color: $base-border;
+
+        .color-item {
+          border: 3px solid $white;
+        }
+      }
+    }
+  }
+}
+
+.open-picker {
+  display: block;
+}
+
+.issue_inner {
+  .agile {
+    .agile_bord:last-child {
+      .color-picker {
+        left: auto;
+        right: 2px;
+      }
+    }
+  }
+}
+
+.fix-agile{
+
+  .issue_content {
+    &:before,
+    &:after {
+      content: '';
+      display: block;
+      width: 30px;
+      height: 200px;
+      background: #ffffff;
+      position: fixed;
+      top: 67px;
+      z-index: 25;
+    }
+
+    &:before {
+      border-left: 10px solid #f4f5f6;
+      left: 200px;
+    }
+
+    &:after {
+      border-right: 10px solid #f4f5f6;
+      right: 0;
+    }
+  }
+  .agile_title {
+    z-index: 4;
+    position: fixed;
+    top: 67px;
+    line-height: 45px;
+    background: $white;
+  }
+
+  .change-bg-btn {
+    z-index: 4;
+    position: fixed;
+    top: 111px;
+
+    & + .open-picker {
+      z-index: 4;
+      position: fixed;
+      top: 118px;
+      left: auto;
+    }
+  }
+}
+
+
+
+

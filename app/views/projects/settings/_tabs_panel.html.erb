@@ -1,0 +1,7 @@
+<ul class="nav-tabs">
+  <li><%= link_to t('project_info'), project_settings_path(@project),
+                                  class: 'btn btn-gray show_loader highlight_link settings-info-link', remote: true %></li>
+  <li><%= link_to t('team'), team_project_settings_path(@project),
+                          class: 'btn btn-gray team show_loader highlight_link', remote: true %></li>
+  <li><%= @project.delete_link(current_user) %></li>
+</ul>

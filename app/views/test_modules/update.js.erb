@@ -1,0 +1,18 @@
+selector = $('.cases-info-item-inner[data-id=<%= @test_module.id %>]')
+var count = selector.find('.test_case_item').length
+selector.children('.cases-test')
+        .children('.cases-test-header')
+        .children('.test-name')
+        .html("<%= @test_module.title %><span class='number'>(" + count + ")</span>")
+selector.children('.cases-test')
+        .children('.cases-test-content')
+        .find('tbody .module')
+        .html('<%= @test_module.title %>')
+hide_modal();
+bind_custom_scrollbar();
+init_plan_togle_switcher();
+TestModule.jstree.rename_item('<%= @test_module.id %>', '<%= @test_module.title %>');
+<% if @test_module.updated_at > @test_module.created_at %>
+$('.plans-info').children().find('.active .plans-item-inner-bottom .latest-update').text('<%= j test_plan_footer_info(@current_plan).first %>')
+$('.plans-info').children().find('.active .plans-item-inner-bottom .date').text('<%= j test_plan_footer_info(@current_plan).second %>')
+<% end %>

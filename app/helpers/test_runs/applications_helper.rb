@@ -1,0 +1,2 @@
+module TestRuns::ApplicationsHelper
+end

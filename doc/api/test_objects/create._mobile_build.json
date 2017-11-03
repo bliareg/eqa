@@ -1,0 +1,59 @@
+{
+  "resource": "Test Objects",
+  "http_method": "POST",
+  "route": "/api/v1/test_objects",
+  "description": "Create. Mobile Build",
+  "explanation": null,
+  "parameters": [
+    {
+      "required": true,
+      "name": "token",
+      "description": "Uniq project token"
+    },
+    {
+      "required": true,
+      "name": "auth_token",
+      "description": "User authenticity token"
+    },
+    {
+      "Type": "Multipart/Form-data",
+      "required": true,
+      "name": "file",
+      "description": "Your ipa or apk file"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "POST",
+      "request_path": "/api/v1/test_objects",
+      "request_body": "------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"token\"\r\n\r\nesazRSTcFSdyX5L/e+MyqMu+mWWH1yh316\r\n------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"auth_token\"\r\n\r\nE/tmTYkqr0Fhr0zR24Ed2/KSpOFBl4kU45\r\n------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"file\"; filename=\"app-debug.apk\"\r\nContent-Type: application/apk\r\nContent-Length: 2110107\r\n\r\n[uploaded data]\r\n------------XnJLe9ZIbbGUYtzPQJ16u1--\r",
+      "request_headers": {
+        "Content-Type": "multipart/form-data; boundary=----------XnJLe9ZIbbGUYtzPQJ16u1",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "multipart/form-data; boundary=----------XnJLe9ZIbbGUYtzPQJ16u1",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"id\": 8,\n  \"file_file_name\": \"app-debug1.1.10.apk\",\n  \"file_content_type\": \"application/apk\",\n  \"file_file_size\": 2110107,\n  \"file_updated_at\": \"2017-04-14T07:55:56.579Z\",\n  \"project_id\": 17,\n  \"user_id\": 43,\n  \"created_at\": \"2017-04-14T07:56:03.804Z\",\n  \"updated_at\": \"2017-04-14T07:56:03.804Z\",\n  \"link\": null,\n  \"platform_version\": \"Android 7.1.1\",\n  \"package\": \"com.thinkmobiles.android.easyqa\",\n  \"min_sdk_version\": \"Android 15\",\n  \"sdk_version\": \"Android 25\",\n  \"identeficator\": \"com.thinkmobiles.android.easyqa:10:1.1.10_debug\",\n  \"deleted_at\": null,\n  \"url\": \"http:///system/test_objects/files/7cd3c116587d776594d7046ee3b37874d2edfc9c/7cd3c116587d776594d7046ee3b37874d2edfc9c/d2839ef938dc34e3203f9b88a7f0419e59341a1a/original/app-debug1.1.10.apk\"\n}",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"377c1a93f753720382395d6e538c3869\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "d28a00b9-fb32-4a4c-80f5-a01bf11cc689",
+        "X-Runtime": "7.496752",
+        "Content-Length": "691"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"http://localhost:3000/api/v1/test_objects\" -d '------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"token\"\r\n\r\nesazRSTcFSdyX5L/e+MyqMu+mWWH1yh316\r\n------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"auth_token\"\r\n\r\nE/tmTYkqr0Fhr0zR24Ed2/KSpOFBl4kU45\r\n------------XnJLe9ZIbbGUYtzPQJ16u1\r\nContent-Disposition: form-data; name=\"file\"; filename=\"app-debug.apk\"\r\nContent-Type: application/apk\r\nContent-Length: 2110107\r\n\r\n[uploaded data]\r\n------------XnJLe9ZIbbGUYtzPQJ16u1--\r' -X POST \\\n\t-H \"Content-Type: multipart/form-data; boundary=----------XnJLe9ZIbbGUYtzPQJ16u1\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

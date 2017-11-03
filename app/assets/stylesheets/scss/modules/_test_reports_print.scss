@@ -1,0 +1,159 @@
+//@media print {
+//
+//  ul {
+//    margin: 0;
+//    padding: 0;
+//    list-style: none;
+//  }
+//
+//  img {
+//    vertical-align: middle;
+//    max-width: 100%;
+//    height: auto;
+//  }
+//
+//  .preview-wrap {
+//    padding-top: 15px;
+//    border-top: 1px solid $base-border;
+//  }
+//
+//  .report-info {
+//    width: 100%;
+//    margin-right: 2%;
+//
+//    .btn-green {
+//      display: none;
+//    }
+//  }
+//
+//  .time-spent-info {
+//    width: 100%;
+//  }
+//
+//  .report-info-table {
+//    width: 100%;
+//    border-collapse: separate;
+//    border-spacing: 0 10px;
+//    @include rem(font-size, 12px);
+//
+//    thead {
+//      display: table-header-group
+//    }
+//
+//    td,
+//    th {
+//      text-align: left;
+//      vertical-align: middle;
+//      padding: 0.5em;
+//    }
+//
+//    tr {
+//      height: 50px;
+//      page-break-inside: avoid;
+//
+//      &:nth-child(2n+1) {
+//        background-color: $test-reports-item-bg;
+//        -webkit-print-color-adjust: exact;
+//        border-radius: 6px;
+//      }
+//
+//      td {
+//        border: none;
+//
+//        &:first-child {
+//          padding-left: 1em;
+//          color: $base-text;
+//          font-family: $bold-font-family;
+//          border-radius: 6px 0 0 6px;
+//        }
+//
+//        &:last-child {
+//          color: $test-reports-text;
+//          border-radius: 0 6px 6px 0;
+//        }
+//      }
+//
+//      .table-item {
+//        vertical-align: top;
+//      }
+//    }
+//
+//    .avatar {
+//      width: 24px;
+//      height: 24px;
+//      margin-right: 10px;
+//      border-radius: 50%;
+//      object-fit: cover;
+//    }
+//
+//    .user {
+//      &:not(:last-child) {
+//        margin-bottom: 5px;
+//      }
+//    }
+//  }
+//
+//  .time-spent-table {
+//    border-collapse: collapse;
+//
+//    th {
+//      border-top: none;
+//      font-family: $bold-font-family;
+//
+//      &:first-child {
+//        padding-left: 1em;
+//      }
+//    }
+//
+//    tr {
+//      height: 30px;
+//
+//      &:first-child {
+//        td {
+//          padding-top: 1.2em;
+//        }
+//      }
+//
+//      &:last-child {
+//        td {
+//          border-bottom: 1px solid $base-border;
+//        }
+//      }
+//
+//      &:nth-child(2n+1) {
+//        background-color: $base-bg;
+//      }
+//
+//      &:nth-child(2n) {
+//        background-color: $test-reports-item-bg;
+//        -webkit-print-color-adjust: exact;
+//        border-radius: 6px;
+//      }
+//    }
+//
+//    .issue-id {
+//      width: 10%;
+//    }
+//
+//    .issue-title {
+//      width: 60%;
+//    }
+//
+//    .issue-type {
+//      width: 15%;
+//    }
+//
+//    .issue-time {
+//      width: 15%;
+//      font-family: $bold-font-family;
+//    }
+//  }
+//
+//  .chart {
+//    width: 100%;
+//
+//    canvas {
+//      display: none;
+//    }
+//  }
+//}

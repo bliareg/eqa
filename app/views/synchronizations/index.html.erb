@@ -1,0 +1,33 @@
+<div class="tab-pane-content plugins-info-tab">
+  <div class="tab-pane-content-header">
+    <div class="plugins">
+      <h3 class="title"><%= t 'plugins' %></h3>
+      <%= link_to t('add_new_plugin'),
+                  project_synchronization_choose_path(@project),
+                  remote: true,
+                  method: :get,
+                  class: 'btn btn-green' %>
+    </div>
+    <div class="plugins-info">
+      <h3 class="title"><%= t 'information' %></h3>
+    </div>
+  </div>
+  <div class="tab-pane-content-info">
+    <div class="plugins plugins-block">
+      <div class="plans-info">
+        <% @settings.each do |setting| %>
+          <%= render partial: 'synchronizations/plugin_preview_card',
+                     locals: { setting: setting } %>
+        <% end %>
+      </div>
+    </div>
+    <div class="plugins-info">
+      <div class="plugins-info-block">
+        <% @settings.each do |setting| %>
+          <%= render partial: 'synchronizations/plugin_info_card',
+                     locals: { setting: setting } %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

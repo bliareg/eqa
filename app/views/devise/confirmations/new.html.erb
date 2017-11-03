@@ -1,0 +1,11 @@
+ <div class="wrapper">
+  <div class="confirm-message">
+    <% if @user.persisted? && @user.confirmed? %>
+      <h2><%= t 'email_confirmed' %></h2>
+      <%= link_to t('try_log_in'), new_user_session_path, class: "btn btn-link" %>
+    <% else %>
+      <h2><%= t 'confirm_your_email' %></h2>
+      <p><%= t 'devise.failure.token_is_invlaid' %></p>
+    <% end %> 
+  </div>
+</div>

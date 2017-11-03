@@ -1,0 +1,15 @@
+---
+
+- name: Setup nginx and passenger
+  hosts: all
+  remote_user: deploy
+  become: yes
+  vars:
+    passenger_root: /usr/lib/ruby/vendor_ruby/phusion_passenger/locations.ini
+    passenger_ruby: /usr/bin/{{ rbenv_ruby_filename }}
+    passenger_app_env: standalone
+    passenger_app_root: "{{ deploy_folder }}{{ app_name }}current/public"
+    passenger_server_name: "{{ app_domain }}"
+  roles:
+    - { role: geerlingguy.passenger }
+    - { role: nginx }

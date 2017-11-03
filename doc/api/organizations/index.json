@@ -1,0 +1,49 @@
+{
+  "resource": "Organizations",
+  "http_method": "GET",
+  "route": "/api/v1/organizations",
+  "description": "Index",
+  "explanation": null,
+  "parameters": [
+    {
+      "required": true,
+      "name": "auth_token",
+      "description": "User authenticity token"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "/api/v1/organizations?auth_token=D0MlZLb4eDGuBDLsgs%2FfLf0aXd216wmx21",
+      "request_body": null,
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+        "auth_token": "D0MlZLb4eDGuBDLsgs/fLf0aXd216wmx21"
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "[\n  {\n    \"id\": 4,\n    \"title\": \"Organization4\",\n    \"description\": \"Organization4 - the best company in the world.\",\n    \"deleted_at\": null,\n    \"created_at\": \"2017-04-14T07:55:26.348Z\",\n    \"updated_at\": \"2017-04-14T07:55:26.348Z\",\n    \"slug\": \"Organization4\",\n    \"is_payment_expired\": false,\n    \"is_payment_expiring\": false\n  },\n  {\n    \"id\": 5,\n    \"title\": \"Organization5\",\n    \"description\": \"Organization5 - the best company in the world.\",\n    \"deleted_at\": null,\n    \"created_at\": \"2017-04-14T07:55:29.348Z\",\n    \"updated_at\": \"2017-04-14T07:55:29.348Z\",\n    \"slug\": \"Organization5\",\n    \"is_payment_expired\": false,\n    \"is_payment_expiring\": false\n  },\n  {\n    \"id\": 6,\n    \"title\": \"Organization6\",\n    \"description\": \"Organization6 - the best company in the world.\",\n    \"deleted_at\": null,\n    \"created_at\": \"2017-04-14T07:55:29.434Z\",\n    \"updated_at\": \"2017-04-14T07:55:29.434Z\",\n    \"slug\": \"Organization6\",\n    \"is_payment_expired\": false,\n    \"is_payment_expiring\": false\n  },\n  {\n    \"id\": 7,\n    \"title\": \"Organization7\",\n    \"description\": \"Organization7 - the best company in the world.\",\n    \"deleted_at\": null,\n    \"created_at\": \"2017-04-14T07:55:29.525Z\",\n    \"updated_at\": \"2017-04-14T07:55:29.525Z\",\n    \"slug\": \"Organization7\",\n    \"is_payment_expired\": false,\n    \"is_payment_expiring\": false\n  },\n  {\n    \"id\": 8,\n    \"title\": \"Organization8\",\n    \"description\": \"Organization8 - the best company in the world.\",\n    \"deleted_at\": null,\n    \"created_at\": \"2017-04-14T07:55:29.611Z\",\n    \"updated_at\": \"2017-04-14T07:55:29.611Z\",\n    \"slug\": \"Organization8\",\n    \"is_payment_expired\": false,\n    \"is_payment_expiring\": false\n  },\n  {\n    \"id\": 9,\n    \"title\": \"Organization9\",\n    \"description\": \"Organization9 - the best company in the world.\",\n    \"deleted_at\": null,\n    \"created_at\": \"2017-04-14T07:55:29.735Z\",\n    \"updated_at\": \"2017-04-14T07:55:29.735Z\",\n    \"slug\": \"Organization9\",\n    \"is_payment_expired\": false,\n    \"is_payment_expiring\": false\n  }\n]",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"374a59d70df7442898aea518cca62b4d\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "40c4a353-d286-4d0c-b263-d95852db4c42",
+        "X-Runtime": "0.105955",
+        "Content-Length": "1633"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"http://localhost:3000/api/v1/organizations?auth_token=D0MlZLb4eDGuBDLsgs%2FfLf0aXd216wmx21\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

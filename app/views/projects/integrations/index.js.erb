@@ -1,0 +1,8 @@
+if ($('.card-integrations-title').length) {
+  $('#content').html("<%= j render file: 'projects/integrations/index.html.erb' %>");
+} else {
+  $('.main-content').html("<%= j render file: 'projects/integrations/index.html.erb', layout: 'layouts/projects/_integrations' %>");
+  $('.integrations-link').addClass('active');
+}
+projects_left_manu_action('<%= request.path %>');
+$('.load-block').hide();

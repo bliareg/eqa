@@ -1,0 +1,43 @@
+<% module_id = test_module.id %>
+
+<div class="cases-info-item-inner open %>" data-id="<%= module_id %>" id="test-module-<%= module_id %>">
+  <% module_class = test_module.parent_id ? 'sub' : 'main' %>
+  <div class="cases-test module-item <%= module_class %>">
+    <div class="cases-test-header">
+      <span class="test-caret caret-down %>"></span>
+      <span class="test-name"> <%= test_module.title %>
+        <span class="number">(<%= test_module.test_cases.count %>)</span>
+      </span>
+    </div>
+    <div class="cases-test-content" id="case-content-module-<%= module_id %>">
+      <div class="cases-test-content-item main-item">
+        <% @column_set = @current_plan.column_set(current_user) %>
+        <table id="<%= module_id %>">
+          <thead>
+            <tr>
+              <!-- <th class="drag"></th> -->
+              <th class="checkbox" style='width: <%= @column_set['drag_checkbox'] %>%'>
+                <%= check_box_tag 'case', module_id, false, class: "checkbox checkbox-all", id: "checkbox-module-#{module_id}",
+                  data: { module_id: module_id } %>
+
+                <label for="checkbox-module-<%= module_id %>" class="checkbox-label"></label>
+              </th>
+              <th class="id" style='width: <%= @column_set['id'] %>%'>ID</th> <!--main-id-->
+
+              <th class="test-title" style='width: <%= @column_set['title'] %>%'>Title</th>
+              <% (@column_set.keys & ::TestCase::VISIBLE_COLUMNS.keys).each do |name| %>
+                <th class="<%= generate_class_from_name(name) %>" style='width: <%= @column_set[name] %>%' data-column='<%= name %>'>
+                  <%= t("column_#{name}") %>
+                </th>
+              <% end %>
+            </tr>
+          </thead>
+          <tbody>
+            <%= render partial: 'test_case', collection: test_module.test_cases, locals: { module_id: module_id },  as: :test_case %>
+          </tbody>
+        </table>
+      </div>   <!-- cases-test-content-item main-item-->
+    </div>
+    <%= render partial: 'test_cases_item', collection: test_module.children, as: :test_module %>
+  </div>
+</div>

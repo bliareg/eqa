@@ -1,0 +1,66 @@
+<div class="modal-dialog import-case">
+  <div class="modal-content container">
+    <div class="title-main">
+      <div id='error_notice'></div>
+      <h3><%= t("import_#{@object_name.pluralize}") %></h3>
+      <span class="close">
+        <span class='icon-close-icon'></span>
+      </span>
+    </div>
+    <%= form_tag map_fields_path, method: :post,
+                 id: 'upload_csv_file', remote: true do %>
+      <div class="modal-content-scroll">
+        <div class="modal-body" data-error="<%= t('cant_be_blank') %>">
+        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+        <%= hidden_field_tag :object, @object_name %>
+        <% if defined?(@test_plans) %>
+          <div class="row">
+            <div class="col xs-12">
+              <div class="input_wrapper drop-arr">
+                <label for="test-plan" class="title star">
+                  <%= t('test_plan') %>
+                </label>
+                <%= select_tag :test_plan_id,
+                               options_for_select(@test_plans),
+                               include_blank: t('choose_test_plan'),
+                               id: 'test_plan_id_csv' %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+        <div class="row">
+          <div class="col xs-12">
+            <div class="input_wrapper drop-arr">
+              <%= label_tag :separator, t('separator'), class: 'title star' %>
+              <%= text_field_tag :separator, ',' %>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col xs-12">
+            <h3 class="title star"><%= t('upload_csv_file') %></h3>
+            <div class="dropzone dz-message">
+              <span class="btn btn-white-green pre_upload">
+                <%= t('click_to_load') %>
+                <span><%= t('or_drag_your_csv_file_here') %></span>
+              </span>
+            </div>
+            <div id="loadPreview" class="preview"></div>
+          </div>
+        </div>
+        </div>
+      </div>
+    <% end -%>
+    <div class="btn-group">
+      <%= submit_tag t('next'), class: "btn btn-grey btn-big", id: "next" %>
+      <button type="button" class="btn btn-white-green btn-big cancel">
+        <%= t('cancel') %>
+      </button>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+  $(document).ready(function(){
+    Import.upload_file.init();
+  })
+</script>

@@ -1,0 +1,76 @@
+<div class="modal-dialog add_issue">
+  <div class="modal-content container">
+    <div class="title-main">
+      <h3><%= t('issue.new') %></h3>
+      <span class="close">
+        <span class='icon-close-icon'></span>
+      </span>
+    </div>
+    <%= form_for(@issue, url: issues_path(@project),
+                         validate: true,
+                         html: { multipart: true,
+                                 class: 'form_with_dropzone',
+                                 data: { project_id: @issue.project_id } },
+                         remote: true) do |f| %>
+      <div class="modal-content-scroll">
+        <div class="modal-body">
+          <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+          <%= f.hidden_field :reporter_id, value: current_user.id %>
+          <%= f.hidden_field :project_id, value: @project.id %>
+          <%= f.hidden_field :test_case_id, value: @test_case.id if @test_case %>
+          <% if @log_file %>
+            <%= hidden_field_tag 'attachment', @log_file.crash_log.path %>
+            <%= f.hidden_field   :log_file_id, value: @log_file.id %>
+          <% end %>
+          <div class="row-wrap">
+            <div class="input_wrapper col-6">
+                <%= f.label :summary, class: 'title star' %>
+                <%= f.text_field :summary, placeholder: t('activerecord.attributes.issue.summary'),
+                                           validate: true %>
+            </div>
+
+            <div class="input_wrapper col-6 drop-arr">
+                <%= f.label :assign_to, class: 'title' %>
+                <%= f.select :assigner_id, users_select(@project.members),
+                                     { prompt: t('non_assigned') },
+                                     id: 'assigned' %>
+            </div>
+          </div>
+          <div class="row-wrap">
+            <div class="input_wrapper col-3 issue-type <%= @issue.issue_type %>">
+              <%= f.label :issue_type, class: 'title' %>
+              <%= f.select :issue_type, Issue.issue_type.options, {}, id: 'type-view' %>
+            </div>
+            <div class="input_wrapper col-3 issue-priority <%= @issue.priority %>">
+              <%= f.label :priority, class: 'title' %>
+              <%= f.select :priority, Issue.priority.options  %>
+            </div>
+            <div class="input_wrapper col-3">
+              <%= f.label :status_id, class: 'title' %>
+              <%= f.select :status_id, @issue.status_options %>
+            </div>
+            <div class="input_wrapper col-3">
+              <%= f.label :test_object, class: 'title' %>
+              <%= f.select :test_object_id, select_test_object(@project), {
+              include_blank: t('choose_test_object') }, id: 'build-view' %>
+            </div>
+          </div>
+          <div class="input_wrapper">
+            <%= f.label :description, class: 'title' %>
+            <%= f.text_area :description, class: 'desc',
+                                          cols: '30',
+                                          rows: '10' %>
+          </div>
+          <div class="issue-attachments">
+            <div class="title"><%= t 'attachments' %></div>
+            <%= render 'issues/attachments_row', form: f %>
+          </div>
+        </div>
+      </div>
+      <div class="btn-group">
+        <%= f.submit t('save'), class: 'btn btn-green btn-big' %>
+        <span class="btn btn-white-green cancel btn-big"><%= t('cancel') %></span>
+      </div>
+    <% end %>
+  </div>
+</div>

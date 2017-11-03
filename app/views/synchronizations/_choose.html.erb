@@ -1,0 +1,20 @@
+<div class="modal-dialog add-plugin">
+  <div class="modal-content container">
+    <div class="title-main">
+      <h3><%= t 'new_integration' %></h3>
+      <span class="close">
+        <span class='icon-close-icon'></span>
+      </span>
+      <div class="input_wrapper select-plugin">
+        <%= select_tag '',
+                       options_for_select(Project::PLUGINS),
+                       include_blank: I18n.t('choose_plugin'),
+                       class: 'plugin_select' %>
+      </div>
+    </div>
+      <div class="new_integration_form">
+        <button class="btn btn-white-green btn-big cancel"><%= t('cancel') %></button>
+      </div>
+      <div class='error_connection_block'></div>
+  </div>
+</div>

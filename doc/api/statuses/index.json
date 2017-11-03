@@ -1,0 +1,55 @@
+{
+  "resource": "Statuses",
+  "http_method": "GET",
+  "route": "/api/v1/statuses",
+  "description": "Index",
+  "explanation": null,
+  "parameters": [
+    {
+      "required": true,
+      "name": "auth_token",
+      "description": "User authenticity token"
+    },
+    {
+      "required": true,
+      "name": "token",
+      "description": "Uniq project token"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "/api/v1/statuses?token=qRexM7UIpU2ew7Z%2BdMLyyvb00x4LGOJw15&auth_token=ww8a6t5AQoWmNy%2FcO2nRYwBeuV%2BlrJTN39",
+      "request_body": null,
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+        "token": "qRexM7UIpU2ew7Z+dMLyyvb00x4LGOJw15",
+        "auth_token": "ww8a6t5AQoWmNy/cO2nRYwBeuV+lrJTN39"
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "[\n  {\n    \"id\": 1,\n    \"name\": \"Submited\",\n    \"created_at\": \"2017-04-14T07:54:28.954Z\",\n    \"updated_at\": \"2017-04-14T07:54:28.954Z\"\n  },\n  {\n    \"id\": 2,\n    \"name\": \"To be discussed\",\n    \"created_at\": \"2017-04-14T07:54:28.990Z\",\n    \"updated_at\": \"2017-04-14T07:54:28.990Z\"\n  },\n  {\n    \"id\": 3,\n    \"name\": \"Reopened\",\n    \"created_at\": \"2017-04-14T07:54:29.012Z\",\n    \"updated_at\": \"2017-04-14T07:54:29.012Z\"\n  },\n  {\n    \"id\": 4,\n    \"name\": \"In Progress\",\n    \"created_at\": \"2017-04-14T07:54:29.034Z\",\n    \"updated_at\": \"2017-04-14T07:54:29.034Z\"\n  },\n  {\n    \"id\": 5,\n    \"name\": \"Code Review\",\n    \"created_at\": \"2017-04-14T07:54:29.056Z\",\n    \"updated_at\": \"2017-04-14T07:54:29.056Z\"\n  },\n  {\n    \"id\": 6,\n    \"name\": \"QA Review\",\n    \"created_at\": \"2017-04-14T07:54:29.080Z\",\n    \"updated_at\": \"2017-04-14T07:54:29.080Z\"\n  },\n  {\n    \"id\": 7,\n    \"name\": \"Closed\",\n    \"created_at\": \"2017-04-14T07:54:29.100Z\",\n    \"updated_at\": \"2017-04-14T07:54:29.100Z\"\n  },\n  {\n    \"id\": 50,\n    \"name\": \"transmitting\",\n    \"created_at\": \"2017-04-14T07:55:50.048Z\",\n    \"updated_at\": \"2017-04-14T07:55:50.048Z\"\n  },\n  {\n    \"id\": 51,\n    \"name\": \"programming\",\n    \"created_at\": \"2017-04-14T07:55:50.124Z\",\n    \"updated_at\": \"2017-04-14T07:55:50.124Z\"\n  },\n  {\n    \"id\": 52,\n    \"name\": \"navigating\",\n    \"created_at\": \"2017-04-14T07:55:50.190Z\",\n    \"updated_at\": \"2017-04-14T07:55:50.190Z\"\n  },\n  {\n    \"id\": 53,\n    \"name\": \"navigating\",\n    \"created_at\": \"2017-04-14T07:55:50.324Z\",\n    \"updated_at\": \"2017-04-14T07:55:50.324Z\"\n  },\n  {\n    \"id\": 54,\n    \"name\": \"transmitting\",\n    \"created_at\": \"2017-04-14T07:55:50.389Z\",\n    \"updated_at\": \"2017-04-14T07:55:50.389Z\"\n  }\n]",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"b8fb047457dbcfbd6cc9f272ef95e22e\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "1b68a28d-e942-4ab9-a6e2-05e8f09d69de",
+        "X-Runtime": "0.171448",
+        "Content-Length": "1317"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"http://localhost:3000/api/v1/statuses?token=qRexM7UIpU2ew7Z%2BdMLyyvb00x4LGOJw15&auth_token=ww8a6t5AQoWmNy%2FcO2nRYwBeuV%2BlrJTN39\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

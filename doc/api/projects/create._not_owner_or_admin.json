@@ -1,0 +1,63 @@
+{
+  "resource": "Projects",
+  "http_method": "POST",
+  "route": "/api/v1/projects",
+  "description": "Create. Not owner or admin",
+  "explanation": null,
+  "parameters": [
+    {
+      "required": true,
+      "name": "auth_token",
+      "description": "User authenticity token"
+    },
+    {
+      "required": true,
+      "name": "organization_id",
+      "description": "Organization id"
+    },
+    {
+      "required": true,
+      "name": "project",
+      "description": "Project attributes"
+    },
+    {
+      "scope": "project",
+      "required": true,
+      "name": "title",
+      "description": "Title of the project"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "POST",
+      "request_path": "/api/v1/projects",
+      "request_body": "{\"organization_id\":13,\"project\":{\"title\":\"Example project\"},\"auth_token\":\"B8BGgrUOSBiZaZJHM0TzzA9uDQ6uGZcF28\"}",
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 403,
+      "response_status_text": "Forbidden",
+      "response_body": "<!DOCTYPE html>\n<html>\n  <head>\n    <title>QualityDashboard</title>\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"/css/main.css\"/>\n  </head>\n  <body>\n    <header id=\"head_menu\" class=\"main-header\">\n      <div class=\"logo_title\">\n        <a href=\"/\">\n          <img src=\"/images/logo_main.png\" alt=\"Logo main\" />\n          <span>Easy QA</span>\n</a>      </div>\n      <div style=\"text-align: center\"> You have no permission to view this page or perform this action.</div>\n    </header>\n  </body>\n</html>\n",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Content-Type": "text/html; charset=utf-8",
+        "Cache-Control": "no-cache",
+        "X-Request-Id": "5a7c6dbd-9b22-41af-b2b7-e1aaeceaeccd",
+        "X-Runtime": "0.065066",
+        "Content-Length": "505"
+      },
+      "response_content_type": "text/html; charset=utf-8",
+      "curl": "curl \"http://localhost:3000/api/v1/projects\" -d '{\"organization_id\":13,\"project\":{\"title\":\"Example project\"},\"auth_token\":\"B8BGgrUOSBiZaZJHM0TzzA9uDQ6uGZcF28\"}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

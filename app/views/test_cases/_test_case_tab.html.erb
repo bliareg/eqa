@@ -1,0 +1,61 @@
+<div class="tab" id="testcaseInfo">
+  <div class="modal-content-scroll">
+
+    <div class="row">
+      <div class="case-title col xs-10 disabled-select">
+        <label for="caseTitle1" class="title"><%= t('title') %> <sup>*</sup></label>
+        <%= text_field_tag('caseTitle1', @test_case.title) %>
+      </div>
+
+      <div class="col col xs-2">
+        <% if policy(@test_case.project).tester_or_higher_rank? %>
+          <%= link_to(edit_test_case_path(@test_case), remote: true, class: 'edit') do %>
+            <span class='icon-edit-icon'></span>
+          <% end %>
+
+          <%= link_to(@test_case, method: :delete,
+                      remote: true, class: 'edit',
+                      'data-confirm' => t('test_case_delete_confirmation')) do %>
+            <span class='icon-delete-icon'></span>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="case-selection clearfix disabled-select">
+
+      <div class="input_wrapper drop-arr case-selection-item">
+        <label for="section1" class="title"><%= t('module') %><sup>*</sup></label>
+        <select name="section" id="section1">
+          <option selected="selected"><%= @test_module.title %></option>
+        </select>
+      </div>
+
+      <div class="input_wrapper drop-arr case-selection-item">
+        <label for="type1" class="title"><%= t('type') %><sup>*</sup></label>
+        <select name="type" id="type1">
+          <option selected="selected"><%= @test_case.case_type.text %></option>
+        </select>
+      </div>
+
+    </div>
+
+    <div class="presteps">
+      <label for="presteps1" class="title"><%=t('presteps') %></label>
+      <textarea readonly name="presteps" id="presteps1"><%= @test_case.pre_steps %></textarea>
+      <span class="example"><%= t('presteps_example_with_ref') %></span>
+    </div>
+
+    <div class="steps">
+      <label for="steps1" class="title"><%=t('test_case_steps') %></label>
+      <textarea readonly name="steps" id="steps1"><%= @test_case.steps %></textarea>
+      <span class="example"><%= t('steps_example') %></span>
+    </div>
+
+    <div class="expected_result">
+      <label for="expected_result1" class="title"><%=t('test_case_expected_result') %></label>
+      <textarea readonly name="expected_result" id="expected_result1"><%= @test_case.expected_result %></textarea>
+      <span class="example"><%= t('expected_result_example')%></span>
+    </div>
+  </div>
+</div>

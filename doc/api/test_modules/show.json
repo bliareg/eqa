@@ -1,0 +1,60 @@
+{
+  "resource": "Test Modules",
+  "http_method": "GET",
+  "route": "/api/v1/test_modules/:id",
+  "description": "Show",
+  "explanation": null,
+  "parameters": [
+    {
+      "required": true,
+      "name": "auth_token",
+      "description": "User authenticity token"
+    },
+    {
+      "required": true,
+      "name": "token",
+      "description": "Uniq project token"
+    },
+    {
+      "required": true,
+      "name": "id",
+      "description": "Test module id"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "/api/v1/test_modules/7?token=zP40TIc2RNDNNI%2BeASElxGuQwXxnxt8K18&auth_token=wrpus%2FZJ5qJHNoKLFGOZWGz%2B4hUzzBL057",
+      "request_body": null,
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+        "token": "zP40TIc2RNDNNI+eASElxGuQwXxnxt8K18",
+        "auth_token": "wrpus/ZJ5qJHNoKLFGOZWGz+4hUzzBL057"
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"id\": 7,\n  \"test_plan_id\": 2,\n  \"created_by\": 55,\n  \"title\": \"Mustafar\",\n  \"description\": \"Truly wonderful, the mind of a child is.\",\n  \"parent_id\": null,\n  \"lft\": 13,\n  \"rgt\": 14,\n  \"depth\": 0,\n  \"children_count\": null,\n  \"created_at\": \"2017-04-14T07:56:14.677Z\",\n  \"updated_at\": \"2017-04-14T07:56:14.677Z\",\n  \"position\": 0\n}",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"fd89debf96740449c6c271e1c8a7ffea\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "0d8825f7-b8f9-493b-a7b5-91f1c5906ba2",
+        "X-Runtime": "0.053827",
+        "Content-Length": "277"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"http://localhost:3000/api/v1/test_modules/7?token=zP40TIc2RNDNNI%2BeASElxGuQwXxnxt8K18&auth_token=wrpus%2FZJ5qJHNoKLFGOZWGz%2B4hUzzBL057\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

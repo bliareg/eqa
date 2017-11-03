@@ -1,0 +1,24 @@
+<% content_for :application do %>
+  <div id='projects-left-menu' class="mCustomScrollbar" data-project-id="<%= @project.id %>">
+    <div class="sidebar <%= notification_class %>">
+      <div class="logo_block">
+        <%= image_tag @project.logo.file.url(:medium), class: 'logo' %>
+        <h1 class="project-title-color"><%= @project.title %></h1>
+        <p><%= t 'you_are' %><span><%= " #{@project.user_role(current_user)}" %></span></p>
+      </div>
+      <nav>
+        <%= render 'projects/left_menu' %>
+      </nav>
+    </div> <!--sideBar-->
+  </div>    <!--mCustomScrollbar-->
+  <div class="content-with-sidebar">
+    <div class="container-full">
+      <div class="row">
+        <div class="main-content <%= notification_class %> col m-12">
+          <%= content_for?(:projects_profile) ? yield(:projects_profile) : yield %>
+        </div> <!--main-content col m-12-->
+      </div>  <!--row-->
+    </div>  <!--container-full -->
+  </div>  <!--content-with-sidebar -->
+<% end %>
+<%= render template: 'layouts/application' %>

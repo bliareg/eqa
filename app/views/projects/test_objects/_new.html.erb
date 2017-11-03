@@ -1,0 +1,46 @@
+<div class="modal-dialog upload-build">
+  <div class="modal-content container">
+    <div class="title-main">
+      <h3><%= @project.test_objects.count.zero? ? t('upload_first_object') : t('upload_object') %></h3>
+      <span class="close">
+        <span class='icon-close-icon'></span>
+      </span>
+    </div>
+    <div class="modal-body">
+      <div class="row">
+        <div class="col xs-12">
+          <h3 class="title"><%= t('build_file_ipa_or_apk') %></h3>
+          <%= form_for(@test_object, url: project_test_objects_path(@project),
+                                     html: { class: 'dropzone', id: 'new_upload' },
+                                     remote: true) do |f| %>
+            <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+            <%= hidden_field_tag :page, params[:page] %>
+            <div class="upload-build-zone">
+              <span class='icon-load-cloud load-cloud-img'></span>
+            </div>
+          <% end %>
+          <p class="load-cloud-description">
+            <%= t('you_can_also_use_our') %> <span><%= t('integrations') %> </span><%= t('to_upload_builds_from_your_building') %>
+          </p>
+          <%= form_for(@test_object, url: project_test_objects_path(@project),
+                                     html: { id: 'link_upload' },
+                                     remote: true, validate: true) do |f| %>
+            <%= hidden_field_tag :page, params[:page] %>
+            <%= f.hidden_field :platform_version, value: 'Web' %>
+            <div class="input_wrapper">
+              <%= f.label t('or_add_link'), class: 'star' %>
+              <%= f.text_field :link, validate: true %>
+            </div>
+            <%= f.submit t('save_object'), class: 'btn btn-green open-addTestObjectLink' %>
+            <button type="button" class="btn btn-white-green cancel"><%= t('cancel') %></button>
+          <% end %>
+        </div>
+      </div>
+      <div class="row">
+        <div id="progressbar"></div>
+        <div class="col xs-12" id="after_upload" style="display: none;">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

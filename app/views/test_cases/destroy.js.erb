@@ -1,0 +1,13 @@
+$('span.cases_count').html(parseInt($('span.cases_count').html()) - 1);
+var selector = $('div.plans-info-item[data-plan-id=<%= @test_module.test_plan_id %>] p.cases_count');
+selector.text(parseInt(selector.text()) - 1 );
+var selector = $('.cases-info-item-inner[data-id=<%= @test_module.id %>]');
+selector.find('tr#case_<%= @test_case.id %>').remove();
+number_element = selector.find('.number')
+number_element.text('(' + selector.find('.test_case_item').length + ')')
+hide_modal();
+$('.mCustomScrollbar').mCustomScrollbar('update');
+<% unless @test_case.deleted_at.nil? %>
+$('.plans-info').children().find('.active .plans-item-inner-bottom .latest-update').text('<%= j test_plan_footer_info(@test_module.test_plan).first %>')
+$('.plans-info').children().find('.active .plans-item-inner-bottom .date').text('<%= j test_plan_footer_info(@test_module.test_plan).second %>')
+<% end %>

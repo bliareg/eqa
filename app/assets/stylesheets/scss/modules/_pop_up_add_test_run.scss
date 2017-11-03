@@ -1,0 +1,70 @@
+.modal-add-test-run {
+  width: 1000px;
+  position: relative;
+  //
+  //.modal-content-scroll {
+  //  height: 380px;
+  //}
+
+  .assign {
+    width: 55%;
+
+    .input_wrapper {
+      width: 80%;
+    }
+  }
+
+  .radio-btn-group {
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 1px solid $base-border;
+
+    .change-selection {
+      width: 60%;
+      margin-left: 30px;
+      padding: 13px 20px 13px 20px;
+      background-color: $change-selection-bg;
+      border-radius: 6px;
+
+      span {
+        color: $base-text;
+        font-weight: 600;
+      }
+
+      a {
+        color: $change-selection-link;
+      }
+    }
+  }
+
+  .radio-btn-group-item {
+    width: 60%;
+
+    &:first-child {
+      margin-bottom: 40px;
+    }
+
+    .title {
+      line-height: 15px;
+      font-family: $base-font-family;
+      font-weight: 600;
+      @include rem(font-size, 14px);
+    }
+
+    .radio-btn-group-text {
+      padding-left: 30px;
+
+      p {
+        color: $base-light-text;
+        @include rem(font-size, 13px);
+      }
+    }
+  }
+
+  #sort,
+  #filter {
+    .dd-select {
+      background: transparent !important;
+    }
+  }
+}

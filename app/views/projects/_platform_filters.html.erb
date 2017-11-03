@@ -1,0 +1,29 @@
+<div class="card card-search">
+  <h1 class="title"><%= t 'users.my_projects' %></h1>
+  <div class="projects-nav">
+    <div class="search-wrap">
+      <%= form_tag(projects_path, method: 'get', class: 'search', autocomplete: "off") do %>
+        <%= text_field_tag :search, params[:search], placeholder: t('search'), id: "search"%>
+        <%= button_tag(type: 'submit', class: 'search-btn') do %>
+         <span class="fa fa-search ic-search" aria-hidden="true"></span>
+        <% end %>
+      <% end %>
+    </div>
+    <ul class="my-projects-nav-tabs">
+      <% @platform_counts.sort.each do |name, amount| %>
+        <li>
+          <%= link_to t(name.downcase, default: name) + " (#{amount})",
+                      projects_path(platform: name),
+                      class: "btn btn-white-green #{active_filter?(name)}" %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<script>
+  $( function() {
+    var availableTags = <%= raw @projects.pluck(:title).to_json %>;
+    $( "#search" ).autocomplete({ source: availableTags });
+  });
+</script>

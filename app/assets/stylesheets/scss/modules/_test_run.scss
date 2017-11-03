@@ -1,0 +1,233 @@
+.testRun {
+
+  .btn-green {
+    padding: 15px 20px;
+    margin-bottom: 20px;
+  }
+
+  .testRun-box {
+    margin-bottom: 20px;
+
+    .main-title {
+      padding: 18px 20px;
+      background-color: $test-run-main-title-bg;
+      border-radius: 6px;
+      @include rem(font-size, 16px);
+    }
+  }
+
+  .testRun-box-item {
+    display: block;
+    padding: 20px 0;
+    border-top: 1px solid $base-border;
+    @extend %clearfix;
+
+    &:first-of-type {
+      border-top: none;
+    }
+
+    &-img {
+      float: left;
+      width: 70px;
+      height: 70px;
+      margin-right: 20px;
+      border-radius: 18px;
+    }
+
+    &-info {
+      float: left;
+      width: 55%;
+
+      @media (min-width: 1350px) {
+        width: 60%;
+      }
+
+      @media (min-width: 1800px) {
+        width: 70%;
+      }
+
+      .title {
+        display: block;
+        color: $test-run-info-title;
+        font-family: $base-font-family;
+        line-height: 25px;
+        @include rem(font-size, 16px);
+        @extend %text-overflow;
+        max-width: 100%;
+      }
+
+      .user {
+        color: $base-light-text;
+        @include rem(font-size, 13px);
+      }
+
+      .edit {
+        padding-left: 8px;
+        margin-left: 8px;
+        color: $test-run-info-edit;
+        border-left: 1px solid $base-border;
+        cursor: pointer;
+        @include rem(font-size, 13px);
+
+        span {
+          width: 12px;
+          margin-right: 4px;
+
+          &.icon-delete-icon{
+            color: $btn-red;
+          }
+        }
+      }
+
+      .test-progress {
+        margin-top: 5px;
+        @extend %clearfix;
+
+        li {
+          float: left;
+          padding: 0 10px;
+          color: $base-light-text;
+          font-weight: 300;
+          line-height: 20px;
+          border-left: 1px solid $base-border;
+          @include rem(font-size, 12px);
+
+          &:first-child {
+            padding-left: 0;
+            border-left: none;
+          }
+        }
+      }
+    }
+
+    .progress-bar {
+      float: right;
+      position: relative;
+      top: 12px;
+      width: 340px;
+      height: 50px;
+      padding: 10px;
+      background-color: $base-bg;
+      border: 1px solid $base-border;
+      border-radius: 6px;
+      cursor: context-menu;
+      @extend %clearfix;
+
+      .progress {
+        float: left;
+        height: 30px;
+        width: 250px;
+        background: $test-run-progress;
+        border-radius: 3px;
+        overflow: hidden;
+        @extend %clearfix;
+
+        .passed,
+        .retest,
+        .blocked,
+        .untested,
+        .failed,
+        .not-available {
+          float: left;
+          height: 100%;
+        }
+
+        .passed {
+          background: $test-run-passed;
+        }
+
+        .retest {
+          background: $test-run-retest;
+        }
+
+        .blocked {
+          background: $test-run-blocked;
+        }
+
+        .untested {
+          background: $test-run-untested;
+        }
+
+        .failed {
+          background: $test-run-failed;
+        }
+
+        .not-available {
+          background: $test-run-not-available;
+        }
+      }
+
+      .passed-progress {
+        float: right;
+        line-height: 30px;
+        @include rem(font-size, 16px);
+      }
+    }
+  }
+
+  .testRun-test-item .cases-test-header .progress-bar {
+    .progress {
+      display: inline-block;
+      float: left;
+      width: 128px;
+      height: 22px;
+      margin-top: 10px;
+      margin-left: 20px;
+      border: 1px solid #e2e2e2;
+      border-radius: 4px;
+      overflow: hidden;
+
+      .passed,
+      .retest,
+      .blocked,
+      .untested,
+      .failed,
+      .not-available {
+        float: left;
+        height: 100%;
+      }
+
+      .passed {
+        background: $test-run-passed;
+      }
+
+      .retest {
+        background: $test-run-retest;
+      }
+
+      .blocked {
+        background: $test-run-blocked;
+      }
+
+      .untested {
+        background: $test-run-untested;
+      }
+
+      .failed {
+        background: $test-run-failed;
+      }
+
+      .not-available {
+        background: $test-run-not-available;
+      }
+    }
+
+    .passed-progress {
+      float: left;
+      margin-top: 5px;
+      margin-left: 5px;
+      line-height: 30px;
+      font-size: 16px;
+      font-size: 1rem;
+    }
+  }
+
+  &-test-info {
+    width: 100%;
+    //overflow-x: auto;
+  }
+}
+
+.JCLRgrips {
+   max-width: 100% !important;
+ }

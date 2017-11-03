@@ -1,0 +1,13 @@
+<div class="col xs-7">
+  <div class="input_wrapper">
+    <%= f.label :title, class: 'star' %>
+    <%= f.text_field :title, autofocus: true, validate: true, 'data-id' => @organization.id %>
+  </div>
+  <div class="input_wrapper">
+    <%= f.label :description %>
+    <%= f.text_area :description, cols: '30', rows: '5' %>
+  </div>
+</div>
+<div class="col xs-5">
+  <%= render partial: 'shared/dropzone_area', locals: { object: @organization } %>
+</div>

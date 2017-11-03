@@ -1,0 +1,8 @@
+<ul>
+  <li class='select-modules' id='jstree-module-<%= test_module.id %>'>
+    <span data-id="<%= test_module.id %>">
+      <a href="javascript:;" class="folder-title" value="<%= test_module.id %>"><%= test_module.title %></a>
+    </span>
+    <%= render partial: 'test_runs/test_modules_item', collection: test_module.children, as: :test_module %>
+  </li>
+</ul>

@@ -1,0 +1,13 @@
+<h1>Test Modules</h1>
+<div id='test_modules_list'>
+    <%= link_to 'Add module', new_test_module_path(@test_plan_profile.id), id: 'create_test_module',  remote: true %>
+      <%= link_to 'Add case',new_test_case_path( {test_plan_id: @test_plan_profile.id, project_id: @test_plan_profile.project_id}), id: 'create_test_case',  remote: true %></td>
+  <table border="1" cellspacing="0" cellpadding="15" width="500" height="90" id='module_lists'>
+    <tr>
+      <th>Id</th>
+      <th>Title</th>
+      <th>Description</th>
+    </tr>
+    <%= render partial: 'module_lists', collection: @test_palan_modules, as: :item %>
+  </table>
+</div>

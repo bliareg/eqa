@@ -1,0 +1,5 @@
+if ($('.testRun-box').length) {
+  $('.testRun-box.new .test_runs_list').prepend("<%= j render partial: 'test_run_item', locals: { run: @new_test_run} %>")
+}
+element_html = "<%= j render partial: 'shared/push_up_notification', locals: { message: t('test_run_successfully_cloned') } %>"
+$('body').append($(element_html));

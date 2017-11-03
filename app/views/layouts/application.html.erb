@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang='<%= I18n.locale %>'>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="turbolinks-cache-control" content="no-cache">
+    <meta name="viewport" content="<%= meta_shrink_to_fit_tag_content %>">
+    <%= yield :meta %>
+
+    <title>EasyQA Test Management Tool</title>
+
+    <%= favicon_link_tag 'favicon.png' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <!-- <link rel="stylesheet" href="//aui-cdn.atlassian.com/aui-adg/5.9.12/css/aui.min.css" media="all"> -->
+    <!-- <link type="text/css" rel="stylesheet" media="screen" href="https://qaplugin.atlassian.net/atlassian-connect/all.css" /> -->
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag "https://www.google.com/jsapi", "chartkick" %>
+    <%= csrf_meta_tags %>
+    <%= action_cable_meta_tag %>
+    <script type="text/javascript">check_iframe()</script>
+    <script type="text/javascript" src="/js/libs/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/js/libs/jquery.ddslick.js"></script>
+    <script type="text/JavaScript" src="/js/libs/jquery.print.js"></script>
+    <script type="text/JavaScript" src="https://mottie.github.io/tablesorter/js/jquery.tablesorter.js"></script>
+    <script src="https://js.braintreegateway.com/v2/braintree.js"></script>
+    <script src="https://www.paypalobjects.com/api/checkout.js"></script>
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body class='locale-<%= I18n.locale %>' data-close-confirmation-message="<%= t 'close_confirmation_message' %>">
+   <%= include_gon %>
+    <div class="wrapper">
+      <%= (render 'layouts/sign_menu', no_project: without_left_menu?) if user_signed_in? %>
+      <%= yield(:sign_menu) if content_for?(:sign_menu) %>
+      <div class="content-wrapper">
+        <%= content_for?(:application) ? yield(:application) : yield %>
+      </div>
+      <%= render 'layouts/footer', no_project: without_left_menu? %>
+    </div>
+    <%= render 'layouts/modal' %>
+    <% unless Rails.env.development? %>
+      <%= render "devise/shared/google_analytics" %>
+      <%= render "layouts/hotjar" %>
+    <% end %>
+    <script>
+      if (isInIframe()) {
+        connect_to_atlassian('<%= @base_url %>');
+        clear_page();
+      }
+    </script>
+  </body>
+</html>

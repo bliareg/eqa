@@ -1,0 +1,22 @@
+<tr data-test-run-id="<%=@test_run.id%>" data-test-case-id="<%=result.test_case_id%>" data-test-result-id="<%=result.id%>">
+  <% if @column_visibility.sort_order.nil? || @column_visibility.sort_order.empty? %>
+    <td class="drag-icon" style='width: <%= @column_set['drag_icon'] %>%'>
+      <span class='icon-drag-icon'></span>
+    </td>
+  <% end %>
+  <td class="id" id='<%= result.id_in_project %>' style='width: <%= @column_set['id'] %>%'><%= result.id_in_project %></td>
+  <td class="test-title" title='<%= result.title %>' style='width: <%= sorted_title_width %>%'><%= result.title %></td>
+  <% (@column_set.keys & TestRunResult::VISIBLE_COLUMNS.keys).each do |column_name| %>
+    <td class="<%= (generate_class_from_name(column_name)) %>"
+        title="<%= column_name == 'status' ? test_run_result_label(result) : result.get_column_value(column_name) %>"
+        style='width: <%= @column_set[column_name] %>%'>
+      <% if column_name == 'status' %>
+        <div class="status-block <%= test_run_result_class(result) %>">
+          <%= test_run_result_label(result) %>
+        </div>
+      <% else %>
+        <%= result.get_column_value(column_name) %>
+      <% end %> 
+    </td>
+  <% end %>
+</tr>

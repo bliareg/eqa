@@ -1,0 +1,45 @@
+<div class="container-full">
+  <div class="row">
+    <div class="main-content <%= notification_class %> col m-12">
+      <%= render 'users/card_user_info' %>
+      <div class="container-full">
+        <div class="row flex-row">
+          <div class="safariFix col m-6">
+            <div class="card card-history">
+              <h3 class="card-title"><%= t 'project_history' %></h3>
+              <div class="history-list">
+                <% @projects_history.each do |object| %>
+                  <%= render 'history_item', object: object %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+          <div class="safariFix col m-6">
+            <div class="Home card card-graphics">
+              <h3 class="card-title"><%= t 'project_graphics' %></h3>
+              <div class="chart">
+                <canvas id="root_diagram"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '748424998568365'); // Insert your pixel ID here.
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=748424998568365&ev=PageView&noscript=1"
+/></noscript>
+<!-- DO NOT MODIFY -->
+<!-- End Facebook Pixel Code -->

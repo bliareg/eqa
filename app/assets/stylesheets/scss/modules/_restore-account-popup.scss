@@ -1,0 +1,17 @@
+.restore-your-account {
+  width: 640px;
+
+  .description {
+    margin-bottom: 30px;
+
+    p {
+      margin: 0;
+      @include rem(font-size, 14px);
+    }
+  }
+
+  .btn {
+    height: 40px;
+    padding: 9px 20px;
+  }
+}

@@ -1,0 +1,30 @@
+<% object_project = object.project %>
+<div class="item">
+  <%= link_to project_path(object_project) do %>
+    <%= image_tag object.project.logo.file.url(:medium), class: 'project-logo' %>
+  <% end %>
+  <div class="changes-block">
+    <span class="history-changes">
+      <%= changes_text(object) %>
+      <%= link_to project_path(object_project) do %>
+        <span class="history-project-name">
+          <%= object_project.title %>
+        </span>
+      <% end %>
+    </span>
+    <div class="platform">
+      <% object_project.platforms.each do |platform| %>
+        <div class="<%= platform_icon(platform.name) %>">
+          <span class="fa fa-<%= platform_icon(platform.name) %>" aria-hidden="true"></span>
+        </div>
+      <% end %>
+    </div>
+    <div class="last-update">
+      <%= "#{time_ago_in_words(object.created_at)} #{t 'ago'}" %>
+    </div>
+    <span class="owner">
+      <%= t 'you_are' %>
+      <%= @project_roles[object.project_id] %>
+    </span>
+  </div>
+</div>

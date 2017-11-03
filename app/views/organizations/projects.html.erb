@@ -1,0 +1,12 @@
+<div class="card card-tab-content org-projects tab">
+  <div class="card-header">
+    <h2 class="card-header-title"><%= t 'projects' %></h2>
+    <%= @organization.add_project_link(current_user) %>
+  </div>
+  <div class="columns-wrapper org-projects">
+    <% @projects.each do |project| %>
+      <%= render partial: 'projects/organization_project_info',
+                   locals: { project: project} %>
+    <% end %>
+  </div>
+</div>

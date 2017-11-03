@@ -1,0 +1,27 @@
+<div class="card card-integrations-title">
+    <h2 class="card-integrations-title"><%= t 'integrations' %></h2>
+</div>
+<div class="main-content-info test-plan-activity">
+  <ul class="nav-tabs">
+    <li>
+      <%= link_to t('sdk_integrations'), project_integrations_path(@project), class: "btn btn-gray highlight_link integrations-link show_loader", remote: true %>
+    </li>
+    <li>
+      <%= link_to t('plugin_integrations'), project_synchronizations_path(@project), class: "btn btn-gray highlight_link  show_loader", remote: true %>
+    </li>
+  </ul>
+  <div class="tab-content">
+    <div class="tab-pane tab">
+      <div class="card-wrapper">
+        <div class="load-block">
+          <div class="loader-wrap">
+            <div class="loader"></div>
+          </div>
+        </div>
+        <div id="content">
+          <%= content_for?(:project_integrations) ? yield(:project_integrations) : yield %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

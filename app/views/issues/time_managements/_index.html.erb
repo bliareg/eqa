@@ -1,0 +1,41 @@
+<div class="spent-time-tab tab" id="spentTime">
+  <% if policy(@issue.project).not_viewer? %>
+    <%= form_for(TimeManagement.new, url: issues_time_managements_path, validate: true, remote: true) do |f| %>
+      <%= f.hidden_field :user_id, value: current_user.id %>
+      <%= f.hidden_field :issue_id, value: @issue.id %>
+      <div class="tab-header">
+        <div class="input_wrapper">
+          <%= f.text_field :spent_time, placeholder: t('time_word'), validate: true %>
+        </div>
+
+        <div class="input_wrapper">
+          <%= f.text_field :comment, placeholder: t('comment.one') %>
+        </div>
+
+        <div class="input_wrapper">
+          <%= f.submit t('add_time'), class: 'btn btn-green' %>
+          <span class="btn btn-green btn-big save_btn" style='display: none;'><%= t 'save' %></span>
+          <span class="btn btn-white-green btn-big cancel_btn" style='display: none;'><%= t 'cancel' %></span>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+  <div class="modal-content-scroll">
+    <table class="spent-time-table">
+      <thead>
+        <tr>
+          <th><%= t 'date_word' %></th>
+          <th><%= t 'time_word' %></th>
+          <th><%= t 'user' %></th>
+          <th><%= t 'comment.one' %></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @issue.time_managements.each do |time_management| %>
+          <%= render 'issues/time_managements/time_management', time_management: time_management %>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

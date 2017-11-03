@@ -1,0 +1,7 @@
+<% content_for :modal do %>
+  <%= render local_assigns.except(:params) %>
+<% end %>
+<%= render_parent_layout(local_assigns[:params]) %>
+<script type="text/javascript">
+  open_modal('<%= j content_for :modal %>', '<%= parent_url(local_assigns[:params]) %>')
+</script>

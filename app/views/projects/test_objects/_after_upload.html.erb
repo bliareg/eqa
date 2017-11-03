@@ -1,0 +1,45 @@
+<div class="file-info">
+  <span class='file-name'>
+    <span><%= t 'file' %>: </span><%= @test_object.link || @test_object.file.original_filename %>
+  </span>
+  <div id='progressbar'>
+    <span class='status'>
+      <span><%= t 'status' %>: </span><%= @test_object.errors.messages.empty? ? t('success') : t('failed') %>
+    </span>
+    <span class='received'>
+      <span><%= t 'received' %>: </span><%= calculate_size_in_mb(@test_object.file) %>
+    </span>
+  </div>
+  <% if @test_object.errors.messages.empty? %>
+    <p class="link-description">
+      <%= t 'install_link' %>
+    </p>
+    <%= link_to @test_object.url, @test_object.url,
+                                  class: 'btn-white-green link link-to-object' %>
+  <% else %>
+    <% @test_object.errors.messages.each do |_key, message| %>
+      <p>
+        <div class="field_with_errors">
+          <label class="message">
+            <%= message[0] %>
+          </label>
+        </div>
+      </p>
+    <% end %>
+  <% end %>
+  <div class="btns-block">
+    <% if @test_object.errors.messages.empty? %>
+      <button class="btn btn-green link_inform_copy_link"><%= t 'copy_link' %></button>
+      <%= link_to t('send_by_email'),
+                  new_test_object_mailer_path(@test_object.id),
+                  remote: true,
+                  class: 'btn btn-green btn-send' %>
+    <% end %>
+    <button type="button" class="btn btn-white-green cancel">
+      <%= t('close') %>
+    </button>
+  </div>
+</div>
+<script type="text/javascript">
+  build_link_inform_init();
+</script>

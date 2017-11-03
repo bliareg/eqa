@@ -1,0 +1,99 @@
+.modal {
+  display: none;
+  overflow: hidden;
+  background: $modal-bg-shadow;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2100;
+
+  &-dialog {
+    position: relative;
+    margin: 30px auto;
+  }
+
+  &.fade {
+    opacity: 0;
+    transition: opacity .8s linear;
+  }
+
+  &.fade.in {
+    opacity: 1;
+  }
+
+  .modal.fade .modal-dialog {
+    transform: translate(0, -50%);
+    transition: transform .8s ease-out;
+  }
+
+  .modal.in .modal-dialog {
+    transform: translate(0, 0);
+  }
+
+  &-body {
+    padding-right: 5px;
+
+    .title {
+      display: block;
+      margin-bottom: 5px;
+      font-family: $base-font-family;
+      font-weight: 400;
+      @include rem(font-size, 14px);
+    }
+
+    .example {
+      display: block;
+      margin-bottom: 17px;
+      margin-top: 8px;
+      font-family: $light-font-family;
+      color: $modal-example-color;
+      @include rem(font-size, 12px);
+    }
+  }
+
+  &-content {
+    position: relative;
+    padding: 20px;
+    overflow-y: auto;
+    background-clip: padding-box;
+    background-color: $white;
+    border: 1px solid $modal-border;
+    border-radius: 6px;
+    outline: 0;
+    box-shadow: 0 5px 15px $modal-box-shadow;
+
+    .title-main h3 {
+      margin: 0 0 20px 0;
+      font-family: $bold-font-family;
+      font-weight: bold;
+      @include rem(font-size, 24px);
+    }
+
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      color: $base-text;
+      cursor: pointer;
+      z-index: 1500;
+
+      span {
+        display: block;
+      }
+    }
+  }
+
+  .btn-group {
+    margin: 20px 0 0 0;
+
+    .btn {
+      padding: 10px 20px;
+    }
+  }
+
+  .ui-selectmenu-button {
+    width: 100%;
+  }
+}

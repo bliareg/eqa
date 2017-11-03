@@ -1,0 +1,103 @@
+<div class="main-content-info issues">
+  <div class="issue_inner">
+    <div class="issue_header">
+      <div class="head_title_top">
+        <h2><%= t 'issues_summary' %></h2>
+        <%= render 'issues/controls'%>
+        <div class="search-wrap">
+          <%= form_tag(issues_path, method: :get,
+                       class: 'search-form search', autocomplete: "on", remote: true) do %>
+            <%= text_field_tag :search, params[:search],
+                               placeholder: t('search_issue'),
+                               id: "search"%>
+            <%= button_tag(type: 'submit', class: 'search-btn', value: 'submit') do %>
+              <span class="fa fa-search ic-search" aria-hidden="true"></span>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+      <div class="head_title_middle">
+        <%= render 'issues/table_counts' %>
+      </div>
+      <div class="head_title_bottom">
+        <div class="columns-visibility">
+          <span class="btn btn-green open-columns-list">
+            <%= t 'columns_visibility' %>
+            <span class="drop-arrow"></span>
+          </span>
+          <ul class="columns-list dd-options dd-click-off-close modal-content-scroll">
+          </ul>
+        </div>
+        <div class="btn btn-green add-column">
+          <span class="fa fa-plus" aria-hidden="true"></span>
+          <%= t 'add_new_column' %>
+        </div>
+
+        <div class="remove-column">
+          <span class='icon-delete-icon'></span>
+          <span><%= t 'drag_selected_column_here_to_remove' %></span>
+        </div>
+      </div>
+    </div>
+    <div class="issue_content">
+      <div class="agile" data-project-id="<%= @project.id %>" data-user-id="<%= current_user.id %>">
+        <% @project_statuses.each do |project_status| %>
+          <%= render 'statuses/status', project_status: project_status,
+                                        status: project_status.status,
+                                        issues: issues_by_project_status(project_status) %>
+        <% end %>
+      </div>
+    </div>
+    <nav class='pagination'><span><%= link_to_next_page %></span></div>
+  </div>
+</div>
+<div class="back-to-top" id="backToTop">
+  <div class="icon-wrap">
+    <span class="fa fa-chevron-up icon"></span>
+  </div>
+</div>
+<div id="color-picker" class="color-picker">
+  <ul class="color-list">
+    <li>
+      <span class="color-item item-1"></span>
+    </li>
+    <li>
+      <span class="color-item item-2"></span>
+    </li>
+    <li>
+      <span class="color-item item-3"></span>
+    </li>
+    <li>
+      <span class="color-item item-4"></span>
+    </li>
+    <li>
+      <span class="color-item item-5"></span>
+    </li>
+    <li>
+      <span class="color-item item-6"></span>
+    </li>
+    <li>
+      <span class="color-item item-7"></span>
+    </li>
+    <li>
+      <span class="color-item item-8"></span>
+    </li>
+    <li>
+      <span class="color-item item-9"></span>
+    </li>
+  </ul>
+</div>
+<script>
+  $(function() {
+    var availableTags = <%= raw @issues.pluck(:summary).flatten.to_json %> ;
+    $("#search").autocomplete({
+      source: availableTags
+    });
+  });
+  Issues.cable.init();
+  <% if @issue.present? %>
+    open_issue(<%= @issue.id %>)
+  <% else %>
+    clear_query_params();
+  <% end %>
+</script>

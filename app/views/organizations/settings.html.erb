@@ -1,0 +1,15 @@
+<div class="card card-tab-content org-delete tab">
+  <div class="card-header">
+    <h2 class="card-header-title"><%= t 'delete_organization' %></h2>
+    <%= link_to(t('delete_organization'), destroy_organization_confirm_path(@organization),
+                  remote: true, class: 'btn btn-red card-header-btn') %>
+  </div>
+  <div class="columns-wrapper">
+    <%= image_tag(image_path("warning-icon.png"), class: 'warning-icon') %>
+    <div class="warning-description">
+      <p class="warning-description-title"><%= t 'deleting_organization' %></p>
+      <p class="warning-description-text"><%= t 'permanent_action' %></p>
+      <p class="warning-description-text"><%= t 'no_member' %></p>
+    </div>
+  </div>
+</div>

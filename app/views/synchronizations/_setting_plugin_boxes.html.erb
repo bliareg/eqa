@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col xs-12">
+    <div class="input_wrapper">
+      <p class="title"><%= t 'synchronize_text' %></p>
+      <div class="radio-item">
+        <%= f.radio_button :synchronization_type, :all, class: 'radio' %>
+        <%= f.label :synchronization_type, t('all_issues'),
+                                           value: :all, class: 'title' %>
+      </div>
+      <div class="radio-item">
+        <%= f.radio_button :synchronization_type, :only_pushed,
+                                                  class: 'radio' %>
+        <%= f.label :synchronization_type, t('pushed_issues'),
+                                           value: :only_pushed,
+                                           class: 'title' %>
+      </div>
+    </div>
+    <div class="input_wrapper synchronize">
+      <%= f.check_box :enable_synchronization, class: 'checkbox' %>
+      <%= f.label :enable_synchronization, t('automatic_synchronization') %>
+    </div>
+  </div>
+</div>

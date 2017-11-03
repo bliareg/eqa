@@ -1,0 +1,58 @@
+<div class="modal-dialog import-preview">
+  <div class="modal-content container">
+    <div class="title-main">
+      <h3><%= t('import_preview') %></h3>
+      <span class="close">
+        <span class='icon-close-icon'></span>
+      </span>
+    </div>
+    <div class="modal-content-scroll">
+      <div class="modal-body">
+        <div class="row">
+          <div class="col xs-12">
+            <%= form_tag import_path, id: 'import_issues_form', remote: true do %>
+              <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+              <%= hidden_field_tag :test_plan_id, @test_plan_id if defined?(@test_plan_id) %>
+              <%= hidden_field_tag :object, @object_name %>
+              <table class="import-preview-table">
+                <% statuses = collect_statuses(@project.id) %>
+                <% members = collect_members(@project.id) %>
+                <% @objects_from_csv.each.with_index(1) do |object, i| %>
+                   <tbody>
+                    <tr class="issue-number">
+                      <td colspan="3"><%= t('case') %> <%= i %></td>
+                    </tr>
+                    <tr class="table-title">
+                      <td colspan="2"><%= t('csv_field') %></td>
+                      <td><%= @object_name.humanize.capitalize %> <%= t('field') %></td>
+                    </tr>
+                      <% @mapped_csv_fields.each do |csv_field, map_field| %>
+                        <tr class="issue">
+                          <td>
+                            <p class="assign-to"><%= map_field.underscore.humanize %></p>
+                            <p class="field-info">(<%= t('imported_as_an') %> <span><%= csv_field %></span>)</p>
+                          </td>
+                          <td>
+                            <span class='icon-arrow'></span>
+                          </td>
+                          <td>
+                            <div class="input_wrapper drop-arr">
+                              <%= build_input_tag(map_field, object, statuses, members) %>
+                            </div>
+                          </td>
+                        </tr>
+                      <% end %>
+                  </tbody>
+                <% end -%>
+              </table>
+            <% end -%>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="btn-group">
+      <button type="button" class="btn btn-green btn-big open_popup" id="next"><%= t('begin_import') %></button>
+      <%= link_to t('back'), map_fields_path(@project, object: @object_name), class: 'open_popup btn btn-white-green btn-big', remote: true, method: :post %>
+    </div>
+  </div>
+</div>

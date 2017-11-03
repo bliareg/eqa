@@ -1,0 +1,7 @@
+---
+
+- name: Configure Nginx for app
+  hosts: rails
+  remote_user: "{{ deploy_user }}"
+  roles:
+    - role: app

@@ -1,0 +1,20 @@
+---
+
+- name: Install curl
+  apt: name=curl
+
+- name: Add locale variables to /etc/environment
+  become_user: root
+  become: yes
+  lineinfile:
+    dest: /etc/environment
+    line: "{{ item.line }}"
+  with_items:
+    - { line: LC_ALL=en_US.UTF-8 }
+
+- name: Install libpq-dev for postgresql
+  apt: name={{item}}
+  with_items:
+       - libpq-dev
+       - libxrender1
+       - imagemagick

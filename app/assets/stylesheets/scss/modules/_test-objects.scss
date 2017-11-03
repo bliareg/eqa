@@ -1,0 +1,189 @@
+.card-builds {
+  padding: 30px 20px;
+
+  &-header {
+    @extend %clearfix;
+
+    .card-builds-title {
+      float: left;;
+      color: $base-text;
+      @include rem(font-size, 24px);
+    }
+
+    .btn {
+      float: right;
+      margin-left: 10px;
+    }
+  }
+
+  .builds-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+
+    .tablesorter-headerDesc {
+      .fa-chevron-up {
+        display: none;
+      }
+    }
+
+    .tablesorter-headerAsc {
+      .fa-chevron-down {
+        display: none;
+      }
+    }
+
+    //.tablesorter-headerUnSorted {
+    //  .fa {
+    //    display: inline-block;
+    //  }
+    //}
+
+    .sorter-false {
+      .fa {
+        display: none;
+      }
+    }
+
+    th, td {
+      color: $base-text;
+      border: none;
+      @include rem(font-size, 13px);
+    }
+
+    &-title {
+      th {
+        height: 50px;
+        color: $base-text;
+        font-family: $bold-font-family;
+        font-weight: bold;
+        vertical-align: bottom;
+        border-bottom: 1px solid $base-border;
+        @include rem(font-size, 14px);
+
+        &:first-child {
+          padding-left: 2em;
+        }
+      }
+    }
+
+    .test-object {
+      background-color: $test-object-bg;
+
+      td {
+        height: 50px;
+
+        &:first-child {
+          padding-left: 2em;
+          border-radius: 6px 0 0 6px;
+        }
+
+        &:last-child {
+          border-radius: 0 6px 6px 0;
+        }
+      }
+
+      .chevron {
+        border-left: 1px solid $base-border;
+      }
+
+      .test-object-version {
+        display: block;
+        width: 130px;
+        @extend %text-overflow;
+      }
+
+      .chevron-down,
+      .chevron-up {
+        display: block;
+        color: $chevron-up-down-color;
+        text-align: center;
+        cursor: pointer;
+
+        &:before {
+          content: "\f078";
+          font-family: $font-awesome;
+        }
+      }
+
+      .chevron-up {
+        &:before {
+          content: "\f077";
+          font-family: $font-awesome;
+        }
+      }
+
+      .btn {
+        padding: 3px 10px;
+        @include rem(font-size, 13px);
+      }
+      &:hover .ico-delete .icon-delete-icon {
+        color: $btn-red;
+      }
+      .ico-delete .icon-delete-icon {
+        transition: all .2s;
+        font-size: 20px;
+        color: $grey-36;
+
+        &:hover {
+          color: $red-2;
+        }
+      }
+    }
+
+    .builds-added {
+      color: $builds-added-color;
+    }
+
+    .builds-added-details-wrap {
+      padding: 0;
+
+      .builds-added-details {
+        display: none;
+        width: 100%;
+        margin-bottom: 30px;
+
+        tr {
+          height: 30px;
+
+          &:nth-child(2n+1) {
+            background-color: $test-object-bg;
+          }
+
+          &:last-child {
+            border-bottom: 1px solid $base-border;
+          }
+        }
+
+        td {
+          color: $base-text;
+          border: none;
+          @include rem(font-size, 13px);
+
+          &:first-child {
+            padding-left: 2em;
+            border-radius: 6px 0 0 6px;
+          }
+
+          &:last-child {
+            border-radius: 0 6px 6px 0;
+          }
+
+          &:nth-child(1) {
+            font-family: $bold-font-family;
+            font-weight: bold;
+          }
+
+          &:nth-child(3) {
+            font-family: $bold-font-family;
+            font-weight: bold;
+          }
+        }
+
+        .object-notes {
+          color: $base-light-text;
+        }
+      }
+    }
+  }
+}

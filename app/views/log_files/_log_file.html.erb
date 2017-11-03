@@ -1,0 +1,54 @@
+<tr class="test-crash" data-log-file-id="<%= log_file.id %>">
+  <td><%= destroy_log_file_button(log_file) %></td>
+  <td>
+    <span class="test-object-version">
+      <%= log_file.crash.test_object.file_file_name || log_file.crash.test_object.link %>
+    </span>
+  </td>
+  <td><%= "#{log_file.crash.device_brand} #{log_file.crash.os_version}" %></td>
+  <td class="crashes-log">
+    <%= link_to_download_log(log_file)%>
+  </td>
+  <td class="crashes-added">
+    <%= (log_file.log_created_at + timezone).strftime("%d/%m/%Y %H:%M:%S") if log_file.log_created_at %>
+  </td>
+  <td><%= (log_file.updated_at + timezone).strftime("%d/%m/%Y %H:%M:%S") %></td>
+  <td class='log-file-btn-<%= log_file.id %>'>
+    <%= crash_action_button(@project, log_file) %>
+  </td>
+  <td class="chevron"><span class="chevron-down"></span></td>
+</tr>
+<tr class='test-crashes-details' style='display: none;'>
+  <td colspan="7" class="crash-details-wrap">
+    <table class="crash-details" style='display: block'>
+      <colgroup>
+      <col width="18%">
+      <col width="47%">
+      <col width="10%">
+      <col width="25%">
+      </colgroup>
+      <tr>
+        <td><%= t 'crash_summary' %>:</td>
+        <td colspan="3"><%= log_file.first_log_line %></td>
+      </tr>
+      <tr>
+        <td><%= t 'device_manufacturer' %>:</td>
+        <td><%= log_file.crash.device_manufacturer %></td>
+        <td><%= t 'build_version' %>:</td>
+        <td><%= log_file.test_object.identeficator.split(':').last if log_file.test_object.identeficator %></td>
+      </tr>
+      <tr>
+        <td><%= t 'device_model' %>:</td>
+        <td><%= log_file.crash.device_model %></td>
+        <td><%= t 'device' %>:</td>
+        <td><%= log_file.crash.device %></td>
+      </tr>
+      <tr>
+        <td><%= t 'device_serial' %>:</td>
+        <td><%= log_file.crash.device_serial %></td>
+        <td><%= t 'size' %>:</td>
+        <td><%= "#{log_file.crash_log.size} b" %></td>
+      </tr>
+    </table>
+  </td>
+</tr>

@@ -1,0 +1,62 @@
+<div class="wrapper">
+<center class="wrapper"> 
+  <div style="max-width: 580px;margin: 0 auto; padding: 0 10px;">
+    <table style="color:#484848;width: 100%;margin: 0 auto;font-size:0;">
+      <tbody>
+        <tr>
+          <td style="padding:48px 0 32px;">
+            <a target="_blank" href="https://geteasyqa.com" title="EasyQA" style="display:inline-block;font-size: 20px;line-height: 20px; text-decoration: none; color: #32b789;font-weight: 600;">
+              <span style="padding-right: 6px">
+                <img src="https://app.geteasyqa.com/images/logo_main_dark.png" width="30" height="30">
+              </span>
+              <span style="vertical-align: super;">EasyQA</span>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding-bottom:20px;font-weight: 700;line-height: 1.3;font-size: 32px;">
+            <%= "#{t('hi')}, #{@user.name}." %>
+          </td>
+        </tr>
+        <tr><td style="font-weight: 300;line-height: 1.4;font-size: 18px;padding-bottom: 20px;">
+          <%= I18n.t('you_have_tried_to_pay_for_your_easyqa_license_but_the_transaction_was_not_successful') %>
+        </td></tr>
+        <tr><td style="font-weight: 300;line-height: 1.4;font-size: 18px;padding-bottom: 20px;">
+          <%= I18n.t('your_subscription_details') %>
+        </td></tr>
+        <tr><td style="font-weight: 300;line-height: 1.4;font-size: 17px;">
+          <%= @payment.licenses_amount %> <%=I18n.t('licenses')%>
+        </td></tr>
+        <tr><td style="font-weight: 300;line-height: 1.4;font-size: 17px;">
+          <%= I18n.t('amount') %>: $<%= @payment.amount %>
+        </td></tr>        
+        <tr><td style="font-weight: 300;line-height: 1.4;font-size: 18px;padding-bottom: 20px;">
+          <%= I18n.t('please_check_your_paypal_account_to_proceed_your_payment') %>
+        </td></tr> 
+        <tr><td style="font-weight: 300;line-height: 1.4;font-size: 18px;padding-bottom: 20px;"> 
+          <%= I18n.t('if_you_have_any_questions_please_contact_our_product_manager') %>
+        </td></tr> 
+        <tr><td style="font-weight: 300;line-height: 1.4;font-size: 18px;padding-bottom: 20px;"> 
+          <%= I18n.t('yours') %>, <br/> EasyQA <br/>
+        </td></tr>
+        <tr><td style="padding: 20px 0"><hr style="background-color: rgb(219, 219, 219);height: 1px;border: none;width: 100%;"></td></tr>
+        <tr>
+          <td style="padding: 20px 0">
+            <% if I18n.locale.to_s == 'en' %>
+              <a style="display: inline-block; line-height: 1; padding: 10px 20px; color: #32b789;
+                  border: 1px solid #32b789; font-size: 18px; border-radius: 5px;
+                  text-decoration: none;"
+                  href="https://geteasyqa.com/how-to/what-is-easyqa" target="_blank"> <%= I18n.t('learn_more_how_to_use_easyqa') %> </a>
+            <% else %>
+              <a style="display: inline-block; line-height: 1; padding: 10px 20px; color: #32b789;
+                        border: 1px solid #32b789; font-size: 18px; border-radius: 5px;
+                        text-decoration: none;"
+                        href="https://geteasyqa.com/ru/how-to/easyqa-what-is/" target="_blank"> <%= I18n.t('learn_more_how_to_use_easyqa') %> </a>
+            <% end %>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</center>
+</div>

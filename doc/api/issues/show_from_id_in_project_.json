@@ -1,0 +1,60 @@
+{
+  "resource": "Issues",
+  "http_method": "GET",
+  "route": "/api/v1/issues/:id",
+  "description": "Show from id in project ",
+  "explanation": null,
+  "parameters": [
+    {
+      "required": true,
+      "name": "token",
+      "description": "Uniq project token"
+    },
+    {
+      "required": true,
+      "name": "auth_token",
+      "description": "User authenticity token"
+    },
+    {
+      "required": true,
+      "name": "id",
+      "description": "Issue ID in project"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "/api/v1/issues/pid1?token=MWuTuH0gsXNrO6b9PXepf8CbPVrnbi6f3&auth_token=j3rLlApItw9beE63SDYmeHIODn87JwoE20",
+      "request_body": null,
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+        "token": "MWuTuH0gsXNrO6b9PXepf8CbPVrnbi6f3",
+        "auth_token": "j3rLlApItw9beE63SDYmeHIODn87JwoE20"
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"id\": 2,\n  \"summary\": \"consequatur\",\n  \"description\": \"Et est exercitationem dolore tenetur.\",\n  \"project_id\": 3,\n  \"issue_type\": \"feature\",\n  \"priority\": \"medium\",\n  \"status_id\": 1,\n  \"reporter_id\": null,\n  \"assigner_id\": null,\n  \"created_at\": \"2017-04-14T07:54:54.039Z\",\n  \"updated_at\": \"2017-04-14T07:54:54.039Z\",\n  \"project_issue_number\": 1,\n  \"test_object_id\": null,\n  \"log_file_id\": null,\n  \"spent_time\": \"1970-01-01T00:00:00.000Z\",\n  \"deleted_at\": null,\n  \"crash_id\": null,\n  \"attachments\": [\n    {\n      \"id\": 35,\n      \"created_at\": \"2017-04-14T07:55:10.383Z\",\n      \"updated_at\": \"2017-04-14T07:55:10.383Z\",\n      \"file_file_name\": \"test.mp4\",\n      \"file_content_type\": \"video/mp4\",\n      \"file_file_size\": 7532155,\n      \"file_updated_at\": \"2017-04-14T07:55:10.321Z\",\n      \"attachable_type\": \"Issue\",\n      \"attachable_id\": 2,\n      \"url\": \"/system/attachments/files/7cd3c116587d776594d7046ee3b37874d2edfc9c/7cd3c116587d776594d7046ee3b37874d2edfc9c/5717b5d97404043410fec8af522ce77ac6f962be/original/test.mp4\"\n    },\n    {\n      \"id\": 34,\n      \"created_at\": \"2017-04-14T07:55:10.177Z\",\n      \"updated_at\": \"2017-04-14T07:55:10.177Z\",\n      \"file_file_name\": \"test.jpg\",\n      \"file_content_type\": \"image/jpeg\",\n      \"file_file_size\": 119260,\n      \"file_updated_at\": \"2017-04-14T07:55:09.575Z\",\n      \"attachable_type\": \"Issue\",\n      \"attachable_id\": 2,\n      \"url\": \"/system/attachments/files/7cd3c116587d776594d7046ee3b37874d2edfc9c/7cd3c116587d776594d7046ee3b37874d2edfc9c/d5000ec59b1caa3bbe7cb1f3cb35fca91bf37b60/original/test.jpg\"\n    }\n  ]\n}",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"cf250a983e538f88778d1b4d86e66175\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "854d17e7-029c-47db-a26f-c7be09de97bc",
+        "X-Runtime": "0.063636",
+        "Content-Length": "1310"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"http://localhost:3000/api/v1/issues/pid1?token=MWuTuH0gsXNrO6b9PXepf8CbPVrnbi6f3&auth_token=j3rLlApItw9beE63SDYmeHIODn87JwoE20\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

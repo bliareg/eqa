@@ -1,0 +1,36 @@
+<div class="tab-pane testPlans" id="test_plans">
+  <div class="tab-pane-content">
+    <div class="tab-pane-content-header">
+      <%= render 'projects/tab_pane_content_header' %>
+    </div>
+    <div class="tab-pane-content-info">
+      <div class="plans">
+        <a href="javascript:;" class="plans-toggle">
+          <span class="fa fa-caret-left" aria-hidden="true"></span>
+        </a>
+        <div class="plans-info">
+          <%= render 'test_plans/test_plan_list' %>
+        </div>      <!-- plans-->
+      </div>
+      <div class="cases">
+        <div class="cases-info">
+          <div class='sortable-container root' data-test-plan-id='<%= @current_plan.try(:id) %>'>
+            <% if @current_plan.present? %>
+              <%= render @current_plan.roots_test_modules.sort_by(&:position) %>
+            <% end %>
+          </div>
+        </div>  <!-- cases-info-->
+      </div>  <!-- cases mCustomScrollbar-->
+      <div class="contains contains-info">
+        <div class="horizontalScroll">
+          <div id="jstree"></div>
+        </div>
+      </div>
+    </div>
+  </div><!-- tab-pane-content-->
+</div>
+<script type="text/javascript">
+  testModuleWidth();
+  TestModule.init();
+  TestModule.jstree.init(<%= raw @current_plan.try(:jstree_data).try(:to_json) %>)
+</script>

@@ -1,0 +1,23 @@
+<% if policy(@project).not_viewer? %>
+  <%= link_to t('issue.new'), new_issue_path(@project), remote: true,
+              class: 'btn btn-big btn-green' %>
+  <div class="icon-wrap">
+    <%= link_to export_issues_path(@project, { format: :csv }),
+                class: 'btn btn-green export' do %>
+      <span class='icon-export'></span>
+      <span class="hover-block export-hover"><%= t('export') %></span>
+    <% end %>
+
+    <%= link_to upload_csv_path(@project, object: :issue),
+                class: 'btn btn-green import', remote: true do %>
+      <span class='icon-import'></span>
+      <span class="hover-block import-hover"><%= t('import') %></span>
+    <% end %>
+    <%= link_to new_project_sync_issue_path(@project),
+                remote: true,
+                class: 'btn btn-green synchronize' do %>
+      <%= image_tag('synchronize.png') %>
+      <span class="hover-block"><%= t 'synchronize' %></span>
+    <% end %>
+  </div>
+<% end %>

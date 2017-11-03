@@ -1,0 +1,90 @@
+.card {
+  @extend %clearfix;
+
+  &-search {
+    height: 80px;
+    padding: 20px 25px 20px 0;
+    margin: 0 0 30px 0;
+
+    .title {
+      display: inline-block;
+      margin-left: 22px;
+      color: $base-text;
+      font-family: $bold-font-family;
+      font-weight: bold;
+      line-height: 40px;
+      @include rem(font-size, 24px);
+    }
+
+    .projects-nav {
+      float: right;
+      display: flex;
+      align-items: center;
+
+      .my-projects-nav-tabs, form  {
+        float: left;
+      }
+
+      .my-projects-nav-tabs {
+        > li {
+          display: inline-block;
+
+           .btn {
+             height: 40px;
+             padding: 0 20px;
+             line-height: 40px;
+           }
+
+          .active {
+            height: 40px;
+            padding: 0 20px;
+            color: $white;
+            line-height: 40px;
+            border-color: $btn-green;
+            background-color: $btn-green;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+
+  &-team {
+    padding: 20px 20px 10px 20px;
+
+    .title-block {
+      margin-bottom: 20px;
+      @extend %clearfix;
+    }
+
+    .card-org-logo {
+      float: left;
+      height: 40px;
+      width: 40px;
+      margin-right: 10px;
+      border-radius: 50%;
+    }
+
+    .card-title {
+      float: left;
+      margin-right: 20px;
+      color: $base-text;
+      font-family: $bold-font-family;
+      font-weight: bold;
+      line-height: 40px;
+      @include rem(font-size, 16px);
+
+      &:hover {
+        color: $link-hover;
+      }
+    }
+
+    .project-owner {
+      float: left;
+      margin: 0;
+      color: $base-light-text;
+      line-height: 40px;
+      @include rem(font-size, 14px);
+    }
+  }
+}

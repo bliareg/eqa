@@ -1,0 +1,21 @@
+<% if params[:page] || params[:filter] || params[:search] %>
+  json = <%= raw @project_statuses.each_with_object({}) { |ps, hash|
+    issues = issues_by_project_status(ps)
+    hash['#status-' + ps.status_id.to_s] = render issues.first(@per_page)
+    hash['#status-' + ps.status_id.to_s + '-count'] = issues.size
+   }.to_json %>
+  $.each(json, function (key, value) {
+    $(key).html(value);
+    $('nav.pagination span').html('<%= j link_to_next_page %>');
+  });
+  $('.head_title_middle').html('<%= j render "table_counts" %>');
+<% else %>
+  browser_path = "<%= issues_path %>"
+  $('.main-content').html("<%= j render file: 'issues/index.html.erb' %>");
+  window.history.pushState('dashboard', '', browser_path);
+  highlight_project_left_menu_item(browser_path);
+  issues_agile_board_init();
+  scroll_agile_board();
+  backToTop();
+  hide_modal();
+<% end %>

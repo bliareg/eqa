@@ -1,0 +1,7 @@
+<ul id="left-menu" class="nav_menu">
+  <% @project.left_menu.each do |link, value| %>
+    <li>
+      <%= project_menu_item(link, value) %>
+    </li>
+  <% end %>
+</ul>

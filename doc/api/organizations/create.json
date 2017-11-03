@@ -1,0 +1,64 @@
+{
+  "resource": "Organizations",
+  "http_method": "POST",
+  "route": "/api/v1/organizations",
+  "description": "Create",
+  "explanation": null,
+  "parameters": [
+    {
+      "required": true,
+      "name": "auth_token",
+      "description": "User authenticity token"
+    },
+    {
+      "required": true,
+      "name": "organization",
+      "description": "Organization attributes"
+    },
+    {
+      "scope": "organization",
+      "required": true,
+      "name": "title",
+      "description": "Title of the organization"
+    },
+    {
+      "scope": "organization",
+      "name": "description",
+      "description": "Description of the organization"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "POST",
+      "request_path": "/api/v1/organizations",
+      "request_body": "{\"organization\":{\"title\":\"Organization10\",\"description\":\"Organization10 - the best company in the world.\"},\"auth_token\":\"D0MlZLb4eDGuBDLsgs/fLf0aXd216wmx21\"}",
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"id\": 10,\n  \"title\": \"Organization10\",\n  \"description\": \"Organization10 - the best company in the world.\",\n  \"deleted_at\": null,\n  \"created_at\": \"2017-04-14T07:55:30.105Z\",\n  \"updated_at\": \"2017-04-14T07:55:30.105Z\",\n  \"slug\": \"Organization10\",\n  \"is_payment_expired\": false,\n  \"is_payment_expiring\": false\n}",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"bcbbe3b469a6f99902fba2c913bd9ba9\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "bd0b9694-82ca-44ca-82c3-9f2947a99b8a",
+        "X-Runtime": "0.067768",
+        "Content-Length": "275"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"http://localhost:3000/api/v1/organizations\" -d '{\"organization\":{\"title\":\"Organization10\",\"description\":\"Organization10 - the best company in the world.\"},\"auth_token\":\"D0MlZLb4eDGuBDLsgs/fLf0aXd216wmx21\"}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}
