@@ -15,6 +15,10 @@
       <span class="message">
         <%= t('overlimit_users') % { licenses: current_user.current_license.number_of_licenses , members: current_user.team.size } %>
       </span>
+    <% elsif current_user.is_ip_invalid? %>
+      <span class="message">
+        <%= t('used_by_another_host') %>
+      </span>
     <% end %>
     <%= link_to t(:view_plans), licenses_path, class: "btn top-panel-btn" %>
   </div>

@@ -1,10 +1,2 @@
-class Projects::TestActivitiesController < Projects::ProjectsController
-  layout 'test_activities'
-
-  def index
-    authorize @project, :member?
-    gon.test_order = TestCase.line_chart(day_ago: 14, parent: @project, field: :case_type)
-    gon.test_results = TestRunResult.line_chart(day_ago: 14, parent: @project, field: :status)
-    @test_run_info = @project.test_runs.last
-  end
-end
+# RubyEncoder v2.4.0
+if not self.respond_to?(:RGLoader_load,:include_private) then _d = _d0 = File.expand_path(File.dirname(__FILE__)); while 1 do _f = _d + '/rgloader/loader.rb'; break if File.exist?(_f); _d1 = File.dirname(_d); if _d1 == _d then raise "Ruby script '"+__FILE__+"' is protected by RubyEncoder and requires a RubyEncoder loader to be installed. Please visit the http://www.rubyencoder.com/loaders/ RubyEncoder web site to download the required loader and unpack it into '"+_d0+"/rgloader/' directory in order to run this protected file."; exit; else _d = _d1; end; end; require _f; end; RGLoader_load('AAIAAAAEaAAAAIAAAAAA/8qLwFmxxRruA5Ea0AJDdEZjKhdZQCCxxBvAWBk++sT3IVOp8WYor8CZDp3ZchYQiRviUGtDGAHCFhCP+OutB6wkaYoCy9H6G1GXiAaEfrtVVQlBroKg6/LVF4Fei7cTXm4SSToqpbR6FwAAALACAACMrm44/kUqDP22Zm/rxe6nE6l7ZFyjbkiE2V+SXbB+e7cz9EjdFaepWnjFvvkaTCrEDCFg2mQFXyN9Rv83i+xidpmxtAPi5MRMQMYmaBgNZN2sQcNrqkaZ14okQ5eLoWaX6khnYnsxkjRXpE2foRgCdy5Me6vQwhAuXH+uU4O2BFGl2NoDK1BoV1SNok4MJ2icnqvlkJZt1gY0xQkCqxxOtPruhMFJNKrk4DltHQZPjmG9uv2sW+RQWqxPUlgjewvD/PZ2sXUHLHRhNevlps0IiH7PIsjxxzVAEWFR0SUvmLvae1t9ysCV5KrL4hQBW9ad9glTtkHLfug4Xa31gm9UxnYkE5K3ZH4pMOXq00RaZ6DqR+O+pKjBhh0qbeycwq8O88nBbglbJ+zG/VDtEhxdzf4YgEcFmEkoNIOJQ8S9RcHGVLuWDNwAbzuqkLJNIpabrqHpsdeG+3/QUQpxxSG+DB0WpbGwyVyhxxCA5vU+7xvI65suJtb3C27CPaWgVPKW7Fa3PCS283RXlI5YHXz2WvMdwCc8vZUzI9sEtiDsLd1NvZY2MmSjN5eR5Ny77rDz8NEVkiOrmQZKbfRwqt7odV8Y4REPXZx10L+ghbdLfFcBckwWSgh5KJHfDZ21EY67PgCK+DuAnbZS1JLLnx1xSJaH3WN9gMTYeBfPB5vBOu+CIL4bugLbrluhh0t6AbeG1fml7wrPYK6UQCQUoHcQt3/qCUpgQH73407SRYwknaWISq+3/ZEZFJVIMv0ZjDEOqL0br1HxkTmF/uuRz4unmjKgz6wAk4cVJlSdpg/LzzqPTvAaPZHsVW8KV+hhIDWWB4UmZAWwrNjWWlHZTa6+R60dTCEpkKSCL/ZjqLmo19b2Nrs3LWOp2FVi9wQcVW4ks/6mYwuUfCCRWVqvt1LxAAAAAA==');

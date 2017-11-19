@@ -1,0 +1,73 @@
+<% if @is_regular %>
+  <div class="licenses">
+    <div class="card-header">
+      <h2 class="card-heading"><%= t('license.many') %></h2>
+    </div>
+    <div class="licenses-top-block">
+      <div class="input_wrapper quantity">
+        <label for="quantity"><%= t(:quantity) %></label>
+        <%= number_field_tag :quantity, 1, in: 1..999999, max: 6,  onkeypress: 'return digitalValidation(value)', autocomplete: :off, id: :quantity_standalone, data: data_hash_for_standalone_price %>
+      </div>
+    </div>
+    <div class="licenses-bottom-block" id="increase_block">
+      <div>
+        <h3 class="block-subtitle"><%= "#{show_period} #{t('license.total_amount')}" %>
+          <span id="new_licenses_amount">1</span>
+        </h3>
+        <span class="total-price" id="new_fee">$<%= @fee_per_new_license / 100.0 %></span>
+      </div>
+      <div>
+        <div class="input_wrapper promo-code-block">
+          <input id="promocode" type="text" maxlength="8" placeholder="<%= t('promocode.enter') %>">
+        </div>
+        <div id="check_promocode" class="btn btn-green show_loader"><%= t('promocode.apply') %></div>
+        <span class="total-price" id="price_with_promocode_add">$<%= @fee_per_new_license / 100.0 %></span>
+        <% if !@client.can_pay_regular? %>
+          <span class="message">You can't pay now</span>
+        <% elsif @pending_payments_exist %>
+          <span class="message"><%= t('payment.waiting') %></span>
+        <% else %>
+          <div id="paypal-button-standalone" data-licenses-amount='1'></div>
+        <% end %>
+      </div>
+      <div id='message_promocode_add'></div>
+    </div>
+  </div>
+<% else %>
+  <div class="licenses">
+    <div class="card-header">
+      <h2 class="card-heading"><%= t('license.many') %></h2>
+    </div>
+    <div class="licenses-top-block">
+      <div class="input_wrapper quantity">
+        <label for="quantity"><%= t(:quantity) %></label>
+        <%= number_field_tag :quantity, @client.current_license.number_of_licenses, in: 1..999999, max: 6,  onkeypress: 'return digitalValidation(value)', autocomplete: :off, id: :quantity_standalone, data: data_hash_for_standalone_price %>
+      </div>
+    </div>
+    <div class="licenses-bottom-block" id="increase_block">
+      <div>
+        <h3 class="block-subtitle"><%= "#{show_period} #{t('license.additional_amount')}" %>
+          <span id="new_licenses_amount">0</span>
+        </h3>
+        <span class="total-price" id="new_fee">$0.0</span>
+      </div>
+      <div>
+        <div class="input_wrapper promo-code-block">
+          <input id="promocode" type="text" maxlength="8" placeholder="<%= t('promocode.enter') %>">
+        </div>
+        <div id="check_promocode" class="btn btn-green show_loader"><%= t('promocode.apply') %></div>
+        <span class="total-price" id="price_with_promocode_add">$0.0</span>
+        <% if @pending_payments_exist %>
+          <span class='message'><%= t('payment.waiting') %></span>
+        <% else %>
+          <div id='paypal-button-standalone' data-licenses-amount='0'></div>
+        <% end %>
+      </div>
+      <div id='message_promocode_add'></div>
+    </div>
+  </div>
+<% end %>
+
+<script type="text/javascript">
+  init_payments_page();
+</script>

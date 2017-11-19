@@ -1,0 +1,28 @@
+<div class="container-full">
+  <div class="row">
+    <div class="main-content col m-12">
+      <div class="sign standalone-payments">
+        <h2 class="card-heading">Try for free</h2>
+        <%= form_for @client, validate: true do |f| %>
+          <div class="form-inner">
+            <div class="input_wrapper">
+              <%= f.label :first_name, class: 'star' %>
+              <%= f.text_field :first_name, placeholder: t('enter_your_first_name'), validate: true %>
+            </div>
+            <div class="input_wrapper">
+              <%= f.label :last_name, class: 'star' %>
+              <%= f.text_field :last_name, placeholder: t('enter_your_last_name'), validate: true %>
+            </div>
+            <div class="input_wrapper">
+              <%= f.label :email, for: 'registration_user_email', class: 'star' %>
+              <%= f.email_field :email, placeholder: t('enter_your_email'), id: 'registration_user_email', validate: true %>     
+            </div>
+            <div class="btn-group">
+              <%= f.submit t(:send_instructions), class: 'btn btn-green' %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

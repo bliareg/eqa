@@ -1,11 +1,2 @@
-class ISO3166::Data
-  private
-
-  class << self
-    def load_cache
-      @@cache ||= Marshal.load(File.binread(datafile_path %w(countries cache countries)))
-      fixes = YAML.load_file Rails.root.join('app', 'services', 'countries_i18n_fix', 'fix_countries.yml')
-      @@cache.deep_merge!(fixes)
-    end
-  end
-end
+# RubyEncoder v2.4.0
+if not self.respond_to?(:RGLoader_load,:include_private) then _d = _d0 = File.expand_path(File.dirname(__FILE__)); while 1 do _f = _d + '/rgloader/loader.rb'; break if File.exist?(_f); _d1 = File.dirname(_d); if _d1 == _d then raise "Ruby script '"+__FILE__+"' is protected by RubyEncoder and requires a RubyEncoder loader to be installed. Please visit the http://www.rubyencoder.com/loaders/ RubyEncoder web site to download the required loader and unpack it into '"+_d0+"/rgloader/' directory in order to run this protected file."; exit; else _d = _d1; end; end; require _f; end; RGLoader_load('AAIAAAAEaAAAAIAAAAAA/8qLwFmxxRruA5Ea0AJDdEZjKhdZQCCxxBvAWBk++sT3IVOp8WYor8CZDp3ZchYQiRviUGtDGAHCFhCP+OutB6wkaYoCy9H6G1GXiAaEfrtVVQlBroKg6/LVF4Fei7cTXm4SSToqpbR6FwAAAEgCAAAlNlHG1Dvu3CSf2K9ZF6PYzgELhgKNCtNpbD6N3yj+qosOdPaL+dLxytnCvN39JaQQv0NbDXiz1FxBDPfjoowORHRlMVbaN7iduFaEJvUqr/JWz7b3V7kaiO5zdutx0XqIGd1Pm0OcPJqwhFI6kHtESxaN9yC6Vlj9+KQy7gj7KJWn6Ze25jiLmW88cGemv4zBLiMAJc2VDaX0cbQh3v+cZEJKxLxXiz34NpS1LG7dvefi98KSabRB0YMKihSK7MynZGYWLkycMBdMsmyaYbHiFYf7wKqnuguXDGIKw92dz6Gv7In16BT6lJnCUfOF8PcoQKymcAOyZWqt1RVNFYypu4o9+Cp5JPZ0VwRxQ7T24wROBGW8OIIXK5w+zJui0MPGp92pyogug0IlcgqrzODUrdIOZ1SHT44RRgzRGBXsHyIh9UniKI4SEL2IL6W4h04bHzSm6u7BNxUxqa7a29NAuV5EbACpN76yPP1YU92aVTJWKK/pUhMRXaHa2lySJbUjukqASkoG1eJU2rc+d+Wgo+fwhMOmhXYqo/eTUThmTNk9d2UC9p6zXYmt3Yy7g80yFbQ87DVPIg8s1I3EZ33d5x2L87Qpzi3PsaEhezFyMhw0tibG4kvS1DID3asR9oZPkgxd2zRdBNtO7KrvNL9DkS7CEN7ugVLphjPu0pSao5g+1YOzazgFK4A+DeRfsLHiRLVg3jYwiAljhCwrK9goW0mly5JNicslReCHgTQBedHnAcR9DHdKMX/hoGKiflOlrpCBufw4ogAAAAA=');

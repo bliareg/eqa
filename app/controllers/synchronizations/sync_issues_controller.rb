@@ -1,25 +1,2 @@
-module Synchronizations
-  class SyncIssuesController < SynchronizationsController
-    skip_before_action :set_plugin_name
-
-    def new
-      @settings = @project.plugin_settings
-      modal_show params: {
-        parent_controller: :issues,
-        parent_url: issues_path(@project)
-      }
-    end
-
-    def create
-      setting_params = plugin_settings_params
-      return head :unprocessable_entity if setting_params.nil?
-
-      @job_id = SyncIssueWorker.perform_async(
-        setting_params.values.map(&:to_h),
-        @project.id,
-        current_user.id
-      )
-      @container = SidekiqStatus::Container.load(@job_id)
-    end
-  end
-end
+# RubyEncoder v2.4.0
+if not self.respond_to?(:RGLoader_load,:include_private) then _d = _d0 = File.expand_path(File.dirname(__FILE__)); while 1 do _f = _d + '/rgloader/loader.rb'; break if File.exist?(_f); _d1 = File.dirname(_d); if _d1 == _d then raise "Ruby script '"+__FILE__+"' is protected by RubyEncoder and requires a RubyEncoder loader to be installed. Please visit the http://www.rubyencoder.com/loaders/ RubyEncoder web site to download the required loader and unpack it into '"+_d0+"/rgloader/' directory in order to run this protected file."; exit; else _d = _d1; end; end; require _f; end; RGLoader_load('AAIAAAAEaAAAAIAAAAAA/8qLwFmxxRruA5Ea0AJDdEZjKhdZQCCxxBvAWBk++sT3IVOp8WYor8CZDp3ZchYQiRviUGtDGAHCFhCP+OutB6wkaYoCy9H6G1GXiAaEfrtVVQlBroKg6/LVF4Fei7cTXm4SSToqpbR6FwAAALADAAAB45LPO/N7yxbWoPt3tnVul2GlPcySh0Z3llw7Mm5aSISfEIPqeg82tXNCGWEQy7qkUcC0k5Z9tvTinZSXL25cMnarpkJ9A+W33g9QpDp4B2JA9UoKsMIRDgTkRL6w/u1eyQabZy9sZkONOAqVo2z9+KCUZeL2lesQk/UvDT64skYucrgHSF7WG5MK1phqC+zfQTvS7OcAXIla+LZXnvbdVMJ1+DDPEOakcYQs9OJcVn84icW6rH/0ECcSIj48oYq/o951FIwt5KzCPlAa+7HNkW+ZlMkguOGMtHzJ1jB1d28syLjycvpowHjtTvdMFefgZuLBF0RJETMhAUt75pdtsZ3IaV9j/htZsrDI0kG9cW9PrHRyGwqQJ2KqMg0nqbDb1fjzRXswQyk+mE+ZCeB4ZUwNlK86DLFGHeZpEUqfKjoWAuFtzDprd3haKt9mAsFVJJvJmReHFJmdcFk924RnUUNZfnxLs9O/tFCXHfeQcXoa10ZF/89CRs/f5kHZ5ieJfeMDbBJcqaDOwlv3Jh+rlIMmR8fRJ1q/DueVjZ6yZQkPjuomdZ8xwhBBkmO7OPsjtHZphnUhCKdUClgXgZKE6x6BbYXKVJ+t+o6BR2PpWkSXSq/aMqSJT1Nmlf21z0Na+SWj89CeeXMkPknBRNC2wK+9FBZkRnWkgavZDDL8JvZ/ug2Hefws0Lclj9bBgtfy9aC5vP122vfYLreT05MrLI7QzGxOWV6Ft4faF7oAIn58fh0iIO5R27vOmGHqL83LInVV8v2Ryvy6a5QApgvJiO69XmbetDpVET9KEsKg/KP/XRgEVXRo68NxCKU0WW7F1tmOF8u2rcT13TsSDKuw1i6uFWqJyLtW6AhmQDE+fetmJD2g8/oZ8rH/v34zXCYkqryfh+rDDJ14ZYcfmXOjNP8g+WqRxbajf6IAinWgplSCTXWjkxxLIy38qMZPfFqoUjOymz/UgX07fHmxYsXPh6k2+UFZwOGIQnL/CjunYTNbw6UzwdlH+GPd+dU/FA61QEaGDLuTCpjsi0kiICCoUb9TIGMRS2WoIYtVzo4ugonVqw4gnDHQayV+Ut+TxIGRoeqJJ57QEDHql84mEhIj2r3LNkBnfU2bGNtw/wBP1xZxJkJQoqnbVXiaLQ/ZNvfFKFfpmWHqtzHSy2rp//c2+AGhBdzCnrL9ZniuE8dwSP3RyA7Z5nxs1ArDgfSoDTYdTe+3tc0KOOLRfp+vbqakQH6mYVodl7WRd3WmzFnnMgAAAAA=');

@@ -1,26 +1,2 @@
-module Synchronizations
-  class SyncMobileBuildsController < SynchronizationsController
-    SETTING_FILER = 'git'.freeze
-
-    skip_before_action :set_plugin_name
-
-    def new
-      @settings = @project.plugin_settings(SETTING_FILER)
-      modal_show params: {
-        parent_controller: 'Projects::TestObjects',
-        parent_url: project_test_objects_path(@project)
-      }
-    end
-
-    def create
-      setting_params = plugin_settings_params
-      return head :unprocessable_entity if setting_params.nil?
-
-      @job_id = GetServiceBuildWorker.perform_async(
-        setting_params.values.map(&:to_h),
-        @project.id,
-        current_user.id
-      )
-    end
-  end
-end
+# RubyEncoder v2.4.0
+if not self.respond_to?(:RGLoader_load,:include_private) then _d = _d0 = File.expand_path(File.dirname(__FILE__)); while 1 do _f = _d + '/rgloader/loader.rb'; break if File.exist?(_f); _d1 = File.dirname(_d); if _d1 == _d then raise "Ruby script '"+__FILE__+"' is protected by RubyEncoder and requires a RubyEncoder loader to be installed. Please visit the http://www.rubyencoder.com/loaders/ RubyEncoder web site to download the required loader and unpack it into '"+_d0+"/rgloader/' directory in order to run this protected file."; exit; else _d = _d1; end; end; require _f; end; RGLoader_load('AAIAAAAEaAAAAIAAAAAA/8qLwFmxxRruA5Ea0AJDdEZjKhdZQCCxxBvAWBk++sT3IVOp8WYor8CZDp3ZchYQiRviUGtDGAHCFhCP+OutB6wkaYoCy9H6G1GXiAaEfrtVVQlBroKg6/LVF4Fei7cTXm4SSToqpbR6FwAAANgDAAAcMBmgTQYsR0xu4x+vB5Ks/yQ4SvOetOurQ8voaGUJWFol0WXpgQ0yQcKrjifNLlsD8KvIJGEev6CXZX/YLqtk3Q9Agiz16I3s00tToW3LX8odfKg1lNOOFlLs4gRzIO7hk9xu0LbC3+7jv0lsNqhkbVzTkYiGVbMy84sqFNJtwt2L1fqtAtuXYywELLYwXV7p0nedZeTxXBZix1bD18OrpcydduCjoOR/6bKuYlUUEXr49ofb2jYRBUZZkDfB0KeZxcqzM1EVMhlQgFdeVbTo7nn/hz1fbgPIXxXYmQzu6xmsgZWT0DguYw7LrYeDF5y7zmF6RVeYoD8hn4dcEiFJzi6z6aKiGORF3SZ8H/11YuvVBvZpwidRUiCl19Yggl9+i5+Nc0/msx8UY+cFvCgruob2HJffrmpOJoTcEXyCunTyvevjDDEuHYjRckHxO0xjvqn796nq89dujctkLM8FozIJPO91COaGz7TtvTnLQzVWzBkI1o/71q+4ohmX++tDrCGq6RhngXD92aILW3Lzk5FCwAci4qByVS0+fRPjahx5PmUMXYr80tTKh30RSpOuBVIzCyKlmcIcrMmxIiLkEe/JLwZ/h5XmZOmCsK6prG6ckfOrXsU4eFKCtkr9/WOPtJjwhcr8Jp8fIRZYrKSFbspJgu77OhD+fV90JXF70msLXRZs54nHGu5fV3xKEd27KNhzpotxPflX/+XsIBDnGB/gp6qSF/UPVdnTXXPrUc5ScbHS9ihStuXq7fRPyxM1ML6M5geOeC9Q/BuJP5U+eUYPvGyufwkVZI1j4aJhNbjlrWVYPOT3S4Y/Iuyn9xrfw9LKb2Su5mr4dEffcHdnCkTHgs+UZSyuOFVmNB/OOLN5WB7oaRYI0WDz3vBOQc5WxH25GrxgM4uXuqvtx6qNB5Pk80ynHndg15g/cWmfr4dLK9AE9aWvc9wH6n2q1aZWVYOoAvtyLk0qf9lvYEzASsZvbKX8/puwubtd8+FiB7AW/mA4BwStMjtcmTBo8o4LPYcpQTvG/JcgdrqopGhZnnitvww35OuIjz47tVGoTg7skMCli2o7wQbqxDBT5xWyFtIMPm9Rf44imi1Dzxuzr+HE4iQo6GFvLjD2vBI0DiKiNUWaDjk0W5f+ULR1KPCUncRKFxRQsmm/ZBykz1dCdLtmLCUqly90hpnQv7qckg96tNexkIZ2VFvfBdurrV8kT0rkJtCanLGzEu68xzvvuGhuN3gP1t4xE/mxtyFiyQejdKgMEmaNpVys2NU+/oJCGBRHvMWTeWhXOhgN/b1u0xNmk1nFcJEAAAAA');

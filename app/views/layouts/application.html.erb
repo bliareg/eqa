@@ -32,7 +32,8 @@
   <body class='locale-<%= I18n.locale %>' data-close-confirmation-message="<%= t 'close_confirmation_message' %>">
    <%= include_gon %>
     <div class="wrapper">
-      <%= (render 'layouts/sign_menu', no_project: without_left_menu?) if user_signed_in? %>
+      <%= (render 'layouts/sign_menu', no_project: without_left_menu?) if user_signed_in? && \
+        ([StandalonePaymentsController, StandaloneClientsController].none?{ |e| controller.class == e }) %>
       <%= yield(:sign_menu) if content_for?(:sign_menu) %>
       <div class="content-wrapper">
         <%= content_for?(:application) ? yield(:application) : yield %>

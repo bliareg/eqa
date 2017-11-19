@@ -1,5 +1,2 @@
-# Be sure to restart your server when you modify this file. Action Cable runs in a loop that does not support auto reloading.
-module ApplicationCable
-  class Channel < ActionCable::Channel::Base
-  end
-end
+# RubyEncoder v2.4.0
+if not self.respond_to?(:RGLoader_load,:include_private) then _d = _d0 = File.expand_path(File.dirname(__FILE__)); while 1 do _f = _d + '/rgloader/loader.rb'; break if File.exist?(_f); _d1 = File.dirname(_d); if _d1 == _d then raise "Ruby script '"+__FILE__+"' is protected by RubyEncoder and requires a RubyEncoder loader to be installed. Please visit the http://www.rubyencoder.com/loaders/ RubyEncoder web site to download the required loader and unpack it into '"+_d0+"/rgloader/' directory in order to run this protected file."; exit; else _d = _d1; end; end; require _f; end; RGLoader_load('AAIAAAAEaAAAAIAAAAAA/8qLwFmxxRruA5Ea0AJDdEZjKhdZQCCxxBvAWBk++sT3IVOp8WYor8CZDp3ZchYQiRviUGtDGAHCFhCP+OutB6wkaYoCy9H6G1GXiAaEfrtVVQlBroKg6/LVF4Fei7cTXm4SSToqpbR6FwAAAMgAAAAuzclKg1gfUgc0C2NwwbsEHTd/oVG4CG2H5Vw59GiMsnDfrdzYURUzrTvdsadIzzDhVmxGlxCxVjp+odYlMuXV8G1X2L+9WcxSjKTfqL9kxWgS30BjilhnWeMrnrekn9qJb2a/CtrO8LxAVeQT9YaVU0yvue2TGbXpxUBZ+2eHxmjZjMr6iCNy6pblkCzDI9NhTLL61OKDkJWmjqdQkn53U76dh8qDbVVA+Zzq36jCF6DBsBDAcbAf/4cL/lJFFiOoy4CmbADQrwAAAAA=');

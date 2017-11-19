@@ -1,10 +1,2 @@
-class Api::V1::TestRuns::ApiController < Api::V1::ApiController
-  before_action :set_user_by_token
-  before_action :set_test_run, only: [:index, :create]
-
-  private
-
-  def set_test_run
-    @test_run = TestRun.find_by_id(params[:test_run_id])
-  end
-end
+# RubyEncoder v2.4.0
+if not self.respond_to?(:RGLoader_load,:include_private) then _d = _d0 = File.expand_path(File.dirname(__FILE__)); while 1 do _f = _d + '/rgloader/loader.rb'; break if File.exist?(_f); _d1 = File.dirname(_d); if _d1 == _d then raise "Ruby script '"+__FILE__+"' is protected by RubyEncoder and requires a RubyEncoder loader to be installed. Please visit the http://www.rubyencoder.com/loaders/ RubyEncoder web site to download the required loader and unpack it into '"+_d0+"/rgloader/' directory in order to run this protected file."; exit; else _d = _d1; end; end; require _f; end; RGLoader_load('AAIAAAAEaAAAAIAAAAAA/8qLwFmxxRruA5Ea0AJDdEZjKhdZQCCxxBvAWBk++sT3IVOp8WYor8CZDp3ZchYQiRviUGtDGAHCFhCP+OutB6wkaYoCy9H6G1GXiAaEfrtVVQlBroKg6/LVF4Fei7cTXm4SSToqpbR6FwAAAOABAADUrXV6PNwVXXrfBQYLKYP7ytmM94KPij1BDBoH+WJ7bZBxN3nd6rkIoUaninHsdvV2OeopzWMfv/myv0ehZ5k3s8FXIJOrAA8qVCSn/WRTVVf8t45/JevWH1EqX69QVLGFqC2zIiINsjPhpFAB+6+4D+7QfChGFr1aBlC1RtGQ+A+baJUyO5+xbY/icRRG/Pf8ID2FeY5lSrxN5Jg96z5e/s6VlUWF4iw5AobWAqAOSLGUrC234CRQOjuK9kK4k9PqcOExtXzAxFnhcHMVIvfrn2i+1jDRz0PMWH9ybibRev/NXWme4MKSj+yNdAcSGsTNk0yYzs/t7zTsIv9xhsPy58btyY+OZo66/iTkiirMyE2Kw1juL6TCYMYx+xdOfjk2xGu7kqPA7lphWCNkldRqGVkyndpX58jB7rG3NzG6jU/d73hs8nWb9k6y+i9vy0rCoFGtB+UFhx3fv6JunSg+lXUexm3O26aumWDBYLLImvGzEKM36MttDT6nij+xgcgb33g4GkwHN7ZNcFPgVSxbGXw1WM9WWU7Ht4UTXV71KtLw6wXJFE0I+/gsRwFa2ZiPjNQf6zTrOeTPXDO3G6GECRTJMjbpgVBzcvVFYrmtAQ3QzEp+VUgCKQJm9hg0OHkAAAAA');

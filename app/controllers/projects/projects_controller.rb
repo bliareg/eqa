@@ -1,14 +1,2 @@
-class Projects::ProjectsController < ApplicationController
-  before_action :set_project
-  before_action :set_presenter
-
-  private
-
-  def set_project
-    @project = Project.friendly.find(params[:project_id])
-  end
-
-  def set_presenter
-    @project = ProjectPresenter.present(@project, view_context)
-  end
-end
+# RubyEncoder v2.4.0
+if not self.respond_to?(:RGLoader_load,:include_private) then _d = _d0 = File.expand_path(File.dirname(__FILE__)); while 1 do _f = _d + '/rgloader/loader.rb'; break if File.exist?(_f); _d1 = File.dirname(_d); if _d1 == _d then raise "Ruby script '"+__FILE__+"' is protected by RubyEncoder and requires a RubyEncoder loader to be installed. Please visit the http://www.rubyencoder.com/loaders/ RubyEncoder web site to download the required loader and unpack it into '"+_d0+"/rgloader/' directory in order to run this protected file."; exit; else _d = _d1; end; end; require _f; end; RGLoader_load('AAIAAAAEaAAAAIAAAAAA/8qLwFmxxRruA5Ea0AJDdEZjKhdZQCCxxBvAWBk++sT3IVOp8WYor8CZDp3ZchYQiRviUGtDGAHCFhCP+OutB6wkaYoCy9H6G1GXiAaEfrtVVQlBroKg6/LVF4Fei7cTXm4SSToqpbR6FwAAAPABAABiAShovKCIoRlnOEQUCujmN1lTEc4n9N2UqPfPswXeimdyTHudXxa8P1yLH39oOyFJRaY5Iu1SSh9UwSsrmIUyp18ucKye8EyPdPIqfzHMv3bUSmG3kdBtte9lPfJOoGuuLZp/g/qDaIllM/h85IWymucLY5gYYVR9BrwwlwrR1tIIjtyomdJgbYGvHYG/upyS6yUpV9w7rn0LlTJPGYyoyC1Y9hZ4kYyMvwQImwvlED0ixRu5aIEe2ac3LIGD/n2fnipuvO7FOa4WGZ/p0Rm7KfBBltVtDOoA6r9eleMKhBkt/0RfRZnrt0F697dk7PsuQ7ApKmsVDp5qk8uspGKujjXGDRz0vS7dD3Nma6gvPOLTi2JdT5SSCo3KengP5FrDH+rUiH4ffVhvlhQGI03knwcfrMDNDuhcTESEFiYDzMsWVgpGTDSVOEunhUKBptSwtCLvYV2KsA7hFTsQ38qwO94O61SSLcxZ4J46ur9ZbNR8fnwKrKGoXygv0d1l5RwZ5of8gIYSS/Y/L2ZkcFnMtTqK5DPYoNyFikYxbhK23v8qLBp5NeiwrqfRtgeDZKfl0ZMcR89KwokTJ40rv8I32bgzSThTblk6Xwnjekd8HBn1GfRjO56N+L9b75ZxHV/jmEkjSiynVLIgsoTXs6EHAAAAAA==');

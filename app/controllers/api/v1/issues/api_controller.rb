@@ -1,13 +1,2 @@
-class Api::V1::Issues::ApiController < Api::V1::ApiController
-  before_action :set_user_by_token
-  before_action :set_issue, only: :create
-
-  private
-
-  def set_issue
-    id_in_project = params[:issue_id][/(?<=pid)\d+/]
-    @issue = @project.issues.public_send(
-      id_in_project ? 'find_by_project_issue_number' : 'find', id_in_project || params[:issue_id]
-    )
-  end
-end
+# RubyEncoder v2.4.0
+if not self.respond_to?(:RGLoader_load,:include_private) then _d = _d0 = File.expand_path(File.dirname(__FILE__)); while 1 do _f = _d + '/rgloader/loader.rb'; break if File.exist?(_f); _d1 = File.dirname(_d); if _d1 == _d then raise "Ruby script '"+__FILE__+"' is protected by RubyEncoder and requires a RubyEncoder loader to be installed. Please visit the http://www.rubyencoder.com/loaders/ RubyEncoder web site to download the required loader and unpack it into '"+_d0+"/rgloader/' directory in order to run this protected file."; exit; else _d = _d1; end; end; require _f; end; RGLoader_load('AAIAAAAEaAAAAIAAAAAA/8qLwFmxxRruA5Ea0AJDdEZjKhdZQCCxxBvAWBk++sT3IVOp8WYor8CZDp3ZchYQiRviUGtDGAHCFhCP+OutB6wkaYoCy9H6G1GXiAaEfrtVVQlBroKg6/LVF4Fei7cTXm4SSToqpbR6FwAAAHgCAAAExcURB2E6MNsd6pBLUfuJOoknRaVNYHYFRMGWtykwWlRJAIDWxTYuCF6syIqPmHoNMVaCX1azD08v/mqcRrXGy+zzChiYwJC5biGZCSQ4v01S+409+oqkUVQ6YqJkMgRkRQmF4YEyihfiDhpVTTto0V8GjMc7+zXT/9wX6GCLYHcrAd0wTyRpJKkSP4R6C5xYOUBBdJW9TNLSk0xZnHGRZMqvqWLF++lJ8pumHEc/tY57V9ACGTbQXqCoMaX0iQFqbS4GZzbbeIhZ/VASW2OUdEuFWNekCLEx7F+1qWGswic/GJJsDidZm0NvB+zlq+4RldxJzcpOyNgW7iBRIPEGa8qTTnLG4/tiO56nq2OY2KCqcZVcaBXDSjAYr5dsckAMi0UkDHPbGQE4WUAAOOEi1jo36uvdNDFpFVI1uPvx5w5KJymedoUK6ACiPjdFMzUJHSDUD2ue96tq8qtkZ4Kh/YXH+MoCmVQClP0UmiZnqbb+vSHAuy/kLxFfe+lEIt/1FKXLb3oe8NQRvC1sNFjst1xrCvz5nYZsnLXSfy2oYJ+ILZ746r0xLs1f0pNRDa/10NwyLKiEXK22mtAgZbPVumn8HY3SmXs/00bRhggSiJRMhD/cCkMglLIDwFNQuIWUpymDz61VErto680ZlnSFhavjMnQO/ZSq7/tWAes5RI+BZ2yEh4R2I012ZLcCjMP/U0buqMdlji/lVIkmXYw4sLazC5acuB/0/yTtqegI4H32MyOcxoPi1vwD2ptucZTlK3BozI4dNl3WutdUwBNwENHFUUDl4xVWfxxxblamS7h8R+HkM//xZARi6WDnH6obM32KpqfHXAAAAAA=');

@@ -1,11 +1,2 @@
-class Users::ExpirationReminderPaymentsController < ApplicationController
-  def expired
-    return head :forbidden unless current_user.is_payment_expired
-    modal_show params: { parent_controller: :pages, parent_url: root_path }
-  end
-
-  def expiring
-    return head :forbidden unless current_user.is_payment_expiring
-    modal_show params: { parent_controller: :pages, parent_url: root_path }
-  end
-end
+# RubyEncoder v2.4.0
+if not self.respond_to?(:RGLoader_load,:include_private) then _d = _d0 = File.expand_path(File.dirname(__FILE__)); while 1 do _f = _d + '/rgloader/loader.rb'; break if File.exist?(_f); _d1 = File.dirname(_d); if _d1 == _d then raise "Ruby script '"+__FILE__+"' is protected by RubyEncoder and requires a RubyEncoder loader to be installed. Please visit the http://www.rubyencoder.com/loaders/ RubyEncoder web site to download the required loader and unpack it into '"+_d0+"/rgloader/' directory in order to run this protected file."; exit; else _d = _d1; end; end; require _f; end; RGLoader_load('AAIAAAAEaAAAAIAAAAAA/8qLwFmxxRruA5Ea0AJDdEZjKhdZQCCxxBvAWBk++sT3IVOp8WYor8CZDp3ZchYQiRviUGtDGAHCFhCP+OutB6wkaYoCy9H6G1GXiAaEfrtVVQlBroKg6/LVF4Fei7cTXm4SSToqpbR6FwAAAHgCAAC5JEJGBP2+NeB+E55oWQSYe8WUauj46qihxNwwUb1H7OTkJCbl/bOPo6ZDuADKslpSauTCEcahIO6VdbQvj18msOjNckuBic69E9Jk/3mmN02OQ4/ft3xAi0DFExcNLcRAnrsSnXhWJth8CyNj6wh5SpRCN6cBYLmJIPyOrFDckXtlBjU0BqBSASUA2OEoLGucNMcjm/VCs0a+mSc3zXPAllKA5t57JrCblTyLG1gj6gktuETOfrLQkX8vZo4I/u3bvbxZ8zGZc5MfZS/eVSNvZvd1sO94PBTY7TKHEUq0xRYLGbEjyrVfdFoTu7Zc0G+CF/KaVKiNuJB/LBVFxkxNMNOIxb6q5BRHYffsPgpr3dfzR6FheFFSu272M9OpdMoWxGr2/Xu9sNmHNFlmxcGfc+73mVaPi7HJJSjTR1t3iPwerBtj381JGyNnewYL4jy7a6DTBLNMB02RToCwNSDuJEUIBGdl0qn82tVejvGlKCmceZGuVYTbKn6zPfS3GiLCsYpxOqgS9bI4MvwYOLQSrRIfS7kf4d0aatzmi2EusK7PUpKhiAfPAu/hqIoL0P629HrWcX62mGJdFwyBZHLJV+uLbGCclhJexocifE+xcZsU514w5HaCSpSVMXiQu5NBF+bD8x3IDJtm9yq5ckMX1xLicpXFTjKVkmFQhsbjYwQvBgHuCDukBa8N1XwyBIjX6CZ8pW+6h5zUfN1rJkaCX0V7sMaPy9Z25sh6qTNBm8EYws0vWu+Ub8rNDIR5uKVGA+HMXuBxYz0Q12SgV/FhFzcjFm3MktizouObr0S0zo91+R+1mMzoalyDyzmTT3o2z6PEC/RC5QAAAAA=');

@@ -34,8 +34,8 @@
               <td class="_dateLeftPart">
                 <div class="_billingBlock">
                   <div class="_billingTitle">Bill to</div>
-                  <div class="_billingCustomerName"><%= @payment.user.name %></div>
-                  <div class="_billingCompanyAddress"><%= @payment.user.company %>, <%= @payment.user.street_address %>, <%= @payment.user.city %>, <%= @payment.user.state %>, <%= ISO3166::Country[@payment.user.country] %>, zip: <%= @payment.user.zip_code %>, Phone: <%= @payment.user.phone_number %></div>
+                    <div class="_billingCustomerName"><%= @payment.payer.name %></div>
+                    <div class="_billingCompanyAddress"><%= @payment.payer.company %>, <%= @payment.payer.street_address %>, <%= @payment.payer.city %>, <%= @payment.payer.state %>, <%= ISO3166::Country[@payment.payer.country] %>, zip: <%= @payment.payer.zip_code %>, Phone: <%= @payment.payer.phone_number %></div>
                 </div>
               </td>
               <td class="_dateRightPart">

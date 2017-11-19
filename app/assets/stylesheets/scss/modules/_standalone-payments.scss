@@ -1,0 +1,76 @@
+.card-heading {
+  color: #333;
+  text-align: center;
+  @include rem(font-size, 24px);
+}
+
+.standalone-payments {
+  padding: 30px 40px 20px;
+
+  .form-inner {
+    padding-top: 20px;
+
+    .input_wrapper {
+      width: 60%;
+      margin: 0 auto 15px;
+    }
+  }
+
+  .btn-group {
+    padding-top: 20px;
+    text-align: center;
+
+    .btn-green {
+      height: 40px;
+      padding: 11px 35px;
+      line-height: 1;
+    }
+  }
+
+  .billings-info {
+    display: flex;
+
+    .left-side,
+    .right-side {
+      width: 50%;
+    }
+
+    .left-side {
+      padding-right: 15px;
+    }
+
+    .right-side {
+      padding-left: 15px;
+    }
+
+    .input_wrapper {
+      width: 100%;
+      margin: 0 0 15px;
+    }
+  }
+
+  .payments {
+    margin-top: 5px;
+
+    .licenses-top-block {
+      padding: 15px 0;
+    }
+
+    .licenses-bottom-block {
+      padding: 15px 0 0;
+      background: $base-bg;
+      border-top: 1px solid #e2e2e2;
+    }
+
+    .licenses {
+      .card-header {
+        padding-top: 15px;
+        border-top: 1px solid #e2e2e2;
+      }
+    }
+
+    .block-subtitle {
+      @include rem(font-size, 16px);
+    }
+  }
+}

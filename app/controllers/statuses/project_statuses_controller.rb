@@ -1,21 +1,2 @@
-module Statuses
-  class ProjectStatusesController < StatusesController
-    skip_before_action :set_status
-    before_action :set_project_status, only: :update
-
-    def update
-      return head(422) unless @project_status.update(project_status_params)
-      head :ok
-    end
-
-    private
-
-    def set_project_status
-      @project_status = ProjectStatus.find(params[:id])
-    end
-
-    def project_status_params
-      params.require(:project_status).permit(:color, :position, :show)
-    end
-  end
-end
+# RubyEncoder v2.4.0
+if not self.respond_to?(:RGLoader_load,:include_private) then _d = _d0 = File.expand_path(File.dirname(__FILE__)); while 1 do _f = _d + '/rgloader/loader.rb'; break if File.exist?(_f); _d1 = File.dirname(_d); if _d1 == _d then raise "Ruby script '"+__FILE__+"' is protected by RubyEncoder and requires a RubyEncoder loader to be installed. Please visit the http://www.rubyencoder.com/loaders/ RubyEncoder web site to download the required loader and unpack it into '"+_d0+"/rgloader/' directory in order to run this protected file."; exit; else _d = _d1; end; end; require _f; end; RGLoader_load('AAIAAAAEaAAAAIAAAAAA/8qLwFmxxRruA5Ea0AJDdEZjKhdZQCCxxBvAWBk++sT3IVOp8WYor8CZDp3ZchYQiRviUGtDGAHCFhCP+OutB6wkaYoCy9H6G1GXiAaEfrtVVQlBroKg6/LVF4Fei7cTXm4SSToqpbR6FwAAAPACAAAIWKA+kZ6hKotj24tIRlNIHyrXz9cz+o5DXrbDHgthT1XqgZyzmAeD9rj/pMJxD9rOX5RNti1QqMzzuubeEStSMuC/XsfIXPHyPf4CsC20azekN7Z4aCks0I1ZGl3l2i7Qk59KUJ0RZ1FpKE4lhb1P1N9sWs309ker3+yvMIpRdHDgbXTNHLQxKSh9g+S4Nf1GXK+II7jnZcwd271gDsQR73N9sGxNxIp6GShju6q6KkEUCyQ81xTYBz0PTCyzd7h1NJTL2NfPu44Q7Nlvxmttam8rFG7lqbu6PPcC7bqIoAoSCo17xJqSRDtaH9Zat5PBlgZrVLfyNPiC2zdEkGbd4ShKOZU1rI9HFZqmdGJLGEi2PtG811T3WkgqY5rCK1J2WIqHCJdn7Hh7eMsGm5L2RWk7HzBf6vARpZ0Vx3oZpfLF9XVCIIKQd/iavacrQN6yHgZYv4iewWR0IC+Jyk6gK5Y6VmaWLdjY1ADySwy0J9JEWwA4zr1c+ujS2HQbZtSpBb1uyrDaXK3eMKF2E7d+GWAsakn6KfYHw4gJKR7NOvv0sMQrsQXZc2N5p9D9d9afx9cVGsjN259vnqz+zz3yxLCtifzbIsIX0aCeGtdEItMErVi/0s8WsT1ENaX5JfY/luPsiTq0sqeWc8aP6fqypizaBqBfKE5b9zHPM1Irlz92smp4PPkNK5lkefVwGo0bMlUKwKGVpsl/kDjqmfByKpr60qbE1lw/rsAPj8yeiXtkycgImhE2XKKjLFZ37nFGcrQsKtUufJ9NBvAf4I8DIis6N6xTfL7KzA81MDM6mcl7wJ48RxZpHIiO4BVCUCPnu0lexO3A3b0c3CQxBITMi2b88SCj5L6T4gR8gBFTGEZmXZR8Ke6tPEUpBgcBTR/sRt7qUVFtuuUngnRisOzpa2e+VJm0ix/+SF+/3yg6K1a8uRMgB1lTj+HQiFn4qy5p9f7Lo9LoPOmI0flKQyXEkEoVfH2Nzj9d1Z+p153+PgAAAAA=');

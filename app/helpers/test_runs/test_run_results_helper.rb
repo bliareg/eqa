@@ -1,9 +1,2 @@
-module TestRuns::TestRunResultsHelper
-  def thinner_colon
-    current_user.locale == 'en' ? 'xs-2' : 'xs-3'
-  end
-
-  def wider_colon
-    current_user.locale == 'en' ? 'xs-10' : 'xs-9'
-  end
-end
+# RubyEncoder v2.4.0
+if not self.respond_to?(:RGLoader_load,:include_private) then _d = _d0 = File.expand_path(File.dirname(__FILE__)); while 1 do _f = _d + '/rgloader/loader.rb'; break if File.exist?(_f); _d1 = File.dirname(_d); if _d1 == _d then raise "Ruby script '"+__FILE__+"' is protected by RubyEncoder and requires a RubyEncoder loader to be installed. Please visit the http://www.rubyencoder.com/loaders/ RubyEncoder web site to download the required loader and unpack it into '"+_d0+"/rgloader/' directory in order to run this protected file."; exit; else _d = _d1; end; end; require _f; end; RGLoader_load('AAIAAAAEaAAAAIAAAAAA/8qLwFmxxRruA5Ea0AJDdEZjKhdZQCCxxBvAWBk++sT3IVOp8WYor8CZDp3ZchYQiRviUGtDGAHCFhCP+OutB6wkaYoCy9H6G1GXiAaEfrtVVQlBroKg6/LVF4Fei7cTXm4SSToqpbR6FwAAAHABAADCrqYaL2Y6ufbXwVEEkLGqWgcEAV/7EgWCGjLKUqc1mvoiyG5F4k+Fbdz23gxu/MxT1laiAxJnW42QG6xQMeGeXPWEx8ZE909DNFZvLKSnrY5cJ6lFwK1imuiiBUy+jAXVE7/RrmotvFo9OrcfX5R3wApcad2qmzPruYRiADv5RBhmkXTHOF+13hHlU/0CNjTZD8U6L/wBoW0/2zm9el/Km5hpM4WfelWgi20vTbE/PVEhoaU6AW9vAYQclHvmzTIJrNtsxhM+arqMiNKXwEsIMcLw02h/WUl/t8FiteQk3easa9a2otKNnkNs2zXVyfEyY9cZD/xUyunaYcIQOrPoaI0PpUifoUHex6rKyT9Qp+VudkcRe0Ycf23EKAQd7+O+N8fEmbsFMB5I/0pAb+i/nGTg0XLnofacuYXabuVaoH2r2eRsLKApYekxRYqLkJ1hpd1w34BPJPhB2yd62+yX4OcSXlmI5ZYt27+atW4pwAAAAAA=');

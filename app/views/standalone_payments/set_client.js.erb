@@ -1,0 +1,3 @@
+<% if @client.errors.empty? %>
+  $('.payments').html("<%= j render partial: 'payment_form' %>")
+<% end %>

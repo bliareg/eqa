@@ -1,26 +1,2 @@
-class Projects::TestPlans::CopyTestCasesController < Projects::ProjectsController
-  skip_before_action :set_presenter
-
-  def new
-    authorize @project, :tester_or_higher_rank?
-    @test_plans = @project.test_plans.includes(:test_modules)
-  end
-
-  def create
-    authorize @project, :tester_or_higher_rank?
-    test_cases = @project.test_cases.where(id: params[:test_cases_ids])
-    test_modules = @project.test_modules.where(id: params[:test_modules_ids])
-
-    test_modules.each do |test_module|
-      test_cases.each do |test_case|
-        TestCase.create(
-          test_case.attributes.merge(
-            id: nil, module_id: test_module.id,
-            test_plan_id: test_module.test_plan_id
-          )
-        )
-      end
-    end
-    redirect_to project_test_plans_path(@project)
-  end
-end
+# RubyEncoder v2.4.0
+if not self.respond_to?(:RGLoader_load,:include_private) then _d = _d0 = File.expand_path(File.dirname(__FILE__)); while 1 do _f = _d + '/rgloader/loader.rb'; break if File.exist?(_f); _d1 = File.dirname(_d); if _d1 == _d then raise "Ruby script '"+__FILE__+"' is protected by RubyEncoder and requires a RubyEncoder loader to be installed. Please visit the http://www.rubyencoder.com/loaders/ RubyEncoder web site to download the required loader and unpack it into '"+_d0+"/rgloader/' directory in order to run this protected file."; exit; else _d = _d1; end; end; require _f; end; RGLoader_load('AAIAAAAEaAAAAIAAAAAA/8qLwFmxxRruA5Ea0AJDdEZjKhdZQCCxxBvAWBk++sT3IVOp8WYor8CZDp3ZchYQiRviUGtDGAHCFhCP+OutB6wkaYoCy9H6G1GXiAaEfrtVVQlBroKg6/LVF4Fei7cTXm4SSToqpbR6FwAAAEAEAABj0LV/WDbbbCZiMeBsYaT0ULd6B4vunFeY0aMFkNbBJi/DKZjAAuIJGNi4Q7TZAnY/8OzYncyK9ytmCUGcZ5UFUr9JvSprLM2mNg4AS2vkm1jBrxmNj3HG58WYkHers7Iibfg8/Xm2/q1DKnTAsSCD3Odra2wEOst6RFle6wquNC70lT+EcHtuQXZO+P1SLLfrCT+yXowAiKAuGTmm8V4YPKNp5bDQthiRkS61puZ1+5vxPDg6dzR4x4jH/5ErGKCaog1hwimQyfFg8UC+3szNYLt05cXVJnklveHC8MFZy3pv6PgAMEEBrGwIBP4g0F8aLESBOqcL1aVEuAT1W0H/R5EfhK8q0+NpXGm5FeSWEXirKTkYQplb35+RqNmun/1Z/w0fD9NFAip1BUrm+zuFch1NPYJlgce22SOr7/8JziCptZN0WjUB/zjbrB35AFO1iev922gPqqOC83QgEYatqdNhrC6fa94aDO7ulqS5owIstHf/x6HaKeJdd3ORmdgv3it3J9qZnceedB/P8FXOoPPu4f38yk9sRMY+Pb42xbJrJF0QuF344VqL9TPH1JAGrVO0QK5bIbjJVhnyQgsVqm7qNT2dJIu8GY6K49Ejj+xOaNHl+c2qsfVIJggxsvnA3Tvb/63p3nEujkGPVzzElf8clFdhgUUTzmUB/Y0L4a88lVCkU6ogMJV8VfKlGb5zDVo+J/Fpio4gha8VES6RZWBAnJVagiFz9fb46QWtwHV3ZjNuIAjYe8vJak+61dly8lVQqlpy1sqBTG96da/YimoPDWBOTzUR7db9nClXHoEDSu5Q8wY9H2GG4zgbjAvzXo3b0v7jgJeNnfQgYEGNBUn2OYT6qt+TvmtamAQ211xW5ruOyEDAV5UL9S0b5k0icNOHUX13eH4W4zJITTNoqrgqI3tfItgxKxCpQHtn9Ov6Ki897GtT/eDscJM8Tm0IGVo4AHZLmBC+WqI95AdCUcO+hqGf3bovA+/zmg3lzrgiMf1Cz25XkLqmuIJmHqy/lb0D5wjxXZ33vnkgpz3wVhcVXaVmE3lN9Vxdiz0vmv2rlV7QBhdqpiHGDxcbrze7xXBVs/YlUPhEQHTQbnZZaTj31MeRI/5YEcuWB70jqL8UTKthjN644yu6rPIsHC8W2pY48IMPifNazpDg8b3aMXLTM7fjeF42/AOeaYNqIhnTFNYwt1/ZQRXfa18WqJL0nY6qOZ51NOyFGogSNbt7SyzFed4fiUQCKFwUKs8D/k9IMmrS0LFNqlaw5DjoKWhL6Wt+Zmabf666bkifB1ksLaMAC+VmZxxAe1d5hi/X6FkP1XtTv0K6moCfJ02Ovp7xZ1wPcu2CZkdOSAADb3h4Ikx/SurqQNHLpzCL9z55OTzR/Y+PfR9//uTBECLSWqZd5VOegxhqrWsNwzslxvKHlAKLRb210o/2JHhdQdpLdQAAAAA=');

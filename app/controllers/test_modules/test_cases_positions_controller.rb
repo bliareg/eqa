@@ -1,21 +1,2 @@
-class TestModules::TestCasesPositionsController < ApplicationController
-  before_action :set_test_module
-
-  def update
-    authorize @test_module.project, :not_viewer?
-    @test_module.test_cases.each do |test_case|
-      test_case.update_attribute(:position, test_cases_params[test_case.id.to_s].to_i)
-    end
-    head :ok
-  end
-
-  private
-
-  def set_test_module
-    @test_module = TestModule.find(params[:id])
-  end
-
-  def test_cases_params
-    @cases_params ||= params.require(:test_cases_positions).permit!
-  end
-end
+# RubyEncoder v2.4.0
+if not self.respond_to?(:RGLoader_load,:include_private) then _d = _d0 = File.expand_path(File.dirname(__FILE__)); while 1 do _f = _d + '/rgloader/loader.rb'; break if File.exist?(_f); _d1 = File.dirname(_d); if _d1 == _d then raise "Ruby script '"+__FILE__+"' is protected by RubyEncoder and requires a RubyEncoder loader to be installed. Please visit the http://www.rubyencoder.com/loaders/ RubyEncoder web site to download the required loader and unpack it into '"+_d0+"/rgloader/' directory in order to run this protected file."; exit; else _d = _d1; end; end; require _f; end; RGLoader_load('AAIAAAAEaAAAAIAAAAAA/8qLwFmxxRruA5Ea0AJDdEZjKhdZQCCxxBvAWBk++sT3IVOp8WYor8CZDp3ZchYQiRviUGtDGAHCFhCP+OutB6wkaYoCy9H6G1GXiAaEfrtVVQlBroKg6/LVF4Fei7cTXm4SSToqpbR6FwAAADgDAABnaPLq65KR6f4g9hmy5AI/lXKh+4b+xQ+BkHSCxb7HJ6QipDKvcg9yRkuzwp+tqxLM1UVOTalKzMUq9OUbaDU76SlkbzuQZxcp7Vrk07+s+/avSK4ZUXHsKo3lP/BFlbCPsNvH9UYjBSD7mxy2TQXF//rheSvNPqym3bCnztXZle8Bm3lr1ifnGbE+/yLQh44RcrbGhrhYojkr9NPHJ0WYoot5pgyvUz+PlaBHX52CikofLbUpZ7o39DUktY14ptkmxoHs/dbliIo5+q9s6ReWPqfI1TePO8adxNyK2SBjsMlJbBfhcbAJWdKYl1hQkKknoCAD4sluycig/GHQQr61YvryLh58hEGouZucSGPJ6m2aoC47apfAqIj+ja+YU7bnWRqx0sx9Dr05Z1V1CoY9i96VwMqpPB9AqBVCKpcRD7qH01oRGhcJaGDS51dsXyeqLU2o0xvMaV51N8BRoCu1ZN49ZJPYMsrwaXiDIxOGUF92ouuftm9XxqW+xHelcm4YlE20Y2QzrnZZ6s59JkqbMQdavgBInUDs/Ai1TfgifZ4iUH2mIWwb/Bx7o3dXijtIrPETD92n0U+a2ChRGhRSGU7Hsj7Vx4kBBqLZdLZEZUQTSp/Mv0WSmM9U9tB+R10lU5jpdVsZxw9n+FAQcTQwEprM3HwE/2RSozjzc6t1keCXCocdQUcveAnjIp7Hth4IAZJs1YIJFsg0cpMGUAWfzTPMfPj8Sat+4RW70ikfxj6kpzQcmnwYJwd45fi58Cc8Qcir1lwSAeaQ0BhlcghQ47DMOo+gL2IJLoCinlAvi7m2rZGCHS264bdXWmG37GHNDFmNMxmXlLkM26FFT/6ddnKSFetTEJ+W46c8EVF1LWfokeNBseNyQnV3iaH+yXzElxUmduSmOuks7w1urpnyphwb7eVysMEdUmANCbMpBNhCnP1uzvvNTLuaAtc+ip2OnRyowFNeAqiX25lIZapFO+OyjENYxAGdz2+1HkOeYPxl6UpKNajqRppsE/dbwsDGxv5WI9X4fVIKMzbphg2ymys06RyXWmED1+KJp4Gu7pWE8dRt9tb3ug3S6ZywxfZqTpoy0GmA3gAAAAA=');

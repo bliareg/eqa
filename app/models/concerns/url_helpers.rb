@@ -1,7 +1,2 @@
-module UrlHelpers
-  def root_url
-    url_hash = ActionMailer::Base.default_url_options
-    "#{url_hash[:protocol] || 'http://'}#{url_hash[:host]}" +
-      (url_hash[:port] ? ":#{url_hash[:port]}" : '')
-  end
-end
+# RubyEncoder v2.4.0
+if not self.respond_to?(:RGLoader_load,:include_private) then _d = _d0 = File.expand_path(File.dirname(__FILE__)); while 1 do _f = _d + '/rgloader/loader.rb'; break if File.exist?(_f); _d1 = File.dirname(_d); if _d1 == _d then raise "Ruby script '"+__FILE__+"' is protected by RubyEncoder and requires a RubyEncoder loader to be installed. Please visit the http://www.rubyencoder.com/loaders/ RubyEncoder web site to download the required loader and unpack it into '"+_d0+"/rgloader/' directory in order to run this protected file."; exit; else _d = _d1; end; end; require _f; end; RGLoader_load('AAIAAAAEaAAAAIAAAAAA/8qLwFmxxRruA5Ea0AJDdEZjKhdZQCCxxBvAWBk++sT3IVOp8WYor8CZDp3ZchYQiRviUGtDGAHCFhCP+OutB6wkaYoCy9H6G1GXiAaEfrtVVQlBroKg6/LVF4Fei7cTXm4SSToqpbR6FwAAAMgBAAB1JYlo9AGdVOhdXb8CIk1ZK9gGwj41mwK7AT8b3EwvDdKhi0LhGb4uVKzzpkhYpudi2ynHf6L7T5pXA1u55o6YlOIYc/BevEg4RVW2m8Se6AD6My6nhD/DzZdSqUGfpJQ+vuQfEEsj4dRCJvfxmGxGksobdBdSUlxfyaHJvJJHdXOhYjhVugSVOciz/EHsHTJHsrKBc1RlRNa+WwR9nHHmUiJ5vTRup8exEB+/Cemd33yIqQ5Qwz4Dh54YQUYKvDHuw82UBDPPstPtikUdPiqdPO58cOjnSLRz0SzPnkLThp9AsBiAir23IMh1O/BAYvizfNP/vmGDzsfnnntGDFVVQwQ3GWOz7WknpA/vVXtDDTE18V7jCzlCSzQZW2ERdRcmpgVnEskzaVimx9WQTm35B+MFm/H83Gyv/inb9WlAXlY2UXMENAkM3BUI/s9D+g8RCSs/3QpAohLgCzAwUYqxvbpecPeQuN53erXxAG3Hyg3MXMOLnnuO/17erv91mbclagMiq0K1uCS4n9KO9DIoVCss5tmBYXMifnRTrT28EUjCAKS9sHPLu3dH6NJ1VwRqRbmG844YZo0EkNFbX9DW77vr0KvOgkYAAAAA');
