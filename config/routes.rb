@@ -2,11 +2,11 @@ Rails.application.routes.draw do
   get 'transactions/new'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
+  ActiveAdmin.routes(self) rescue ActiveAdmin::DatabaseHitDuringLoad
   devise_scope :user do
-     get 'users/sign_up/:referral_token', to: 'users/registrations#referral_invitation', as: 'referral_invitation'
+    get 'users/sign_up/:referral_token', to: 'users/registrations#referral_invitation', as: 'referral_invitation'
   end
-  devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks",
+  devise_for :users, controllers: { omniauth_callbacks: 'omniauth_callbacks',
                                     sessions: 'users/sessions',
                                     passwords: 'users/passwords',
                                     registrations: 'users/registrations',
@@ -31,16 +31,21 @@ Rails.application.routes.draw do
     get 'crashes/:project_key', action: :crashes
   end
 
-
   unless Rails.env.standalone?
-    # resources :payment_methods, only: [:create, :destroy] do
-    #   member { put :make_default }
-    # end
     resources :billings, only: [:index] do
       collection { put :toggle_autopayment }
       collection { put :update_licenses_amount }
     end
     resources :payments, only: :index
+    resources :standalone_clients, only: [:new, :create]
+    resources :standalone_payments, only: [:new, :create, :show], param: :token do
+      collection { put :set_client }
+      collection { get :finished }
+    end
+
+    # resources :payment_methods, only: [:create, :destroy] do
+    #   member { put :make_default }
+    # end
     # resources :payments, only: [:create] do
     #   collection { post :transaction_webhook }
     #   collection { post :disbursement_webhook }
@@ -52,7 +57,6 @@ Rails.application.routes.draw do
       collection { post :sale_webhook }
       collection { delete :cancel }
     end
-
     resources :promocodes, only: [] do
       collection { post :check }
     end
@@ -72,7 +76,7 @@ Rails.application.routes.draw do
   end
 
   mount ActionCable.server => '/cable'
-  devise_scope :user do 
+  devise_scope :user do
     get '/users' => 'devise/registrations#new'
     put '/activate_account/:user_id' => 'users#activate_account', as: :activate_account
     get '/users/password' => 'devise/passwords#new'
@@ -154,6 +158,7 @@ Rails.application.routes.draw do
         end
       end
       get ':parent_name/:parent_id/test_cases', to: 'test_plans/test_modules/test_cases#index', as: :test_cases
+      resources :standalone_validator, only: :create unless Rails.env.standalone?
     end
   end
 
@@ -245,15 +250,15 @@ Rails.application.routes.draw do
   end
   resources :test_reports, only: :create do
     collection { post :send_email }
-  end 
+  end
 
   scope path: '/projects/:id', controller: :projects do
-    put 'refresh_token',   action: :refresh_token
-    get 'add_members',     action: :add_members
-    post 'add_members',    action: :invite_users_to_project
+    put 'refresh_token',           action: :refresh_token
+    get 'add_members',             action: :add_members
+    post 'add_members',            action: :invite_users_to_project
     get 'destroy_project_confirm', action: :destroy_project_confirm, as: :destroy_project_confirm
-    put 'update',          action: :update,                as: :project_update
-    put 'remove_project_logo', action: :remove_logo,       as: :remove_project_logo
+    put 'update',                  action: :update,                  as: :project_update
+    put 'remove_project_logo',     action: :remove_logo,             as: :remove_project_logo
   end
 
   resource :issues, only: [], shallow: true do

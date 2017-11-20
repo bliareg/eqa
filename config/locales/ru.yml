@@ -215,6 +215,8 @@ u:
   can_not_be_zero: Не может быть равен нулю
   invalid_license: Лицензия недействительная
   expired_license: Срок лицензии уже истек
+  used_by_another_host: Текущая лицензия используется другим хостом
+  invalid_license_email: Ваша лицензия не соответствует электронной почте
   already_exists: Уже существует
   trial_already_exists: Пробная лицензия уже существует
   cancel: Отмена
@@ -840,6 +842,7 @@ u:
   print: Распечатать
   priority: Приоритет
   privacy_policy: Privacy Policy
+  proceed: Продолжить
   project:
     activity: Активность за последние 30 дней
     add_new: Добавить новый проект
@@ -956,6 +959,7 @@ u:
   send: Отправить
   send_by_email: Отправить по электронной почте
   send_email: Отправить Email
+  send_instructions: Отправить инструкции
   send_link: Отправить ссылку
   send_reset_password_instructions: Отправить мне инструкции по сбросу пароля
   sent_you_an_invitation: отправил вам приглашение

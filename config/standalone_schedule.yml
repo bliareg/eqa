@@ -4,3 +4,6 @@ DestroyOldData:
 LicenseExpirationNotificaton:
   cron: "*/1 * * * *"
   class: "LicenseExpirationNotificatonWorker"
+StandaloneValidator:
+  cron: "*/1 * * * *"
+  class: "StandaloneValidatorWorker"

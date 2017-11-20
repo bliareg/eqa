@@ -203,6 +203,8 @@ en:
   invalid_license: Invalid license
   expired_license: License already expired
   already_exists: Already exists
+  used_by_another_host: Current License is used by another host
+  invalid_license_email: Your license is not match email
   trial_already_exists: Trial license already exists
   cancel: Cancel
   cancel_my_account: Cancel my account
@@ -816,6 +818,7 @@ en:
   pricing: Pricing
   print: Print
   privacy_policy: Privacy Policy
+  proceed: Proceed
   project:
     activity: Last 30 days activity
     add_new: Add New Project
@@ -925,6 +928,7 @@ en:
   send: Send
   send_by_email: Send by email
   send_email: Send email
+  send_instructions: Send instructions
   send_link: Send link
   send_reset_password_instructions: Send me reset password instructions
   sent_you_an_invitation: sent you an invitation
