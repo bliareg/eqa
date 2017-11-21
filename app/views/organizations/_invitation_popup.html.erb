@@ -35,19 +35,11 @@
               <div class="popup-description-column">
                 <p class="popup-description"><%= t 'invite.existing_users' %></p>
                 <p class="popup-description"><%= t 'invite.an_invitation' %></p>
-                <% if Rails.env.standalone? %>
-                  <% if (@organization.owner&.current_license&.licenses_left || 0).zero? %>
+                <% if !@organization.owner.billing.trial_period? %>
+                  <% if @organization.owner.available_licenses_count.zero? %>
                     <p class="popup-description warning"><%= t 'invite.no_licenses' %></p>
                   <% else %>
-                    <p class="popup-description accent"><%= t('invite.licenses_left', count: @organization.owner.current_license.licenses_left) %></p>
-                  <% end %>
-                <% else %>
-                  <% if !@organization.owner.billing.trial_period? %>
-                    <% if @organization.owner.available_licenses_count.zero? %>
-                      <p class="popup-description warning"><%= t 'invite.no_licenses' %></p>
-                    <% else %>
-                      <p class="popup-description accent"><%= t('invite.licenses_left', count: @organization.owner.available_licenses_count) %></p>
-                    <% end %>
+                    <p class="popup-description accent"><%= t('invite.licenses_left', count: @organization.owner.available_licenses_count) %></p>
                   <% end %>
                 <% end %>
               </div>
