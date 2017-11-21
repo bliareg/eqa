@@ -204,6 +204,7 @@ en:
   expired_license: License already expired
   already_exists: Already exists
   used_by_another_host: Current License is used by another host
+  move_to_new_ip: Current License is used by another host. Would you like to apply this license to current IP?
   invalid_license_email: Your license is not match email
   trial_already_exists: Trial license already exists
   cancel: Cancel

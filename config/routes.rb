@@ -62,6 +62,7 @@ Rails.application.routes.draw do
     end
   else
     resources :licenses, only: [:new, :index, :create]
+    resource :forget_standalone_ip, only: :create
   end
 
   get '/users/profile/referral_program', controller: :referrals, action: :show, as: :referral_program
@@ -158,7 +159,10 @@ Rails.application.routes.draw do
         end
       end
       get ':parent_name/:parent_id/test_cases', to: 'test_plans/test_modules/test_cases#index', as: :test_cases
-      resources :standalone_validator, only: :create unless Rails.env.standalone?
+      unless Rails.env.standalone?
+        resources :standalone_validator, only: :create
+        resources :forget_standalone_ip, only: :create
+      end
     end
   end
 

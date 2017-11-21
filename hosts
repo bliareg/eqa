@@ -1,0 +1,73 @@
+[rails]
+# Your server IP address
+35.202.38.141
+
+[rails:vars]
+# Your application name
+app_name=eqa
+# Your app domain (for nginx configuration)
+app_domain=35.202.38.141
+
+# unchangeble section
+
+# deploy account name (account will be created at app server)
+deploy_user=deploy
+# deploy folder (project folder)
+deploy_folder=/home/deploy/www/
+
+ruby_version=2.3.1
+rbenv_ruby_filename=ruby2.3
+# unchangeble section
+
+# Password for deploy_user (plain text)
+user_password_plain=password
+# Password for deploy_user, encrypted in md5
+# mkpasswd --method=sha-512 DEPLOY_USER_PASSWORD_PLAIN
+user_password_sha_512=$6$Kpgcq4fngo/s4hqz$GwcR0YlPUHZxEmIYCJR5A6Pp5y7XKigXJ6oYeDdA5ZI9OOrFk4jZ9MvLvGDYc7VyTqbzMHOmWIR/fZbM2j6uJ/
+
+# GitHub account data for cloning project
+git_https_username=deploy
+git_https_password=password
+
+# Server root account password
+# password is not send anywhere else except your server
+# and can be changed on server after project will be deployed
+root_password=password
+
+# secret_key_base
+# the simplest way to ge it is to run in console next command
+# openssl rand -hex 64
+secret_key_base=56c8e9ed622ae53892169d4dcb414c2a11d25f8bf854d932527fa79da8838b3c9dd8af49e2d122966585dac96bd431c9d571516612c12fbbf1e9e0e62978460e
+
+# email wich will be in FROM field
+secret_email=your_gmail@gmail.com
+# plain email password
+secret_email_password=your_gmail_password
+# mail.thinkmobiles.com, for example
+action_mailer_address=smtp.gmail.com
+# thinkmobiles.com (see action_mailer_address value)
+action_mailer_sdomain=
+
+# devise_email email wich will be in "From" field when you will restore your account
+devise_email=your_gmail@gmail.com
+
+# devise_secret_key serve for security porposes
+# the simplest way to ge it is to run in console next command
+# openssl rand -hex 64
+devise_secret_key=5297d6193d465c31c95086533cc5bdc97dfd3605a9a35f9508f9265f77c3e564a540b91bf15607f52cc8baddf25443d2c0343bcb782dadc6a303322062ee74a1
+
+###### open ssl sertificate configuration
+
+# ssl_sertificate_present MUST BE true or false
+ssl_sertificate_present=false
+# absolute path to .crt sertificate file
+ssl_certificate=
+# absolute path to .txt sertificate file
+ssl_certificate_key=
+
+###### Monit setup
+
+# Username for Monit web interface access
+monit_web_login=
+# Password for Monit web interface access (plain text)
+monit_web_passwd=
