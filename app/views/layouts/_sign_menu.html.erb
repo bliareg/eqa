@@ -1,6 +1,6 @@
 <header id='head_menu' class="main-header <%= notification_class %>">
-  <% if current_user.payment_notification_visible? && (current_user.organization_owner_roles.exists? || current_user.organizations.count.zero?) %>
-    <%= render(Rails.env.standalone? ? 'layouts/license_notification' : 'layouts/payment_notification') %>
+  <% if current_user.payment_notification_visible? %>
+    <%= render 'layouts/payment_notification' %>
   <% end %>
   <div class="logo_title <%= header_class(no_project)%>">
     <%= link_to root_path do %>
