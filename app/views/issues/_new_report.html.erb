@@ -6,7 +6,7 @@
         <span class='icon-close-icon'></span>
       </span>
     </div>
-    <%= form_for(@issue, url: report_bug_path,
+    <%= form_for(@issue, url: retrieve_report_bug_path,
                          validate: true,
                          html: { multipart: true, class: 'form_with_dropzone' },
                          remote: true) do |f| %>

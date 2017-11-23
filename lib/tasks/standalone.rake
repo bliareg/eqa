@@ -1,4 +1,4 @@
-ENCODER_COMMAND = '(cd app/ && $RUBY_ENCODER --ruby 2.3 **/*.* -r -f "*.rb" -x "db/|spec/" --rails -o %{target_dir})'.freeze
+ENCODER_COMMAND = '(cd app/ && $RUBY_ENCODER -r --ruby "2.3" "*.rb" --rails -o "%{target_dir}")'.freeze
 namespace :standalone do
   task build: :environment do
     if valid_tools?

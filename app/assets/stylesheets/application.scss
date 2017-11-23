@@ -40,6 +40,24 @@ input.fake-input {
   }
 }
 
+.bar:hover::after { 
+   content: attr(data-title); 
+   position: absolute; 
+   bottom: 100%; 
+   z-index: 1;
+   background: $hover-block;
+   color: $white;
+   font-family: Arial, sans-serif; 
+   font-size: 11px; 
+   padding: 5px 0;
+   transition: opacity 1s;
+   display: inline-block;
+   opacity: 1;
+   border-radius: 6px;
+   width: 100px;
+   text-align: center;
+   font-size: 14px;
+}
 
 .table-promocode {
   .total-price {

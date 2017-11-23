@@ -30,7 +30,8 @@
         <tr><td style="font-weight: 300;line-height: 1.4;font-size: 18px;padding-bottom: 20px;">
           <% license = @client.standalone_licenses.last %>
           Your trial license <%= "for period #{license.period_start.strftime('%d %b %Y')} - #{license.period_end.strftime('%d %b %Y')} for #{license.number_of_licenses} users" %> is:
-          <%= license.token %>
+          <pre></pre>
+          <code><%= license.token %></code>
         </td></tr>
         <tr><td style="font-weight: 300;line-height: 1.4;font-size: 18px;padding-bottom: 20px;">
           Kind regards,

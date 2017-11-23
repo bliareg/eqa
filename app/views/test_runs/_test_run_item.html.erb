@@ -28,12 +28,16 @@
   </div>
   <div class="progress-bar">
     <div class="progress">
-      <div class="passed" style="width: <%= run.progress_width[:pass] %>"></div>
-      <div class="blocked" style="width: <%= run.progress_width[:block] %>"></div>
-      <div class="failed" style="width: <%= run.progress_width[:fail] %>"></div>
-      <div class="not-available" style="width: <%= run.progress_width[:na] %>"></div>
-      <div class="untested" style="width: <%= run.progress_width[:untested] %>"></div>
+      <div class="passed bar" data-title="passed" style="width: <%= run.progress_width[:pass] %>"></div>
+      <div class="blocked bar" data-title="blocked" style="width: <%= run.progress_width[:block] %>"></div>
+      <div class="failed bar" data-title="failed" style="width: <%= run.progress_width[:fail] %>"></div>
+      <div class="not-available bar" data-title="not-available" style="width: <%= run.progress_width[:na] %>"></div>
+      <div class="untested bar" data-title="untested" style="width: <%= run.progress_width[:untested] %>"></div>
     </div>
-    <span class="passed-progress"><%= run.progress_width[:pass] || '0%' %></span>
+    <span class="passed-progress"> 
+      <%= number_to_percentage(run.progress_width[:pass].to_f + 
+                               run.progress_width[:block].to_f + 
+                               run.progress_width[:fail].to_f + 
+                               run.progress_width[:na].to_f, precision: 2) || '0%' %></span> 
   </div>
 </div>
