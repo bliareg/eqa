@@ -273,12 +273,8 @@ function bind_custom_scrollbar() {
     });
   }
 
-  $('.dd-options').mouseenter(function(){
-    $(this).parents('.mCustomScrollbar').mCustomScrollbar('disable')
-  });
-  
-   $('.dd-options').mouseleave(function(){
-    $(this).parents('.mCustomScrollbar').first().mCustomScrollbar('update')
+  $('.dd-options').mCustomScrollbar({
+    theme:"dark-thin"
   });
 
   var options = { autoExpandHorizontalScroll: true,

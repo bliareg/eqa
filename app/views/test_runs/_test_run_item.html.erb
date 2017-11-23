@@ -15,7 +15,13 @@
     <ul class="test-progress">
       <% run.results.each do |status, count| %>
         <li>
-          <span><%= count %> </span><%= t "enumerize.test_run_result.status.#{status}" %>
+        <% if count != 0 %>
+          <%= link_to test_run_path(run.id, status: status), remote: true, class: 'green-color'  do %>
+            <span><%= count %> </span><%= t "enumerize.test_run_result.status.#{status}" %>
+          <% end %>
+        <% else %>
+        <span><%= count %> </span><%= t "enumerize.test_run_result.status.#{status}" %>
+        <% end %>
         </li>
       <% end %>
     </ul>
