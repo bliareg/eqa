@@ -1,8 +1,10 @@
 var User = {
   password: {
     current_password_validation: function() {
-      client_side_validation_params = $('#edit_user_password')[0].ClientSideValidations.settings.validators
-      client_side_validation_params['current_password'] = client_side_validation_params['user[password]']
+      if ($('#edit_user_password').length) {
+        client_side_validation_params = $('#edit_user_password')[0].ClientSideValidations.settings.validators
+        client_side_validation_params['current_password'] = client_side_validation_params['user[password]']
+      }
     }
   }
 }

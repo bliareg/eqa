@@ -7,7 +7,7 @@
     <div class="licenses-top-block">
       <div class="input_wrapper quantity">
         <label for="quantity"><%= t(:quantity) %></label>
-        <%= number_field_tag :quantity, @billing.licenses_amount, in: 1...999999, max: 6,  onkeypress: 'return digitalValidation(value)', autocomplete: :off, data: data_hash_for_price %>
+        <%= number_field_tag :quantity, @billing.licenses_amount, in: 1..999999, max: 6,  onkeypress: 'return digitalValidation(value)', autocomplete: :off, data: data_hash_for_price %>
       </div>
       <span class="monthly-fee"><%= t(:monthly_fee) %>
         <span id="new_monthly_fee">$<%= monthly_fee %></span>
@@ -15,7 +15,7 @@
 
       <div class="input_wrapper month-number-block">
         <label for="number_of_months"><%= t(:number_of_months) %></label>
-        <%= number_field_tag :number_of_months, 1, in: 1...999999, max: 6,  onkeypress: 'return digitalValidation(value)', autocomplete: :off %>
+        <%= number_field_tag :number_of_months, 1, in: 1..999999, max: 6,  onkeypress: 'return digitalValidation(value)', autocomplete: :off %>
       </div>
       <% if flash[:licenses_amount_error].present? %>
         <span class="error-message"><%= flash[:licenses_amount_error] %></span>
@@ -67,7 +67,7 @@
     <div class="licenses-top-block">
       <div class="input_wrapper">
         <label for="quantity"><%= t(:quantity) %></label>
-        <%= number_field_tag :quantity, @billing.licenses_amount, in: 1...999999, max: 6,  onkeypress: 'return digitalValidation(value)', autocomplete: :off, data: data_hash_for_price %>
+        <%= number_field_tag :quantity, @billing.licenses_amount, in: 1..999999, max: 6,  onkeypress: 'return digitalValidation(value)', autocomplete: :off, data: data_hash_for_price %>
       </div>
       <% if flash[:licenses_amount_error].present? %>
         <span class="error-message"><%= flash[:licenses_amount_error] %></span>
@@ -83,7 +83,7 @@
       <div>
         <!-- block 1 -->
         <div class="input_wrapper promo-code-block">
-          <input id='promocode_add' type="text" maxlength="8" placeholder="Enter promo code">
+          <input id='promocode_add' type="text" maxlength="8" placeholder="<%= t('promocode.enter') %>">
         </div>
         <div id='check_promocode_add' class="btn btn-green show_loader"><%= t('promocode.apply') %></div>
         <span class="total-price" id="price_with_promocode_add">$<%= monthly_fee %></span>

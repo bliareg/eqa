@@ -17,10 +17,11 @@
       </span>
     <% elsif current_user.is_ip_invalid? %>
       <span class="message">
-        <%= t('used_by_another_host') %>
+        <%= t('move_to_new_ip') %>
       </span>
+      <%= link_to :OK, forget_standalone_ip_path, class: 'btn top-panel-btn', remote: true, method: :post %>
     <% end %>
-    <%= link_to t(:view_plans), licenses_path, class: "btn top-panel-btn" %>
+    <%= link_to t(:view_plans), licenses_path, class: "btn top-panel-btn" unless current_user.is_ip_invalid? %>
   </div>
   <span class="fa fa-times close close_notification" aria-hidden="true"></span>
 </div>

@@ -307,7 +307,11 @@
             labelErrorField.insertAfter(label);
             labelErrorField.find('label#label_tag').replaceWith(label);
           }
-          return form.find("label.message[for='" + (element.attr('id')) + "']").text(message);
+          try {
+            return form.find("label.message[for='" + (element.attr('id')) + "']").html(message);
+          } catch (e) {
+            return form.find("label.message[for='" + (element.attr('id')) + "']").text(message);
+          }
         },
         remove: function(element, settings) {
           var errorFieldClass, form, inputErrorField, label, labelErrorField;
@@ -657,6 +661,7 @@ $(document).on('ajax:error', 'form', function(event, request) {
 
 function ajaxErrorValidation(request, form) {
   var input;
+  console.clear()
   if (request.status == 422 && form[0].ClientSideValidations && request.responseJSON) {
     var formName = form.attr('id') && form.attr('id').match(/(?:(?:new_)|(?:edit_))(\w*)$/)[1];
 
