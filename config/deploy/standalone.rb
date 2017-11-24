@@ -6,7 +6,7 @@ server 'REMOTE_SERVER_IP',
 
 # Repo settings
 set :scm, 'git'
-set :repo_url, "https://github.com/bliareg/eqa.git"
+set :repo_url, "https://github.com/thinkmobiles/eqa.git"
 set :branch, 'master'
 set :git_https_username, 'GIT_HTTPS_USERNAME'
 set :git_https_password, 'GIT_HTTPS_PASSWORD'

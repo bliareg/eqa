@@ -2,8 +2,8 @@ DestroyOldData:
   cron: "0 3 1 * *"
   class: "DestroyOldDataWorker"
 LicenseExpirationNotificaton:
-  cron: "*/1 * * * *"
+  cron: "0 0 * * *"
   class: "LicenseExpirationNotificatonWorker"
 StandaloneValidator:
-  cron: "*/1 * * * *"
+  cron: "0 0 * * *"
   class: "StandaloneValidatorWorker"

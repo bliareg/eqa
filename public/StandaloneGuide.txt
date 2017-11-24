@@ -1,3 +1,4 @@
+# INSTALLING
 Install Ubuntu 16.04 on aws or another host managment tools.
 1. Edit file using terminal text editor with sudo permission (nano, vim etc.)
 located at - /etc/ssh/sshd_config
@@ -17,11 +18,11 @@ passwd root
 
 5.Download standalone EasyQA application
 cd
-git clone https://github.com/bliareg/eqa
+git clone https://github.com/thinkmobiles/eqa
 
 6. Fill hosts file with terminal text editor (vim, nano, etc.), located at - eqa/standalone/ansible_provision/hosts
 
-See example of configured hosts file: https://github.com/bliareg/eqa/blob/master/hosts
+See example of configured hosts file: https://github.com/thinkmobiles/eqa/blob/master/hosts
 
 7.Deploy standalone app
 cd eqa
@@ -32,3 +33,31 @@ docker run -it eqa
 
 8. Open your server public IP in browser
 9. Register with your email, which has been indicated for licenses requesting
+
+10. Please, check your email (which you indicated in hosts file). The notification about security account block can be there.
+You need to confirm, that you are using your email for sending notification from your host.
+
+# UPDATING
+cd
+cd eqa
+
+1. Download changes from repository
+git pull
+
+Getting root rights
+sudo su
+
+2. Clean old docker builds
+docker kill $(docker ps -q)
+docker rm $(docker ps -a -q)
+docker rmi $(docker images -q -f dangling=true)
+docker rmi $(docker images -q)
+
+2. Cleaning RAM
+free && sync && echo 3 > /proc/sys/vm/drop_caches && free
+
+3. Rebuilding standalone app
+docker build -t eqa .
+docker run -it eqa
+
+Exit root
