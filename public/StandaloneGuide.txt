@@ -15,17 +15,17 @@ sudo su
 passwd root
 
 4. Exit root
-
+EasyQA_standalone
 5.Download standalone EasyQA application
 cd
-git clone https://github.com/thinkmobiles/eqa
+git clone https://github.com/thinkmobiles/EasyQA_standalone
 
-6. Fill hosts file with terminal text editor (vim, nano, etc.), located at - eqa/standalone/ansible_provision/hosts
+6. Fill hosts file with terminal text editor (vim, nano, etc.), located at - EasyQA_standalone/standalone/ansible_provision/hosts
 
-See example of configured hosts file: https://github.com/thinkmobiles/eqa/blob/master/hosts
+See example of configured hosts file: https://github.com/thinkmobiles/EasyQA_standalone/blob/master/hosts
 
 7.Deploy standalone app
-cd eqa
+cd EasyQA_standalone
 sudo su
 - Deploy app using docker
 docker build -t eqa .
@@ -39,7 +39,7 @@ You need to confirm, that you are using your email for sending notification from
 
 # UPDATING
 cd
-cd eqa
+cd EasyQA_standalone
 
 1. Download changes from repository
 git pull
